@@ -1,0 +1,210 @@
+[
+    {
+        "key": "AC",
+        "value": "Avenida Calle"
+    },
+    {
+        "key": "AG",
+        "value": "Agrupación"
+    },
+    {
+        "key": "AK",
+        "value": "Avenida Carrera"
+    },
+    {
+        "key": "AU",
+        "value": "Autopista"
+    },
+    {
+        "key": "AV",
+        "value": "Avenida"
+    },
+    {
+        "key": "BG",
+        "value": "Bodega"
+    },
+    {
+        "key": "BL",
+        "value": "Bloque"
+    },
+    {
+        "key": "BV",
+        "value": "Bulevar Pasaje"
+    },
+    {
+        "key": "CA",
+        "value": "Casa"
+    },
+    {
+        "key": "CC",
+        "value": "Centro Comercial"
+    },
+    {
+        "key": "CH",
+        "value": "Chalet"
+    },
+    {
+        "key": "CI",
+        "value": "Circular"
+    },
+    {
+        "key": "CJ",
+        "value": "Callejon"
+    },
+    {
+        "key": "CL",
+        "value": "Calle"
+    },
+    {
+        "key": "CN",
+        "value": "Camino"
+    },
+    {
+        "key": "CO",
+        "value": "Condominio"
+    },
+    {
+        "key": "CR",
+        "value": "Carrera"
+    },
+    {
+        "key": "CT",
+        "value": "Carretera"
+    },
+    {
+        "key": "CV",
+        "value": "Circunvalar"
+    },
+    {
+        "key": "DG",
+        "value": "Diagonal"
+    },
+    {
+        "key": "ED",
+        "value": "Edificio"
+    },
+    {
+        "key": "EN",
+        "value": "Entrada"
+    },
+    {
+        "key": "ET",
+        "value": "Etapa"
+    },
+    {
+        "key": "FC",
+        "value": "Finca"
+    },
+    {
+        "key": "GA",
+        "value": "Granja"
+    },
+    {
+        "key": "HD",
+        "value": "Hacienda"
+    },
+    {
+        "key": "KM",
+        "value": "Kilometro"
+    },
+    {
+        "key": "L",
+        "value": "Local"
+    },
+    {
+        "key": "LT",
+        "value": "Lote"
+    },
+    {
+        "key": "MN",
+        "value": "Mezzanine"
+    },
+    {
+        "key": "MZ",
+        "value": "Manzana"
+    },
+    {
+        "key": "",
+        "value": "Número"
+    },
+    {
+        "key": "OF",
+        "value": "Oficina"
+    },
+    {
+        "key": "P",
+        "value": "Piso"
+    },
+    {
+        "key": "PA",
+        "value": "Parcela"
+    },
+    {
+        "key": "PH",
+        "value": "Penthouse"
+    },
+    {
+        "key": "PS",
+        "value": "Paseo"
+    },
+    {
+        "key": "PT",
+        "value": "Puesto"
+    },
+    {
+        "key": "SE",
+        "value": "Sector"
+    },
+    {
+        "key": "SL",
+        "value": "Solar"
+    },
+    {
+        "key": "SM",
+        "value": "SuperManzana"
+    },
+    {
+        "key": "SS",
+        "value": "Semisotano"
+    },
+    {
+        "key": "ST",
+        "value": "Sotano"
+    },
+    {
+        "key": "TR",
+        "value": "Torre"
+    },
+    {
+        "key": "TV",
+        "value": "Transversal"
+    },
+    {
+        "key": "UB",
+        "value": "Urbanización"
+    },
+    {
+        "key": "UN",
+        "value": "Unidad"
+    },
+    {
+        "key": "UR",
+        "value": "Unidad Residencial"
+    },
+    {
+        "key": "VD",
+        "value": "Vereda"
+    },
+    {
+        "key": "VI",
+        "value": "Via"
+    },
+    {
+        "key": "VT",
+        "value": "Variante"
+    },
+    {
+        "key": "ZN",
+        "value": "Zona"
+    }
+]

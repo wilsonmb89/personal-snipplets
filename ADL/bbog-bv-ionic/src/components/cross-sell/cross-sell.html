@@ -1,0 +1,18 @@
+<div>
+  <ion-grid no-padding>
+    <ion-row class="cross-sell-row">
+      <ion-col col-12>
+        <div id="cs-title" class="text-style-sub">{{crossTitle}}</div>
+      </ion-col>
+      <ion-col col-12 col-xs-12 col-sm-12 col-md-12 col-xl-6>
+        <bdb-cs-approved-card (onMainCardClicked)="onItemClicked($event)" [approvedCard]="approvedCard"
+          *ngIf="!!approvedCard"></bdb-cs-approved-card>
+        <bdb-cs-main-card (onMainCardClicked)="onItemClicked($event)" [mainCard]="mainCard" *ngIf="!!mainCard">
+        </bdb-cs-main-card>
+      </ion-col>
+      <ion-col class="mosaic-col" col-12 col-xs-12 col-sm-12 col-md-12 col-xl-6>
+        <bdb-cs-mosaic (onItemClicked)="onItemClicked($event)" [mosaicList]="mosaicList"></bdb-cs-mosaic>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

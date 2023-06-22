@@ -1,0 +1,17 @@
+.main-container {
+  display: none;
+
+  &__title {
+    color: var(--sherpa-carbon-900);
+    margin-top: var(--sherpa-spacing-8);
+  }
+
+  &__summary {
+    margin-top: var(--sherpa-spacing-4);
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+  }
+}

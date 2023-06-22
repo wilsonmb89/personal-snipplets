@@ -1,0 +1,92 @@
+settings-app {
+
+  bdb-last-connect {
+    bottom: 47px;
+    width: 100%;
+    text-align: center;
+    right: inherit;
+  }
+
+  .scroll-content {
+    padding: 0!important;
+  }
+
+  #main-settings-grid.grid {
+    padding: 0px;
+    min-height: 100%;
+    height: 100%;
+  }
+
+  #main-settings-grid.grid .main-row.row {
+    height: 100%;
+  }
+
+  .left-container {
+    text-align: center;
+    background-color: white;
+    padding: 0px;
+  }
+
+  .right-container {
+    background-color: color($colors, bdb-bg);
+    box-shadow: inset 0px 0px 14px 1px rgba(102, 128, 173, 0.2);
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    .left-container {
+
+      background-color: color($colors, bdb-bg);
+
+      bdb-submenu-header .title {
+          font-family: $ArgoBold;
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 1.14;
+          color: color($colors, bdb-blue);
+      }
+    }
+  }
+
+  .setting-main {
+
+    &__item {
+      height: 6.6rem;
+      font-size: 1.5rem;
+      color: color($colors, bdb-slate);
+      padding-left: 2.4rem;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    &__title {
+      font-family: $ArgoBold;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: color($colors, bdb-blue);
+      height: 4.7rem;
+    }
+  }
+
+  .setting-footer {
+    
+    &__btn-exit {
+      font-family: $RobotoBold;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 1.33;
+      text-align: center;
+      color: #ffffff;
+      color: white;
+
+      img {
+        margin-right: 3px;
+      }
+    }
+
+    &__version {
+      color: var(--pulse-color-carbon-700);
+      padding: 1.6rem 2.4rem;
+      background-color: color($colors, bdb-bg);
+    }
+  }
+}

@@ -1,0 +1,90 @@
+@import '../../app/core/styles/loading.scss';
+
+bdb-shortcut-card-load {
+    .shortcut-card-content {
+        text-align: center;
+        width: 77px;
+
+        &__first-line, &__second-line {
+            @include loading-effect(1);
+            background-color: color($colors, ghost) !important;
+        }
+
+        &__first-line {
+            font-size: 1px;
+            border-radius: 4px;
+            margin-top: 14px;
+            width: 70%;
+            height: 8px;
+            color: color($colors, ghost);
+            display: inline-block;
+        } 
+        
+        &__second-line {
+            font-size: 1px;
+            border-radius: 4px;
+            margin-bottom: 12.5px;
+            margin-top: 2px;
+            width: 55%;
+            height: 8px;
+            color: color($colors, ghost);
+            display: inline-block;              
+        }
+        .avatar-ghost-wrapper{
+            @include loading-effect(1);
+            text-align: center;
+            align-items: center;
+            width: 54px;
+            height: 54px;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: color($colors, ghost);
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+
+      
+        .shortcut-card-content {
+            width: 112px;
+            height: 126px;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+
+            &__wrap{
+                padding-top: 1.5rem !important;
+            }
+            
+            &__first-text, &__second-text {
+                color: color($colors, steel);
+            }
+    
+            &__first-text {
+                margin-top: 16px;
+            } 
+
+            &__avatar {
+                .avatar-wrapper {
+                    &__avatar {
+                        border-style: solid;
+                        background-color: color($colors, ghost);
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .shortcut-card-content {
+            &__avatar {
+                .avatar-ghost-wrapper__border-avatar {
+                    background-color: color($colors, ghost) !important;
+                }
+            }
+    
+        }
+    
+    }
+}

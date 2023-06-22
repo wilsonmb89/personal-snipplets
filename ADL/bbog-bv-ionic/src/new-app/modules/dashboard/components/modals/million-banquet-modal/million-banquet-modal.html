@@ -1,0 +1,35 @@
+<pulse-modaltb class="campaign-million-banquet">
+  <div slot="header">
+    <div class="campaign-million-banquet__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <div class="campaign-million-banquet__icon">
+          <img src="assets/imgs/dashboard/million_banquet/campaign-million-banquet.png" alt="million-banquet">
+        </div>
+      </div>
+      <div slot="title">
+        ¡Únete al Banquete del Millón!
+      </div>
+      <div slot="body">
+        <div class="campaign-million-banquet__body">
+          <span class="pulse-tp-bo3-comp-b">En el Banco de Bogotá apoyamos la reactivación económica de
+          los microempresarios de Colombia.</span> Con tus donaciones, el Minuto de Dios beneficiará a
+          40,000 micronegocios afectados por la pandemia.
+          <br><br>
+          Más información en <span class="campaign-million-banquet__body--link" (click)="openExternalUrl()">www.banquetedelmillon.org</span>
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="campaign-million-banquet__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="goToDonations()">
+        Dona aquí
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

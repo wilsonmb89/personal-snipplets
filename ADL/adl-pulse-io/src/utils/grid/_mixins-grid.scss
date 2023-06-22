@@ -1,0 +1,46 @@
+@import "../media-query";
+
+@mixin build-col-class(){
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding: var(--pulse-padding-vertical) var(--pulse-gutter-width, 0.8rem);
+}
+  
+@mixin build-cols($break) {
+  $col-list: null;
+  @for $i from 0 through $cols {
+
+    $width: percentage(1 / $cols)*$i;    
+    .col-#{$break}-#{$i} {
+        width: $width;
+        flex-basis: $width;
+    }
+    .col-#{$break}-offset-#{$i} {
+        margin-left: $width;
+    }   
+    @if $i != 0 { 
+      .order-#{$break}-#{$i}{
+        order: $i;
+      }
+    }
+    $col-list: append($col-list, unquote(".col-#{$break}-#{$i}"), comma);
+  }
+  #{$col-list} {
+    @include build-col-class();
+  }  
+}
+
+@mixin generate-cols() {
+
+  @each $breakpoint-name, $value in $screen-breakpoints {
+    @if $breakpoint-name == 'xs' {
+      @include build-cols($breakpoint-name);
+    }
+    @else {
+      @media only screen and  (min-width: $value) {
+        @include build-cols($breakpoint-name);
+      }; 
+    }
+  };
+  
+};

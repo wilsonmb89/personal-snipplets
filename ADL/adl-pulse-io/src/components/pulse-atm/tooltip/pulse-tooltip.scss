@@ -1,0 +1,191 @@
+@import "pulse-tooltip.vars";
+@import "../../../global/animate";
+
+:host {
+    width: fit-content;
+    --fnt-color: var(--pulse-color-fg);
+    --bck-color: var(--pulse-color-bg);
+    --pulse-card-color: var(--pulse-color-100);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+}
+
+:host([class*="position-ind-left-"]) .tooltip_main {
+    &::after {
+        left: 0px;
+    }
+}
+
+:host(.position-ind-left-start) .tooltip_main {
+    &::after {
+        top: 0%;
+        transform: translate(-50%, 90%) rotate(-45deg);
+    }
+}
+
+:host(.position-ind-left-middle) .tooltip_main {
+    &::after {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+}
+
+:host(.position-ind-left-end) .tooltip_main {
+    &::after {
+        bottom: 0%;
+        transform: translate(-50%, -90%) rotate(-45deg);
+    }
+}
+
+:host([class*="position-ind-top-"]) .tooltip_main {
+    &::after {
+        top: 0px;
+    }
+}
+
+:host(.position-ind-top-start) .tooltip_main {
+    &::after {
+        left: 0%;
+        transform: translate(190%, -50%) rotate(45deg);
+    }
+}
+
+:host(.position-ind-top-middle) .tooltip_main {
+    &::after {
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+}
+
+:host(.position-ind-top-end) .tooltip_main {
+    &::after {
+        right: 0%;
+        transform: translate(-190%, -50%) rotate(45deg);
+    }
+}
+
+:host([class*="position-ind-bottom-"]) .tooltip_main {
+    &::after {
+        bottom: 0px;
+    }
+}
+
+:host(.position-ind-bottom-start) .tooltip_main {
+    &::after {
+        left: 0%;
+        transform: translate(190%, 50%) rotate(225deg);
+    }
+}
+
+:host(.position-ind-bottom-middle) .tooltip_main {
+    &::after {
+        left: 50%;
+        transform: translate(-50%, 50%) rotate(225deg);
+    }
+}
+
+:host(.position-ind-bottom-end) .tooltip_main {
+    &::after {
+        right: 0%;
+        transform: translate(-190%, 50%) rotate(225deg);
+    }
+}
+
+:host([class*="position-ind-right-"]) .tooltip_main {
+    &::after {
+        right: 0px;
+    }
+}
+
+:host(.position-ind-right-start) .tooltip_main {
+    &::after {
+        top: 0%;
+        transform: translate(50%, 90%) rotate(135deg);
+    }
+}
+
+:host(.position-ind-right-middle) .tooltip_main {
+    &::after {
+        top: 50%;
+        transform: translate(50%, -50%) rotate(135deg);
+    }
+}
+
+:host(.position-ind-right-end) .tooltip_main {
+    &::after {
+        bottom: 0%;
+        transform: translate(50%, -90%) rotate(135deg);
+    }
+}
+
+:host(.mobile) .tooltip_main {
+    position: absolute;
+    bottom: 0px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 2.4rem;
+    max-width: none;
+    width: -webkit-fill-available;
+}
+
+:host(.mobile) .full-shadow {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.tooltip_main {
+    position: relative;
+    border-radius: #{$tooltip-radius};
+    background: var(--bck-color, $def-backg);
+    color: var(--fnt-color);
+    width: fit-content;
+    padding: 1.6rem 2.4rem;
+
+    &::after {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        background: var(--bck-color, $def-backg);
+        border-radius: 4px 0 0 0;
+        transform-origin: center;
+    }
+
+    &__close {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin: 0.8rem;
+    }
+
+    &__desc {
+        margin: 0.4rem 0 0 0;
+    }
+
+    &__xs {
+        max-width: 25.2rem;
+    }
+
+    &__s {
+        max-width: 36.8rem;
+    }
+
+    &__m {
+        max-width: 40rem;
+    }
+
+    &__l {
+        max-width: 50rem;
+    }
+
+    &__xl {
+        max-width: 50rem;
+    }
+}

@@ -1,0 +1,33 @@
+<ion-content no-padding class="onboarding-home-content">
+
+  <div class="onboarding-home-content__close" (click)="close()">
+    <img src="assets/imgs/closeicon_token.svg">
+  </div>
+
+  <ion-slides [pager]="true" (ionSlideWillChange)="slideChanged()" [speed]="800" class="onboarding-home-content__slides">
+    <ion-slide class="onboarding-home-content__slide" *ngFor="let item of listSlides; let i=index">
+      <div class="onboarding-home-content__slide-img">
+        <img [src]="bdbPlatforms.isMobile() ? item.img.mobile : item.img.desktop">
+      </div>
+      <div class="onboarding-home-content__title">
+        {{ item.title.text }}
+        <span>{{ item.title.bold }}</span>
+      </div>
+      <div class="onboarding-home-content__subtitle">
+        {{ item.subtitle }}
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <button bvButton color="mango-gradient" [@btnUpAndDown]="viewBtnFirst" class="onboarding-home-content__slide-btn" type="button"
+    (click)="next()">Conoce lo nuevo</button>
+  <button bvButton color="mango-gradient" [@btnUpAndDown]="!viewBtnLast" class="onboarding-home-content__slide-btn" type="button" (click)="close()">Entendido</button>
+
+  <div class="onboarding-home-content__btn-prev" [@openClose]="viewBtnPrev" (click)="prev()">
+    <img src="assets/imgs/onboarding-home/round-chevron-left-24-px.svg">
+  </div>
+  <div class="onboarding-home-content__btn-next" [@openClose]="viewBtnNext" (click)="next()">
+    <img src="assets/imgs/onboarding-home/round-chevron-right-24-px.svg">
+  </div>
+
+</ion-content>

@@ -1,0 +1,157 @@
+:host {
+  .pulse-mobile-calendar-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem 0;
+    border-bottom: 0.1rem solid #e1e2e6;
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &--date-title {
+        color: var(--pulse-color-carbon-900);
+        padding-bottom: 1.6rem;
+      }
+
+      &--days-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        color: var(--pulse-color-carbon-100);
+        padding-bottom: 0.8rem;
+
+        &__day {
+          width: 3.5rem;
+          text-align: center;
+        }
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &__calendar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &__week {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          &__day {
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &.active {
+              color: var(--pulse-color-carbon-900);
+            }
+
+            &.selected {
+              color: var(--pulse-color-fg);
+              background-color: var(--pulse-color-init);
+              border-radius: 50%;
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                box-sizing: border-box;
+                z-index: -1;
+                display: inline-block;
+                height: 100%;
+                top: 0px;
+                background-color: var(--pulse-color-info-100);
+              }
+
+              &.start::before {
+                width: 50%;
+                left: 50%;
+              }
+
+              &.end::before {
+                width: 50%;
+                right: 50%;
+              }
+            }
+
+            &.ranged {
+              color: var(--pulse-color-init);
+              background-color: var(--pulse-color-info-100);
+
+              &.rounded-left {
+                border-top-left-radius: 2.5rem;
+                border-bottom-left-radius: 2.5rem;
+              }
+
+              &.rounded-right {
+                border-top-right-radius: 2.5rem;
+                border-bottom-right-radius: 2.5rem;
+              }
+            }
+
+            &.inactive {
+              color: var(--pulse-color-carbon-400);
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 330px) {
+      &__header {
+        &--days-title {
+          &__day {
+            width: 4rem;
+          }
+        }
+      }
+      &__body {
+        &__calendar {
+          &__week {
+            &__day {
+              width: 4rem;
+              height: 4rem;
+            }
+          }
+        }
+      }
+    }
+
+    @media only screen and (min-width: 385px) {
+      &__header {
+        &--days-title {
+          &__day {
+            width: 4.8rem;
+          }
+        }
+      }
+      &__body {
+        &__calendar {
+          &__week {
+            &__day {
+              width: 4.8rem;
+              height: 4.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

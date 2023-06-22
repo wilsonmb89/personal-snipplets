@@ -1,0 +1,50 @@
+app-contact-numbers-modal {
+
+  .contact-numbers-main {
+
+    &__header {
+      &__btn-close {
+        height: 2.8rem;
+        width: 2.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--pulse-color-info-100);
+        margin-left: auto;
+        cursor: pointer;
+      }
+    }
+
+    &__content {
+      &__body {
+        flex-grow: 1;
+
+        &__info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 3.2rem;
+
+          div.data {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 540px) {
+    .contact-numbers-main {
+      &__footer {
+        &__button-wrapper {
+          text-align: center;
+
+          pulse-button {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}

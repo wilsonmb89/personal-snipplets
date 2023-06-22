@@ -1,0 +1,423 @@
+---
+name: "Cuentas-Afc"
+priority: 001
+condition: account.bankId == "SDA"  && account.subBankId.startsWith("067");
+actions:
+  - account.athId = "AF";
+  - account.accountName = "Cuenta AFC";
+---
+name: "Cuenta-de-Ahorros-Nomina"
+priority: 100
+condition: account.bankId == "SDA" && account.subBankId.startsWith("010");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros Nómina";
+---
+name: "Cuenta-de-Ahorros-Aventura"
+priority: 105
+condition: account.bankId == "SDA" && account.subBankId.startsWith("040");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros Aventura";
+---
+name: "Cuenta-de-Ahorros-Energía"
+priority: 110
+condition: account.bankId == "SDA" && account.description.toLowerCase().contains("energia");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros Energía";
+---
+name: "Cuenta-de-Ahorros-Pensionado"
+priority: 115
+condition: account.bankId == "SDA" && account.subBankId.startsWith("055");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros Pensionado";
+---
+name: "Cuenta-de-Ahorros-Joven"
+priority: 120
+condition: account.bankId == "SDA" && account.subBankId.startsWith("060");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros Joven";
+---
+name: "Cuenta-de-Ahorros-LibreAhorro"
+priority: 125
+condition: account.bankId == "SDA" && account.subBankId.startsWith("061");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros LibreAhorro";
+---
+name: "Cuenta-de-Ahorros-RentaAhorro"
+priority: 130
+condition: account.bankId == "SDA" && account.subBankId.startsWith("062");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros RentaAhorro";
+---
+name: "Cuenta-de-Ahorros-FlexiAhorro"
+priority: 135
+condition: account.bankId == "SDA" && account.subBankId.startsWith("063");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros FlexiAhorro";
+---
+name: "Econocuenta"
+priority: 140
+condition: account.bankId == "SDA" && account.subBankId.startsWith("068");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Econocuenta";
+---
+name: "Cuenta-de-Ahorros-Programado"
+priority: 145
+condition: account.bankId == "SDA" && account.description.toLowerCase().contains("program");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros Programado";
+---
+name: "Cuenta-de-Ahorros-Premium"
+priority: 150
+condition: account.bankId == "SDA" && account.subBankId.startsWith("098");
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros Premium";
+---
+name: "Cuenta-de-Ahorros "
+priority: 199
+condition: account.bankId == "SDA"
+actions:
+  - account.athId = "ST";
+  - account.accountName = "Cuenta de Ahorros";
+---
+name: "Cuenta-Corriente-Juridica"
+priority: 200
+condition: account.bankId == "DDA" && account.description.toLowerCase().contains("jur");
+actions:
+  - account.athId = "IM";
+  - account.accountName = "Cuenta Corriente Juridica";
+---
+name: "Cuenta-Corriente-Comercial"
+priority: 205
+condition: account.bankId == "DDA" && account.subBankId.startsWith("010");
+actions:
+  - account.athId = "IM";
+  - account.accountName = "Cuenta Corriente Comercial";
+---
+name: "Cuenta-Corriente"
+priority: 210
+condition: account.bankId == "DDA" && account.subBankId.startsWith("001");
+actions:
+  - account.athId = "IM";
+  - account.accountName = "Cuenta Corriente";
+---
+name: "Cuenta-Corriente-Oficial"
+priority: 215
+condition: account.bankId == "DDA" && account.subBankId.startsWith("020");
+actions:
+  - account.athId = "IM";
+  - account.accountName = "Cuenta Corriente Oficial";
+---
+name: "Cuenta-Corriente-Nomina"
+priority: 220
+condition: account.bankId == "DDA" && account.subBankId.startsWith("045");
+actions:
+  - account.athId = "IM";
+  - account.accountName = "Cuenta Corriente Nómina";
+---
+name: "Cuentas-Corrientes"
+condition: account.bankId == "DDA"
+priority: 299
+actions:
+  - account.athId = "IM";
+  - account.accountName = "Cuenta Corriente";
+---
+name: "Tarjeta-de-Credito-Clasica-master"
+priority: 300
+condition: account.bankId == "CCA"
+  && account.franchise == "MC"
+  && (account.description.toLowerCase().contains("clásica") || account.description.toLowerCase().contains("clasica"))
+actions:
+  - account.athId = "MC";
+  - account.accountName = "Tarjeta de Crédito Clásica";
+  - account.franchise = "Mastercard";
+---
+name: "Tarjeta-de-Credito-Platinum-master"
+priority: 305
+condition: account.bankId == "CCA"
+  && account.franchise == "MC"
+  && account.description.toLowerCase().contains("platinum")
+actions:
+  - account.athId = "MC";
+  - account.accountName = "Tarjeta de Crédito Platinum";
+  - account.franchise = "Mastercard";
+---
+name: "Tarjeta-de-Credito-Gold-master"
+priority: 310
+condition: account.bankId == "CCA"
+  && account.franchise == "MC"
+  && (account.description.toLowerCase().contains("gold") || account.description.toLowerCase().contains("oro"))
+actions:
+  - account.athId = "MC";
+  - account.accountName = "Tarjeta de Crédito Gold";
+  - account.franchise = "Mastercard";
+---
+name: "Tarjeta-de-Credito-Signature-master"
+priority: 315
+condition: account.bankId == "CCA"
+  && account.franchise == "MC"
+  && account.description.toLowerCase().contains("signature")
+actions:
+  - account.athId = "MC";
+  - account.accountName = "Tarjeta de Crédito Signature";
+  - account.franchise = "Mastercard";
+---
+name: "Tarjeta-de-Credito-Elite-master"
+priority: 320
+condition: account.bankId == "CCA"
+  && account.franchise == "MC"
+  && account.description.toLowerCase().contains("elite")
+actions:
+  - account.athId = "MC";
+  - account.accountName = "Tarjeta de Crédito Elite";
+  - account.franchise = "Mastercard";
+---
+name: "Tarjeta-de-Credito-black-master"
+priority: 325
+condition: account.bankId == "CCA"
+  && account.franchise == "MC"
+  && account.description.toLowerCase().contains("black")
+actions:
+  - account.athId = "MC";
+  - account.accountName = "Tarjeta de Crédito Black";
+  - account.franchise = "Mastercard";
+---
+name: "Tarjeta-Mastercard"
+priority: 349
+condition: account.bankId == "CCA" && account.franchise == "MC"
+actions:
+  - account.athId = "MC";
+  - account.accountName = "Tarjeta de Crédito";
+  - account.franchise = "Mastercard";
+---
+name: "Tarjeta-de-Credito-Clasica-visa"
+priority: 350
+condition: account.bankId == "CCA"
+  && account.franchise == "CB"
+  && (account.description.toLowerCase().contains("clásica") || account.description.toLowerCase().contains("clasica"))
+actions:
+  - account.athId = "CB";
+  - account.accountName = "Tarjeta de Crédito Clásica";
+  - account.franchise = "Visa";
+---
+name: "Tarjeta-de-Credito-Platinum-visa"
+priority: 355
+condition: account.bankId == "CCA"
+  && account.franchise == "CB"
+  && account.description.toLowerCase().contains("platinum")
+actions:
+  - account.athId = "CB";
+  - account.accountName = "Tarjeta de Crédito Platinum";
+  - account.franchise = "Visa";
+---
+name: "Tarjeta-de-Credito-Gold-visa"
+priority: 360
+condition: account.bankId == "CCA"
+  && account.franchise == "CB"
+  && (account.description.toLowerCase().contains("gold") || account.description.toLowerCase().contains("oro"))
+actions:
+  - account.athId = "CB";
+  - account.accountName = "Tarjeta de Crédito Gold";
+  - account.franchise = "Visa";
+---
+name: "Tarjeta-de-Credito-Signature-visa"
+priority: 365
+condition: account.bankId == "CCA"
+  && account.franchise == "CB"
+  && account.description.toLowerCase().contains("signature")
+actions:
+  - account.athId = "CB";
+  - account.accountName = "Tarjeta de Crédito Signature";
+  - account.franchise = "Visa";
+---
+name: "Tarjeta-de-Credito-Elite-visa"
+priority: 370
+condition: account.bankId == "CCA"
+  && account.franchise == "CB"
+  && account.description.toLowerCase().contains("elite")
+actions:
+  - account.athId = "CB";
+  - account.accountName = "Tarjeta de Crédito Elite";
+  - account.franchise = "Visa";
+---
+name: "Tarjeta-de-Credito-Black-visa"
+priority: 375
+condition: account.bankId == "CCA"
+  && account.franchise == "CB"
+  && account.description.toLowerCase().contains("black")
+actions:
+  - account.athId = "CB";
+  - account.accountName = "Tarjeta de Crédito Black";
+  - account.franchise = "Visa";
+---
+name: "Tarjeta-Visa"
+priority: 399
+condition: account.bankId == "CCA" && account.franchise == "CB"
+actions:
+  - account.athId = "CB";
+  - account.accountName = "Tarjeta de Crédito";
+  - account.franchise = "Visa";
+---
+name: "CDTs"
+priority: 499
+condition: account.bankId == "CDA"
+actions:
+  - account.athId = "CD";
+  - account.accountName = "CDT";
+---
+name: "Fiducias"
+priority: 599
+condition: account.bankId == "FDA"
+actions:
+  - account.athId = "FB";
+  - account.accountName = "Fiducia";
+---
+name: "Adelantos-de-Nomina"
+priority: 600
+condition: account.bankId == "LOC" && account.subBankId =="110ML"
+actions:
+  - account.athId = "DN";
+  - account.accountName = "Adelanto de Nómina";
+---
+name: "leasing-habitacional"
+priority: 605
+condition: account.bankId == "LOC" && account.subBankId =="117ML"
+actions:
+  - account.athId = "LH";
+  - account.accountName = "Leasing Habitacional";
+---
+name: "leasing-habitacional-dos"
+priority: 610
+condition: account.bankId == "LOC" && account.subBankId =="118ML"
+actions:
+  - account.athId = "LF";
+  - account.accountName = "Leasing Habitacional";
+---
+name: "anticipo-leasing"
+priority: 615
+condition: account.bankId == "LOC" && account.description.toLowerCase().contains("anticipo")
+actions:
+  - account.athId = "LA";
+  - account.accountName = "Anticipo Leasing";
+---
+name: "crediservice"
+priority: 620
+condition: account.bankId == "LOC" && account.subBankId =="570ML"
+actions:
+  - account.athId = "AP";
+  - account.accountName = "Crediservice";
+---
+name: "crediservice-dos"
+priority: 625
+condition: account.bankId == "LOC" && account.subBankId =="568ML"
+actions:
+  - account.athId = "AN";
+  - account.accountName = "Crediservice";
+---
+  name: "crediservice-tres"
+  priority: 630
+  condition: account.bankId == "LOC" && account.subBankId =="572ML"
+  actions:
+    - account.athId = "AN";
+    - account.accountName = "Crediservice";
+---
+  name: "crediservice-cuatro"
+  priority: 635
+  condition: account.bankId == "LOC" && account.subBankId =="014ML"
+  actions:
+    - account.athId = "AN";
+    - account.accountName = "Crediservice";
+---
+  name: "crediservice-cinco"
+  priority: 640
+  condition: account.bankId == "LOC" && account.subBankId =="070ML"
+  actions:
+    - account.athId = "AN";
+    - account.accountName = "Crediservice";
+---
+  name: "crediservice-seis"
+  priority: 645
+  condition: account.bankId == "LOC" && account.subBankId =="182ML"
+  actions:
+    - account.athId = "AN";
+    - account.accountName = "Crediservice";
+---
+name: "Credito-de-Vivienda-dos"
+priority: 650
+condition: account.bankId == "LOC" && account.subBankId =="119ML"
+actions:
+  - account.athId = "AV";
+  - account.accountName = "Crédito de Vivienda";
+---
+name: "credito-libranza"
+priority: 700
+condition: account.bankId.matches("LOC|DLA") && account.description.toLowerCase().contains("libranza")
+actions:
+  - account.athId = "LB";
+  - account.accountName = "Crédito Libranza";
+---
+name: "credito-de-vivienda"
+priority: 705
+condition: account.bankId.matches("LOC|DLA") && account.description.toLowerCase().contains("vivienda")
+actions:
+  - account.athId = "AV";
+  - account.accountName = "Crédito de Vivienda";
+---
+name: "credito-leasing"
+priority: 710
+condition: account.bankId.matches("LOC|DLA") && account.description.toLowerCase().contains("leasing")
+actions:
+  - account.athId = "AD";
+  - account.accountName = "Crédito Leasing";
+---
+name: "credito-vehiculo"
+priority: 715
+condition: account.bankId.matches("LOC|DLA") && (account.description.toLowerCase().contains("vehículo") || account.description.toLowerCase().contains("vehiculo"))
+actions:
+  - account.athId = "AD";
+  - account.accountName = "Crédito Vehículo";
+---
+name: "credito-rotativo"
+priority: 720
+condition: account.bankId.matches("LOC|DLA") && account.description.toLowerCase().contains("rotativo")
+actions:
+  - account.athId = "AD";
+  - account.accountName = "Crédito Rotativo";
+---
+name: "compra-de-cartera"
+priority: 725
+condition: account.bankId.matches("LOC|DLA") && account.description.toLowerCase().contains("cartera")
+actions:
+  - account.athId = "AD";
+  - account.accountName = "Compra de Cartera";
+---
+name: "credito-estudiantil"
+priority: 730
+condition: account.bankId.matches("LOC|DLA") && account.description.toLowerCase().contains("estudiantil")
+actions:
+  - account.athId = "AD";
+  - account.accountName = "Crédito Estudiantil";
+---
+name: "credito-libre-destino"
+priority: 735
+condition: account.bankId.matches("LOC|DLA") && account.description.toLowerCase().contains("libre")
+actions:
+  - account.athId = "AD";
+  - account.accountName = "Crédito Libre Destino";
+---
+name: "otros-creditos"
+priority: 799
+condition: account.bankId.matches("LOC|DLA")
+actions:
+  - account.athId = "AD";
+  - account.accountName = "Crédito";

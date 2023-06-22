@@ -1,0 +1,52 @@
+@import '../../../variables.scss';
+
+.empty-state {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__img {
+    width: 27.5rem;
+    height: 15.4rem;
+  }
+
+  &__title {
+    width: 34.3rem;
+    margin: var(--sherpa-spacing-6) 0 var(--sherpa-spacing-6);
+    text-align: center;
+    color: var(--sherpa-carbon-600);
+  }
+
+  &__link {
+    cursor: pointer;
+    color: var(--sherpa-midnight-800);
+  }
+
+  &__link:hover {
+    text-decoration: underline;
+  }
+
+  &__button {
+    width: auto;
+  }
+
+  @media only screen and (min-width: 599px) {
+    &__title {
+      width: 30rem;
+      margin: var(--sherpa-spacing-1) 0 var(--sherpa-spacing-6);
+    }
+  }
+
+  @media only screen and (min-width: $break-table-md) {
+    &__img {
+      width: 34.4rem;
+      height: 19.2rem;
+    }
+
+    &__title {
+      width: 36.8rem;
+    }
+  }
+}

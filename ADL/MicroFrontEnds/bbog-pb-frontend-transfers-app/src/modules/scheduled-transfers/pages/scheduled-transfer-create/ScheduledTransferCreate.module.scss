@@ -1,0 +1,38 @@
+.st-create {
+  position: relative;
+
+  &__content {
+    background-color: var(--sherpa-midnight-50);
+    min-height: calc(100vh - 80px);
+    padding-bottom: 3.2rem;
+
+    &__caption {
+      display: flex;
+      flex-direction: column;
+      padding: var(--sherpa-spacing-8) var(--sherpa-spacing-0) var(--sherpa-spacing-6);
+
+      &__title {
+        color: var(--sherpa-carbon-900);
+      }
+
+      &__subtitle {
+        color: var(--sherpa-carbon-800);
+        margin-top: var(--sherpa-spacing-2);
+      }
+    }
+
+    &__form {
+      background-color: var(--sherpa-white);
+      border: 0.1rem solid var(--sherpa-carbon-200);
+      padding: var(--sherpa-spacing-4);
+      border-radius: 1rem;
+      box-sizing: border-box;
+    }
+
+    @media only screen and (min-width: 770px) {
+      &__form {
+        padding: var(--sherpa-spacing-0);
+      }
+    }
+  }
+}

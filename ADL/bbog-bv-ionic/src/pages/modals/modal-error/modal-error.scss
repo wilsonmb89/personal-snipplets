@@ -1,0 +1,83 @@
+page-modal-error {
+
+    .scroll-content{
+        overflow-y:hidden
+    }
+
+    .top{
+        padding: 32px 20px 0px 20px;
+        text-align: center;
+    }
+
+    .top .icon-container{
+        border-radius: 50%;
+        background-color: #f69b31;
+        display: inline-flex;
+        height: 48px;
+        width: 48px;
+        align-items: center;
+    }
+
+    .top .icon-container img{
+        margin: 0 auto;
+    }
+
+    .top .title{
+        font-family: $RobotoRegular;
+        font-size: 32px;
+        color: color($colors, bdb-black);
+        margin-top: 17px;
+    }
+
+    .top .message{
+        font-family: $RobotoLight;
+        font-size: 16px;
+        color: color($colors, bdb-black);
+        padding: 20px 50px 30px 50px;
+    }
+
+    .main-btn, .aux-btn{
+        background-color: #eef0f2;
+        color: color($colors, bdb-blue);
+        font-size: 16px;
+        font-family: $RobotoRegular;
+        margin: 0;
+        flex: 1;
+        height: 4.6rem;
+        transition: 0.2s ease;
+    }
+
+    .main-btn:hover, .aux-btn:hover{
+        color: white;
+        transition: 0.2s ease-out;
+    }
+
+    .toolbar-content{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .btn-wrapper{
+        min-height: 4.6rem;
+    }
+
+    @media (max-width: 576px) {
+
+        .top{
+            padding: 0px;
+            padding-top: 19px;
+            padding-bottom: 19px;
+        }
+
+        .top .title{
+            font-size: 20px;
+        }
+
+        .top .message{
+            font-family: $RobotoRegular;
+            opacity: 0.8;
+            padding: 5px 28px 0px 28px;
+        }
+   
+    }
+}

@@ -1,0 +1,30 @@
+.user-validation {
+  background-color: var(--sherpa-midnight-50);
+  height: 100vh;
+  &__title {
+    margin: 6.4rem var(--sherpa-spacing-0) var(--sherpa-spacing-6);
+    color: var(--sherpa-carbon-900);
+  }
+  &__form {
+    display: flex;
+    align-items: flex-end;
+    margin-top: var(--sherpa-spacing-7);
+    &__identification-type {
+      width: 100%;
+      max-width: 11rem;
+      margin-right: var(--sherpa-spacing-4);
+    }
+    &__identification-number {
+      width: calc(100% - 12.6rem);
+    }
+  }
+  &__submit {
+    width: 12.8rem;
+    margin-top: var(--sherpa-spacing-7);
+  }
+  @media (max-width: 599px) {
+    &__title {
+      margin: var(--sherpa-spacing-7) var(--sherpa-spacing-0) var(--sherpa-spacing-4);
+    }
+  }
+}

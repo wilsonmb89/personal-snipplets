@@ -1,0 +1,13 @@
+transaction-result-page {
+  .transaction-result-container {
+    &__list-items {
+      &--item {
+        color: var(--pulse-color-carbon-700);
+
+        &.error {
+          color: var(--pulse-color-carbon-100);
+        }
+      }
+    }
+  }
+}

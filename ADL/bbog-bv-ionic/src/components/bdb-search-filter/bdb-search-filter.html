@@ -1,0 +1,64 @@
+<div class="search-wrapper">
+  <div class="search-wrapper__title pulse-tp-hl4-comp-l">
+    {{title}}
+  </div>
+  <div class="search-wrapper__quick-select" *ngIf="quickSelect">
+    <div class="search-wrapper__quick-select--radio" *ngIf="quickSelect && datePicker">
+      <bdb-radio>
+        <input bdbRadioRef type="radio" value="quick-select" name="filter-type" checked
+          (change)="filterTypeChanged($event.target.value)">
+      </bdb-radio>
+    </div>
+    <div class="search-wrapper__quick-select--select">
+      <select bdb-select id="bsf-opt" (change)="quickSelectChanged($event.target.value)" name="quick-select"
+        [disabled]="disabledQuickSelect">
+        <option value="0" [attr.selected]="!disabledQuickSelect">Seleccione</option>
+        <option *ngFor="let option of options; let i = index;" [attr.selected]="i === 0 ? true : null"
+          [value]="option.key">{{option.value}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="search-wrapper__date-picker" *ngIf="datePicker">
+    <div class="search-wrapper__date-picker--radio" *ngIf="quickSelect && datePicker">
+      <bdb-radio>
+        <input bdbRadioRef type="radio" value="date-picker" name="filter-type"
+          (change)="filterTypeChanged($event.target.value)">
+      </bdb-radio>
+    </div>
+
+    <pulse-date-picker class="search-wrapper__date-picker--date-picker" range hidden-p-sm-down
+      (datePickerChange)="datePickerChange($event.detail)" [disabled]="disabledDatePicker" [value]="valueDatePicker"
+      [minDate]="minDate" [maxDate]="maxDate">
+    </pulse-date-picker>
+
+    <div class="search-wrapper__date-picker--mobile" hidden-p-md-up>
+      <div class="picker-mobile-container">
+        <div class="picker-mobile-container__form-control">
+          <label class="picker-mobile-container__form-control--label pulse-tp-hl6-comp-m">Desde</label>
+          <div class="picker-mobile-container__form-control--ion-datetime">
+            <ion-datetime placeholder="DD-MM-AAAA" displayFormat="DD-MM-YYYY" name="start-date-picker-mobile"
+              [disabled]="disabledDatePicker" [min]="dateFormat(minDate)" [max]="dateFormat(maxDate)"
+              (ionChange)="startDateMobileChange($event)">
+            </ion-datetime>
+          </div>
+        </div>
+        <div class="picker-mobile-container__separator">
+          <div class="picker-mobile-container__separator--line"></div>
+        </div>
+        <div class="picker-mobile-container__form-control">
+          <label class="picker-mobile-container__form-control--label pulse-tp-hl6-comp-m">Hasta</label>
+          <div class="picker-mobile-container__form-control--ion-datetime">
+            <ion-datetime placeholder="DD-MM-AAAA" displayFormat="DD-MM-YYYY" name="end-datep-icker-mobile"
+              [disabled]="valueDatePicker.length === 0"
+              [min]="valueDatePicker.length > 0 ? dateFormat(valueDatePicker[0]) : null" [max]="dateFormat(maxDate)"
+              (ionChange)="endDateMobileChange($event)">
+            </ion-datetime>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pulse-button class="search-wrapper__date-picker--pulse-button" id="bsf-search" *ngIf="datePicker"
+      (click)="search()" [disabled]="disabledButtonSearch">{{msgButton}}
+    </pulse-button>
+  </div>
+</div>

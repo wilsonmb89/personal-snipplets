@@ -1,0 +1,20 @@
+
+@import '../../../../global/spacing';
+.indicator{
+    width: fit-content;
+    background: var(--pulse-color-info-100);
+    border-radius: 10px;
+    &__point{   
+        &--disable, &--enable {
+            border-radius: 50%;   
+            transition: background-color 0.5s ease;   
+        }
+        &--disable {     
+            background: var(--pulse-color-info-400);             
+        }
+        &--enable {
+            background: var(--pulse-color-bg);
+    
+        }
+    }   
+}

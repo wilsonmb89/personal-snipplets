@@ -1,0 +1,33 @@
+.product-validation {
+  background-color: var(--sherpa-midnight-50);
+  height: 100vh;
+  &__title {
+    margin: 6.4rem var(--sherpa-spacing-0) var(--sherpa-spacing-6);
+    color: var(--sherpa-carbon-900);
+  }
+  &__help-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--sherpa-spacing-4);
+    &__title {
+      font-weight: bold;
+      color: var(--sherpa-carbon-900);
+    }
+    &__body {
+      color: var(--sherpa-carbon-800);
+    }
+  }
+  &__product-key,
+  &__product-number {
+    margin-top: var(--sherpa-spacing-4);
+  }
+  &__submit {
+    width: 12.8rem;
+    margin-top: var(--sherpa-spacing-7);
+  }
+  @media (max-width: 599px) {
+    &__title {
+      margin: var(--sherpa-spacing-7) var(--sherpa-spacing-0) var(--sherpa-spacing-4);
+    }
+  }
+}

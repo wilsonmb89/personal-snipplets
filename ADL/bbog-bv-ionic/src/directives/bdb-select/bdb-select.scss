@@ -1,0 +1,28 @@
+.bdb-select{
+    background-color: white;
+    background: url(../assets/imgs/arrow-line.svg) ;
+    appearance: none;
+    background-position: calc(100% - 14px) center;
+    background-size: 1rem 0.8rem;
+    background-repeat: no-repeat;
+    padding: 15px 30px 15px 15px;
+    width: 100%;
+    font-family: $RobotoRegular;
+    color: rgba(color($colors, bdb-black), .8);
+    line-height: 1.9rem;
+    border-radius: 6px;
+    border: 1px solid color($colors, light-blue-grey);
+    font-size: 1.6rem;
+}
+
+.bdb-select.is-invalid{
+    border-color: #ff7683;
+    background-color: #fddfe2;
+    color: color($colors, bright-red);
+}
+
+.bdb-select:disabled{
+    border-color: #e1e2e6;
+    background-color: #ededee;
+    color: rgba(color($colors, steel), .8);
+}

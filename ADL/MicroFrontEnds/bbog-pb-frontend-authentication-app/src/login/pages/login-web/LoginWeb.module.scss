@@ -1,0 +1,70 @@
+.login-web {
+  border: 0.1rem solid var(--sherpa-carbon-200);
+  margin-top: var(--sherpa-spacing-6);
+  &__form {
+    padding: var(--sherpa-spacing-4) var(--sherpa-spacing-8);
+    background-color: var(--sherpa-white);
+    &__identification__number,
+    &__secure,
+    &__debit__password,
+    &__debit__last-digits,
+    &__access {
+      margin-top: var(--sherpa-spacing-4);
+    }
+    &__secure-forget {
+      display: flex;
+      justify-content: flex-start;
+      padding: var(--sherpa-spacing-0);
+      font-size: var(--sherpa-spacing-3);
+      height: var(--sherpa-spacing-4);
+      margin-top: var(--sherpa-spacing-2);
+    }
+    &__error {
+      width: 100%;
+      margin-top: var(--sherpa-spacing-2);
+      color: var(--sherpa-error-500);
+    }
+    &__actions {
+      display: flex;
+      margin-top: var(--sherpa-spacing-2);
+      &__register,
+      &__old-portal {
+        font-size: var(--sherpa-spacing-3);
+        padding: var(--sherpa-spacing-0);
+        display: flex;
+      }
+      &__register {
+        width: 10.4rem;
+        justify-content: flex-start;
+      }
+      &__old-portal {
+        justify-content: flex-end;
+      }
+    }
+    &__habeas {
+      margin-top: var(--sherpa-spacing-2);
+      color: var(--sherpa-carbon-800);
+      & > a {
+        text-decoration: none;
+        color: var(--sherpa-midnight-800);
+      }
+    }
+  }
+  &__version {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--sherpa-spacing-1);
+    margin-right: var(--sherpa-spacing-3);
+    color: var(--sherpa-carbon-900);
+  }
+  @media (max-width: 580px) {
+    &__form {
+      padding: var(--sherpa-spacing-4) var(--sherpa-spacing-4);
+    }
+  }
+  @media (max-width: 350px) {
+    &__form {
+      padding: var(--sherpa-spacing-4) var(--sherpa-spacing-4);
+    }
+  }
+}

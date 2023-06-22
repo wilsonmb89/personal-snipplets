@@ -1,0 +1,35 @@
+<pulse-flowthc>
+    <div slot="header">
+        <flow-header (onStart)="onBackPage()" (onEnd)="logout()">
+            Cambio de claves
+            <div start>Atrás</div>
+            <div end>Salida segura</div>
+        </flow-header>
+    </div>
+    <div slot="content">
+        <div class="form-debit-card-container">
+            <div class="pulse--grid">
+                <div class="pulse-row">
+                    <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+                        <div class="pulse-tp-hl3-comp-m form-debit-card-container__title">
+                            Cambio de clave Tarjeta Débito
+                        </div>
+                        <div class="pulse-tp-hl5-comp-r form-debit-card-container__subtitle">
+                            Escoge una clave que no uses en otras cuentas.
+                        </div>
+                        <div class="form-debit-card-container__form">
+                            <pulse-card>
+                                <pulse-item [description]="'No. ' + displayNumber">
+                                    <img src="assets/imgs/change-keys/credit-card-lock.svg" alt="credit-card-lock"
+                                        slot="start">
+                                    Tarjeta Débito
+                                </pulse-item>
+                                <form-change-pass (onSubmit)="changePass($event)"></form-change-pass>
+                            </pulse-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</pulse-flowthc>

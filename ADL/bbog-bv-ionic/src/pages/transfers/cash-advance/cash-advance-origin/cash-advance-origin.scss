@@ -1,0 +1,24 @@
+page-cash-advance-origin {
+
+    .loader-wrapper{
+        text-align: center;
+    }
+
+
+    .subtitle{
+        color: color($colors, bdb-blue);
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 32px;
+        margin-left: 72px;
+    }
+
+    .inner{
+        margin-bottom: 40px;
+    }
+
+    .scroll-content{
+        overflow-y: auto;
+    }
+   
+}

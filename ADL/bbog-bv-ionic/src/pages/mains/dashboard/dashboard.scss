@@ -1,0 +1,258 @@
+page-dashboard {
+  --pulse-select-card-height: 18.8rem;
+  --pulse-select-card-width: 16.2rem;
+
+  .temp-hover {
+    margin: 16px 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .temp-hover:hover {
+    transform: none;
+  }
+
+  .dashboard-content::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 245.8px;
+    background-image: linear-gradient(313deg, #0e43a0, #427ee6);
+  }
+
+  .pockets-container {
+    overflow-x: scroll;
+    display: flex;
+    height: fit-content;
+    overflow-y: hidden;
+    padding: 2px;
+  }
+
+  .dashboard-header {
+
+    &__title-greeting {
+      font-family: $RobotoLight;
+      font-size: 15.4px;
+      color: white;
+    }
+
+    &__title-name {
+      font-family: $RobotoLight;
+      font-size: 23.9px;
+      color: white;
+    }
+
+    &__logo-bdb {
+      margin-right: 3.7px;
+    }
+
+    &__btn-cad{
+      background-color: transparent;
+      padding-left: 0px;
+      padding-right: 0px;
+      widht: 21px;
+      height: 21px;
+    }
+
+    &__btn-gear {
+      background-color: transparent;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .toolbar-background {
+      background-color: transparent;
+    }
+  }
+
+  .dashboard-content {
+
+    &__first-col {
+      overflow-x: hidden;
+      background-color: transparent;
+    }
+
+    &__second-col {
+      border-top-left-radius: 8.5px;
+      border-top-right-radius: 8.5px;
+      background-color: white;
+    }
+
+    &__cards {
+      padding: 1.2rem;
+    }
+
+    &__header {
+
+      .title {
+        opacity: 0.8;
+        font-family: $ArgoRegular;
+        font-size: 13.7px;
+        color: color($colors, bdb-black);
+        line-height: 1.5;
+        padding: 0px;
+        margin-top: 17.9px;
+        margin-bottom: 10.1px;
+      }
+    }
+
+    &__cross-sell {
+      display: block;
+
+      .cross-sell-row {
+        width: 100%;
+        padding-bottom: 32px;
+
+        .section-title {
+          opacity: 0.8;
+          font-family: $ArgoRegular;
+          font-size: 13.7px;
+          color: color($colors, bdb-black);
+          line-height: 1.5;
+          padding: 0px;
+        }
+      }
+    }
+
+    &__help {
+      display: block;
+
+      .help-row {
+        width: 100%;
+
+        .section-title {
+          opacity: 0.8;
+          font-family: $ArgoRegular;
+          font-size: 13.7px;
+          color: color($colors, bdb-black);
+          line-height: 1.5;
+          padding: 0px;
+        }
+      }
+    }
+
+    &__card-aval {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .scroll-content {
+      border-top-left-radius: 8.5px;
+      border-top-right-radius: 8.5px;
+    }
+
+    &__private-mode {
+      margin-top: .9rem;
+      float: right;
+    }
+  }
+
+  .pocket-section-wrapper {
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    padding-left: .7rem;
+    padding-bottom: 1.1rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+
+    .temp-hover:hover {
+      transform: translateX(5px);
+    }
+
+    .dashboard-content::before {
+      content: none;
+    }
+
+    .dashboard-content {
+
+      &__grid {
+        height: 100vh;
+      }
+
+      &__first-col {
+        background-color: color($colors, bdb-bg);
+        height: 100vh;
+        overflow-y: scroll;
+      }
+
+      &__second-col {
+        border-radius: inherit;
+        height: 100vh;
+        overflow-y: scroll;
+      }
+
+      &__separator {
+        opacity: 0.8;
+        border-top: solid 1px color($colors, light-blue-grey);
+      }
+
+      &__title-greeting {
+        font-family: $RobotoLight;
+        font-size: 16px;
+        color: color($colors, bdb-blue);
+        margin-top: 32px;
+      }
+
+      &__title-name {
+        font-family: $RobotoRegular;
+        font-size: 24px;
+        color: color($colors, bdb-blue);
+        margin-bottom: 16px;
+      }
+
+      &__header {
+
+        .title {
+          opacity: 0.8;
+          font-family: $ArgoRegular;
+          font-size: 16px;
+          letter-spacing: -0.3px;
+          color: color($colors, bdb-black);
+          line-height: 1;
+          margin-top: 23px;
+          margin-bottom: 32px;
+        }
+      }
+
+      &__col-empty {
+        background-color: color($colors, bdb-bg);
+      }
+
+      &__cross-sell {
+        .cross-sell-row {
+
+          .section-title {
+            opacity: 0.8;
+            font-family: $ArgoRegular;
+            font-size: 16px;
+            letter-spacing: -0.3px;
+            color: color($colors, bdb-black);
+            line-height: 1;
+            margin-top: 33.5px;
+          }
+        }
+      }
+
+      &__help {
+        .section-title {
+          opacity: 0.8;
+          font-family: $ArgoRegular;
+          font-size: 16px;
+          letter-spacing: -0.3px;
+          color: color($colors, bdb-black);
+          line-height: 1;
+          margin-top: 10px;
+        }
+      }
+
+      .scroll-content {
+        border-radius: inherit;
+        overflow: hidden;
+      }
+    }
+  }
+
+}

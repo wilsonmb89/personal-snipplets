@@ -1,0 +1,46 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="'Atrás'"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="acct-nick-name-wrapper">
+        <div class="inner">
+          <div class="title">
+            {{ title }}
+          </div>
+          <form [formGroup]="acctNickNameForm" class="bv-form">
+            <div class="subtitle">
+              {{ subtitle }}
+            </div>
+            <ion-input class="input-item" id="san-inp-name" type="text" placeholder="Nombre de cuenta"
+              formControlName="nickName" bdb-normalize-diacritic (keyup)="onTextChange($event)"
+              maxlength="40"></ion-input>
+            <div class="btn-wrapper" hidden-p-sm-down>
+              <button bvButton id="san-btn-after" class="after-btn" color="white"
+                [disabled]="acctNickNameForm.controls.nickName.invalid" (click)="triggerAction(false)">Transferir
+                después</button>
+              <button bvButton id="san-btn-pay" [disabled]="acctNickNameForm.controls.nickName.invalid" ion-button
+                (click)="triggerAction(true)">Ir a la transferencia</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div slot="summary">
+        <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar class="bottom-btn" no-padding>
+    <button id="mob-san-btn-after" class="now-btn after-btn2" color="bdb-blue" ion-button (click)="triggerAction(false)"
+      [disabled]="acctNickNameForm.controls.nickName.invalid">Transferir después</button>
+    <button id="mob-san-btn-pay" class="now-btn" color="bdb-blue" ion-button (click)="triggerAction(true)"
+      [disabled]="acctNickNameForm.controls.nickName.invalid">Ir a la transferencia</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,54 @@
+page-phone-input {
+
+    .subtitle {
+        font-family: $RobotoLight;
+        font-size: 1.6rem;
+        color: color($colors, bdb-slate);
+        margin-bottom: 3rem;
+    }
+
+    .btn-wrapper {
+        margin-top: 48px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-wrapper .key-hint {
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, steel);
+        margin-left: 16px;
+    }
+
+    *.continue-btn {
+        color: white;
+        font-size: 14px;
+        font-family: $RobotoRegular;
+        left: 0%;
+        margin-left: 0px;
+        width: 100%;
+        height: 48px;
+    }
+
+    .button-inner {
+        color: white;
+        font-family: $RobotoRegular;
+        font-size: 16px;
+    }
+
+    .bv-form {
+        padding: 0 2rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .subtitle {
+            font-family: $RobotoRegular;
+            font-size: 1.6rem;
+            color: color($colors, bdb-blue);
+        }
+
+        .bv-form {
+            padding: 0;
+        }
+    }
+}

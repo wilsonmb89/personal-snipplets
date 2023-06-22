@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="249" height="171" viewBox="0 0 249 171">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M-58-26h364v224H-58z"/>
+        <g>
+            <ellipse cx="170.97" cy="2.245" fill="#FFF" fill-rule="nonzero" rx="1.35" ry="2.76" transform="rotate(-71.24 170.97 2.245)"/>
+            <path stroke="#E7ECF3" stroke-width=".5" d="M23.54 35.29A61.91 61.91 0 0 0 9.62 47C4.93 52.32 1.08 58.71.36 65.76-.36 72.81 2.63 80.57 8.86 84c6.83 3.72 15.64 1.37 21.76-3.44 6.12-4.81 10.23-11.63 14.6-18.07 6.65-9.77 14.35-19.08 24.18-25.64 9.83-6.56 22.08-10.19 33.66-7.85 11.58 2.34 22 11.5 24.06 23.14"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M75.35 71.8s15.45 2 19.11-.64M74.23 62.41c1.82-.37 16.31.31 16.31.31s5.86-8.12 9.95-12"/>
+            <rect width="123" height="105" x="64.5" y="50.5" fill="#FFF" fill-rule="nonzero" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" rx="5.51"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M64.5 61.5h123"/>
+            <circle cx="74.15" cy="56.15" r="1.65" fill="#6B80A8" fill-rule="nonzero"/>
+            <circle cx="80.75" cy="56.15" r="1.65" fill="#F2F5F7" fill-rule="nonzero"/>
+            <circle cx="87.35" cy="56.15" r="1.65" fill="#C6D3E0" fill-rule="nonzero"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M99 45.16c6.69.006 12.11 5.43 12.11 12.12v58.14c0 6.694 5.426 12.12 12.12 12.12h5.45"/>
+            <path stroke="#FFF" stroke-width="2" d="M169.79 132.82c1.16-3.65 1.92-7.73.33-9.57-3.2-3.71-16 8.3-16 8.3s3.95-5 3.72-7.73c-.16-2.09-8 .48-11.75 1.84"/>
+            <path fill="#6B80A8" fill-rule="nonzero" d="M241.07 170.59h-24.33s3.32-3.92 5.72-4.37c0 0-12.79-20.49-15-29.22a37 37 0 0 1-.91-11.49l-1.81 10.36 3.8 34.72h-25.33s4.64-3.3 6.86-3.74c0 0-3.35-26-2.81-32.38.54-6.38.83-33.46 10.41-43 6.79-6.75 17.39-6.75 24.52 3.7 6.51 9.56 4.27 38 4.27 38l14.61 37.42z"/>
+            <path stroke="#FFF" stroke-width="3" d="M207.28 106.51l-1.2 30.2"/>
+            <path fill="#C6D3E0" fill-rule="nonzero" d="M32.84 170.59h22s-2.59-3.92-4.81-4.37c0 0 6.37-22.36 7.41-31.27.81-6.95 1.06-19.53 1.06-19.53l2.5 18.8-4.5 36.37h23.34s-4.27-3.3-6.33-3.74c0 0 3.56-26.4 3.56-34.79 0-6.43-.34-31-9.17-40.55-6.27-6.75-16.77-7-21.5 1.79-5.43 10-5.89 39.32-5.89 39.32l-7.67 37.97z"/>
+            <path stroke="#FFF" stroke-width="3" d="M58.34 106.51l1.11 30.2"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M248 170.59H26.92"/>
+            <path fill="#6B80A8" fill-rule="nonzero" d="M73.84 69.31L64 80.45a5 5 0 0 1-8.63-1.93l-3.64-12.75a5 5 0 0 1 3.44-6.24 5 5 0 0 1 2-.16L70.65 61a5 5 0 0 1 3.19 8.31z"/>
+            <path fill="#C6D3E0" fill-rule="nonzero" d="M65 64c-2 0-1.69-2.28-1.69-2.28l3-8.66S63.54 50.19 65 48c1.46-2.19 3.51-.28 3.51-.28a6 6 0 0 1 6-1.92c3.64 1 4.72 3.62 4.19 6.57-.9 5.13-4 5.77-9.28 4L67.17 62A2.06 2.06 0 0 1 65 64z"/>
+            <path fill="#6B80A8" fill-rule="nonzero" d="M66.89 47s.22-4.12 5.51-4.21c5.29-.09 5.76 1.88 7.87 1.27 2.11-.61 2.86 5.75-2.93 5.55-5.79-.2-5.53-.61-5.53-.61s-.51 2.55-1.94 2.14c-1.43-.41-1.48-3.14-1.48-3.14"/>
+            <path fill="#FFF" fill-rule="nonzero" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M94.49 50.75a11.19 11.19 0 0 1 2.15-1.69c3.68-2 6.64-.73 7 0 .36.73-.64 6.94-1.55 7.11-.91.17-.63-5.42-.63-5.42s-.41 6.72-1.29 6.72c-.88 0-1.09-5.76-1.09-5.76s-.52 5.76-1.24 5.71c-.72-.05-1-4.26-1-4.26M182.41 54.16s-.32 4.21-1 4.26c-.68.05-1.24-5.71-1.24-5.71s-.2 5.76-1.09 5.76c-.89 0-1.3-6.72-1.3-6.72s.26 5.63-.62 5.42c-.88-.21-1.92-6.38-1.56-7.11.36-.73 3.32-2 7 0a6.61 6.61 0 0 1 1 .67"/>
+            <path fill="#6B80A8" fill-rule="nonzero" d="M195.19 50.09s-4.28 4.44-3.88 8.67c.4 4.23 6 6.58 6 6.58l11.39-7.93-13.51-7.32z"/>
+            <path fill="#C6D3E0" fill-rule="nonzero" d="M222.36 77.12a16.564 16.564 0 1 0-33.12-.76l33.12.76z"/>
+            <path fill="#F2F5F7" fill-rule="nonzero" d="M207.45 66L206 52.44s3-2.32 2-4.62c-1-2.3-3.3-.78-3.3-.78a5.74 5.74 0 0 0-5.38-2.69c-3.6.38-4.8 4.83-4 7.61 1.15 4.11 3.29 5.8 7.3 4.1l.54 9.87A1.9 1.9 0 0 0 205 68a2.56 2.56 0 0 0 2.45-2z"/>
+            <path fill="#6B80A8" fill-rule="nonzero" d="M207 61c-4-.46-4.06-14.19-4.06-14.19a12.34 12.34 0 0 1-7.86 2.68 6.69 6.69 0 0 1 6.61-6.6c6.6-.43 8.77 3.45 8.77 3.45s7.21.43 8.31 6c1.1 5.57-4.22 10.35-4.22 10.35A51.94 51.94 0 0 0 207 61z"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M189.38 91.75s-6 3.5-5.88 4.29c.12.79 5.15-1.75 5.15-1.75s-5.31 4.07-5.15 5c.16.93 5.89-2.69 5.89-2.69s-4.07 3.34-3.9 4c.17.66 4.82-1.86 6.61-2.09 1.79-.23 17.18-4.24 19-6.28 1.82-2.04 8.56-15.79 8.56-15.79M213.44 66.53C212.2 66.47 206 83 206 83l-15.4 6.84h-1.71"/>
+            <path stroke="#FFF" stroke-width=".75" d="M193.35 98.32s11-3.19 15.65-5.86a19.56 19.56 0 0 0 4.66-4.38"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M83.65 89.88s5.68 4.55 5.51 5.35c-.17.8-5.34-1.87-5.34-1.87s4.88 4 4.71 4.87c-.17.87-6.15-2.91-6.15-2.91s3.91 3.72 3.74 4.4c-.17.68-5.26-2.21-7.23-3.14-1.63-.77-16.41-4.89-18.7-6.79-2.86-2.38-8.85-15.27-8.85-15.27M57.55 64.61c1.3-.06 8.39 16 8.39 16l15.38 7.36h1.48"/>
+            <path stroke="#FFF" stroke-width=".75" d="M69.41 93.6s-6-1.95-8.91-4.1a19.78 19.78 0 0 1-3.17-3.34"/>
+            <path fill="#FFF" fill-rule="nonzero" d="M146.47 76.24A10.29 10.29 0 0 1 143.8 75c-2.34-1.5-3.72-3.55-3.07-4.56.65-1.01 2.89-.64 5.15.72l.59 5.08z"/>
+            <ellipse cx="96.67" cy="72.503" fill="#FFF" fill-rule="nonzero" rx="2.76" ry="1.8" transform="rotate(-65.72 96.67 72.503)"/>
+            <circle cx="29" cy="48" r="15" fill="#6B80A8" fill-rule="nonzero"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M12.25 48.56a19.84 19.84 0 0 1 8.43-3.82 6.54 6.54 0 0 1 4.13.27 2.84 2.84 0 0 1 1.51 3.5M23 51.36a18.24 18.24 0 0 1 7.92-2.94 5.92 5.92 0 0 0-2.79 4.84M30.65 51.64a2.14 2.14 0 0 1 2.88.17 3.4 3.4 0 0 1 .77 3 8.49 8.49 0 0 1-1.3 2.88 38.52 38.52 0 0 1-6.6 8M19.9 60.66a11.86 11.86 0 0 1 6.7-4.09c.46-.16.97-.09 1.37.19a1.5 1.5 0 0 1 .18 1.42 11.31 11.31 0 0 1-4 6.27"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M13.49 51.48a10.08 10.08 0 0 1 5.86-3.2 2.2 2.2 0 0 1 1.37.11 1.64 1.64 0 0 1 .7 1.77 4.5 4.5 0 0 1-.94 1.78A88.06 88.06 0 0 1 13.24 60"/>
+            <circle cx="23.5" cy="41.5" r="1" fill="#FFF" fill-rule="nonzero"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M27.41 28.07l-1.06 8.37c-.08.59 0 1.39.57 1.5a1.17 1.17 0 0 0 .92-.38l3.23-2.63-.74 6.29c-.08.67 0 1.53.58 1.78.406.09.83.014 1.18-.21a52.63 52.63 0 0 0 11.08-7.22"/>
+            <ellipse cx="39" cy="49" fill="#FFF" fill-rule="nonzero" rx="1.5" ry="2.5"/>
+            <path fill="#FFF" fill-rule="nonzero" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M121.41 117.24V38.5h52.09v79.81a8.62 8.62 0 0 1-8.62 8.62H131.1"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M129.89 50.61h13.33M129.89 60.3h36.34M129.89 66.36h36.34M129.89 72.42h36.34M129.89 78.48h36.34M129.89 84.53h36.34M129.89 90.59h36.34M129.89 96.65h36.34M129.89 103.91h20.59"/>
+            <circle cx="230.5" cy="84.5" r="3" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+            <circle cx="26.35" cy="131.12" r="3.96" fill="#6B80A8" fill-rule="nonzero"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M144.77 150.7l19.9-16.75M138.33 143.05l19.9-16.75"/>
+            <ellipse cx="161.445" cy="130.117" fill="#C6D3E0" fill-rule="nonzero" rx="2.5" ry="5.5" transform="rotate(-40.09 161.445 130.117)"/>
+            <ellipse cx="141.551" cy="146.859" fill="#6B80A8" fill-rule="nonzero" rx="2.5" ry="5.5" transform="rotate(-40.09 141.55 146.859)"/>
+            <circle cx="177" cy="25" r="6" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M182.5 28.5l6 4"/>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" d="M187.5 58.5c.49 3.32 2.11 5.15 4.73 7.13"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,79 @@
+<ion-content style="background: transparent" no-padding>
+  <ion-grid no-padding>
+    <div class="form-wrapper">
+      <form [formGroup]="pbLandingForm" class="bv-form">
+        <ion-row>
+          <ion-col class="landing-col" col-12 col-sm-4 offset-sm-4>
+            <select class="pb-select" formControlName="idType">
+              <option *ngFor="let item of idTypes" [value]="item.value">{{item.name}}</option>
+            </select>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="landing-col" col-12 col-sm-4 offset-sm-4>
+            <input formControlName="idNumber" maxlength="11" pattern="[0-9]*" inputmode="numeric"
+              placeholder="Número de identificación" pb-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="landing-col" col-12 col-sm-4 offset-sm-4>
+            <input formControlName="pin" pattern="[0-9]*" maxlength="4" type="password" inputmode="numeric"
+              placeholder="Clave de la tarjeta débito" pb-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="landing-col" col-12 col-sm-4 offset-sm-4>
+            <input formControlName="lastDigits" pattern="[0-9]*" maxlength="4" type="password" inputmode="numeric"
+              placeholder="4 últimos dígitos de la tarjeta débito" pb-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="landing-col" col-12 col-sm-4 offset-sm-4>
+            <div class="btn-container">
+              <div class="error-msg">
+                {{logErr}}
+              </div>
+              <button bv-button color="pb-classic" [showLoader]="loading" id="pl-submit-btn" class="pb-submit"
+                (click)="onSubmit()" [disabled]="pbLandingForm.invalid">
+                <div style="display: inline-block;"><img class="pb-classic__lock"
+                    src="assets/imgs/lock_yellow_pb.svg">INGRESA SEGURO</div>
+              </button>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="landing-col" col-12 col-sm-4 offset-sm-4>
+            <div class="recaptcha-policy">
+              <div class="recaptcha-policy__content pulse-tp-hl6-comp-r">
+                <span>Este sitio está protegido por reCAPTCHA y aplican las </span>
+                <a rel=noopener class="recaptcha-policy__content--anchor" href="https://policies.google.com/privacy">políticas de privacidad</a> y los 
+                <a rel=noopener class="recaptcha-policy__content--anchor" href="https://policies.google.com/terms">términos de servicio de Google.</a>
+              </div>
+            </div>
+            <div class="version pulse-tp-bo4-comp-r">
+              V.{{ appVersion$ | async }}
+            </div>
+          </ion-col>
+        </ion-row>
+      </form>
+    </div>
+    <ion-row>
+      <ion-col class="landing-col" col-12 col-sm-4 offset-sm-4>
+        <div class="options">
+          <ul>
+            <li>
+              <a (click)="redirect(safeKeyLogin)">Ingresar con Clave Segura
+                <i class="arrow-blue"></i>
+              </a>
+            </li>
+            <li>
+              <a (click)="redirect(pbClassic)">Ingresa al portal anterior
+                <i class="arrow-blue"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

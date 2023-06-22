@@ -1,0 +1,64 @@
+<div class="voucher-page" #ppalContainer>
+  <div class="row navigation--header">
+    <div class="col-xs-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+      <bdb-nav-options *ngIf="!withLogout" (onLeftClicked)="onBackPressed()" [lOption]="'Atrás'">
+        <svg-back (click)="onBackPressed()" left></svg-back>
+      </bdb-nav-options>
+      <bdb-nav-options *ngIf="withLogout" (onRightClicked)="onLogout()" [rOption]="'Salida segura'">
+        <svg-logout (click)="onLogout()" right></svg-logout>
+      </bdb-nav-options>
+    </div>
+  </div>
+
+  <div class="generic-voucher-container">
+    <div class="generic-voucher-container__grid pulse-grid">
+      <div class="row">
+        <div hidden-md-down
+             class="col-lg-3 col-md-10 col-md-offset-1 col-xs-12 generic-voucher-container__grid--section-form">
+          <div hidden-md-down>
+                    <span class="voucher-content__title-text pulse-tp-hl3-comp-b">
+                        {{ data.successful ? 'Transacción exitosa' : 'Transacción fallida' }}
+                    </span>
+            <img [src]="data.successful ? 'assets/imgs/group-9.png' : 'assets/imgs/group-8.png'"
+                 class="voucher-content__title-img">
+          </div>
+          <div>
+            <div hidden-md-down class="col-12 voucher-content__failed-text" *ngIf="!data.successful">
+              {{ data.err.title }} <b>{{ data.err.result}}</b> <br/>
+              {{ data.err.message }}
+            </div>
+          </div>
+          <div *ngIf="data.sendEmail" hidden-md-down>
+            <div class="voucher-content__action">
+              <div #sendMail id="voucherEmailImg" class="voucher-content__action-circle" (click)="triggerSendEmail()">
+                <img src="assets/imgs/new-voucher/email-action-add.svg" class="voucher-content__action-circle-img">
+              </div>
+              <span class="voucher-content__action-text">E-mail</span>
+            </div>
+          </div>
+          <div *ngIf="data.successful">
+            <div>
+              <generic-voucher-send-email hidden-md-down [viewSendEmail]="viewSendEmail"
+                                          (triggerSendEmail)="triggerSendEmail()"
+                                          (submitSendEmail)="submitSendEmail($event)">
+              </generic-voucher-send-email>
+            </div>
+          </div>
+          <div *ngIf="!data.successful" hidden-md-down>
+            <pulse-button (click)="goPreviousPage()"
+                          [colorgradient]="true"
+                          [color]="'primary'"
+            >Volver
+            </pulse-button>
+          </div>
+        </div>
+        <div
+          class="col-lg-6 col-md-10 col-md-offset-1 col-xs-12 generic-voucher-container__grid--section-suggestion">
+          <generic-voucher-info [data]="data" [buttons]="buttons" [viewSendEmail]="viewSendEmail"
+                                (triggerSendEmail)="triggerSendEmail()" (submitSendEmail)="submitSendEmail($event)"
+                                (popFlowEvent)="popFlow()" (btnClick)="btnClick($event)"></generic-voucher-info>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

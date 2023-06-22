@@ -1,0 +1,22 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+
+    &__layout {
+      display: flex;
+      flex-direction: row;
+
+      &__pages {
+        flex-grow: 1;
+      }
+
+      &__summary {
+        max-width: 27rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,348 @@
+page-amount-select {
+
+    .inner{
+        // width: 63%;
+        // margin: 0 auto;
+    }
+
+    .inner .radio-list{
+        margin-top: 50px;
+    }
+
+    .tc-ammount-wrapper{
+        flex: 1;
+        overflow-x: hidden;
+    }
+
+    .tc-ammount-wrapper .subtitle{
+        font-family: $RobotoRegular;
+        font-size: 16px;
+        color : color($colors, bdb-blue);
+        // margin-top: 40px;
+    }
+
+    .tc-ammount-wrapper .inner .err-hint{
+        margin-top: 22px;
+        color: #a94442;
+    }
+
+    .tc-ammount-wrapper .inner .input-wrp{
+        width: 50%;
+    }
+
+    .spec-wrapper .input-item{
+        text-align: end;
+    }
+
+    /* grid styles */
+    .inner .container{
+        margin-top: 48px;
+    }
+
+    .inner .container .bv-row{
+        margin: 28px 0;
+    }
+
+    .inner .container .bv-row .bv-col{
+        display: inline-flex;
+        width: 100%;
+        cursor: pointer;
+        height: 28px;
+    }
+
+    .inner .container .bv-row .bv-col .radio-label{
+        font-family: $RobotoLight;
+        font-size: 16px;
+        color: color($colors, bdb-black);
+        padding-left: 36px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .inner .container .bv-row .bv-col .radio-value{
+        font-family: $RobotoLight;
+        font-size: 18px;
+        color: color($colors, bdb-black);
+        display: flex;
+        align-items: center;
+    }
+
+    .bv-row .bv-col .spec-wrapper{
+        display: inline-flex;
+        flex: 1;
+    }
+    /* radio button styles */
+    .control{
+        cursor: pointer;
+        position: relative;
+    }
+
+    .control input{
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+
+    .control__indicator{
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        background: #e6e6e6;
+    }
+
+    .control--radio .control__indicator {
+        border-radius: 50%;
+    }
+
+    /* Checked state */
+    .control input:checked ~ .control__indicator {
+        background: color($colors, active-green);
+    }
+
+    /* Disabled state */
+    .control input:disabled ~ .control__indicator {
+        pointer-events: none;
+        opacity: .6;
+        background: #e6e6e6;
+    }
+
+    /* Check mark */
+    .control__indicator:after {
+        position: absolute;
+        display: none;
+        content: '';
+    }
+
+    /* Checkbox tick */
+    .control--radio .control__indicator:after {
+        top: 5px;
+        left: 9px;
+        width: 4px;
+        height: 9px;
+        transform: rotate(45deg);
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+    }
+
+    .control input:checked ~ .control__indicator:after {
+        display: block;
+    }
+
+    .btn-wrapper{
+        margin-top: 48px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-wrapper .key-hint{
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, steel);
+        margin-left: 16px;
+    }
+
+    /* selector pago extraordinario styles */
+    .pe-row .pe-col{
+        display: inline-flex;
+        float: right;
+    }
+
+    .pe-row .pe-col .btn-select{
+        border-radius: 6px;
+        border: solid 1px color($colors, light-blue-grey);
+        padding: 12px 24px;
+        cursor: pointer;
+        margin-left: 28px;
+        text-align: center;
+    }
+
+    .pe-row .pe-col .btn-select .text-strong{
+        font-family: $RobotoMedium;
+        font-size: 14px;
+        color: color($colors, bdb-slate);
+    }
+
+    .pe-row .pe-col .btn-select .text-light{
+        font-family: $RobotoLight;
+        font-size: 12px;
+        color: color($colors, bdb-slate);
+    }
+
+    .pe-row .pe-col .btn-select.active{
+        border-radius: 6px;
+        border: solid 2px color($colors, active-green);
+        box-shadow: 0 0 5px 0 rgba(102, 128, 173, 0.2);
+    }
+
+  .bv-row .extra-payment {
+    padding-top: 3.5rem;
+    @media only screen and (max-width: 768px) {
+      padding-top: 0rem;
+    }
+  }
+
+  .pe-row .extra-payment-info {
+    margin-bottom: 7rem;
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 0rem;
+    }
+  }
+
+  .pe-row .pe-col .payment-type {
+    border-radius: 1rem;
+    border: solid 1px var(--pulse-color-carbon-light-400);
+    background-color: var(--pulse-color-carbon-light-100);
+    color: var(--pulse-color-carbon-700);
+    width: 31.5rem;
+    height: 11.8rem;
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @media only screen and (min-width: 1061px) {
+      width: 43rem;
+    }
+    @media only screen and (min-width: 1050px) and (max-width: 1060px) {
+      width: 38rem;
+    }
+    @media only screen and (max-width: 350px) {
+      height: 17.8rem;
+    }
+
+    pulse-select-card-group {
+      width: 100%;
+    }
+
+  }
+
+  .pe-row .pe-col .payment-type .info {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .pe-row .pe-col .payment-type .select-card {
+    @media only screen and (min-width: 435px) and (max-width: 499px) {
+      min-width: 18rem;
+    }
+    @media only screen and (min-width: 500px) and (max-width: 539px) {
+      min-width: 21rem;
+    }
+
+    @media only screen and (min-width: 580px) and (max-width: 620px) {
+      min-width: 15rem;
+    }
+    @media only screen and (min-width: 620px) and (max-width: 650px) {
+      min-width: 17rem;
+    }
+    @media only screen and (min-width: 710px) and (max-width: 769px){
+      min-width: 20rem;
+    }
+    @media only screen and (min-width: 770px) and (max-width: 869px){
+      max-width: 12rem;
+    }
+
+    @media only screen and (min-width: 1042px){
+      min-width: 16rem;
+    }
+  }
+
+    *.continue-btn{
+        padding: 0 25px;
+        border-radius: 6px;
+    }
+
+    .button-inner{
+        font-size: 12px;
+        color: white;
+        font-family: $RobotoRegular;
+    }
+
+    @media only screen and (max-width: 768px){
+
+        .inner .container .bv-row{
+            margin: 24px 0;
+        }
+
+        *.continue-btn{
+            border-radius: 0;
+
+        }
+
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+        .inner{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .inner .radio-list{
+            margin-top: 24px;
+        }
+
+        .tc-ammount-wrapper .subtitle{
+            font-family: $RobotoLight;
+            font-size: 16px;
+            color : color($colors, bdb-slate);
+            // margin-top: 10px;
+        }
+
+        .tc-ammount-wrapper .inner .bv-form{
+            margin-top: 15px;
+            position: relative;
+            flex: 1;
+        }
+
+        /* grid styles */
+        .inner .container{
+            margin-top: 24px;
+        }
+        .inner .container .bv-row .bv-col{
+            display: inline-flex;
+            height: unset;
+        }
+
+        .bv-row .bv-col .spec-wrapper{
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* selector pago extraordinario styles */
+        .pe-row .pe-col{
+            display: inline-flex;
+            float: none;
+            width: 100%;
+        }
+
+        .pe-row .pe-col .btn-select{
+            flex: 1;
+            margin-left: 0;
+        }
+
+        .pe-row .pe-col .btn-select:first-child{
+            margin-right: 8px;
+        }
+
+        .tc-ammount-wrapper .inner .input-item{
+            margin-top: 6px;
+        }
+
+        .inner .container .bv-row .bv-col .radio-label{
+            margin-top: 5px;
+        }
+
+        .tc-ammount-wrapper .inner .input-wrp{
+            padding-top: 2.4rem;
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.shell-container {
+  width: 100%;
+  height: 100%;
+  &__mf {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+  }
+  &__portal {
+    display: contents;
+  }
+  &__auth {
+    display: block;
+  }
+  &__legacy {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+.loading {
+  font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  opacity: 0.5;
+}
+
+.overlay-root {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,18 @@
+<pulse-card class="card-notification-content-new" pulse-padding-none-xs-a color="primary" colorgradient= true>
+  <div *ngIf="this.whithCloseBtn" (click)="close()" class="card-notification-content-new__btn-close">
+    <pulse-icon icon="close" color="white"></pulse-icon>
+  </div>
+    <div (click)="executeEmit()" id="cardNotification">
+        <div  class="card-notification-content-new__imgBox">
+            <div class="card-notification-content-new__icon-notification">
+              <img class="card-notification-content-new__img" src="assets/imgs/act-img-card.svg">
+            </div>
+          <div class="card-notification-content-new__text-notification">
+            <div class="card-notification-content-new__first-text pulse-tp-bo3-comp-r" [innerHtml]="cardNotification.firstText">
+            </div>
+            <div col-12 class="card-notification-content-new__text-notification__second-text pulse-tp-hl5-comp-r" [innerHtml]="cardNotification.secondText">
+            </div>
+          </div>
+        </div>
+    </div>
+  </pulse-card>

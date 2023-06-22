@@ -1,0 +1,130 @@
+person-data {
+
+	.acct-person-wrapper {
+		flex: 1;
+		overflow-x: hidden;
+		height: 100%;
+    }	
+    
+    .acct-person-wrapper .title {
+		font-family: $RobotoRegular;
+		font-size: 16px;
+		color: color($colors, bdb-blue);
+	}
+	.acct-person-wrapper .subtitle {
+		font-size: 12px;
+		color: color($colors, bdb-black);
+	}
+	.acct-person-wrapper .subtitle.subtitle-acct-number {
+		margin-top: 40px;
+	}
+	.acct-person-wrapper .subtitle.subtitle-acct-bank {
+		margin-top: 26px;
+	}
+	/* form styles */
+	.acct-person-wrapper .inner .bv-form {
+		position: relative;
+	}
+	.acct-person-wrapper .inner .bv-form .err-hint {
+		margin-top: 22px;
+		color: #a94442;
+	}
+	.acct-person-wrapper .inner .bv-form .input-item {
+		background-color: transparent;
+		border: none;
+		border-bottom: 2px solid #dcdee0;
+		width: 100%;
+		padding: 2px 0px;
+		font-size: 24px;
+		font-family: $RobotoLight;
+		color: color($colors, bdb-black);
+	}
+    
+	.btn-wrapper {
+		margin-top: 48px;
+		display: inline-flex;
+		align-items: center;
+	}
+	.btn-wrapper .key-hint {
+		font-family: $RobotoRegular;
+		font-size: 12px;
+		color: color($colors, steel);
+		margin-left: 16px;
+    }
+    
+	.button-inner {
+		font-size: 12px;
+		color: white;
+		font-family: $RobotoRegular;
+	}
+
+    ::placeholder {
+		/* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: color($colors, bdb-black);
+		opacity: 0.2;
+		/* Firefox */
+    }
+    
+	 :-ms-input-placeholder {
+		/* Internet Explorer 10-11 */
+		color: color($colors, bdb-black);
+		opacity: 0.8;
+	}
+	 ::-ms-input-placeholder {
+		/* Microsoft Edge */
+		color: color($colors, bdb-black);
+		opacity: 0.8;
+    }
+    
+    .item-doc-type {
+		background-color: transparent;
+		border: none;
+		border-bottom: 2px solid #dcdee0;
+		width: 100%;
+		padding: 2px 0px;
+		.item-inner {
+			border: 0px !important;
+		}
+		.item-md {
+			font-size: 24px;
+			font-family: $RobotoLight;
+			color: color($colors, bdb-black);
+			font-size: 24px;
+		}
+		/* remove the original arrow */
+		select.input-lg {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			-o-appearance: none;
+			/* no standardized syntax available, no ie-friendly solution available */
+		}
+		select+i.fa {
+			float: right;
+			margin-top: -30px;
+			margin-right: 5px;
+			/* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+			pointer-events: none;
+			/* everything after this is just to cover up the original arrow */
+			/* (for browsers that don't support the syntax used above) */
+			background-color: #fff;
+			padding-right: 5px;
+		}
+	}
+    @media only screen and (max-width: 768px){
+
+		.acct-person-wrapper{
+			height: unset;
+        }
+        
+		.acct-person-wrapper .subtitle {
+			font-family: $RobotoLight;
+			font-size: 16px;
+			color: color($colors, bdb-slate);
+		}
+		.acct-person-wrapper .inner .bv-form {
+			margin-top: 15px;
+			position: relative;
+			flex: 1;
+		}
+    } 
+}

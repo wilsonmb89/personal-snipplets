@@ -1,0 +1,64 @@
+page-credit-card-select-payment {
+
+
+    .subtitle{
+        font-family: $ArgoRegular;
+        font-size: 16px;
+        color : color($colors, bdb-blue);
+    }
+
+    .component-wrapper {
+        margin-bottom: 70px;
+    }
+
+    .err-result{
+        color: #721c24;
+        font-family: $RobotoLight;
+        font-size: 16px;
+    }
+
+    *.confirm-btn{
+        margin-top: 48px;
+    }
+
+    .scroll-content{
+        overflow-y: auto;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+     
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+        *.confirm-btn{
+            border-radius: 0;
+            margin: 0.4rem 0.2rem;
+        }
+
+        .payment-choice-wrapper .subtitle{
+            font-family: $RobotoLight;
+            font-size: 16px;
+            color: color($colors, bdb-slate);
+            width: 90%;
+            margin: 16px auto;
+        }
+
+        .payment-choice-wrapper .inner .component-wrapper{
+            margin-top: 0!important;
+        }
+
+        .scroll-content{
+            padding: 0!important;
+        }
+    }
+
+    @media only screen and (max-width: 992px) {
+        .component-wrapper{
+            width: 100%;
+        }
+    }
+}

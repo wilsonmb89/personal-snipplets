@@ -1,0 +1,38 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" [lOption]="'Atrás'" (onRightClicked)="onAbandonClicked()"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+
+      <div class="inner">
+        <div class="subtitle">
+          {{subtitle}}
+        </div>
+        <div class="component-wrapper">
+
+          <bdb-card-check *ngFor="let item of items" [title]="item.cardTitle" [label]="item.cardLabel"
+            [value]="item.cardValue" [BdbChecked]="item.isActive" (clickCard)="paymentSelected(item)">
+          </bdb-card-check>
+
+        </div>
+        <div class="err-result">{{error}}</div>
+        <button id="tt-btn" bv-button color="mango" hidden-p-sm-down ion-button (click)="send()"
+          [disabled]="!enable">{{msgButton}}</button>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar>
+    <button id="mob-tt-btn" class="confirm-btn" full color="mango" hidden-lg-up ion-button (click)="send()"
+      [disabled]="!enable">{{msgButton}}</button>
+  </ion-toolbar>
+</ion-footer>

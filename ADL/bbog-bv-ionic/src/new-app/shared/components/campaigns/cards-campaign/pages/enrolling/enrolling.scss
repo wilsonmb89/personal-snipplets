@@ -1,0 +1,48 @@
+page-enrolling {
+
+  .enrolling-container {
+
+    &__header-logos {
+      text-align: center;
+    }
+
+    &__content {
+      width: 100%;
+      height: 100vh;
+
+      &__wrapper {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10rem;
+
+        &__icon {
+          width: 18rem;
+        }
+
+        @media only screen and (min-width: 540px) {
+          &__icon {
+            padding-top: 5rem;
+            width: 20rem;
+          }
+        }
+
+        @media only screen and (min-width: 768px) {
+          &__icon {
+            padding-top: 0;
+            width: 25rem;
+          }
+        }
+
+        &__msg {
+          color: var(--pulse-color-primary-700);
+          text-align: center;
+
+        }
+
+      }
+    }
+  }
+}

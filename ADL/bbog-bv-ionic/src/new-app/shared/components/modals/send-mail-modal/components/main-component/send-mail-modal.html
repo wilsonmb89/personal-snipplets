@@ -1,0 +1,92 @@
+<pulse-modaltb class="send-mail-modal-main">
+  <div slot="header" class="send-mail-modal-main__header">
+    <div class="send-mail-modal-main__header__btn-close" id="btn-send-mail-close-modal" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content" class="send-mail-modal-main__content">
+    <pulse-modaltc>
+      <div slot="title" @boxAnimation>
+        <span class="pulse-tp-hl3-comp-b">
+          Enviar por E-mail
+        </span>
+      </div>
+      <div slot="body" class="send-mail-modal-main__content__body">
+        <form *ngIf="!!formSendMail" [formGroup]="formSendMail" (submit)="onSendMail()">
+          <div class="send-mail-modal-main__content__body__info" @boxAnimation>
+            <span class="pulse-tp-bo3-comp-r">
+              Escribe hasta 3 correos para enviar una copia
+            </span>
+          </div>
+          <div class="send-mail-modal-main__content__body__inputs">
+            <div class="send-mail-modal-main__content__body__inputs--input">
+              <pulse-input type="email" 
+                            label="Correo electrónico"
+                            inputtextalign="left"
+                            placeholder="ejemplo@correo.com"
+                            [icon]="!!formSendMail.controls['mailPrincipal'].value ? 'close' : ''"
+                            actionableicon="true"
+                            required
+                            [state]="formSendMail.controls['mailPrincipal'].hasError('InvalidEmail') ? 'error' : 'basic'"
+                            [labelerror]="formSendMail.controls['mailPrincipal'].hasError('InvalidEmail') ? 'El correo no es válido' : ''"
+                            ngDefaultControl
+                            formControlName="mailPrincipal"
+                            id="mailPrincipal"
+                            (iconClick)="closeInput('mailPrincipal')"
+                            [name]="'mailPrincipal'"></pulse-input>
+            </div>
+            <div class="send-mail-modal-main__content__body__inputs--input" [class.hidden]="inputHiddenControl.mailOptional1" @boxAnimation>
+              <pulse-input type="email"
+                            inputtextalign="left"
+                            placeholder="ejemplo@correo.com"
+                            icon="close"
+                            actionableicon="true"
+                            [state]="formSendMail.controls['mailOptional1'].hasError('InvalidEmail') ? 'error' : 'basic'"
+                            [labelerror]="formSendMail.controls['mailOptional1'].hasError('InvalidEmail') ? 'El correo no es válido' : ''"
+                            ngDefaultControl
+                            formControlName="mailOptional1"
+                            id="mailOptional1"
+                            (iconClick)="closeInput('mailOptional1')"
+                            [name]="'mailOptional1'"></pulse-input>
+            </div>
+            <div class="send-mail-modal-main__content__body__inputs--input" [class.hidden]="inputHiddenControl.mailOptional2" @boxAnimation>
+              <pulse-input type="email"
+                            inputtextalign="left"
+                            placeholder="ejemplo@correo.com"
+                            icon="close"
+                            actionableicon="true"
+                            [state]="formSendMail.controls['mailOptional2'].hasError('InvalidEmail') ? 'error' : 'basic'"
+                            [labelerror]="formSendMail.controls['mailOptional2'].hasError('InvalidEmail') ? 'El correo no es válido' : ''"
+                            ngDefaultControl
+                            formControlName="mailOptional2"
+                            id="mailOptional2"
+                            (iconClick)="closeInput('mailOptional2')"
+                            [name]="'mailOptional2'"></pulse-input>
+            </div>
+          </div>
+          <div class="send-mail-modal-main__content__body__add" (click)="addNewEmail()">
+            <pulse-nav-button iconPosition="left"
+                              icon="add-bv"
+                              fill="solid"
+                              [disabled]="!inputHiddenControl.mailOptional2 && !inputHiddenControl.mailOptional1">
+              Agregar otro correo
+            </pulse-nav-button>
+          </div>
+        </form>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer" class="send-mail-modal-main__footer">
+    <div class="send-mail-modal-main__footer__button-wrapper">
+      <pulse-button id="send-mail-action"
+                    [block]="true"
+                    fill="solid"
+                    [disabled]="formSendMail.invalid"
+                    [colorgradient]="true"
+                    (click)="onSendMail()"
+                    @boxAnimation>
+        Enviar
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

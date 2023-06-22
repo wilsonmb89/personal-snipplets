@@ -1,0 +1,48 @@
+$size-xs: 0.8rem;
+$size-s: 1.6rem;
+$size-m: 2.4rem;
+$size-l: 3.2rem;
+$size-xl: 4.8rem;
+
+
+:host {
+  display: inline-flex;
+  height: fit-content;
+}
+
+.pulse-icon-container {
+  display: flex;
+}
+
+svg {
+  width: inherit;
+  height: inherit;
+  color: var(--pulse-color-bg);
+}
+
+
+.size {
+  &--xs {
+    width: $size-xs;
+    height: $size-xs;
+  }
+  &--s {
+    width: $size-s;
+    height: $size-s;
+  }
+  &--m {
+    width: $size-m;
+    height: $size-m;
+  }
+  &--l {
+    width: $size-l;
+    height: $size-l;
+  }
+  &--xl {
+    width: $size-xl;
+    height: $size-xl;
+  }
+}
+
+
+

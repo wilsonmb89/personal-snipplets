@@ -1,0 +1,58 @@
+@import '../../../../variables.scss';
+
+.between_accounts {
+  padding-bottom: 3rem;
+  margin: 0 auto;
+
+  &__version {
+    bottom: 3.2rem;
+    position: sticky;
+    float: right;
+    width: 3rem;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    writing-mode: vertical-rl;
+  }
+
+  &__add-button {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 9rem;
+    width: 18rem;
+    z-index: 1;
+  }
+
+  @media only screen and (min-width: $break-table-md) {
+    margin: auto;
+    min-height: calc(100vh + 8rem);
+    &__add-button {
+      left: calc(50% + 5.4rem);
+      bottom: 2rem;
+    }
+  }
+}
+
+.st-accounts {
+  position: relative;
+  margin-bottom: 3.2rem;
+
+  &__content {
+    background-color: var(--sherpa-midnight-50);
+    min-height: calc(100vh - 80px);
+    padding-bottom: 3.2rem;
+
+    &__caption {
+      display: flex;
+      flex-direction: column;
+      padding: var(--sherpa-spacing-8) var(--sherpa-spacing-0) var(--sherpa-spacing-6);
+
+      &__title {
+        color: var(--sherpa-carbon-900);
+      }
+    }
+  }
+}

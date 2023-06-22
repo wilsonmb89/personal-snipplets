@@ -1,0 +1,19 @@
+page-edit-card-lock {
+    .edit-card-lock-content {
+
+        &__label {
+            opacity: 0.8;
+            font-family: $RobotoRegular;
+            font-size: 13px;
+            line-height: 2;
+            color: color($colors, bdb-black);
+        }
+
+        &__info {
+            width: 20px;
+            height: 20px;
+            margin: 3px 0px 0px 4px;
+        }
+    }
+
+}

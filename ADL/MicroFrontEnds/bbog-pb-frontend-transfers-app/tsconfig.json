@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true,
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@context/*": ["src/context/*"],
+      "@scheduled-transfers/*": ["src/modules/scheduled-transfers/*"],
+      "@between-accounts/*": ["src/modules/between-accounts/*"],
+      "@store/*": ["src/store/*"],
+      "@test-utils/*": ["src/test-utils/*"],
+      "@utils/*": ["src/utils/*"],
+      "@cash-advance/*": ["src/modules/cash-advance/*"]
+    }
+  }
+}

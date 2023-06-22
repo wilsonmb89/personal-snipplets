@@ -1,0 +1,80 @@
+@import "../../../global/colors";
+
+:host {
+  width: 100%;
+  .pulse-voucher-result-container {
+    &__icon {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+
+      &--stamp-wrapper {
+        position: absolute;
+        top: 0.8rem;
+        right: 0rem;
+      }
+    }
+
+    &__title {
+      margin-top: 2.4rem;
+      color: var(--pulse-color-primary-700);
+    }
+
+    &__info {
+      margin-top: 0.8rem;
+      display: flex;
+      flex-direction: column;
+
+      &--success {
+        display: flex;
+        flex-direction: column;
+
+        &__voucher-id {
+          color: var(--pulse-color-carbon-900);
+        }
+        &__voucher-date {
+          color: var(--pulse-color-carbon-700);
+        }
+      }
+
+      &--message {
+        margin-top: 2.4rem;
+        color: var(--pulse-color-carbon-700);
+      }
+    }
+
+    &__mail-control {
+      display: none;
+    }
+
+    &__controls {
+      display: none;
+    }
+
+    @media only screen and (min-width: 1000px) {
+      &__mail-control {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: var(--pulse-color-primary-700);
+        cursor: pointer;
+      }
+
+      &__controls {
+        margin-top: 4.6rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        &--button {
+          &:first-child {
+            margin-bottom: 1.6rem;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

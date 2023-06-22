@@ -1,0 +1,26 @@
+recharge-choice-page {
+  .recharge-choice-container {
+    margin: 0.8rem;
+    display: flex;
+    flex-direction: column;
+
+    &__section {
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        color: var(--pulse-color-primary-700);
+        margin-bottom: 0.8rem;
+      }
+
+      &__desc {
+        color: var(--pulse-color-carbon-700);
+        margin-bottom: 2.4rem;
+      }
+
+      &__options_wrapper {
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+}

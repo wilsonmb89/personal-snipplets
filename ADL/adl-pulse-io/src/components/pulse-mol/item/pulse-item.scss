@@ -1,0 +1,105 @@
+:host(.pulse-item) .pulse-item-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+
+    @media (min-width: 541px) {
+        &--hover:hover {
+            background-color: var(--pulse-color-info-100);            
+            cursor: pointer;
+
+            .pulse-item-container {
+                &__label {        
+                    &--content {
+                        color: var(--pulse-color-primary-700);
+                    }
+                }
+            }
+        }
+    }
+
+    &--expand {
+        background-color: var(--pulse-color-carbon-light-100);
+    }
+    
+    &__start {
+        padding: 1.6rem;
+
+        @media (min-width: 541px) {
+            padding: 2.4rem;
+        }
+    }
+
+    &__label {
+        flex-grow: 1;
+        padding: 1.6rem 0.8rem 1.6rem 0;
+
+        &--content {
+            color: var(--pulse-color-carbon-900);
+        }
+
+        @media (min-width: 541px) {
+            padding: 2.4rem 0.8rem 2.4rem 0;
+        }
+
+        &--description {
+            color: var(--pulse-color-carbon-700);
+            margin-top: 0.4rem;
+        }
+    }
+
+    &__end {
+        padding: 1.6rem;
+
+        @media (min-width: 541px) {
+            padding: 2.4rem;
+        }
+    }
+
+    &__expand {
+        margin: 0;
+        max-height: 0;
+        transition: max-height 0.15s ease-out;
+        overflow: hidden;
+        grid-column: 2;
+
+        &.full-content-mobile {
+            @media (max-width: 540px) {
+                grid-column: 1 / span 3;
+            }
+        }
+
+        &.full-content-tablet, &.full-content-desktop {
+            @media (min-width: 541px) {
+                grid-column: 1 / span 3;
+            }
+        }
+
+        &.expand {
+            max-height: 50rem;
+            transition: max-height 0.25s ease-in;
+            margin: 0 0 2.4rem;
+            
+            @media (min-width: 541px) {
+                margin: 0 0 3.2rem;
+            }
+    
+            &.full-content-mobile {
+                @media (max-width: 540px) {
+                    margin: 0 1.6rem 2.4rem;
+                }
+            }
+
+            &.full-content-tablet, &.full-content-desktop {
+                @media (min-width: 541px) {
+                    margin: 0 2.4rem 3.2rem;
+                }
+            }
+        }
+    }
+
+    &__line {
+        grid-column: 2 / span 2;
+        height: 0.1rem;
+        background-color: var(--pulse-color-carbon-light-700);
+    }
+}

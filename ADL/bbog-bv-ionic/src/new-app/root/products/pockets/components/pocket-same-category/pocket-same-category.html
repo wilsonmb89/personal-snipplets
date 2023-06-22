@@ -1,0 +1,29 @@
+<pulse-modaltb class="pocket-same-category">
+  <div slot="header">
+    <div class="pocket-same-category__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/pocket/err-exceed-max-number.svg" alt="Cannot create more pockets">
+      </div>
+      <div slot="title">
+        No pudimos crear tu alcancía
+      </div>
+      <div slot="body">
+        <div class="pocket-exceed-max__body">
+          Con esta cuenta ya tienes creada una alcancía de <br> categoría {{ data }}. Recuerda que sólo puedes crear <br> una alcancía por categoría.
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="pocket-same-category__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="closeModal()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

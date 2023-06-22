@@ -1,0 +1,87 @@
+bdb-references-generate-card {
+
+  .bdb-references-generate-container {
+
+    &__item-detail {
+      background-color: color($colors, bdb-bg);
+
+      @media only screen and (min-width: 540px) {
+        background-color: transparent;
+      }
+    }
+
+    &__border {
+      height: 1px;
+      width: 100%;
+      background-color: rgba(151, 151, 151, 0.22);
+    }
+
+    &__input {
+      margin: 24px 8px;
+
+      @media only screen and (min-width: 540px) {
+        margin: 24px 0;
+      }
+
+      &__text {
+        opacity: 0.6;
+        font-family: $RobotoMedium;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.67;
+        color: black;
+      }
+
+      input {
+        border-style: dashed;
+      }
+    }
+
+    &__checkbox {
+      display: flex;
+      align-items: center;
+      margin: 8px;
+
+      @media only screen and (min-width: 540px) {
+        margin: 8px 0;
+      }
+
+      &__text {
+        font-family: $RobotoRegular;
+        font-size: 14px;
+        line-height: 1.43;
+        color: #5c5c5c;
+        margin-left: 8px;
+      }
+    }
+
+    &__button {
+      margin: 40px 0;
+
+      button {
+        width: 142px;
+        height: 48px;
+      }
+    }
+  }
+
+  bdb-radio {
+    height: 24px;
+
+    .bdb-radio__container {
+      margin: 0;
+    }
+
+    .bdb-radio__container--checkmark {
+      border-radius: 6px;
+    }
+  }
+
+  bdb-item-card-simplified .item-card-wrapper {
+    padding: 8px 0;
+
+    @media only screen and (min-width: 540px) {
+      padding: 0px 0px 16px;
+    }
+  }
+}

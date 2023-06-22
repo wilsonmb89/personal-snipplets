@@ -1,0 +1,82 @@
+page-modal-covid-19-info {
+  .scroll-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper-close-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    .icon-close-img {
+      margin: 15px;
+      cursor: pointer;
+    }
+  }
+  .logo_banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .wrapper-title {
+    font-size: 20px;
+  }
+  .wrapper-subtitle {
+    font-size: 16px;
+  }
+  .wrapper-tips-list {
+    margin: 0 10%;
+    ul li {
+    color: color($colors, carbon-700);
+    list-style-type: disc;
+      margin: 2% 0;
+    }
+  }
+  .wrapper-detail-info {
+    margin: 3% 0 7% 0;
+    .href-link {
+      color: color($colors, darkish-blue);
+      text-decoration: underline;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.blue-color {
+  color: color($colors, darkish-blue);
+}
+
+.color-carbon {
+  color: color($colors, carbon-700);
+}
+
+@media (max-width: 768px) {
+  .wrapper-tips-list {
+    padding: 0;
+    margin: 0 5% !important;
+  }
+  .href-link::before {
+    content: "\a";
+    white-space: pre;
+  }
+  .wrapper-title {
+    font-size: 19px !important;
+  }
+  .wrapper-subtitle {
+    font-size: 15px !important;
+  }
+  .wrapper-tips-list {
+    margin: 0 10%;
+    ul li span{
+      font-size: 13px !important;
+    }
+  }
+  .wrapper-detail-info {
+    margin: 0 0 4% 0 !important;
+  }
+}

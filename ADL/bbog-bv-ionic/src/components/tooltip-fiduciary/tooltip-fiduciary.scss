@@ -1,0 +1,15 @@
+.body{
+    &__question {
+      max-height: 2rem;
+    }
+    &__question-tooltip {
+        height: 3rem;
+        vertical-align: -webkit-baseline-middle;
+        display: inline-block;
+      }
+    
+      &__question-image {
+          margin-top: 0.2rem;
+        cursor: pointer;
+      }
+}

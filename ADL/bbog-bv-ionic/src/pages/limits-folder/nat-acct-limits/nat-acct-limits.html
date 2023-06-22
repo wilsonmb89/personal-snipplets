@@ -1,0 +1,21 @@
+<ion-content no-padding>
+  <payment-navigation-header (onAbandonClicked)="onAbandonClicked()" (onBackPressed)="onBackPressed()" [text]="abandonText" hidden-xs-down></payment-navigation-header>
+  <div offset-md-1>
+    <item-list-header [subtitle]="subtitle"></item-list-header>
+  </div>
+  <div col-md-8 offset-md-2>
+    <bdb-limit-item *ngFor="let limit of limits" [limit]="limit" [edit]="limit.edit" (toggleEdit)="toggleEdit($event)">
+    </bdb-limit-item>
+    <p *ngIf="activeBtnSubmit" hidden-md-down>
+      <button id="nal-btn" bvButton color='mango' (click)="submitLimits()">Confirmar topes</button>
+    </p>
+  </div>
+
+</ion-content>
+
+<ion-footer no-padding *ngIf="activeBtnSubmit" hidden-lg-up no-border>
+  <ion-toolbar no-padding class="btn-wrapper">
+    <button id="mob-nal-btn" full bvButton color="mango" ion-button (click)="submitLimits()">Confirmar topes
+    </button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,94 @@
+@import '../../../utils//pulse-grid/grid.scss';
+@import '../../../utils/pulse-grid/grid.mixins.scss';
+
+$min-breakpoint: breakpoint-min("lg");
+
+
+:host {
+    --color-bg-icon: var(--pulse-color-info-100);
+    --color-text: var(--pulse-color-carbon-700);
+    display: inline-block;
+}
+
+:host(.pulse-nav-button.nav-button-clear) {
+    --color-bg-icon: transparent;
+}
+
+:host(.pulse-nav-button.nav-button-disabled) {
+
+    .pulse-nav-button-container {
+        cursor: not-allowed;
+        --color-bg-icon: var(--pulse-color-carbon-light-400);
+        --color-text: var(--pulse-color-carbon-100);
+    }
+
+    @media only screen and (min-width: $min-breakpoint) {
+       .pulse-nav-button-container:hover {
+            --color-bg-icon: var(--pulse-color-carbon-light-400);
+            --color-text: var(--pulse-color-carbon-100);
+        }
+    }
+}
+
+:host(.pulse-nav-button.nav-button-click) {
+
+    .pulse-nav-button-container {
+        --color-bg-icon: var(--pulse-color-info-400);
+        --color-text: var(--pulse-color-primary-700);
+    }
+
+    @media only screen and (min-width: $min-breakpoint) {
+        .pulse-nav-button-container:hover {
+            --color-bg-icon: var(--pulse-color-info-400);
+            --color-text: var(--pulse-color-primary-700);
+        }
+    }
+}
+
+:host(.pulse-nav-button) {
+
+    .pulse-nav-button-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &.icon-row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        &__icon-container {
+            width: 3.2rem;
+            height: 3.2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: var(--color-bg-icon);
+        }
+
+        &__text {
+            display: flex;
+            align-items: center;
+            color: var(--color-text);
+            width: max-content;
+          @media only screen and (min-width: 771px) and (max-width: 900px) {
+            width: min-content;
+          }
+
+            &.icon-row-reverse {
+                flex-direction: row-reverse;
+            }
+
+            &--padding {
+                width: .8rem;
+            }
+        }
+    }
+
+    @media only screen and (min-width: $min-breakpoint) {
+        .pulse-nav-button-container:hover {
+            --color-bg-icon: var(--pulse-color-primary-100);
+            --color-text: var(--pulse-color-primary-700);
+        }
+    }
+}

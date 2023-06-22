@@ -1,0 +1,41 @@
+<form [formGroup]="formFactor" (ngSubmit)="submit()" autocomplete="off">
+
+  <ion-grid class="grid-spaces">
+    <ion-row>
+      <ion-col offset-1 offset-lg-1 offset-sm-2 offset-md-3 class="titCol">
+        <p class="bdb-tc">
+          <span class="titleToken"> {{titleToken}} </span>
+          <br>
+          <br>
+          <span class="detailToken"> {{detailToken}}</span>
+        </p>
+      </ion-col>
+      <ion-col col-1 col-lg-1 col-sm-2 col-md-3></ion-col>
+    </ion-row>
+    <ion-row no-padding class="bdb-tc" style="text-align: center;">
+      <ion-col>
+        <input text-wrap class="add-token" id="token" type="tel" dbdNumberFormatter formControlName="token" maxlength="6" pattern="[0-9]*"
+          required autocomplete="off">
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding class="bdb-tc bdb-p0">
+      <ion-col class="bdb-tc bdb-p0">
+        <span *ngIf="showError" class="factor--span--error ">
+          {{messageError}}
+        </span>
+      </ion-col>
+    </ion-row>
+    <ion-row style="text-align: center;" no-padding>
+      <ion-col>
+        <button class="bdb-btn btn-secure-login mango" id="btn-submit" type="submit" [disabled]="!formFactor.valid">Continuar</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="bdb-tc" *ngIf="showResend">
+      <ion-col>
+        <p class="detailResend">No recibí el código -
+          <span class="linkResend" (click)="resendToken()"> Volver a enviar </span>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

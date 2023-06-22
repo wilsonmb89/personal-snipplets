@@ -1,0 +1,72 @@
+@import "../utils/media-query";
+
+$spacings: (
+    none: 0,
+    xs: .2rem,
+    s: .4rem,
+    m: .8rem,
+    l: 1.6rem,
+    xl: 2.4rem,
+    xxl: 3.2rem,
+    xxxl: 3.8rem
+);
+
+@mixin build-spacing-vars() {
+  :root {
+    @each $space-name, $space-value  in $spacings {
+      --pulse-spacing-#{$space-name}: #{$space-value};
+    }
+
+  }
+}
+
+@mixin space($prop , $top, $end: $top, $bottom: $top, $start: $end) {
+  @include property($prop, $top, $end, $bottom, $start);
+}
+
+@mixin property($prop, $top, $bottom, $left, $right) {
+  @include space-horizontal($prop, $left, $right);
+  @include space-vertical($prop, $top, $bottom);
+}
+
+@mixin space-horizontal($prop, $left, $right:$left ){
+  #{$prop}-left: $left;
+  #{$prop}-right: $right;
+}
+
+@mixin space-vertical($prop, $top, $bottom:$top){
+  #{$prop}-top: $top;
+  #{$prop}-bottom: $bottom;
+}
+
+@mixin build_class_space($var-bp-name, $prop){
+  @each $var-sp-name,$var-sp-val in $spacings {
+      .pulse-#{$prop}-#{$var-sp-name}-#{$var-bp-name}-a{
+        @include space($prop, var(--pulse-spacing-#{$var-sp-name} ,$var-sp-val) )
+      }
+      .pulse-#{$prop}-#{$var-sp-name}-#{$var-bp-name}-h{
+        @include space-horizontal($prop, var(--pulse-spacing-#{$var-sp-name} ,$var-sp-val) )
+      }
+      .pulse-#{$prop}-#{$var-sp-name}-#{$var-bp-name}-v{
+        @include space-vertical($prop, var(--pulse-spacing-#{$var-sp-name} ,$var-sp-val) )
+      }
+  }
+}
+
+@mixin generate_media_space($prop){
+  @each $breakpoint-name, $value in $screen-breakpoints {
+    @if $breakpoint-name == 'xs' {
+      @include build_class_space($breakpoint-name, $prop);
+    }
+    @else {
+      @media only screen and  (min-width: $value) {
+        @include build_class_space($breakpoint-name, $prop);
+      }; 
+    }
+  };
+}
+
+@mixin main-space(){
+  @include generate_media_space('padding');
+  @include generate_media_space('margin');
+}

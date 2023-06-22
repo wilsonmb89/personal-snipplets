@@ -1,0 +1,39 @@
+
+<ion-header>
+  <ion-navbar>
+      <div class="close-img" (click)="closeModal()">
+          <img src="assets/imgs/closeicon_token.svg">
+      </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <modal-token-header
+  [iconPath]="iconPath"
+  [title]="title"
+  [text]="text"
+  (onCloseModal)="closeModal()"
+  >
+</modal-token-header>
+  <div class="mc-form">
+      <form [formGroup]="pinForm">
+          <div>
+            <ion-input #token
+              (ionChange)="validateLength()" 
+              text-center 
+              class="input-token" 
+              id="mca-input" 
+              type="password" 
+              maxlength="4" 
+              formControlName="pin" 
+              pattern="[0-9]*"
+              inputmode="numeric"
+            ></ion-input>
+          </div>
+          <button hidden-sm-down [disabled]="pinForm.controls.pin.invalid" ion-button bv-button id="btnValidate" class="modal-btn" color="bdb-blue" (click)="validate()">Continuar</button>
+      </form>
+  </div>
+</ion-content>
+<ion-footer>
+    <button hidden-md-up [disabled]="pinForm.controls.pin.invalid" ion-button full id="btnValidate" class="modal-btn" color="bdb-blue" (click)="validate()">Continuar</button>
+</ion-footer>

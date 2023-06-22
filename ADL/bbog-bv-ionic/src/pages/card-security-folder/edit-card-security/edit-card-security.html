@@ -1,0 +1,37 @@
+<ion-content padding>
+  <form [formGroup]="editSecurityForm" (ngSubmit)="submit()" autocomplete="off">
+    <ion-grid class="edit-security-content" no-padding>
+      <ion-row>
+        <ion-col>
+          <div class="edit-security-content__label" margin-top>
+            <span float-left>Nivel de seguridad</span>
+            <div float-left class="edit-security-content__info" (click)="presentInfo()">
+              <img src="assets/imgs/info-outline-material.png">
+            </div>
+          </div>
+          <select bdb-select formControlName="securityLevel" class="edit-security-content__select" (click)="$event.stopPropagation();">
+            <option disabled value="">Seleccionar</option>
+            <option *ngFor="let itemSecurityLevel of securityLevelList" [value]="itemSecurityLevel.key">{{itemSecurityLevel.value}}</option>
+          </select>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="edit-security-content__label" margin-top>
+            Tipo de novedad de banda
+          </div>
+          <select bdb-select formControlName="typeOfNovelty" class="edit-security-content__select" (click)="$event.stopPropagation();">
+            <option disabled value="">Seleccionar</option>
+            <option *ngFor="let itemTypeOfNovelty of typeOfNoveltyList" [value]="itemTypeOfNovelty.key">{{itemTypeOfNovelty.value}}</option>
+          </select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-footer no-padding hidden-lg-up no-border>
+  <ion-toolbar no-padding no-border>
+    <button ion-button full bvButton color="blue-gradient" (click)="submit()" id="MobileEditSubmit" [disabled]="!editSecurityForm.valid">Aplicar</button>
+  </ion-toolbar>
+</ion-footer>

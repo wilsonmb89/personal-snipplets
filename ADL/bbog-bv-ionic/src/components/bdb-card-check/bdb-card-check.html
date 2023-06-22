@@ -1,0 +1,27 @@
+
+<div class="card-check" id="bdb-card" (click)="executeEmit()">
+  <div class="check"></div>
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <ion-col col-9 no-padding text-left class="row-title" align-self-center>
+        <label class="card-title">
+          {{ title }}
+        </label>
+      </ion-col>
+      <ion-col no-padding col-3 class="row-img" align-self-center>
+        <img *ngIf="icon !== '' && icon !== undefined" [src]="icon" />
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding *ngIf="label !== '' && label !== undefined">
+      <ion-col col-6 no-padding text-left class="row-content">
+        <label id="bcc-prod-num" class="card-content">
+          No. {{ label }}
+        </label>
+      </ion-col>
+      <ion-col no-padding text-right col-6>
+        <label currencyLabelDirective = "{{ value }}" class="row-content__card_value">
+        </label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

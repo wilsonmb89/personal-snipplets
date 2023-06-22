@@ -1,0 +1,17 @@
+<div>
+    <mobile-summary-header *ngIf="summary.header"
+    [showLogo]="!summary.header.hasContraction"
+    [logoPath]="summary.header.logoPath"
+    [contraction]="summary.header.contraction"
+    [avatarColor]="color"
+    [title]="summary.header.title"
+    [details]="summary.header.details"
+    >
+    </mobile-summary-header>
+    <mobile-summary-body *ngIf="summary.body"
+    [textUp]="summary.body.textUp"
+    [textDown]="summary.body.textDown"
+    [valueUp]="summary.body.valueUp"
+    [valueDown]="summary.body.valueDown">
+    </mobile-summary-body>
+</div>

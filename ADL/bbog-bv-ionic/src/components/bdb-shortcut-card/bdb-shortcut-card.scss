@@ -1,0 +1,117 @@
+bdb-shortcut-card {
+
+    .shortcut-card-content {
+        text-align: center;
+        min-width: 11rem;
+        padding: 1.6rem;
+
+        &__first-text,
+        &__second-text {
+            font-family: $RobotoRegular;
+            font-size: 13px;
+            line-height: 1.23;
+            text-align: center;
+            color: white;
+            white-space: nowrap;
+        }
+
+        &__first-text {
+            margin-top: 14px;
+        }
+
+        &__second-text {
+            margin-bottom: 12.5px;
+        }
+
+        &__avatar {
+            .avatar-wrapper__border-avatar {
+                width: 5.6rem;
+                height: 5.6rem;
+                border: solid 4px rgba(255, 255, 255, 0.3);
+            }
+
+            .avatar-wrapper__avatar {
+                width: 42px;
+                height: 42px;
+            }
+        }
+
+        &__date {
+            width: 62px;
+            height: 17px;
+            border-radius: 4px;
+            background-color: white;
+            font-family: $RobotoMedium;
+            font-size: 12px;
+            text-align: center;
+            color: color($colors, cornflower-blue);
+            position: absolute;
+            left: 7px;
+            top: 41px;
+            display: table;
+
+            span {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+    }
+
+    @media only screen and (min-width: 768px) {
+
+
+        .shortcut-card-content {
+            height: 130px;
+            transition: all .2s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background-color: white;
+                box-shadow: 0 0.5rem 1.5rem 0 rgba(color($colors, dusty-shadow), .2);
+                border-radius: 0.6rem;
+            }
+
+            &__first-text,
+            &__second-text {
+                color: color($colors, steel);
+            }
+
+            &__first-text {
+                margin-top: 16px;
+            }
+
+            &__avatar {
+                .avatar-wrapper__border-avatar {
+                    border: none;
+                }
+            }
+
+            &__date {
+                background-color: color($colors, cornflower-blue);
+                color: white;
+                width: 60%;
+                top: 56px;
+                left: 50%;
+                transform: translate(-50%);
+            }
+
+        }
+
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .shortcut-card-content {
+
+            &__avatar {
+                .avatar-wrapper__border-avatar {
+                    background-color: transparent !important;
+                }
+            }
+
+        }
+
+    }
+
+}

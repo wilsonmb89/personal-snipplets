@@ -1,0 +1,129 @@
+page-detail-aval {
+    .header {
+        width: 80%;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .line {
+        border: solid 0.5px color($colors, light-blue-grey);
+    }
+    .detail-aval-grid{
+        height: 100vh;
+    }
+    .detail-card-wrapper {
+        margin-top: 6rem;
+    }
+    bdb-card-check {
+        .card-check {
+            padding: 0.4rem 1.6rem;
+        }
+        .card-check .card-title {
+            font-size: 13px;
+            font-family: $ArgoRegular;
+            line-height: 1.38;
+            color: color($colors, steel);
+        }
+    } //Copy of dashboard
+    ion-header.header::after {
+        background-image: none;
+    }
+    .scroll-content {
+        overflow: hidden;
+        padding: 0;
+    }
+    .left-container {
+        text-align: center;
+        background-color: white;
+        overflow-y: hidden;
+        height: 100vh;
+    }
+    .right-container {
+        background-color: color($colors, bdb-bg);
+    }
+    .default-background {
+        background-color: color($colors, bdb-bg);
+    }
+    .right-container__connect-data {
+        width: 439px;
+        text-align: center;
+    }
+    .left-container__card {
+        margin: 0 5.0rem;
+    }
+    bdb-submenu-header {
+        >.header {
+            padding-bottom: 1.6rem;
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .header {
+            width: 100%
+        }
+        .header .title {
+            font-family: $RobotoRegular;
+            font-size: 12px;
+            color: color($colors, steel);
+            padding: 0;
+        }
+        .left-container {
+            overflow-y: hidden;
+            padding: 15px 15px;
+            height: auto;
+            background-color: transparent;
+        }
+        .scroll-content {
+            overflow-y: hidden;
+        }
+        .section-title {
+            font-family: $RobotoRegular;
+            font-size: 12px;
+            line-height: 1.33;
+            color: color($colors, steel);
+            margin-bottom: 8px;
+            margin-left: 20px;
+        }
+        .margin {
+            margin-left: 8px;
+        }
+        .left-container__card {
+            margin: 0;
+        }
+        bdb-submenu-header {
+            &:after {
+                content: "";
+                display: block;
+                height: 1px;
+                width: 100%;
+                border: 0;
+                background-color: color($colors, light-blue-grey);
+                opacity: 0.4;
+                margin-bottom: 1.4rem;
+            }
+        }
+    }
+    .card-aval {
+        &:hover {
+            transform: translateX(4px);
+            transition: 0.1s ease-in;
+            box-shadow: 0px 5px 15px 0px rgba(102, 128, 173, 0.2);
+        }
+    }
+    .right-container__middle {
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 274px;
+        height: 128px;
+        &__text {
+            opacity: 0.8;
+            font-family: $RobotoRegular;
+            text-align: center;
+            font-size: 14px;
+            color: color($colors, bdb-black);
+            &--force {
+                font-weight: bold;
+            }
+        }
+    }
+}

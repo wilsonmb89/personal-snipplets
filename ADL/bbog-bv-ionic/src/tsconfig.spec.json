@@ -1,0 +1,36 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/spec",
+    "baseUrl": "./",
+    "paths": {
+      "@app/env": [
+        "environments/environment.dev"
+      ],
+      "@app/delegate/config-client/*": [
+        "new-app/core/services-delegate/config-client/*"
+      ],
+      "@app/shared/*": [
+        "new-app/shared/*"
+      ],
+      "@app/modules/*": [
+        "new-app/modules/*"
+      ],
+      "@app/apis/*": [
+        "new-app/core/services-apis/*"
+      ],
+    },
+    "module": "commonjs",
+    "types": [
+      "jasmine",
+      "node"
+    ]
+  },
+  "files": [
+    "test.ts"
+  ],
+  "include": [
+    "**/*.spec.ts",
+    "**/*.d.ts"
+  ]
+}

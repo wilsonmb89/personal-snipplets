@@ -1,0 +1,58 @@
+<pulse-flowthc>
+
+  <div slot="header">
+    <pulse-flowth>
+      <div slot="left-content">
+        <pulse-nav-button only-icon-device="sm,md" navBehavior>Atrás</pulse-nav-button>
+      </div>
+      <div slot="content">
+        Certificados Tributarios
+      </div>
+      <div slot="right-content">
+        <pulse-nav-button only-icon-device="sm,md" icon-position="right" icon="close" navBehavior [goToPage]="'DocsMenuPage'">Abandonar transacción
+        </pulse-nav-button>
+      </div>
+    </pulse-flowth>
+  </div>
+
+  <div slot="content">
+    <div class="pulse--grid">
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+            <pulse-card elevation="4" class="pulse-padding-xs-xl-a content" hidden-p-sm-down>
+              <bdb-item-card-simplified [item]="headItem">
+              </bdb-item-card-simplified>
+              <div class="container">
+                <div class="container__line"></div>
+
+                <p class="container__title"><span class="container__title--force">Selecciona el año</span> a consultar:
+                </p>
+                <pulse-select-card-group groupstyle="buttons">
+                  <pulse-select-card color='primary' (click)="onItemClick(item)" *ngFor="let item of periodList"
+                                     [selected]="item.selected">
+                    {{item.name}}
+                  </pulse-select-card>
+                </pulse-select-card-group>
+              </div>
+            </pulse-card>
+
+
+            <div hidden-p-md-up>
+              <div class="mobile-head">
+                <bdb-item-card-simplified [item]="headItem">
+                </bdb-item-card-simplified>
+              </div>
+              <p class="container__title"><span class="container__title--force">Selecciona el año</span> a consultar:
+              </p>
+              <pulse-select-card-group groupstyle="buttons">
+                <pulse-select-card color='primary' (click)="onItemClick(item)" *ngFor="let item of periodList"
+                                   [selected]="item.selected">
+                  {{item.name}}
+                </pulse-select-card>
+              </pulse-select-card-group>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</pulse-flowthc>

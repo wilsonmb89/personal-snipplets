@@ -1,0 +1,15 @@
+<!-- Generated template for the MobileSummaryHeaderComponent component -->
+<div class="sum-hdr-wrapper">
+  <bdb-avatar class="sum-hdr-wrapper__avatar"
+    [showOnlyIcon]="showLogo"
+    [contraction]="contraction"
+    [avatarColor]="avatarColor"
+    [iconPath]="logoPath"
+    >
+    </bdb-avatar>
+  <div class="sum-hdr-wrapper__card-body">
+    <div class="sum-hdr-wrapper__card-body__title">{{title}}</div>
+    <div class="sum-hdr-wrapper__card-body__details" *ngFor="let detail of details">{{detail}}</div>
+    <div class="sum-hdr-wrapper__card-body__subDetails" *ngFor="let sub of subDetails">{{sub}}</div>
+  </div>
+</div>

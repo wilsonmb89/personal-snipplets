@@ -1,0 +1,25 @@
+<ion-content padding>
+  <div class="modal-generic-info">
+    <div class="modal-generic-info__close">
+      <div class="modal-generic-info__close--icon" (click)="dismiss()">
+        <cancel-icon></cancel-icon>
+      </div>
+    </div>
+    <div class="modal-generic-info__image">
+      <div class="modal-generic-info__image--img">
+        <img [src]="data?.img">
+      </div>
+    </div>
+    <div class="modal-generic-info__title">
+      <div class="modal-generic-info__title--text pulse-tp-hl3-comp-r" [innerHTML]="data?.title"></div>
+    </div>
+    <div class="modal-generic-info__description">
+      <div class="modal-generic-info__description--text pulse-tp-bo3-comp-r" [innerHTML]="data?.description"></div>
+    </div>
+    <div class="modal-generic-info__buttons">
+      <div class="modal-generic-info__buttons--button">
+        <pulse-button (click)="dismiss()" color="primary" colorgradient="true">Entendido</pulse-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

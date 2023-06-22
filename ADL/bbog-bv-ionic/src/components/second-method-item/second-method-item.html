@@ -1,0 +1,25 @@
+<ion-row class="second-item-row"
+         justify-content-center
+         [class.second-item-mouse-over]="mouseOvered"
+         (mouseover)="mouseOvered=true"
+         (mouseout)="mouseOvered=false"
+         no-padding (click)="emitEvent()">
+
+
+  <ion-col col-1>
+    <div class="div-image-regular">
+      <img [src]="imageUrl">
+    </div>
+  </ion-col>
+  <ion-col col-8>
+
+    <div class="div-text-regular">
+      {{text}}
+      <div>
+        <b class="div-text-bold">{{secText}}</b>
+      </div>
+
+    </div>
+
+  </ion-col>
+</ion-row>

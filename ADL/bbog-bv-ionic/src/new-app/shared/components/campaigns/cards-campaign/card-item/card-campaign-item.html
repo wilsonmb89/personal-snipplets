@@ -1,0 +1,22 @@
+
+<div class="card-campaign-item" [ngClass]="getBackgroundColor()" (click)="executeCallback()" >
+  <div class="card-campaign-item__content">
+    <div class="card-campaign-item__content__image-outer">
+      <div class="card-campaign-item__content__image-outer__image-inner">
+        <img [src]=getImgSrc()>
+      </div>
+    </div>
+
+    <div class="card-campaign-item__content__info-wrapper">
+      <div>
+        <span class="pulse-tp-bo3-comp-b">{{itemCardModel.title}}</span><br>
+        <span class="pulse-tp-bo3-comp-r">{{itemCardModel.description}}</span>
+      </div>
+
+      <div class="card-campaign-item__content__info-wrapper__link">
+        <span class="pulse-tp-bo3-comp-r">Conoce más</span>
+        <pulse-icon icon="chevron-right" color="warning"></pulse-icon>
+      </div>
+    </div>
+  </div>
+</div>

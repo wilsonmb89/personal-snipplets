@@ -1,0 +1,64 @@
+<div class="item-card-wrapper">
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-6 col-md-4 (click)="itemClicked()">
+        <div class="item-btn" id="bdb-card">
+          <bdb-avatar class="item-btn__avatar" [showOnlyIcon]="item?.showLogo" [contraction]="item?.contraction"
+            [avatarColor]="getColor(index)" [iconPath]="item?.logoPath" item-start>
+          </bdb-avatar>
+          <div>
+            <p class="item-detail-1">{{item?.title}}</p>
+            <p class="item-detail-2" *ngFor="let des of item?.desc; let i = index;" id="bic-prod-num{{i}}">{{des}}</p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-6 push-0 col-md-4 push-md-4>
+        <div class="item-card-wrapper__options">
+          <div class="item-card-wrapper__options__label" bdb-tag color="active-green" *ngIf="item?.isScheduled"
+            hidden-xs-down>
+            Programado
+          </div>
+          <div class="item-card-wrapper__options__label" *ngIf="item?.isScheduled" hidden-sm-up>
+            <img src="assets/imgs/round-schedule.svg">
+          </div>
+          <div class="item-card-wrapper__options__button-section" *ngIf="item?.withFavorite || item?.withContextMenu">
+            <div class="item-card-wrapper__options__favorite" *ngIf="item?.withFavorite">
+              <bdb-star (isActive)='item.isFavorite' (clickStar)="clickStar($event)"></bdb-star>
+            </div>
+            <div id="context-btn" #contextMenu class="item-card-wrapper__options__context-menu" [hidden]="!item?.withContextMenu">
+              <a>
+                <pulse-nav-button icon="more" (click)="contextClicked($event, contextMenu)" fill="clear">
+              </pulse-nav-button>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-10 offset-2 pull-0 col-md-4 offset-md-0 pull-md-4>
+        <ion-row class="item-card-wrapper__inner-row" (click)="itemClicked()">
+          <ion-col class="item-card-wrapper__detail-col" col-12 col-md-6
+            *ngFor="let detail of item?.details; let i = index;">
+            <div class="item-card-wrapper__detail-col__container">
+              <ion-row no-padding>
+                <ion-col col-6 col-md-12 no-padding>
+                  <div class="item-card-wrapper__detail-col__container__name">
+                    {{ detail.key }}
+                  </div>
+                </ion-col>
+                <ion-col col-6 col-md-12 no-padding>
+                  <div class="item-card-wrapper__detail-col__container__value" *ngIf="i === 0">
+                    {{  detail.value | currency:'USD':'symbol':'1.0':'es-CO' }}
+                  </div>
+                  <div class="item-card-wrapper__detail-col__container__value" *ngIf="i === 1">
+                    {{  detail.value | date:'dd MMM yyyy':'UTC' }}
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

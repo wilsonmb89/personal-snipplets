@@ -1,0 +1,15 @@
+:host(.tags-group) {
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__single {
+      margin-left: 0.4rem;
+    }
+
+  }
+
+
+}

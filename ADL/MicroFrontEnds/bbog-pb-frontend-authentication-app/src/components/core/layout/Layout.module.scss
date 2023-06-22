@@ -1,0 +1,8 @@
+.layout {
+  position: sticky;
+  background-color: white;
+  height: 100vh;
+  @media (max-width: 1024px) {
+    height: auto;
+  }
+}

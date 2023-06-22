@@ -1,0 +1,53 @@
+<tx-in-progress-component *ngIf="!!txInProgressData">
+  <tx-in-progress-header bodyHeader
+    [header]="txInProgressData.header"
+    [action]="txInProgressData.action">
+    <div headerDesc class="tx-in-progress-header-container--desc">
+      <span class='pulse-tp-bo3-comp-b'>Las transacciones a otros Bancos pueden demorarse hasta 1 día hábil.</span>
+      <span class='pulse-tp-bo3-comp-r'>Te recomendamos revisar los movimientos de tu cuenta después de este tiempo,
+      para confirmar el estado de la transacción.</span>
+    </div>
+  </tx-in-progress-header>
+  <tx-in-progress-body bodyData
+    *ngIf="!!txInProgressData.originInfo"
+    [body]="txInProgressData.body"
+    [action]="txInProgressData.action">
+    <div coreInfo>
+      <body-title-desc-item [title]="'Destino:'">
+        <div itemDesc class="item-container__desc pulse-tp-bo3-comp-r">
+          <span class="item-container__desc--main pulse-tp-bo2-comp-r">
+            {{ txInProgressData.originInfo.accountTo.name }}
+          </span>
+          <span>
+            {{ txInProgressData.originInfo.accountTo.bankName }}
+          </span>
+          <span>
+            {{ txInProgressData.originInfo.accountTo.acctInfo }}
+          </span>
+        </div>
+      </body-title-desc-item>
+      <body-title-desc-item [title]="'Costo de la transacción:'">
+        <div itemDesc class="item-container__desc">
+          <span *ngIf="cost$ | async as cost" class="pulse-tp-bo2-comp-r">
+            {{ cost }}
+          </span>
+          <span *ngIf="!(cost$ | async)" class="pulse-tp-bo2-comp-r">
+            <a rel=noopener href="https://www.bancodebogota.com/wps/portal/banco-de-bogota/bogota/productos/para-ti/tasas-y-tarifas" target="_blank">Consultar costo</a>
+          </span>
+        </div>
+      </body-title-desc-item>
+      <body-title-desc-item [title]="'Cuenta de origen:'">
+        <div itemDesc class="item-container__desc">
+          <span class="pulse-tp-bo3-comp-r">
+            {{txInProgressData.originInfo.accountFrom  | Mask4LastDigits}}
+          </span>
+        </div>
+      </body-title-desc-item>
+      <body-title-desc-item [title]="'Estado:'" [noBorder]="true">
+        <div itemDesc class="item-container__desc">
+          <pulse-tag text="Pendiente de aprobación" color="warning" fill="outline"></pulse-tag>
+        </div>
+      </body-title-desc-item>
+    </div>
+  </tx-in-progress-body>
+</tx-in-progress-component>

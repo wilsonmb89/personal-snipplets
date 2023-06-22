@@ -1,0 +1,90 @@
+<pulse-flowthc>
+    <div slot="header">
+        <flow-header (onStart)="onBackPage()" (onEnd)="logout()">
+            Administrar claves
+            <div start>Atrás</div>
+            <div end>Salida segura</div>
+        </flow-header>
+    </div>
+    <div slot="content">
+        <div class="change-keys-container">
+            <div class="pulse--grid">
+
+                <div class="pulse-row" *ngIf="hasSecurePass$ | async">
+                    <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+                        <div class="pulse-tp-hl3-comp-m change-keys-container__title">
+                            Clave Segura
+                        </div>
+                        <div class="pulse-tp-hl5-comp-r change-keys-container__subtitle">
+                            Esta clave te permite ingresar a Banca Virtual, Banca Móvil y Servilínea.
+                        </div>
+                        <div class="change-keys-container__list">
+                            <pulse-list>
+                                <pulse-item [hasExpand]="true" (expand)="goToFormSecurePass()">
+                                    <img src="assets/imgs/change-keys/secure-pass-lock.svg" alt="credit-card-lock"
+                                        slot="start">
+                                    Clave Segura
+                                    <pulse-nav-button fill="clear" icon-position="right" slot="end"></pulse-nav-button>
+                                </pulse-item>
+                            </pulse-list>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="pulse-row" *ngIf="listCards.length > 0">
+                    <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+                        <div class="pulse-tp-hl3-comp-m change-keys-container__title">
+                            Claves de tus Tarjetas Débito
+                        </div>
+                        <div class="pulse-tp-hl5-comp-r change-keys-container__subtitle">
+                            Esta clave te permitirá usar tus tarjetas en cajeros automáticos, oficinas bancarias y
+                            establecimientos.
+                        </div>
+                        <div class="change-keys-container__list">
+                            <pulse-list>
+                                <pulse-item *ngFor="let card of listCards" [description]="'No. ' + card.displayNumber"
+                                    [hasExpand]="true" (expand)="goToFormDebitCard(card)">
+                                    <img src="assets/imgs/change-keys/credit-card-lock.svg" alt="credit-card-lock"
+                                        slot="start">
+                                    Tarjeta Débito
+                                    <pulse-nav-button fill="clear" icon-position="right" slot="end"></pulse-nav-button>
+                                </pulse-item>
+                            </pulse-list>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="pulse-row" *ngIf="toogleKeyCC && showCredit$ | async">
+                    <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+                        <div class="pulse-tp-hl3-comp-m change-keys-container__title">
+                            Clave de Avances de Tarjeta Crédito
+                        </div>
+                        <div class="pulse-tp-hl5-comp-r change-keys-container__subtitle">
+                            Esta clave te permite hacer avances de tu Tarjeta de Crédito para hacer retiros en cajeros.
+                        </div>
+                        <div class="change-keys-container__list">
+                            <pulse-list>
+                                <pulse-item *ngFor="let card of creditCards$ | async; index as i"
+                                    [hasExpand]="!isblocked" (expand)="goToFormCreditCard(card)">
+                                    <img src="assets/imgs/change-keys/credit-card-lock.svg" alt="credit-card-lock"
+                                        slot="start">
+                                    <div class="change-keys-container__list__desc">
+                                        <div class="change-keys-container__list__desc__item">
+                                            Tarjeta Crédito
+                                            <div class="change-keys-container__list__desc__item__num pulse-tp-hl5-comp-r"> No. {{card.displayNumber}} </div>
+                                        </div>
+                                        <pulse-tag class="change-keys-container__list__desc__tag" fill="outline" color="error" colorvariant="700" text="Bloqueada" slot="end" *ngIf="showBlockCreditCardTag(card.lockId)"></pulse-tag>
+                                    </div>
+                                    <pulse-nav-button fill="clear" icon-position="right" slot="end" *ngIf="!showBlockCreditCardTag(card.lockId)"></pulse-nav-button>
+                                </pulse-item>
+                            </pulse-list>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</pulse-flowthc>

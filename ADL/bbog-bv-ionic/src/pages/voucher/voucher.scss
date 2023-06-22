@@ -1,0 +1,111 @@
+page-voucher {
+
+    .voucher-content {
+
+        &__grid {
+            margin-top: 72px;
+        }
+
+        &__title {
+            display: flex;
+            padding: 0px 0px 23px 0px !important;
+        }
+
+        &__title-text {
+            font-family: $ArgoRegular;
+            font-size: 20px;
+            line-height: 1.2;
+            letter-spacing: -0.4px;
+            color: color($colors, bdb-blue);
+        }
+
+        &__title-img {
+            margin-left: 8px;
+            width: 24px;
+            height: 24px;
+        }
+
+        &__failed-text {
+            opacity: 0.8;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+            line-height: 1.5;
+            color: color($colors, bdb-black);
+            padding: 0px 0px 24px 0px !important;
+        }
+
+        &__failed-text-bold {
+            font-family: $RobotoBold;
+            font-weight: bold;
+        }
+
+        &__action {
+            display: flex;
+            align-items: center;
+            padding: 16px 0px !important;
+        }
+
+        &__action-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #e1e2e6;
+            background-color: white;
+            align-items: center;
+            display: flex;
+        }
+
+        &__action-circle:hover {
+            border: 0px;
+            cursor: pointer;
+            box-shadow: 0 5px 10px 0 rgba(102, 128, 173, 0.3);
+        }
+
+        &__action-circle-img {
+            width: 24px;
+            height: 17px;
+            margin: 0 auto;
+        }
+
+        &__action-text {
+            opacity: 0.8;
+            font-family: $RobotoRegular;
+            font-size: 14px;
+            color: color($colors, bdb-black);
+            margin-left: 16px;
+        }
+        
+    }
+
+    @media only screen and (max-width: 767px) {
+        /* For mobile phones: */
+        .voucher-content {
+
+            &__grid {
+                margin: 0px;
+                padding: 8px !important;
+            }
+    
+            &__title {
+                padding: 0px !important;
+            }
+    
+            &__title-text {
+                font-size: 16px;
+                line-height: 1.25;
+                letter-spacing: normal;
+            }
+
+            &__failed-text {
+                padding: 24px 0px 0px 0px !important;
+            }
+    
+            &__action-circle {
+                margin: 0 auto;
+            }
+    
+        }
+
+    }
+
+}

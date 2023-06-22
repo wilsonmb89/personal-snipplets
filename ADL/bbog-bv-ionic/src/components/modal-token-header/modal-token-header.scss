@@ -1,0 +1,35 @@
+modal-token-header {
+    .mt-wrapper {
+        width: 100%;
+        position: relative;
+        &__icon {
+            text-align: center;
+        }
+        &__body {
+            text-align: center;
+            &__title {
+                font-family: $ArgoRegular;
+                font-size: 24px;
+                color: color($colors, bdb-blue);
+                margin-top: 20px;
+            }
+            &__text {
+                font-family: $RobotoLight;
+                font-size: 14px;
+                color: color($colors, bdb-black);
+                width: 60%;
+                margin: 6px auto;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .mt-wrapper {
+            &__icon {
+                img{
+                    margin-top: 26px;
+                }
+            }
+        }
+    }
+}

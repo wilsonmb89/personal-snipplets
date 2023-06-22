@@ -1,0 +1,31 @@
+<ion-grid class="main-wrapper">
+    <ion-row class="container" *ngFor="let step of model.steps; let first = first; let last = last">
+        <ion-col col-3 no-padding>
+            <div class="left-bar">
+                <div class="left-bar-wrapper">
+                    <div class="dot" [class.avatar]="step.id === 'concept' && step.isDone"
+                        [class.dot-done]="step.isDone && step.id !== 'concept'" [style.backgroundColor]="model?.color">
+                        <img [src]="model.logo" [hidden]="step.id !== 'concept' || model.contraction != ''">
+                        <div [hidden]="!first">{{model?.contraction | contractionAvatar}}</div>
+                    </div>
+                    <div class="connector" [class.undashed]="step.isDone" [hidden]="last"></div>
+                </div>
+            </div>
+        </ion-col>
+        <ion-col class="col-desc" col-9 no-padding>
+            <div class="steps-bar">
+                <div class="step" [class.done]="step.isDone">
+                    <div class="title">
+                        {{step.title}}
+                    </div>
+                    <div class="detail" *ngFor="let detail of step.details">
+                        <span *ngIf="!isDetailCostNotAvailable(detail)">{{detail}}</span>
+                        <span *ngIf="isDetailCostNotAvailable(detail)">
+                            <a rel=noopener href="https://www.bancodebogota.com/wps/portal/banco-de-bogota/bogota/productos/para-ti/tasas-y-tarifas" target="_blank">Consultar costo</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

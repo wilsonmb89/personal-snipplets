@@ -1,0 +1,42 @@
+<ion-content no-padding>
+  <div class="modal-flow-confirmation-content">
+    <div class="pulse-grid">
+      <div class="row">
+        <div class="col-xs-12" no-padding>
+          <div class="modal-flow-confirmation-content__img">
+            <img src="assets/imgs/trash_88.svg" width="88" height="88" alt="trash">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" no-padding>
+          <div class="modal-flow-confirmation-content__title">
+            {{ data.title }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" no-padding>
+          <div class="modal-flow-confirmation-content__subtitle">
+            {{ data.subtitle }}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6" no-padding>
+          <div class="modal-flow-confirmation-content__btn-left" float-right>
+            <button bvButton [outline]="data.buttons[0].outline ? true : false" (click)="onCancel()" >{{ data.buttons[0].text }}</button>
+          </div>
+        </div>
+        <div class="col-xs-6" no-padding>
+          <div class="modal-flow-confirmation-content__btn-right" float-left>
+            <button bvButton (click)="onCancel(); data.buttons[1].callback();">{{ data.buttons[1].text }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-flow-confirmation-content__close">
+      <cancel-icon class="modal-flow-confirmation-content__close__cancel-icon" (click)="onCancel()"></cancel-icon>
+    </div>
+  </div>
+</ion-content>

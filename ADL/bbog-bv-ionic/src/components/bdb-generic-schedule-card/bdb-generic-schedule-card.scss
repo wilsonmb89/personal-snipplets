@@ -1,0 +1,109 @@
+bdb-generic-schedule-card {
+
+    .sched-card{
+        padding: 0px;
+        border-radius: 0px;
+        box-shadow: none;
+
+        @media only screen and (min-width: 540px) {
+            padding: 16px 64px 24px 64px;
+            box-shadow: 0 5px 10px 0 rgba(102, 128, 173, 0.3);
+            border-radius: 10px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            padding: 16px 48px 24px 24px;
+        }
+
+        &__item-border {
+            border-bottom: 1px solid #e1e2e6;
+        }
+
+        &__card-simplified {
+            background-color: color($colors, bdb-bg);
+            padding: 8px 18px 0 0;
+
+            @media only screen and (min-width: 540px) {
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+
+        &__form-inputs {
+            padding: 0 16px;
+
+            @media only screen and (min-width: 540px) {
+                padding: 0;
+            }
+        }
+
+        &__label{
+            opacity: 0.6;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 1.67;
+            font-family: $RobotoRegular;
+            color: color($colors, carbon);
+            margin: 22px 0 4px 0;
+        }
+
+        &__center-div{
+            display: block;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding-bottom: 17px;
+            margin: 0px;
+
+            @media only screen and (min-width: 540px) {
+                text-align: left;
+                display: inline-flex;
+                padding: 0;
+                margin-left: 26px;
+            }
+        }
+
+        &__save-button {
+            display: inline-flex;
+        } 
+
+        &__popover {
+            display: inline-flex;
+            cursor: pointer;
+            margin-top: -4px;
+        }
+
+        @media only screen and (min-width: 768px) {
+            &__account-select, &__freq-select, &__days-select{
+                margin-right: 32px !important;
+            }
+
+            &__max-amount{
+                margin-right: 0px !important;
+            }
+        }
+
+        @media only screen and (min-width: 540px) {
+            &__freq-select, &__max-amount{
+                margin-right: 32px !important;
+            }
+        }
+
+        &__buttons-row{
+            margin-top: 47px;
+        }
+
+        &__delete-button{
+            cursor: pointer;
+            display: inline-flex;
+            height: 100%;
+            align-items: center;
+            &__text{
+                font-family: $RobotoRegular;
+                font-size: 1.4rem;
+                color: color($colors, steel);
+                margin-left: 1.5rem;
+            }
+        }
+    }
+}

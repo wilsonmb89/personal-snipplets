@@ -1,0 +1,48 @@
+bdb-context-menu {
+    .context-menu-wrapper {
+        position: relative;
+        padding: 8px 8px;
+        box-shadow: 1px 2px 16px 1px rgba(102, 128, 173, 0.3);
+        margin: 20px;
+        border-radius: 6px;
+        background-color: white;
+        &__list-item {
+            color: color($colors, steel);
+            transition: .3s ease;
+            :hover {
+                background-color: color($colors, pale-grey);
+                color: color($colors, bdb-black);
+                border-radius: 6px;
+                transition: .2s ease-out;
+                &.blue-white-card {
+                    background-color: color($colors, white-toast);
+                    color: color($colors, darkish-blue);
+                }
+            }
+        }
+        &__item {
+            padding: 7px 16px 9px 16px;
+            font-family: $RobotoRegular;
+            font-size: 13px;
+
+            &.red-card {
+                color: color($colors, red-card);
+            }
+            &.blue-white-card {
+                color: color($colors, carbon-700);
+            }
+        }
+    }
+    .context-menu-wrapper.showContextArrow:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 8%;
+        width: 0;
+        height: 0;
+        border: 11px solid transparent;
+        border-bottom-color: white;
+        border-top: 0;
+        margin-top: -11px;
+    }
+}

@@ -1,0 +1,16 @@
+<div [formGroup]="bdbListForm">
+  <div class="subtitle subtitle-acct-number">
+    {{ title }}
+  </div>
+  <ion-item class="item-doc-type">
+    <select
+      (change)="emit($event.target.value)"
+      #bdbItem class="item item-block item-md input-lg"
+      formControlName="bdbItem"
+      id="sap-sel-type">
+      <option *ngFor="let item of bdbList" [value]="item.id" >{{item.name}}</option>
+    </select>
+  </ion-item>
+</div>
+
+

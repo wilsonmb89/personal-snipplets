@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-grid>
+      <ion-row class="modal-header-row">
+        <ion-col col-2 align-self-center class="col-back-btn">
+          <button start (click)="onBackPressed()" [hidden]="hideLeftOption">
+            <img src="assets/imgs/round-chevron-left-24-px.svg">
+          </button>
+        </ion-col>
+        <ion-col col-8 align-self-center>
+          <div class="title">{{title}}</div>
+        </ion-col>
+        <ion-col col-2 align-self-center class="col-close-btn">
+          <button end (click)="onDismiss()" [hidden]="hideRightOption">
+            <img src="assets/imgs/round-close-24-px.svg">
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <bdb-summary></bdb-summary>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding no-bounce>
+  <ion-nav [root]="modalPage" #content></ion-nav>
+</ion-content>

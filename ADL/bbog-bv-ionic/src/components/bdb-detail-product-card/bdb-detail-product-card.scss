@@ -1,0 +1,99 @@
+bdb-detail-product-card {
+
+  .detail-card{
+    box-shadow: 0 0 5px 0 rgba(color($colors, dusty-shadow), .2);
+    border-radius: 10px;
+    background-color: white;
+    z-index: 1;
+    position: relative;
+
+    &__title{
+      color: color($colors, bdb-blue);
+      font-size: 1.8rem;
+      font-family: $ArgoRegular;
+    }
+
+    &__error{
+      font-size: 1.6rem;
+      color: color($colors, cool-grey);
+      font-family: $RobotoLight;
+    } 
+
+    &__acct-number{
+      color: color($colors, bdb-black);
+      font-size: 1.2rem;
+      line-height: 24px;
+      font-family: $RobotoRegular;
+    }
+
+    &__info{
+      color: color($colors, cool-grey);
+      font-size: 1.3rem;
+      line-height: 24px;
+      font-family: $RobotoRegular;
+    }
+
+    &__balance{
+      color: color($colors, bdb-black);
+      font-size: 1.8rem;
+      line-height: 24px;
+      font-family: $RobotoRegular;
+    }
+
+    &__value{
+      color: color($colors, steel);
+      font-size: 1.3rem;
+      line-height: 24px;
+      font-family: $RobotoRegular;
+    }
+  }
+
+  .dc-wrp{
+    position: relative;
+  }
+
+  .card-grid{
+    padding: 16px 0 24px 0;
+  }
+
+    .button-payments {
+        text-align: center;
+    
+        .button {
+          width: 47%;
+          margin-top: 32px;
+          border-radius: 6px;
+          border: solid 2px #fdc130;
+          box-shadow: none;
+    
+          @media only screen and (max-width: 992px) {
+            margin-top: 16px;
+            height: 32px;
+          }
+    
+          .button-inner {
+            color: #fff;
+            font-family: $RobotoRegular;
+            font-size: 12px;
+            line-height: 2;
+          }
+        }
+    
+        detail-card-button:nth-child(2) {
+          .button {
+            background-color: #fff;
+    
+            .button-inner {
+              color: #fdc130;
+            }
+    
+          }
+        }
+    
+      }
+      @media only screen and (max-width: 768px) {
+        &__balance{
+          font-size: 1.7rem;
+        }
+      }
+}

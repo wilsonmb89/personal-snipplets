@@ -1,0 +1,17 @@
+page-cc-destination-acct {
+    .inner {
+        margin-bottom: 40px;
+    }
+    
+    .loader-wrapper {
+        text-align: center;
+    }
+   
+    @media only screen and (max-width: 768px) {
+  
+        .inner {
+            margin-bottom: 5px;
+        }
+        
+    }
+}

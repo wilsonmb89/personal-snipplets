@@ -1,0 +1,22 @@
+<div class="option-list-container">
+  <div class="option-list-container__wrapper" *ngFor="let option of optionsList">
+    <pulse-select-card class="option-list-container__wrapper__option"
+                        [selected]="option.selected"
+                        (click)="changeOptionSelected(option)"
+                        switchtype="radio">
+      <div class="option-list-container__wrapper__option__info">
+        <div class="option-list-container__wrapper__option__info__data">
+          <span class="option-list-container__wrapper__option__info__data--title pulse-tp-hl4-comp-m" [class.selected]="option.selected">
+            {{ option.cardTitle }}
+          </span><br>
+          <span class="pulse-tp-bo3-comp-m">No. {{ option.cardLabel }}</span>
+        </div>
+        <div class="option-list-container__wrapper__option__info__amount">
+          <span class="pulse-tp-bo2-comp-r">
+            {{ option.cardValue | currency:'USD':'symbol':'1.2-2' }}
+          </span>
+        </div>
+      </div>
+    </pulse-select-card>
+  </div>
+</div>

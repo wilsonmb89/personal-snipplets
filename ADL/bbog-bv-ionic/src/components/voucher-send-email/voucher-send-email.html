@@ -1,0 +1,11 @@
+<div class="voucher-send-email-content__email" [@openClose]="viewSendEmail" (@openClose.done)="animEnd($event)">
+  <form [formGroup]="sendEmailForm" (ngSubmit)="onSubmit()" (keydown.enter)="$event.preventDefault()" novalidate>
+    <img src="assets/imgs/closeicon_token.svg" class="voucher-send-email-content__email-close" (click)="closeSendEmail()">
+    <span class="voucher-send-email-content__email-text">
+      Enviar por e-mail
+    </span>
+    <input id="voucherEmail" bdb-form-input type="email" #email [isInvalid]="sendEmailForm.controls.email.invalid && sendEmailForm.controls.email.dirty"
+      formControlName="email" placeholder="Escribe tu correo" class="voucher-send-email-content__email-input" required>
+    <button id="voucherEmailSend" type="submit" bvButton color="blue-gradient" small="true" [disabled]="sendEmailForm.invalid" class="voucher-send-email-content__email-button">Enviar</button>
+  </form>
+</div>

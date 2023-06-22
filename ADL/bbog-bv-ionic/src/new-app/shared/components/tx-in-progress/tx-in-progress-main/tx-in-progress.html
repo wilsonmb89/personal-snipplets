@@ -1,0 +1,28 @@
+<pulse-flowthc>
+  <div slot="header">
+    <flow-header [showStart]="false" [showEnd]="false" [rightOption]="'leave'">
+      <div class="tx-in-progress-container__header-logos">
+        <img class="tx-in-progress-container__header-logos--logo-m" src="assets/imgs/shared/flow-header/bbog-logo-m.svg" alt="header-logos">
+        <img class="tx-in-progress-container__header-logos--logo-s" src="assets/imgs/shared/flow-header/bbog-logo-s.svg" alt="header-logos">
+      </div>
+    </flow-header>
+  </div>
+  <div slot="content">
+    <div class="pulse--grid">
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-6 pulse-col-lg-10 pulse-offset-md-1 pulse-offset-lg-1">
+          <div class="tx-in-progress-container__body pulse-elevation-8">
+            <div class="tx-in-progress-container__body__header">
+              <div class="tx-in-progress-container__body__header--corners"></div>
+              <ng-content select="[bodyHeader]">
+              </ng-content>
+            </div>
+            <div class="tx-in-progress-container__body__data">
+              <ng-content select="[bodyData]"></ng-content>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</pulse-flowthc>

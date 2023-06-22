@@ -1,0 +1,48 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-color: rgba(0, 25, 71, 0.8);
+  align-items: center;
+  justify-content: center;
+  // FIX: change this z-index when pulse modal be fixed!
+  z-index: 999999;
+  &__box {
+    display: flex;
+    border-radius: 2px;
+    width: 68px;
+    height: 71px;
+    color: rgba(0, 0, 0, 0.5);
+    background: #fafafa;
+    box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    animation: spinner-rotate 1s linear infinite;
+    animation-duration: 750ms;
+    circle {
+      stroke: #488aff;
+      fill: transparent;
+      stroke-width: 4px;
+      stroke-dasharray: 128px;
+      stroke-dashoffset: 82px;
+    }
+  }
+
+  @keyframes spinner-rotate {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+}

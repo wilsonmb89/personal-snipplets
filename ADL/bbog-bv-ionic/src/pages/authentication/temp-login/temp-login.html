@@ -1,0 +1,99 @@
+<ion-content padding no-scroll>
+  <pulse-tooltip [objectdesthtml]="testTootip" id="pulsetooltip2" color="success" elevation="4" colorvariant="400"
+    tiptitle='Modo privado' description='Al activarlo los saldos de tus productos se ocultarán.' position="left-middle">
+  </pulse-tooltip>
+
+  <header-img [text]="imgPath" [imgPath]="imgPath"> </header-img>
+  <div style="display: inline-block; box-sizing: border-content;">
+
+    <button bvButton color='mango' (click)="removeTooltips()">Confirmar transferencia</button>
+  </div>
+  <ion-icon #launcherTooltip color="secundary" name="american-football" (click)="launchTooltip(launcherTooltip)"></ion-icon>
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col>
+
+        <bdb-radio>
+          <input bdbRadioRef type="radio" checked="checked" name="radio" (click)="testRadioClick()">
+        </bdb-radio>
+      </ion-col>
+      <ion-col>
+        <ion-row align-items-center align-self-center>
+          <label>titulo</label>
+
+          <bdb-radio align-items-center>
+            <input bdbRadioRef type="radio" name="radio">
+          </bdb-radio>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div style="width: 40%">
+    <product-card-loader>
+    </product-card-loader>
+  </div>
+  <bdb-star [(isActive)]="starStatus"></bdb-star>
+  {{emails | json }}
+  <div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 col-lg-4 offset-0 offset-lg-4>
+          <div class="indications">
+            {{text}}
+          </div>
+          <form [formGroup]="login" (ngSubmit)="submit()">
+            <ion-item>
+
+              <ion-label id="doc-type">Cédula de ciudadanía</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-input
+                [class.invalid]="!login.controls.identificationNumber.valid && (login.controls.identificationNumber.dirty || submitAttempt)"
+                [(ngModel)]="identificationNumber" formControlName="identificationNumber" type="text"
+                pattern="[0-9]{0,}" placeholder="No. Documento" min="0" maxlength="10" value="123456789">
+              </ion-input>
+            </ion-item>
+
+            <p class="invalid-msg">{{errorMsg}}</p>
+
+            <p class="invalid-msg"
+              *ngIf="!login.controls.identificationNumber.valid && (login.controls.identificationNumber.dirty || submitAttempt)">
+              El número de cédula debe tener entre 5 y 10 dígitos
+            </p>
+            <div #testTootip style="display: inline-block">
+              <button class="submit-button" ion-button type="submit"
+                [disabled]="!login.valid || !login.controls.identificationNumber.valid">Consultar</button>
+            </div>
+              <div #contextMenu style="display: inline-block">
+              <pulse-nav-button icon="more" (click)="showMenuOptions(contextMenu)" fill="clear">
+              </pulse-nav-button>
+            </div>
+            <button class="submit-button" ion-button type="button" (click)="fingerPrint()">FingerPrint</button>
+          </form>
+
+            <div class="account-clipboard-container__body__desc pulse-tp-bo3-comp-r">
+          <span>Comparte los datos de tu producto para</span> <span class="pulse-tp-bo3-comp-b">inscripciones y transacciones:</span>
+          <br>
+          <br>
+          <div id="accountInfo">
+          <span class="bank">Banco de Bogotá</span><br>
+           <span class="pulse-tp-bo3-comp-b">Tipo de cuenta: </span><span>Ahorros</span><br>
+           <span class="pulse-tp-bo3-comp-b">Número de cuenta: </span><span>123456789</span><br>
+           <span class="pulse-tp-bo3-comp-b">Titular: </span><span>Pilar Stephany Mass Lopez </span><br>
+           <span class="pulse-tp-bo3-comp-b">Documento: </span><span id="idUser">{{document}}</span>
+           </div>
+           <pulse-nav-button icon="share" (click)="copyAccountInfo()" fill="clear">
+              </pulse-nav-button>
+              <pulse-icon class="card-detail-wrapper__lock_button--icon" color="primary" size="l" icon="share"></pulse-icon>
+              <pulse-icon class="card-detail-wrapper__lock_button--icon" color="primary" size="l" icon="copy-paste"></pulse-icon>
+        </div>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+  </div>
+  <div>
+    <bdb-loader color="steel"></bdb-loader>
+  </div>
+</ion-content>

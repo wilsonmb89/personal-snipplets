@@ -1,0 +1,25 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="'Atrás'"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <person-data #pb (onclic)="triggerAcct($event)" [title]="title" [subtitleName]="subtitleName" 
+      [subtitleType]="subtitleType" [subtitleNumber]="subtitleNumber" [listItem]="listItem"  (valid)="isValid($event)"></person-data>
+    </div>
+    <div slot="summary">
+        <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button class="confirm-btn" id="mob-sap-btn-next" full color="bdb-blue" hidden-lg-up ion-button
+      (click)="triggerAcctMobile()"
+      [disabled]="!validForm">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,35 @@
+<pulse-modaltb class="campaign-dash-unicef">
+  <div slot="header">
+    <div class="campaign-dash-unicef__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/dashboard/unicef/campaign-dashboard.png" alt="token">
+      </div>
+      <div slot="title">
+        ¡Nueva tarjeta UNICEF!
+      </div>
+      <div slot="body">
+        <div class="campaign-dash-unicef__body">
+          Te presentamos la <span class="pulse-tp-bo3-comp-b">nueva Tarjeta Débito UNICEF Banco de Bogotá</span>. La
+          primera tarjeta del país que ayuda a la
+          niñez, donde convertirás el 1% de tus compras y el Banco un 1% adicional en aportes para los niños de
+          Colombia.
+          <br><br>
+          <span class="pulse-tp-bo3-comp-b">Solicítala en el detalle de tu Cuenta de Ahorros</span> en un solo paso y
+          conoce todos los beneficios.
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="campaign-dash-unicef__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="closeModal()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

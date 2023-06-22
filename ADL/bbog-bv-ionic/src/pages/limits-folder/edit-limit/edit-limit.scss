@@ -1,0 +1,94 @@
+page-edit-limit {
+    .edit-content {
+
+        &__title {
+            font-family: $RobotoRegular;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #0041a8;
+        }
+
+        &__label-title {
+            font-family: $RobotoLight;
+            font-size: 11px;
+            line-height: 2.18;
+            color: #a1a6ad;
+            margin-top: 30px;
+        }
+        
+        &__label-input {
+
+            input {
+                font-size: 20px;
+                font-family: $RobotoLight;
+                color: #282828;
+                margin: 0px;
+                padding: 3px 0px;
+                border-bottom: 2px solid #dcdee0;
+            }
+
+            label {
+                font-family: $RobotoRegular;
+                font-size: 12px;
+                color: #bb2a3c;
+            }
+        }
+
+        .scroll-content{
+            overflow: hidden;
+        }
+    }
+
+    .btn-wrapper {
+        min-height: 4.6rem;
+
+        button {
+            background-color: #eef0f2;
+            color: color($colors, bdb-blue);
+            font-size: 16px;
+            font-family: $RobotoRegular;
+            margin: 0;
+            height: 4.6rem;
+        }
+
+        button:hover {
+            color: #fff;
+            background-color: #488aff;
+        }
+    }
+
+    .close-img {
+        background-color: transparent;
+        position: absolute;
+        top: 23px;
+        right: 17px;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .edit-content {
+    
+            &__label-title {
+                font-size: 16px;
+                color: #59626d;
+                margin-top: inherit;
+            }
+            
+            &__label-input {
+    
+                input {
+                    font-size: 24px;
+                }
+            }
+        }
+
+        .btn-wrapper button, .btn-wrapper button:hover {
+            background-color: #002c76;
+            font-family: $RobotoBold;
+            font-size: 16px;
+            line-height: 1.25;
+            text-align: center;
+            color: #ffffff;
+        }
+    }
+}

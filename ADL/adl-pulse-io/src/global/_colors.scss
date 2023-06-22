@@ -1,0 +1,309 @@
+@mixin borderColor($color, $size: 1.2px, $style: solid) {
+  border: $style $size $color !important;
+}
+
+
+/**
+  * New Colors
+**/
+
+$white-contrast: --pulse-color-white-700;
+$carbon-contrast: --pulse-color-carbon-900;
+
+$pulse-colors: (
+  "primary": (
+    900: (
+        bg: #002C76,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #0040A8,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #0070D9,
+        fg: $white-contrast
+    ),
+    100: (
+        bg: #B9DCFE,
+        fg: $carbon-contrast
+    )
+  ),
+  "success": (
+    900: (
+        bg: #3BA73A,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #7AD468,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #94DC84,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #D2F0CA,
+        fg: $carbon-contrast
+    )
+  ),
+  "error": (
+    900: (
+        bg: #B50C17,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #E33031,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #ED4D4C,
+        fg: $white-contrast
+    ),
+    100: (
+        bg: #FFCBD1,
+        fg: $carbon-contrast
+    )
+  ),
+  "warning": (
+    900: (
+        bg: #EA802A,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #F69B31,
+        fg: $carbon-contrast
+    ),
+    400: (
+        bg: #FDC130,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #FCE0B8,
+        fg: $carbon-contrast
+    )
+  ),
+  "info": (
+    900: (
+        bg: #6680AD,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #A4B6C9,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #C4D4E3,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #EAF5FD,
+        fg: $carbon-contrast
+    )
+  ),
+  "carbon": (
+    900: (
+        bg: #333333,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #5C5C5C,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #858585,
+        fg: $white-contrast
+    ),
+    100: (
+        bg: #ADADAD,
+        fg: $white-contrast
+    )
+  ),
+  "carbon-light": (
+    900: (
+        bg: #D6D6D6,
+        fg: $carbon-contrast
+    ),
+    700: (
+        bg: #EAEAEA,
+        fg: $carbon-contrast
+    ),
+    400: (
+        bg: #F5F5F5,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #F6F8FA,
+        fg: $carbon-contrast
+    )
+  ),
+  "gold": (
+    900: (
+        bg: #FFB900,
+        fg: $carbon-contrast
+    ),
+    700: (
+        bg: #FFD200,
+        fg: $carbon-contrast
+    ),
+    400: (
+        bg: #FFE47D,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #FFEEB1,
+        fg: $carbon-contrast
+    )
+  ),
+  "copper": (
+    900: (
+        bg: #925321,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #BD803D,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #CFB458,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #F0F3CB,
+        fg: $carbon-contrast
+    )
+  ),
+  "olive": (
+    900: (
+        bg: #67A22D,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #8CC63F,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #AFD77B,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #DDEEC6,
+        fg: $carbon-contrast
+    )
+  ),
+  "scooter": (
+    900: (
+        bg: #20696A,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #2BA1AC,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #41D0DE,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #B6EFF3,
+        fg: $carbon-contrast
+    )
+  ),
+  "bouquet": (
+    900: (
+        bg: #6B2E68,
+        fg: $white-contrast
+    ),
+    700: (
+        bg: #893A7A,
+        fg: $white-contrast
+    ),
+    400: (
+        bg: #B671A4,
+        fg: $carbon-contrast
+    ),
+    100: (
+        bg: #E0C0D7,
+        fg: $carbon-contrast
+    )
+  ),
+  "white": (
+    700: (
+        bg: #FFFFFF,
+        fg: $carbon-contrast
+    )
+  ),
+);
+
+
+@mixin generate-pulse-colors($color-name, $name-variation-parent, $variations) {
+
+  @each $name-variation, $variation in $variations {
+    
+      @if $name-variation-parent == $name-variation {
+        --pulse-color-bg: var(--pulse-color-#{$color-name}-#{$name-variation}) !important;
+        --pulse-color-init: var(--pulse-color-#{$color-name}-#{$name-variation}) !important;
+        --pulse-color-fg: var(#{map-get($variation, fg)}) !important;
+      }
+      @else {
+        --pulse-color-#{$name-variation}: var(--pulse-color-#{$color-name}-#{$name-variation}) !important;
+      }
+  }
+
+}
+
+@mixin generate-pulse-gradient($color-name, $name-variation) {
+  
+  $to: #{get-pulse-color('white', 700)};
+  $bottom: #{get-pulse-color($color-name, $name-variation)};
+  
+  @if $name-variation == 900 {
+    $to: #{get-pulse-color($color-name, 700)};
+  } @else if $name-variation == 700 {
+    $to: #{get-pulse-color($color-name, 400)};
+  } @else if $name-variation == 400 {
+    $to: #{get-pulse-color($color-name, 100)};
+  }
+  
+  --pulse-color-bg: linear-gradient(to bottom, #{$to}, #{$bottom}) !important;
+}
+
+:root{
+  @each $color-name, $variations in $pulse-colors {
+    @each $name-variation, $variation in $variations {
+      --pulse-color-#{$color-name}-#{$name-variation}: #{map-get($variation, bg)};
+    }
+  };
+}
+
+@each $color-name, $variations in $pulse-colors {
+  @each $name-variation, $variation in $variations {
+    .pulse-color-#{$color-name}-#{$name-variation} {
+      @include generate-pulse-colors($color-name, $name-variation, $variations);
+    }
+
+    .pulse-color-#{$color-name}-#{$name-variation}.pulse-color-gradient {
+      @include generate-pulse-gradient($color-name, $name-variation);
+    }
+  }
+};
+
+
+
+@function get-pulse-color($name, $variation) {
+  
+  @if (map-get($pulse-colors, $name)) {
+
+    $variations: map-get($pulse-colors, $name);
+    
+    @if (map-get($variations, $variation)) {
+      $value: map-get($variations, $variation);
+      $variable: --pulse-color-#{$name}-#{$variation};
+
+      @return var(#{$variable});      
+    } 
+
+  }
+
+  @return var(--pulse-color-#{$name}-700);
+}

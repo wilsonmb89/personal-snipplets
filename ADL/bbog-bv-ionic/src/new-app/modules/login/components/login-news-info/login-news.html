@@ -1,0 +1,78 @@
+<div class="login-news-container">
+  <pulse-collapsible #loginInstructionsCollapsible
+                      name="¿Cómo ingresar al portal anterior?"
+                      description="Acá te contamos paso a paso"
+                      separator="true"
+                      (pulseCollapsibleOpen)="scrollIntoView($event, loginInstructionsCollapsible)"
+                      carousel="false">
+    <div slot="content" class="content-container pulse-tp-bo3-comp-r">
+      <div class="pulse-grid">
+        <div class="row">
+          <div class="col-xs-12 col-md-4 content-container__logo-wrapper">
+            <img src="assets/imgs/login/old-login-instructions.svg" alt="login-instructions">
+          </div>
+          <div class="col-xs-12 col-md-8 content-container__info">
+            <div class="row no-padding">
+              <div class="col-xs-1">
+                <span class="pulse-tp-bo3-comp-b">1.</span>
+              </div>
+              <div class="col-xs-11">
+                Ingresa a <span class="pulse-tp-bo3-comp-b">www.bancodebogota.com</span> y en la sección
+                de la derecha encuentras la opción ingreso al portal anterior.
+                <span class="pulse-tp-bo3-comp-b"> No accedas desde otros links o páginas Web.</span>
+              </div>
+            </div>
+            <div class="row no-padding">
+              <div class="col-xs-1">
+                <span class="pulse-tp-bo3-comp-b">2.</span>
+              </div>
+              <div class="col-xs-11">
+                Haz clic en la opción, te llevará al inicio de sesión,
+                <span class="pulse-tp-bo3-comp-b"> recuerda todas las recomendaciones de seguridad.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </pulse-collapsible>
+  <pulse-collapsible #loginContactCollapsible
+                      name="Contáctanos"
+                      description="Comunícate por nuestros canales"
+                      separator="false"
+                      (pulseCollapsibleOpen)="scrollIntoView($event, loginContactCollapsible)"
+                      carousel="false">
+    <div slot="content" class="content-container">
+      <div class="pulse-grid">
+        <div class="row no-padding">
+          <div class="col-xs-12 content-container__info">
+            <div class="content-container__info__link-items" (click)="openChatBankWindow()">
+              <div class="content-container__info__link-items__icon-col">
+                <img src="assets/imgs/login/icon-whatsapp.svg" alt="chat-whatsapp">
+              </div>
+              <div class="content-container__info__link-items__text-col">
+                Escríbenos por WhatsApp
+              </div>
+            </div>
+            <div class="content-container__info__link-items" (click)="openContactNumbersModal()">
+              <div class="content-container__info__link-items__icon-col">
+                <img src="assets/imgs/login/support-human.svg" alt="support-human">
+              </div>
+              <div class="content-container__info__link-items__text-col">
+                Llamar a la Servilínea
+              </div>
+            </div>
+            <div class="content-container__info__link-items" (click)="openFindBanksWindow()">
+              <div class="content-container__info__link-items__icon-col">
+                <img src="assets/imgs/login/pin-location.svg" alt="pin-location">
+              </div>
+              <div class="content-container__info__link-items__text-col content-container__info__find-office">
+                Buscar cajeros y oficinas
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </pulse-collapsible>
+</div>

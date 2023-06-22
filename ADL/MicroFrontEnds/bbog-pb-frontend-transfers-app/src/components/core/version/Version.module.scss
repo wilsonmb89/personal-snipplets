@@ -1,0 +1,22 @@
+@import '../../../variables.scss';
+
+.container {
+  position: fixed;
+  bottom: 2.6rem;
+  right: 0.6rem;
+  transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  color: var(--sherpa-carbon-900);
+  background-color: rgba(255, 255, 255, 0);
+
+  @media only screen and (max-width: $break-mobile-md) {
+    position: static;
+    right: auto;
+    display: flex;
+    justify-content: center;
+    transform: none;
+    -webkit-transform: none;
+    -ms-transform: none;
+  }
+}

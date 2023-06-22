@@ -1,0 +1,21 @@
+{
+  "name": "Banco de Bogotá",
+  "short_name": "Banco de Bogotá",
+  "start_url": "/?origin=pwa",
+  "scope": "../",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/pwa/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/pwa/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#fff",
+  "theme_color": "#fff"
+}

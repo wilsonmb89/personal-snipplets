@@ -1,0 +1,32 @@
+
+<ion-header hidden-md-up>
+  <ion-navbar class="header" hideBackButton="true">
+    <header-img [text]="'Atrás'" [imgPath]="'assets/imgs/iconAval.png'" (backPressed)="backMobile()"></header-img>
+  </ion-navbar>
+</ion-header>
+
+<ion-content auto-resize class="default-background">
+  <ion-grid id="selection-aval-grid" no-padding>
+    <ion-row class="main-row">
+      <ion-col col-12 col-md-5 col-xl-4 class="left-container">
+        <div class="header_main" hidden-sm-down>
+          <header-img  [text]="'Atrás'" [imgPath]="'assets/imgs/iconAval.png'" (backPressed)="backDesktop()"></header-img>
+        </div>
+        <div class="line" hidden-sm-down></div>
+        <ion-row>
+            <ion-col col-10 offset-1>
+                <bdb-submenu-header [title]="'¿Cuál entidad quieres consultar?'"></bdb-submenu-header>
+                <bdb-card-check *ngFor="let company of companies" class="card-aval" label="" [title]="company.name" [icon]="company.icon"
+                  (clickCard)="clickCard(company)" [BdbBorderCard]="company.color"></bdb-card-check>
+            </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col no-padding col-12 col-md-7 col-xl-8 class="right-container" hidden-sm-down>
+          <header-sesion></header-sesion>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

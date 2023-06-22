@@ -1,0 +1,20 @@
+page-info-max-amount {
+    .info-security-content {
+        background-color: #515151;
+
+        &__img {
+            cursor: pointer;
+        }
+
+        p {
+            font-family: $RobotoRegular;
+            font-size: 14px;
+            line-height: 1.29;
+            color: white;
+            
+            strong {
+                font-size: 16px;
+            }
+        }
+    }
+}

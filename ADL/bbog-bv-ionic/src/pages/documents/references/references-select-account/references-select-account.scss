@@ -1,0 +1,19 @@
+page-references-select-account {
+
+  .references-select-account-container {
+
+    &__title {
+      opacity: 0.8;
+      font-family: $RobotoRegular;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.43;
+      color: black;
+
+      &__bold {
+        font-weight: bold;
+        font-family: $RobotoBold;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+abandon-payment {
+
+  .cancel-web {
+    font-family: $RobotoRegular;
+    font-size: 1.2rem;
+    color: color($colors, steel);
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: flex-end;
+    flex: 1;
+
+    &__icon{
+      box-sizing: border-box;
+      width: 3.2rem;
+      height: 3.2rem;
+      background-color: color($colors, bdb-bg);
+      border-radius: 50%;
+      border-style: none;
+      position: relative;
+      margin-left: 1rem;
+
+      &:before,&:after{
+        content: '';
+        position: absolute;
+        width: 19px;
+        height: 2.45px;
+        background-color: #437bda;
+        border-radius: 20%;
+        top: 50%;
+        left: 50%;
+      }
+
+      &:after{
+        transform:  translate(-50%, -50%) rotate(45deg);
+      }
+      &:before{
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+ /* &:hover:before{
+          box-shadow: 0.2rem -0.2rem 0 lighten( color($colors,cornflower-blue), 10% ),
+              0.4rem -0.4rem 0 lighten( color($colors,cornflower-blue), 20% );
+          transform: translate(0%, -50%) rotate(225deg);
+
+  }*/
+  
+}

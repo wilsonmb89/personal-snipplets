@@ -1,0 +1,39 @@
+<pulse-flowthc>
+  <div slot="header">
+    <pulse-flowth>
+      <div slot="left-content">
+        <pulse-nav-button only-icon-device="sm,md" navBehavior>Atrás</pulse-nav-button>
+      </div>
+      <div slot="content">
+        Referencias Bancarias
+      </div>
+      <div slot="right-content">
+        <pulse-nav-button only-icon-device="sm,md" icon-position="right" icon="close" navBehavior [goToPage]="'DocsMenuPage'">Abandonar transacción
+        </pulse-nav-button>
+      </div>
+    </pulse-flowth>
+  </div>
+  <div slot="content">
+    <div class="pulse--grid">
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+          <form (submit)="generateReference()" class="references-generate-cotainer__form"
+                [formGroup]="formCertificateInfo"
+                autocomplete="off">
+            <pulse-card class="pulse-padding-xs-xl-a" elevation="4" hidden-p-sm-down>
+              <bdb-references-generate-card [item]="item"
+                                            [parentForm]="formCertificateInfo"></bdb-references-generate-card>
+            </pulse-card>
+            <bdb-references-generate-card [item]="item" [parentForm]="formCertificateInfo" hidden-p-md-up>
+            </bdb-references-generate-card>
+          </form>
+          <div class="references-generate-cotainer__button-mobile" hidden-p-md-up>
+            <button [disabled]="!formCertificateInfo.valid" (click)="generateReference()" bvButton
+                    type="button">Generar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</pulse-flowthc>

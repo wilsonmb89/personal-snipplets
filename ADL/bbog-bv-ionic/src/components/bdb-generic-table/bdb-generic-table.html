@@ -1,0 +1,108 @@
+<div class="bdb-generic-table-container">
+  <!-- header -->
+  <div class="bdb-generic-table-container__header__row" #tableContainer hidden-p-sm-down>
+    <div></div>
+    <ng-container *ngFor="let column of columns">
+      <div class="bdb-generic-table-container__header__col" add-attr-table [justify]="column.justify"
+        [platform]="column.platform">
+        <div class="bdb-generic-table-container__header__col__text">
+          {{ column.header }}
+        </div>
+      </div>
+    </ng-container>
+    <div></div>
+    <div class="bdb-generic-table-container__header__border">
+    </div>
+  </div>
+  <!-- header -->
+
+  <ng-container *ngFor="let data of _dataSource; let i = index">
+    <!-- group -->
+    <div class="bdb-generic-table-container__group__row" *ngIf="_validateDateMobile(i, data, _dataSource)"
+      hidden-p-md-up #tableContainer>
+      <div></div>
+      <ng-container *ngFor="let column of columns; let l = index">
+        <div class="bdb-generic-table-container__group__col" add-attr-table [justify]="column.justify"
+          [platform]="column.platform">
+          <div class="bdb-generic-table-container__group__col__text">
+            {{ l === 1 ? _validateDateMobile(i, data, _dataSource) : i === 0 ? column.header : '' }}
+          </div>
+        </div>
+      </ng-container>
+      <div></div>
+    </div>
+    <!-- group -->
+
+    <div class="bdb-generic-table-container__body" [ngClass]="data.expandable ? 'active' : ''"
+      (click)="toggleExpandable(data)">
+      <!-- body -->
+      <div class="bdb-generic-table-container__body__row" #tableContainer>
+        <div></div>
+        <ng-container *ngFor="let column of columns; let j = index">
+          <div class="bdb-generic-table-container__body__col" add-attr-table [justify]="column.justify"
+            [nowrap]="column.nowrap" [platform]="column.platform" [color]="!!column.color ? column.color(data) : null"
+            [type]="column.type">
+            <div class="bdb-generic-table-container__body__col__text" [innerHTML]="column.cell(data)">
+            </div>
+          </div>
+        </ng-container>
+        <div></div>
+      </div>
+      <!-- body -->
+
+      <!-- expandable -->
+      <div class="bdb-generic-table-container__body__more-info" *ngIf="data.expandable" [@expandRow]="data.expandable">
+        <div class="more-info-container">
+          <div style="grid-column: 1 / -1; grid-row: span 2;"></div>
+          <ng-container *ngFor="let row of expandable; let k = index">
+            <div add-attr-table [platform]="row.platform"></div>
+            <div class="more-info-container__col-title" add-attr-table [platform]="row.platform">
+              <div class="more-info-container__col-title__text">
+                {{ row.title }}
+              </div>
+            </div>
+            <div class="more-info-container__col-value" add-attr-table [platform]="row.platform">
+              <div class="more-info-container__col-value__text">
+                {{ row.cell(data) }}
+              </div>
+            </div>
+            <div add-attr-table [platform]="row.platform"></div>
+            <div add-attr-table [platform]="row.platform"></div>
+          </ng-container>
+          <div style="grid-column: 1 / -1; grid-row: span 2;"></div>
+        </div>
+      </div>
+      <!-- expandable -->
+    </div>
+  </ng-container>
+</div>
+
+
+<div class="bdb-generic-table-container__without-history" *ngIf="_dataSource.length === 0 && !error && !loader">
+  <div class="bdb-generic-table-container__without-history__img">
+    <img src="assets/imgs/mov-status/status-empty.svg" alt="status-empty">
+  </div>
+  <div class="bdb-generic-table-container__without-history__text">
+    No tienes movimientos en esta búsqueda
+  </div>
+</div>
+
+<div class="bdb-generic-table-container__without-history" *ngIf="error">
+  <div class="bdb-generic-table-container__without-history__img">
+    <img src="assets/imgs/mov-status/status-fail-desktop.svg" hidden-p-sm-down alt="status-fail">
+    <img src="assets/imgs/mov-status/status-fail-mobile.svg" hidden-p-md-up alt="status-fail">
+  </div>
+  <div class="bdb-generic-table-container__without-history__text">
+    <div class="bdb-generic-table-container__without-history__text__img">
+      <img src="assets/imgs/mov-status/warn.svg" alt="warn">
+    </div>
+    Hubo un error al cargar tus movimientos
+  </div>
+  <div class="bdb-generic-table-container__without-history__btn">
+    <button bvButton (click)="_reload()">Volver a intentar</button>
+  </div>
+</div>
+
+<div class="bdb-generic-table-container__loader" *ngIf="loader">
+  <bdb-loader color="steel"></bdb-loader>
+</div>

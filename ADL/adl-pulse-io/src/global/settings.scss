@@ -1,0 +1,15 @@
+@import "./spacing";
+@import "./colors";
+@import "./shadows";
+
+
+//Fuente base para toda la aplicacion
+$font-family-base: var(--pulse-font-primary, inherit) !default;
+
+// Ubicacin de las fuentes
+$font-path: "/dist/fonts" !default;
+
+@include main-space();
+
+@include pulse-elevation(var(--pulse-card-color));
+

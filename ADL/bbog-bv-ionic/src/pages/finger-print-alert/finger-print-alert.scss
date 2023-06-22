@@ -1,0 +1,36 @@
+page-finger-print-alert {
+    .finger{
+        width: 70%;
+        height: fit-content;
+        justify-content:center;
+        height: 100%;
+        &__image{
+            width: 7.1rem;
+            height: 7.1rem;
+        }
+        &__copy{
+            margin-top:3.8rem;
+            font-size: 1.6rem;
+            font-weight: 300;
+            line-height: 1.38;
+            font-family: $RobotoRegular;
+
+            color: color($colors, bdb-slate);
+            &__bold{
+                font-weight: bold;
+            }
+           
+        }
+        &__config-btn{
+            margin-top:9.9rem;
+            font-size: 1.5rem;
+            height: 4.8rem;
+            width: 18.4rem;
+        }
+        &__back{
+            margin-top:2.0rem;
+            background-color: transparent;
+            outline: none;
+        }
+    }
+}

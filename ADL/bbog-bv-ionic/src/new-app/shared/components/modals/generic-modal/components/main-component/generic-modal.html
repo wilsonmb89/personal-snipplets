@@ -1,0 +1,40 @@
+<pulse-modaltb *ngIf="!!genericModalData" class="generic-modal-main">
+  <div slot="header" class="generic-modal-main__header">
+    <div class="generic-modal-main__header__btn-close" id="btn-generic-modal-close-modal" *ngIf="!genericModalData.hideCloseButton" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content" class="generic-modal-main__content">
+    <pulse-modaltc>
+      <div slot="icon" *ngIf="!!genericModalData.icon.src" @boxAnimation>
+        <img [src]="genericModalData.icon.src" [alt]="genericModalData.icon.alt">
+      </div>
+      <div slot="title" *ngIf="!!genericModalData.modalTitle" @boxAnimation>
+        <span class="pulse-tp-hl3-comp-b">
+          {{ genericModalData.modalTitle }}
+        </span>
+      </div>
+      <div slot="body" class="generic-modal-main__content__body" *ngIf="!!genericModalData.modalInfoData">
+        <div class="generic-modal-main__content__body__info pulse-tp-bo3-comp-r"
+          [innerHTML]="genericModalData.modalInfoData" @boxAnimation>
+        </div>
+        <div>
+          <app-additional-info [additionalInfo]="genericModalData.additionalModalData" @boxAnimation></app-additional-info>
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer" class="generic-modal-main__footer">
+    <div class="generic-modal-main__footer__button-wrapper">
+      <pulse-button *ngFor="let actionBtn of genericModalData.actionButtons"
+                    [id]="actionBtn.id"
+                    [innerHTML]="actionBtn.buttonText"
+                    [block]="actionBtn.block"
+                    [fill]="actionBtn.fill ? actionBtn.fill : 'solid'"
+                    [colorgradient]="actionBtn.colorgradient ? actionBtn.colorgradient : false"
+                    (click)="executeAction(actionBtn.action)"
+                    @boxAnimation>
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

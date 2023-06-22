@@ -1,0 +1,37 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>
+
+      <div class="sub-title
+        pulse-tp-bo1-comp-r
+        pulse-color-primary-700">
+        Productos activos </div>
+
+      <ion-list class="inner">
+        <bdb-item-card (onItemClicked)="onItemClick(item)" *ngFor="let item of productCardsActive; let i = index"
+          id="card-{{i}}" [desc]="item.desc" [subDesc]="item.subDesc" [logoPath]="item.logoPath"
+          [showLogo]="item.showLogo" [title]="item.title">
+        </bdb-item-card>
+      </ion-list>
+
+      <div *ngIf="productCardsInActive.length > 0" class="sub-title
+        pulse-tp-bo1-comp-r
+        pulse-color-primary-700">
+        Productos inactivos o cancelados
+      </div>
+
+      <ion-list class="inner">
+        <bdb-item-card (onItemClicked)="onItemClick(item)" *ngFor="let item of productCardsInActive; let i = index"
+                       id="card2-{{i}}" [desc]="item.desc" [subDesc]="item.subDesc" [logoPath]="item.logoPath"
+                       [showLogo]="item.showLogo" [title]="item.title">
+        </bdb-item-card>
+      </ion-list>
+
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <bdb-loader color="bdb-blue" *ngIf="showProdsLoader"></bdb-loader>
+    </ion-col>
+  </ion-row>
+</ion-grid>

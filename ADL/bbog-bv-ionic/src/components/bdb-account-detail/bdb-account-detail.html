@@ -1,0 +1,41 @@
+<div class="account-detail">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <div class="account-detail__col-1">
+          <div class="account-detail__col-1__name">
+            <div class="account-detail__col-1__name__text">{{item.pName}}</div>
+            <div class="account-detail__col-1__name__logo">
+              <img *ngIf="item?.logo" [src]="item.logo">
+            </div>
+          </div>
+          <div class="account-detail__col-1__number">{{item.pNumber}}</div>
+        </div>
+      </ion-col>
+      <ion-col col-3>
+        <div class="account-detail__col-2">
+          <div class="account-detail__col-2__main">{{item.pBalance?.key}}</div>
+          <div class="account-detail__col-2__value">{{item.pBalance?.value}}</div>
+        </div>
+      </ion-col>
+      <ion-col col-6>
+        <ion-row>
+          <ion-col col-4 col-lg-3 *ngFor="let details of item.pDetails">
+            <div class="account-detail__col-3">
+              <div class="account-detail__col-3__title">{{details.key}}</div>
+              <div class="account-detail__col-3__des">{{details.value}}</div>
+            </div>
+          </ion-col>
+          <ion-col col-12 col-lg-12 *ngIf="showError">
+            <div class="account-detail__error-col">
+              <div class="account-detail__error-col__icon-container">
+                <img src="assets/imgs/alert.svg">
+              </div>
+              <div class="account-detail__error-col__msg">{{error}}</div>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

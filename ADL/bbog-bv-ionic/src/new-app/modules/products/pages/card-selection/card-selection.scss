@@ -1,0 +1,93 @@
+.bgColor {
+    background-color: white;
+}
+.container_card_selection {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 120rem;
+    @media (max-width: 40rem) {
+        max-width: 100%;
+        padding: 0;
+    }
+    &__section {
+        width: 80%;
+        @media (max-width: 40rem) {
+            width: 100%;
+        }
+    }
+    &__title {
+        color: var(--pulse-color-primary-700);
+        margin: 0rem 0rem 0.8rem 1.2rem;
+    }
+    &__subtitle {
+        color: var(--pulse-color-carbon-400);
+        margin: 0rem 0rem 2rem 1.2rem;
+    }
+}
+.cards {
+    width: 100%;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    @media (max-width: 40rem) {
+        box-shadow: none;
+    }
+    &__div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+.divider {
+    position: relative;
+    margin: 1.2rem 0rem 1.2rem 6rem;
+    background-color: var(--pulse-color-carbon-light-900);
+    height: 0.1rem;
+    width: 95%;
+}
+.cardSelection {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: flex-start;
+    &__icon {
+        transform: rotate(-90deg);
+        margin-top: 0.6rem;
+    }
+    &__content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    &__logo {
+        height: 4rem;
+        width: 4rem;
+        border: solid var(--pulse-color-carbon-light-700) 0.1rem;
+        border-radius: 100%;
+        margin: 0rem 2rem 0rem 0rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.content__logo {
+    height: 4rem;
+    width: 4rem;
+    border: solid var(--pulse-color-carbon-light-700) 0.1rem;
+    border-radius: 100%;
+    margin: 0rem 2rem 0rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo__src {
+    height: 3rem;
+    width: 3rem;
+}
+.labels__title {
+    color: var(--pulse-color-carbon-900);
+    margin-bottom: 0.4rem;
+}
+.labels__number {
+    color: var(--pulse-color-carbon-400);
+}

@@ -1,0 +1,18 @@
+.change-limits-container {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.2rem;
+  }
+
+  &__enable-data-btn {
+    position: fixed;
+    bottom: 1.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.limit-tree-container {
+  margin-bottom: 10rem;
+}

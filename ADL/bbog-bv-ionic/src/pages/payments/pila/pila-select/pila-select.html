@@ -1,0 +1,53 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options  (onRightClicked)="onAbandonClicked()"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <form [formGroup]="formPila" (ngSubmit)="submit()">
+        <ion-grid class="pila-sel">
+          <ion-col col-12 >
+            <ion-row class="pila-sel__title">
+              <p>Datos de la planilla asistida (PILA)</p>
+            </ion-row>
+            <ion-row class="pila-sel__type">
+
+              <label class="pila-sel__type__label">Tipo de pago</label>
+
+              <select bdb-select class="pila-sel__type__field" id="type" formControlName="type">
+                <option [ngValue]="'d'" disabled selected>Selecciona el pago</option>
+                <option *ngFor="let item of listProviders?.taxes" [ngValue]="item">{{item.name}}</option>
+              </select>
+
+            </ion-row>
+            <ion-row class="pila-sel__ref">
+              <label class="pila-sel__ref__label">Número de referencia</label>
+              <input bdb-form-input class="pila-sel__ref__field" type="text"
+                placeholder="Escribe el número de referencia" id="ref" formControlName="ref">
+
+            </ion-row>
+            <ion-row class="pila-sel__action">
+              <button id="btn-submit-pila" type="submit" bvButton color="mango-gradient"
+                [disabled]="!formPila.valid || formPila.controls['type'].value ==='d'" hidden-p-sm-down>Continuar</button>
+            </ion-row>
+          </ion-col>
+        </ion-grid>
+      </form>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="btn-submit-pila-mob" type="button" (click)="submit()" class="mob-submit" full color="mango" ion-button
+      [disabled]="!formPila.valid">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

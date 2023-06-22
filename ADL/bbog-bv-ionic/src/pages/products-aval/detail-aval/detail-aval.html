@@ -1,0 +1,33 @@
+<ion-header hidden-md-up>
+  <ion-navbar class="header" hideBackButton="true">
+    <header-img [text]="'Atrás'" [imgPath]="company?.iconLarge" (backPressed)="back()"></header-img>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="default-background">
+  <ion-grid id="detail-aval-grid" no-padding>
+    <ion-row class="main-row">
+      <ion-col col-12 col-md-5 col-xl-4 class="left-container">
+        <ion-row>
+          <ion-col offset-1 col-10>
+            <header-img hidden-sm-down [text]="'Atrás'" [imgPath]="company?.iconLarge" (backPressed)="back()"></header-img>
+            <div class="line" hidden-sm-down></div>
+            <div class="detail-card-wrapper">
+              <bdb-detail-product-card [item]="item"></bdb-detail-product-card>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col hidden-sm-down no-padding col-12 col-md-7 col-xl-8 class="right-container">
+        <header-sesion></header-sesion>
+        <div class="right-container__middle">
+          <img src="assets/imgs/avalDevice.png">
+          <p class="right-container__middle__text">
+            Para consultar los movimientos y realizar transacciones con tus productos ingresa a los canales del
+            <span class="right-container__middle__text--force">{{company?.name}}</span>.
+          </p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

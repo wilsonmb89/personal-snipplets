@@ -1,0 +1,287 @@
+bdb-pocket-card-detail {
+  $min_font: 12;
+  $max_font: 20;
+  
+
+  .pocket-card-detail-wrapper {
+    padding: 2rem 0 4rem 0;
+    position: relative;
+
+    background-image: url("../assets/imgs/pocket-card-detail-imgs/pocket-card-detail-deco.svg");
+    background-position-x: right;
+    background-position-y: top;
+    background-repeat: no-repeat;
+
+    &__gauge {
+      display: flex;
+      justify-content: center;
+
+      @media (min-width: map-get($screen-bkps, "lg")) {
+        justify-content: flex-end;
+      }
+
+      bdb-gauge {
+        width: 18rem;
+
+        @media (min-width: map-get($screen-bkps, "lg")) {
+          width: 20rem;
+        }
+      }
+    }
+
+    &__detail {
+      align-items: center;
+      width: 100%;
+
+      &__values{
+        display: flex;
+        flex-direction: row;
+
+        @media (min-width: map-get($screen-bkps, "lg")) {
+          flex-direction: column;
+        }
+      }
+
+      &__balance,
+      &__goal {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column-reverse;
+
+        @media (min-width: map-get($screen-bkps, "lg")) {
+            text-align: left;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+      }
+
+      &__balance {
+        p {
+          font-size: 1.2rem;
+          margin: 0;
+
+          @media (min-width: map-get($screen-bkps, "lg")) {
+            padding-top: 2rem;
+          }
+        }
+
+        h1 {
+          font-size: 1.5rem;
+          line-height: 1.5;
+          font-weight: 500;
+          margin-top: 1.6rem;
+
+          @media (min-width: 992px) {
+            font-size: 2.4rem;
+            line-height: 1.33;
+            padding-bottom: 1.6rem;
+          }
+        }
+
+        
+      }
+
+      &__goal {
+        small {
+          font-size: 1.2rem;
+        }
+
+        h6 {
+          font-size: 1.5rem;
+          line-height: 1.5;
+          font-weight: 500;
+        }
+      }
+
+      &--cols {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        @media (min-width: map-get($screen-bkps, "lg")) {
+          flex-direction: row;
+        }
+      }
+      
+    }
+
+    &__less-detail {
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+
+      &__border-right {
+        position: relative;
+
+        &:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 10%;
+          height: 80%;
+          border-right: 0.1rem solid rgba(color($colors, white), 0.5);
+        }
+      }
+
+      &__values {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      &__balance, &__goal {
+        justify-content: center;
+
+        p, small {
+          text-align: center;
+          font-size: 12px;
+          display: block;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0rem;
+          margin-inline-end: 0rem;
+
+          @media (min-width: map-get($screen-bkps, "lg")) {
+            font-size: 1.6rem;
+          }
+        }
+
+        h1 {
+          text-align: center;
+          font-size: 1.5rem;
+          @media (min-width: map-get($screen-bkps, "lg")) {
+            font-size: 2.2rem;
+          }
+        }
+      }
+
+      &--cols {
+        animation-duration: 0.3s;
+        animation-name: slideup2;
+        height: 0%;
+      }
+
+    }
+
+    &__buttons {
+      width: 100%;
+      position: absolute;
+      transform: translateY(calc(50% - 3.2rem));
+      display: flex;
+      justify-content: center;
+      opacity: 1;
+      animation-duration: 0.3s;
+      animation-name: slidedown;
+      --pulse-font-family-principal: Roboto-Medium;
+
+      &--translate {
+        animation-duration: 0.4s;
+        animation-name: slideup;
+        opacity: 0;
+        transform: translateY(-3rem);
+      }
+      
+      &__button {
+        display: inline-block;
+        cursor: pointer;
+        margin: 0 1.6rem;
+      }
+    }
+
+    &__error {
+      &__msg {
+        text-align: center;
+
+        &__txt {
+          display: inline-flex;
+          align-items: center;
+          font-family: $RobotoRegular;
+          font-size: 1.6rem;
+          line-height: 1.5;
+          color: color($colors, white);
+        }
+
+        &__txt > span {
+          margin-left: 0.8rem;
+        }
+      }
+
+      &__btn {
+        display: flex;
+
+        &__btn {
+          width: 12.5rem;
+          margin: 0 auto;
+          margin-top: 16px;
+        }
+
+        &__btn.show-loader {
+          background-color: color($colors, bdb-blue);
+          opacity: 0.4;
+          padding: 0 0 0 2rem;
+          pointer-events: none;
+        }
+
+        &__btn:hover {
+          background-color: color($colors, white) !important;
+        }
+
+        &__btn:hover .btn-text {
+          color: color($colors, bdb-blue);
+        }
+      }
+    }
+
+    &__background-img {
+      position: absolute;
+      max-height: 100%;
+    }
+  }
+}
+
+@keyframes slideup {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+
+  70% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+}
+
+@keyframes slideup2 {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+@keyframes slidedown {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(calc(50% - 1.2rem));
+  }
+}

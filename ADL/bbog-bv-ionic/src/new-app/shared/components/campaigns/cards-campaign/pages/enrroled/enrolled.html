@@ -1,0 +1,140 @@
+<pulse-flowthc>
+  <div slot="header">
+    <pulse-flowth showLeft=true showRight=true>
+      <div slot="left-content">
+      </div>
+      <div slot="content">
+        <img class="enrolled-page__header-logos--logo-m" src="assets/imgs/shared/flow-header/bbog-logo-m.svg" alt="header-logos">
+        <img class="enrolled-page__header-logos--logo-s" src="assets/imgs/shared/flow-header/bbog-logo-s.svg" alt="header-logos">
+      </div>
+      <div slot="right-content">
+      </div>
+    </pulse-flowth>
+  </div>
+  <div slot="content" class="test">
+    <div class="pulse--grid">
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-4 pulse-offset-lg-4">
+
+          <div class="enrolled-page__body-1">
+            <div class="space--24"></div>
+            <div class="enrolled-page__body-1__image">
+              <img [src]="infoPage.image">
+            </div>
+            <div class="space--24"></div>
+            <div class="enrolled-page__body-1__title pulse-tp-hl3-comp-b">
+              ¡Tu tarjeta ha sido creada!
+            </div>
+
+            <div class="space--8"></div>
+
+            <div class="enrolled-page__body-1__info pulse-tp-bo3-comp-r">
+              Ten en cuenta lo siguiente:
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space--48"></div>
+
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-6 pulse-offset-md-1 pulse-col-lg-4 pulse-offset-lg-0">
+
+          <div class="enrolled-page__body-2">
+
+            <pulse-avatar size="s"
+                          icon="send-email-fly"
+                          logo="master"
+                          avatartype="icon"
+                          color="info"
+                          colorvariant="100"
+                          iconcolor="primary"
+                          iconcolorvariant="400"
+            ></pulse-avatar>
+
+            <div class="enrolled-page__body-2__text">
+              <div class="enrolled-page__body-2__text__title pulse-tp-hl5-comp-b">
+                {{infoPage.title1}}
+              </div>
+              <div class="enrolled-page__body-2__text__content pulse-tp-hl5-comp-r">
+                {{infoPage.text1}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-6 pulse-offset-md-1 pulse-col-lg-4 pulse-offset-lg-0">
+          <div class="enrolled-page__body-2">
+
+            <pulse-avatar size="s"
+                          [icon]="infoPage.icon2"
+                          logo="master"
+                          avatartype="icon"
+                          color="info"
+                          colorvariant="100"
+                          iconcolor="primary"
+                          iconcolorvariant="400"
+            ></pulse-avatar>
+
+            <div class="enrolled-page__body-2__text">
+              <div class="enrolled-page__body-2__text__title pulse-tp-hl5-comp-b">
+               {{infoPage.title2}}
+              </div>
+              <div class="enrolled-page__body-2__text__content pulse-tp-hl5-comp-r">
+                {{infoPage.text2}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-6 pulse-offset-md-1 pulse-col-lg-4 pulse-offset-lg-0">
+          <div class="enrolled-page__body-2">
+
+            <pulse-avatar size="s"
+                          icon="accounting-coins"
+                          logo="master"
+                          avatartype="icon"
+                          color="info"
+                          colorvariant="100"
+                          iconcolor="primary"
+                          iconcolorvariant="400"
+            ></pulse-avatar>
+
+            <div class="enrolled-page__body-2__text">
+              <div class="enrolled-page__body-2__text__title pulse-tp-hl5-comp-b">
+                {{infoPage.title3}}
+              </div>
+              <div class="enrolled-page__body-2__text__content pulse-tp-hl5-comp-r">
+                {{infoPage.text3}}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="space--48"></div>
+
+      <div class="pulse-row enrolled-page__button-container" >
+        <pulse-button
+          (click) = "finishButton()"
+          color="primary"
+          colorvariant="700"
+          disabled="false"
+          colorgradient="true"
+          pulseButtonType="primary"
+          iconColor="primary"
+          iconColorVariant="700"
+        > Aceptar
+        </pulse-button>
+
+      </div>
+
+    </div>
+  </div>
+</pulse-flowthc>

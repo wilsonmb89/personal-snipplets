@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+.voucher {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--sherpa-midnight-50);
+
+  &__header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 12;
+  }
+
+  &__container {
+    display: flex;
+    height: calc(100% - 8rem);
+    width: 100%;
+    justify-content: center;
+    padding: var(--sherpa-spacing-8) var(--sherpa-spacing-3);
+    padding-top: 9.2rem;
+    box-sizing: border-box;
+  }
+
+  &__voucher {
+    flex-grow: 1;
+  }
+
+  @media screen and (min-width: $break-tablet) {
+    &__container {
+      padding-top: var(--sherpa-spacing-12);
+    }
+    &__voucher {
+      max-width: 46.2rem;
+    }
+  }
+
+  @media screen and (min-width: $break-desktop) {
+    &__voucher {
+      max-width: 97rem;
+    }
+  }
+}

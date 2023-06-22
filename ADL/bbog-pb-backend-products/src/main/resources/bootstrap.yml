@@ -1,0 +1,5 @@
+aws:
+  paramstore:
+    prefix: /${BDB_APPLICATION_CHANNEL:yb-pb}-${yb_profile_env}
+    name: products
+    enabled: ${param_store_enable:false}

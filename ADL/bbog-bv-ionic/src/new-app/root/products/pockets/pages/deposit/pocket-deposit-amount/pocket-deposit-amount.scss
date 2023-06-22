@@ -1,0 +1,13 @@
+page-pocket-deposit-amount {
+
+    .pocket-deposit-amount-container {
+      
+        &__input {
+            margin: 32px 0px 48px;
+            
+            @media only screen and (max-width: 480px) { 
+                margin: 16px 0 0;
+            }
+        }
+    }
+}

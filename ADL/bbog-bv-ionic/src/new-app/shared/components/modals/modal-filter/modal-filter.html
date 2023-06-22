@@ -1,0 +1,38 @@
+<pulse-modaltb class="modal-filter-container" size="xl">
+  <div slot="header">
+    <div class="modal-filter-container__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="title">
+        Buscar movimientos
+      </div>
+      <div slot="body" class="modal-filter-container__body">
+          <div class="modal-filter-container__body__desc pulse-tp-hl4-comp-m">
+            Búsqueda por períodos de 6 meses
+          </div>
+
+          <div class="modal-filter-container__suggest">
+            <div class="modal-filter-container__suggest__text pulse-tp-hl6-comp-m">Sugerencias rápidas</div>
+            <pulse-dropdown class="modal-filter-container__suggest__list" #dropdown (pulseChange)="changeDropDown($event.target.value)"
+                  [ellipsis]="false" [value]="suggestionSelected">
+              <pulse-option *ngFor="let type of listSuggestion" [value]="type.value">{{type.name}}</pulse-option>
+            </pulse-dropdown>
+
+          </div>
+
+            <pulse-calendar hidden-p-sm-down range="true" class="modal-filter-container__calendar" (calendarChange)="selectRangeDate($event.detail)" [value]="dateCalendarSelected"  [maxDate]="maxDate" [minDate]="minDate"></pulse-calendar>
+            <pulse-mobile-calendar-group hidden-p-md-up range="true" height="27rem" (confirmSelection)="selectRangeDate($event.detail)" [value]="dateCalendarSelected" [maxdate]="maxDate" [mindate]="minDate"></pulse-mobile-calendar-group>
+
+
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="modal-filter-container__buttons">
+      <pulse-button colorgradient="true" [disabled]="validateDateSelectec()" (click)="searchDate()">Buscar</pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

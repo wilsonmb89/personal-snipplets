@@ -1,0 +1,51 @@
+{
+  "name": "@pulse.io/components",
+  "version": "0.67.1",
+  "description": "Pulse.IO Design System Components",
+  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "unpkg": "dist/ionic.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avaldigitallabs/adl-pulse-io"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "npm run build:stencil && npm run build:react",
+    "build:stencil": "stencil build --docs",
+    "build:react": "tsc --project tsconfig.react.json",
+    "start": "stencil build --dev --watch --serve --host 0.0.0.0",
+    "test": "stencil test --spec --e2e",
+    "test-cover": "stencil test --spec --e2e --collect-coverage",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "release": "standard-version",
+    "deploy": "node scripts/deploy.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@stencil/core": "1.8.3",
+    "@stencil/react-output-target": "0.0.9",
+    "@stencil/sass": "^1.0.1",
+    "@types/jest": "24.0.20",
+    "@types/node": "^16.0.0",
+    "@types/puppeteer": "1.20.2",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
+    "canvas": "^2.6.1",
+    "execa": "^2.0.1",
+    "jest": "^25.0.0",
+    "jest-cli": "^25.0.0",
+    "listr": "^0.14.0",
+    "puppeteer": "^2.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "standard-version": "^6.0.1",
+    "turbocolor": "^2.6.1",
+    "typescript": "^4.3.5"
+  },
+  "license": "MIT"
+}

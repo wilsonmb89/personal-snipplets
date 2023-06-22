@@ -1,0 +1,63 @@
+<ion-content no-padding>
+  <pulse-flowtm>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="leftHdrOption"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="pocket-goal-container">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="pulse-grid">
+            <div class="row">
+              <div class="col-xs-12 col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6" no-padding>
+                <div class="pocket-goal-container__title flowtt-title">
+                  Tu Alcancía, <br />
+                  <span class="pocket-goal-container__title__bold">
+                    Tu ahorro
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-xs-12" no-padding>
+                <div class="pocket-goal-container__description flowtt-subtitle" hidden-p-sm-down>
+                  Selecciona una <span class="pocket-goal-container__description__bold">categoría</span> y buscaremos las mejores alianzas y descuentos cuando llenes tu alcancía.
+                </div>
+                <div class="pocket-goal-container__description flowtt-subtitle" hidden-p-md-up>
+                  Buscaremos las mejores alianzas y descuentos cuando llenes tu alcancía.
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-xs-12" no-padding>
+                <div class="pocket-goal-container__select">
+                  <select bdb-select formControlName="goals" id="goals">
+                    <option disabled value="">Seleccionar</option>
+                    <option *ngFor="let goal of goals; let i = index" [value]="goal.id">
+                      {{goal.name}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-xs-12" no-padding>
+                <div class="pocket-goal-container__button" hidden-p-sm-down>
+                  <pulse-button (click)="submit()" [disabled]="!form.valid">Continuar</pulse-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </pulse-flowtm> 
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button ion-button full color="blue-gradient" [disabled]="!form.valid" (click)="submit()">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

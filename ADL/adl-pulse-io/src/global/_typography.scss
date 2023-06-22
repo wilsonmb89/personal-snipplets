@@ -1,0 +1,140 @@
+html {
+    font-size: 10px;
+    font-family: var(--pulse-tp-ff-comp);
+}
+
+$fonts-width-default: (
+    l: 300, //light
+    r: 400, //regular
+    m: 500, //medium
+    b: 700 //bold
+);
+
+$fonts: (
+    comp: ( ),
+    brand: ( )
+);
+
+$pulse-typos: (
+    her: (
+        fs: 4.8rem,
+        lh: 7.2rem,
+        ls: -1.8px
+    ),
+    hl1: (
+        fs: 3.2rem,
+        lh: 4.8rem,
+        ls: 0.25px
+    ),
+    hl2: (
+        fs: 2.4rem,
+        lh: 3.6rem
+    ),
+    hl3: (
+        fs: 2rem,
+        lh: 3.2rem,
+        ls: 0.15px
+    ),
+    hl4: (
+        fs: 1.6rem,
+        lh: 2.4rem,
+        ls: 0.15px
+    ),
+    hl5: (
+        fs: 1.4rem,
+        lh: 2rem,
+        ls: 0.1px
+    ),
+    hl6: (
+        fs: 1.2rem,
+        lh: 1.8rem,
+        ls: 0.1px
+    ),
+    bo1: (
+        fs: 1.8rem,
+        lh: 2.8rem
+    ),
+    bo2: (
+        fs: 1.6rem,
+        lh: 2.4rem
+    ),
+    bo3: (
+        fs: 1.4rem,
+        lh: 2rem
+    ),
+    bo4: (
+        fs: 1.2rem,
+        lh: 1.6rem
+    ),
+    cap: (
+        fs: 1rem,
+        lh: 1.5rem
+    ),
+    btn: (
+        fs: 1.4rem,
+        lh: 2rem,
+        ls: 0.25px
+    ),
+    ov: (
+        fs: 1rem,
+        lh: 1.5rem,
+        ls: 0.2px,
+        tt: uppercase
+    )
+);
+
+@function size-default($family, $size ) {
+    @if (map-get($family, $size)) {
+        @return map-get($family, $size);
+    }
+    @else {
+        @return map-get($fonts-width-default, $size);
+    }
+}
+
+@mixin generate-fonts-vars() {
+
+    @each $font-name, $font-value in $fonts {
+        @each $size-name, $size-value in $fonts-width-default {
+            --pulse-font-#{$font-name}-#{$size-name}: #{size-default($font-value, $size-name)};
+        }        
+    }
+}
+
+@mixin generate-typography-vars() {
+  
+    @each $typo-name, $typo-value in $pulse-typos {
+        @each $style-name, $style-value in $typo-value {
+            --pulse-tp-#{$style-name}-#{$typo-name}: #{$style-value};
+        }
+    }
+}
+
+:root {
+    @include generate-fonts-vars();
+    @include generate-typography-vars();
+}
+
+@each $typo-name, $typo-value in $pulse-typos {
+  
+    @each $font-name, $font-value in $fonts {
+        @each $fonts-width-name, $fonts-width-value in $fonts-width-default {
+            .pulse-tp-#{$typo-name}-#{$font-name}-#{$fonts-width-name} {
+                font-family: var(--pulse-tp-ff-#{$font-name});
+                font-weight: var(--pulse-font-#{$font-name}-#{$fonts-width-name});
+            }
+        }   
+    }
+    
+    [class*="pulse-tp-#{$typo-name}-"] {
+        font-size: var(--pulse-tp-fs-#{$typo-name});
+        line-height: var(--pulse-tp-lh-#{$typo-name});
+
+        @if (map-get(map-get($pulse-typos, $typo-name), "ls")) {
+            letter-spacing: var(--pulse-tp-ls-#{$typo-name});
+        }
+        @if (map-get(map-get($pulse-typos, $typo-name), "tt")) {
+            text-transform: var(--pulse-tp-tt-#{$typo-name});
+        }
+    }  
+}

@@ -1,0 +1,67 @@
+<pulse-flowthc>
+
+  <div slot="header">
+    <pulse-flowth>
+      <div slot="left-content">
+        <pulse-nav-button only-icon-device="sm,md" navBehavior>Atrás</pulse-nav-button>
+      </div>
+      <div slot="content">
+        Extractos
+      </div>
+      <div slot="right-content">
+        <pulse-nav-button only-icon-device="sm,md" icon-position="right"  icon="close" navBehavior [goToPage]="'DocsMenuPage'">Abandonar transacción
+        </pulse-nav-button>
+      </div>
+    </pulse-flowth>
+  </div>
+
+  <div slot="content">
+    <div class="pulse--grid">
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+          <pulse-card [elevation]="elevation" class="pulse-padding-xs-xl-a content" hidden-p-sm-down>
+            <bdb-item-card-simplified [item]="headItem">
+            </bdb-item-card-simplified>
+            <div class="container">
+              <div class="container__line"></div>
+              <p class="container__title"><span class="container__title--force">Selecciona el periodo</span> a
+                consultar:</p>
+              <div class="container__date " *ngFor="let item of dateList">
+                <div
+                  class="container__date__year pulse-padding-m-xs-v pulse-padding-l-xs-h pulse-margin-l-xs-v ">
+                  {{item.year}}
+                </div>
+                <pulse-select-card-group groupstyle="buttons">
+                  <pulse-select-card [selected]="period.selected" color='primary' (click)="onItemClick(period)"
+                                     *ngFor="let period of item.period">
+                    <div>{{period.name | period}}</div>
+                  </pulse-select-card>
+                </pulse-select-card-group>
+              </div>
+            </div>
+          </pulse-card>
+
+          <div hidden-p-md-up>
+            <div class="mobile-head">
+              <bdb-item-card-simplified [item]="headItem">
+              </bdb-item-card-simplified>
+            </div>
+            <p class="container__title"><span class="container__title--force">Selecciona el periodo</span> a
+              consultar:</p>
+            <div class="container__date" *ngFor="let item of dateList">
+              <div class="container__date__year pulse-padding-m-xs-v pulse-padding-l-xs-h pulse-margin-m-xs-v">
+                {{item.year}}
+              </div>
+              <pulse-select-card-group groupstyle="buttons">
+                <pulse-select-card [selected]="period.selected" color='primary' (click)="onItemClick(period)"
+                                   *ngFor="let period of item.period">
+                  <div>{{period.name | period: 'mob' }}</div>
+                </pulse-select-card>
+              </pulse-select-card-group>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</pulse-flowthc>

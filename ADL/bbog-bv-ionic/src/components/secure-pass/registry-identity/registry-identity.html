@@ -1,0 +1,43 @@
+<form [formGroup]="formRegistry" (ngSubmit)="submit()" autocomplete="off">
+  <ion-grid class="grid-spaces">
+    <ion-row>
+      <ion-col  class="titCol bdb-tc">
+        <p class="bdb-tc title">
+          {{titleNormal}}
+          <span class="title-principal">
+            {{titleBold}}
+          </span>
+        </p>
+        <p class="subtitle bdb-tc">
+          {{subtitle}}
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col>
+        <select formControlName="documentType" id="documentType" bdb-select>
+          <option *ngFor="let item of listItem" [value]="item.value">{{item.name}}</option>
+        </select>
+      </ion-col>
+    </ion-row>
+    <ion-row no-padding>
+      <ion-col>
+        <input text-wrap class="add-input" id="documentNumber" placeholder="Número de identificación" type="tel" pattern="[0-9]*"
+          formControlName="documentNumber" required maxlength="10" dbdNumberFormatter autocomplete="off">
+      </ion-col>
+    </ion-row>
+    <ion-row class="check" no-padding align-items-center align-self-center>
+      <bdb-radio>
+          <input bdbRadioRef type="checkbox" unchecked name="terms" id="terms" formControlName="terms">
+        </bdb-radio>
+      <label class="aceptar">Aceptar&nbsp;</label>
+      <label class="terminos" (click)="terminos()">Términos y condiciones</label>
+    </ion-row>
+    <ion-row style="text-align: center;" no-padding>
+      <ion-col>
+        <button bvButton class="bdb-btn btn-secure-login gris" id="btn-cancel" (click)="cancel()" type="button">Cancelar</button>
+        <button bvButton class="bdb-btn btn-secure-login" color="mango-gradient" id="btn-submit" type="submit" [disabled]="!formRegistry.valid">Continuar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

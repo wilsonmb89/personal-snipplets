@@ -1,0 +1,26 @@
+.tax-select-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+
+  &__header {
+    text-align: center;
+    color: var(--pulse-color-carbon-700);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.6rem;
+  }
+
+  @media only screen and (min-width: 540px) {
+    &__body {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

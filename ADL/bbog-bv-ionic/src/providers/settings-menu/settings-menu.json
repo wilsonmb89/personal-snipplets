@@ -1,0 +1,45 @@
+[
+    {
+        "key": "limits",
+        "template": "limits%select%acct",
+        "value": "Topes",
+        "img": "",
+        "enabled": true,
+        "microfrontend": true
+    },
+    {
+        "key": "custManagement",
+        "template": "CustomerBasicInfoPage",
+        "value": "Actualización de datos",
+        "img": "",
+        "enabled": true
+    },
+    {
+        "key": "activationCards",
+        "template": "CardSelectionPage",
+        "value": "Activación de Tarjetas",
+        "img": "",
+        "enabled": true
+    },
+    {
+        "key": "cardSecurity",
+        "template": "ActivationBandPage",
+        "value": "Compras y retiros en el exterior",
+        "img": "",
+        "enabled": true
+    },
+    {
+        "key": "debitCardLock",
+        "template": "CardBlockSelectionPage",
+        "value": "Congelar tarjetas",
+        "img": "",
+        "enabled": true
+    },
+    {
+        "key": "changePass",
+        "template": "ChangeKeysPage",
+        "value": "Administrar claves",
+        "img": "",
+        "enabled": true
+    }
+]

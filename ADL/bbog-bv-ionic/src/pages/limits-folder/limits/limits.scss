@@ -1,0 +1,35 @@
+page-limits {
+
+    ion-footer {
+        .bv-button {
+            border-radius: 0px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        item-list-header {
+            .item__sub__subtitle {
+                background-color: khaki;
+                font-size: 14px;
+                font-weight: bold;
+                line-height: 1.14;
+                color: #0041a8;
+            }
+        }
+
+        .scroll-content{
+            overflow-y: scroll!important;
+        }
+    }
+
+    .limits-button-desktop {
+        position: fixed;
+        bottom: 1.4rem;
+        z-index: 999999999;
+    }
+
+    .limits-spacing-bottom {
+        width: 100%;
+        height: 6.8rem;
+    }
+}

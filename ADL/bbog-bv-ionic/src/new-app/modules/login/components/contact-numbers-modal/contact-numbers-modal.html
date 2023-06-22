@@ -1,0 +1,47 @@
+<pulse-modaltb class="contact-numbers-main">
+  <div slot="header" class="contact-numbers-main__header">
+    <div class="contact-numbers-main__header__btn-close" id="btn-otp-close-modal" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content" class="contact-numbers-main__content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/login/icon-phone.svg" alt="contact">
+      </div>
+      <div slot="title">
+        <span class="pulse-tp-hl3-comp-b">Líneas de atención</span>
+      </div>
+      <div slot="body" class="contact-numbers-main__content__body">
+        <div class="contact-numbers-main__content__body__info">
+          <div class="pulse-tp-bo2-comp-b data">
+            Bogotá:<br>
+            Barranquilla:<br>
+            Bucaramanga:<br>
+            Cali:<br>
+            Medellín:<br>
+            Nivel Nacional:
+          </div>
+          <div class="pulse-tp-bo2-comp-r data">
+            601 382 0000<br>
+            605 350 4300<br>
+            607 652 5500<br>
+            602 898 0077<br>
+            604 576 4330<br>
+            01 8000 518877
+          </div>
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer" class="contact-numbers-main__footer">
+    <div class="contact-numbers-main__footer__button-wrapper">
+      <pulse-button id="btn-opt-main-action"
+                    [block]="true" 
+                    [colorgradient]="true"
+                    (click)="closeModal()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

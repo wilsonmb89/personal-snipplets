@@ -1,0 +1,8 @@
+<div *ngIf="isHelpCenterActive$ | async" (click)="help()" class="content-cad">
+  <span class="content-cad__span">Ayuda</span>
+  <div class="icon-cad"></div>
+</div>
+<div (click)="logout()" class="content-sesion">
+  <span>Salida segura</span>
+  <div class="icon-logout"></div>
+</div>

@@ -1,0 +1,52 @@
+bdb-card-notification-new {
+
+    .card-notification-content-new {
+        cursor: pointer;
+        margin: 1.5rem 0;
+        z-index: 1;
+        line-height: 2rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &__icon-notification {
+            display: inline-block;
+            width: 20%;
+            height: auto;
+        }
+
+        &__imgBox {
+            display: flex;
+            position: relative;
+            align-items: flex-start;
+            padding-top: 1.6rem;
+        }
+
+        &__first-text {
+          min-height: 5.5rem;
+        }
+
+        &__text-notification {
+            display: inline-block;
+            width: 75%;
+            margin-left: auto;
+            &__second-text {
+                text-align: right;
+                img {
+                    top: 0.2rem;
+                    left: 0.6rem;
+                    position: relative;
+                }
+            }
+        }
+
+        &__btn-close {
+            width: 2.4rem;
+            height: 2.4rem;
+            position: absolute;
+            z-index: 2;
+            right: 1.6rem;
+            top: 1.6rem;
+        }
+
+    }
+}

@@ -1,0 +1,101 @@
+@import "pulse-radio.vars.scss";
+:host {
+  height: 2.4rem;
+  width: 2.4rem;
+  outline: none;
+}
+.radio {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: $radio-font-family;
+  font-size: $radio-font-size;
+  color: #{get-pulse-color('carbon', 700)};
+  &__input {
+    margin: 0px;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background-color: #{get-pulse-color('white', 700)};
+    height: 2.4rem;
+    width: 2.4rem;
+    border: 1px solid #{get-pulse-color('carbon', 100)};
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    &:hover {
+      background-color: #{get-pulse-color('carbon-light', 400)};
+    }
+    &:active {
+      background-color: #{get-pulse-color('info', 100)};
+    }
+    &:focus {
+      box-shadow: 0 0 2px 4px #{get-pulse-color('info', 100)};
+    }
+    &:focus-within {
+      box-shadow: 0 0 2px 4px #{get-pulse-color('info', 100)};
+    }
+  }
+  
+
+  &__input:checked {
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 100%;
+      width: 100%;
+      content: "";
+      background: var(--background);
+      border-radius: 50%;
+    }
+    &:hover {
+      &::before {
+        background-color: var(--background);
+      }
+    }
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 40%;
+      width: 40%;
+      transform: translate(-50%, -50%);
+      content: "";
+      background: var(--background);
+      border-radius: 50%;
+    }
+  }
+  &__label {
+    margin-left: 0.8rem;
+    vertical-align: super;
+  }
+}
+
+:host(.pulse-color) .radio__input {
+  &::before {
+    --background: var(--pulse-color-bg);
+  }
+  &::after{
+    --background: #{get-pulse-color('white', 700)};
+  }
+}
+:host(.pulse-color) .radio__input:hover {
+  &::before {
+    --background: var(--pulse-color-900);
+  }
+}
+:host(.radio-disabled) .radio__input {
+  background: #{get-pulse-color('carbon-light', 900)};
+  cursor: not-allowed;
+}
+:host(.radio-disabled-checked) .radio__input:checked {
+  cursor: not-allowed;
+  &::before{
+    --background: #{get-pulse-color('carbon-light', 400)};
+  }
+  &::after{
+    --background: #{get-pulse-color('carbon-light', 900)};
+  }
+}

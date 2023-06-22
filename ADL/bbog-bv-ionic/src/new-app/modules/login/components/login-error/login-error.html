@@ -1,0 +1,27 @@
+<pulse-modaltb class="login-error">
+  <div slot="header">
+    <div class="login-error__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/login/login-error.svg" alt="token">
+      </div>
+      <div slot="title">
+        Error al ingresar
+      </div>
+      <div slot="body">
+        <div class="login-error__body" [innerHTML]="getDescription"></div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="login-error__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="closeModal()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

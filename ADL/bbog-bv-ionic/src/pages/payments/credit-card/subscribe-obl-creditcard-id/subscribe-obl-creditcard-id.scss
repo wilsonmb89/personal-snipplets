@@ -1,0 +1,169 @@
+page-subscribe-obl-creditcard-id {
+
+      .obl-id-wrapper{
+          overflow-x: hidden;
+          overflow-y: hidden;
+          height: 100%;
+          padding-bottom: 20px;
+      }
+
+      .input-header{
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, bdb-black);
+        margin-top: 25px;
+      }
+
+      .bank-list{
+          position: absolute;
+          z-index: 900;
+          width: 100%;
+          box-shadow: 0 0 15px 0 rgba(102, 128, 173, 0.2);
+          overflow-y: auto;
+          max-height: 280px;
+      }
+
+      .bank-item:hover{
+          transition: all ease-in 0.2s;
+          background-color: color($colors, bdb-blue);
+      }
+
+      .bank-item:hover {
+          color: white;
+          .service-name {
+              color: white;
+          }
+
+          .category-name {
+              color: white;
+          }
+
+          .bank-name {
+              color: white;
+          }
+      }
+
+      .bank-name {
+          color: color($colors, bdb-black);
+          font-size: 16px;
+      }
+
+      .category-name {
+          color: color($colors, steel);
+          font-size: 12px;
+      }
+
+      .bank-list .itm-inner{
+          color: color($colors, bdb-black);
+          font-family: $RobotoLight;
+          font-size: 16px;
+      }
+
+      .obl-id-wrapper .title{
+          font-family: $RobotoRegular;
+          font-size: 16px;
+          color : color($colors, bdb-blue);
+          margin-top: 40px;
+      }
+
+      .obl-id-wrapper .subtitle{
+          font-size: 12px;
+          color: color($colors, bdb-black);
+      }
+
+      /* form styles */
+      .obl-id-wrapper .inner .bv-form{
+          position: relative;
+      }
+
+      .obl-id-wrapper .inner .bv-form .err-hint{
+          margin-top: 22px;
+          color: #a94442;
+      }
+
+      .obl-id-wrapper .inner .bv-form .input-item{
+          background-color: transparent;
+          border: none;
+          border-bottom: 2px solid #dcdee0;
+          width: 100%;
+          padding: 2px 0px;
+          font-size: 24px;
+          font-family: $RobotoLight;
+          color: color($colors, bdb-black);
+      }
+
+      .btn-wrapper{
+          margin-top: 48px;
+          display: inline-flex;
+          align-items: center;
+      }
+
+      .btn-wrapper .key-hint{
+          font-family: $RobotoRegular;
+          font-size: 12px;
+          color: color($colors, steel);
+          margin-left: 16px;
+      }
+
+      *.continue-btn{
+          padding: 0 25px;
+          border-radius: 6px;
+      }
+
+      .button-inner{
+          font-size: 12px;
+          color: white;
+          font-family: $RobotoRegular;
+      }
+
+      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+          color: color($colors, bdb-black);
+          opacity: 0.2; /* Firefox */
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+          color: color($colors, bdb-black);
+          opacity: 0.8;
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+          color: color($colors, bdb-black);
+          opacity: 0.8;
+      }
+
+      @media only screen and (max-width: 736px){
+
+          *.continue-btn{
+              border-radius: 0;
+          }
+
+          .bank-list{
+              overflow-y: hidden;
+              max-height: none;
+          }
+
+          .inner{
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              height: 100%;
+          }
+
+          .obl-id-wrapper{
+              height: unset;
+          }
+
+          .obl-id-wrapper .subtitle{
+              font-family: $RobotoLight;
+              font-size: 16px;
+              color : color($colors, bdb-slate);
+          }
+
+          .obl-id-wrapper .inner .bv-form{
+              margin-top: 15px;
+              position: relative;
+              flex: 1;
+          }
+
+      }
+}

@@ -1,0 +1,115 @@
+<div class="login-form-container">
+  <div class="login-form-container__form">
+    <div class="login-form-form">
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmitFormLogin()">
+        <div class="login-form-form__title pulse-tp-hl4-comp-r">
+          Ingresa con tu <span class="pulse-tp-hl4-comp-b"
+            id="loginOptionName">{{ loginType === loginOptions.SECURE_PASS ? 'Clave Segura' : 'Tarjeta Débito'}}</span>
+        </div>
+        <div class="login-form-form__document">
+          <div class="login-form-form__document--type">
+            <div class="login-form-input">
+              <div class="login-form-input__label pulse-tp-bo4-comp-m">
+                Documento
+              </div>
+              <div class="login-form-input__input">
+                <select hidden-p-md-up bdb-select class="pulse-tp-bo2-comp-r" formControlName="documentType"
+                  id="documentType">
+                  <option *ngFor="let type of listDocumentType" [value]="type.value">{{type.name}}</option>
+                </select>
+
+                <pulse-dropdown hidden-p-sm-down (pulseChange)="changeDropDown($event.target.value)" [value]="'CC'"
+                  [ellipsis]="false">
+                  <pulse-option *ngFor="let type of listDocumentType" [value]="type.value">{{type.name}}</pulse-option>
+                </pulse-dropdown>
+              </div>
+            </div>
+          </div>
+          <div class="login-form-form__document--number">
+            <div class="login-form-input">
+              <div class="login-form-input__label pulse-tp-bo4-comp-m">
+                Número
+              </div>
+              <div class="login-form-input__input">
+                <pulse-input [type]="'number'" ngDefaultControl formControlName="documentNumber" id="documentNumber"
+                  [name]="'documentNumber'" [placeholder]="'#'" [maxlength]="'11'" [pattern]="'[0-9]*'"
+                  (inputKeyUp)="onkeyBoardInput($event.detail.key)" max-length-input type-number-input
+                  #inputDocumentNumber>
+                </pulse-input>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-form-form__secure-pass" @boxAnimation *ngIf="loginType === loginOptions.SECURE_PASS">
+          <div class="login-form-input">
+            <div class="login-form-input__label pulse-tp-bo4-comp-m">
+              Clave Segura
+            </div>
+            <div class="login-form-input__input">
+              <pulse-input class="login-form-input__input--password" [type]="'password'" max-length-input
+                ngDefaultControl formControlName="securePass" id="passwordSignIn" [name]="'securePass'"
+                [minlength]="'4'" [maxlength]="'4'" [pattern]="'[0-9]*'" [inputmode]="'numeric'"
+                (inputKeyUp)="onkeyBoardInput($event.detail.key)" type-number-input>
+              </pulse-input>
+            </div>
+          </div>
+        </div>
+
+        <div formGroupName="debitCard" class="login-form-form__debit-card" @boxAnimation
+          *ngIf="loginType === loginOptions.DEBIT_CARD">
+          <div class="login-form-input">
+            <div class="login-form-input__label pulse-tp-bo4-comp-m">
+              Clave de Tarjeta Débito
+            </div>
+            <div class="login-form-input__input">
+              <pulse-input class="login-form-input__input--password" [type]="'password'" max-length-input
+                ngDefaultControl formControlName="password" id="passwordSignIn" [name]="'password'" [minlength]="'4'"
+                [maxlength]="'4'" [pattern]="'[0-9]*'" [inputmode]="'numeric'"
+                (inputKeyUp)="onkeyBoardInput($event.detail.key)" type-number-input>
+              </pulse-input>
+            </div>
+          </div>
+          <div class="login-form-input">
+            <div class="login-form-input__label pulse-tp-bo4-comp-m">
+              4 últimos dígitos de la Tarjeta Débito
+            </div>
+            <div class="login-form-input__input">
+              <pulse-input [type]="'number'" ngDefaultControl formControlName="lastDigit" id="lastDigit"
+                [name]="'lastDigit'" [minlength]="'4'" [maxlength]="'4'" [placeholder]="'#'" [pattern]="'[0-9]*'"
+                #inputLastDigit (inputKeyUp)="onkeyBoardInput($event.detail.key)" max-length-input type-number-input>
+              </pulse-input>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-form-form__submit">
+          <pulse-button @boxAnimation *ngIf="loginType === loginOptions.SECURE_PASS" type="submit" [color]="'warning'"
+            [colorgradient]="true" [block]="true" id="submitSignIn" [disabled]="disableConditions">
+            Ingresar
+            ahora</pulse-button>
+          <pulse-button @boxAnimation *ngIf="loginType === loginOptions.DEBIT_CARD" type="submit" [color]="'warning'"
+            [colorgradient]="true" [block]="true" id="submitSignIn" [disabled]="disableConditions">Ingresar
+            ahora</pulse-button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="login-form-container__separator"> </div>
+  <div class="login-form-container__events">
+    <div class="login-form-event" id="optionSignIn" @boxAnimation *ngIf="loginType === loginOptions.SECURE_PASS"
+      (click)="changeTypeLogin(loginOptions.DEBIT_CARD)">
+      <img src="assets/imgs/login/form/debit-card.svg" alt="debit-card">
+      <div class="login-form-event__text pulse-tp-bo3-comp-r">
+        Ingresar con Tarjeta Débito
+      </div>
+    </div>
+    <div class="login-form-event" id="optionSignIn" @boxAnimation *ngIf="loginType === loginOptions.DEBIT_CARD"
+      (click)="changeTypeLogin(loginOptions.SECURE_PASS)">
+      <img src="assets/imgs/login/form/secure-pass.svg" alt="debit-card">
+      <div class="login-form-event__text pulse-tp-bo3-comp-r">
+        Ingresar con Clave Segura
+      </div>
+    </div>
+  </div>
+</div>

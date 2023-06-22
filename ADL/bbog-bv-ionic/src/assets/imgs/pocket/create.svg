@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="264" height="184" viewBox="0 0 264 184">
+    <g fill="none" fill-rule="evenodd" transform="translate(1 -5)">
+        <g stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.005">
+            <path fill="#FFF" fill-rule="nonzero" d="M164.399 81.848l-1.935-15.9-10.966 9.382"/>
+            <path fill="#FFF" d="M90.18 150.732c13.12 22.71 41.05 32.135 65.181 21.994 24.13-10.14 36.928-36.678 29.864-61.933-7.064-25.254-31.783-41.339-57.687-37.537-25.903 3.803-44.903 26.305-44.34 52.513"/>
+            <path d="M135.141 84.728a39.898 39.898 0 0 0-35.913 22.445M167.128 164.11l3.547 14.137-6.465-3.204-2.188 8.2-8.739-11.14"/>
+            <path fill="#FFF" fill-rule="nonzero" d="M138.57 173.477l-5.155 13.612-3.486-6.357-6.473 5.494-.824-14.137M111.235 167.617l-11.164 9.359.046-7.194-8.304 1.603 6.176-12.722"/>
+            <path d="M184.744 106.217l16.105-.003.073 31.541-24.739-.006"/>
+            <path fill="#FFF" fill-rule="nonzero" d="M148.025 79.786l-1.934-15.9-14.439 13.839"/>
+            <path d="M90.361 136.339a24.375 24.375 0 0 1-10.443 4.133 13.804 13.804 0 0 1-10.65-3.1 9.986 9.986 0 0 1-3.115-10.27"/>
+            <g fill="#FFF">
+                <path d="M125.476 142.771c2.559 8.245 10.105 8.233 22.637-.036M109.632 132.683c-2.493 2.441-2.653 4.781-.48 7.02 3.26 3.36 12.831 9.254 25.358-3.894"/>
+                <path d="M140.59 121.18c-23.978-8.972-38.141-9.97-42.49-2.995-6.522 10.463 16.97 19.372 23.94 11.558"/>
+            </g>
+        </g>
+        <g transform="translate(59)">
+            <ellipse cx="43.215" cy="78.259" fill="#FDC130" fill-rule="nonzero" rx="21.982" ry="22.026" transform="scale(-1 1) rotate(30 0 -83.023)"/>
+            <circle cx="45.215" cy="36" r="15" fill="#FDC130" fill-rule="nonzero" transform="scale(-1 1) rotate(30 0 -132.746)"/>
+            <circle cx="16" cy="16" r="11" fill="#FDC130" fill-rule="nonzero" transform="scale(-1 1) rotate(30 0 -43.713)"/>
+            <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.005" d="M76.141 84.728a39.898 39.898 0 0 0-35.913 22.445"/>
+        </g>
+        <ellipse cx="4.451" cy="40.456" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".743" rx="4.451" ry="4.456"/>
+        <ellipse cx="33.515" cy="164.881" fill="#D0413B" fill-rule="nonzero" rx="5.875" ry="5.881"/>
+        <ellipse cx="256.515" cy="104.881" fill="#0040A8" fill-rule="nonzero" rx="5.875" ry="5.881"/>
+    </g>
+</svg>

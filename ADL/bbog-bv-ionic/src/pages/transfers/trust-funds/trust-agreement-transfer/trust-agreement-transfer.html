@@ -1,0 +1,40 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+        [rOption]="abandonText" [lOption]="'Regresar'" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="payment-choice-wrapper">
+
+
+
+        <div class="subtitle">
+          {{subtitle}}
+        </div>
+        <bdb-card-check *ngFor="let item of items" [title]="item.cardTitle" [label]="item.cardLabel"
+          [value]="item.cardValue" [BdbChecked]="item.isActive" (clickCard)="paymentSelected(item)">
+        </bdb-card-check>
+
+        <div class="err-result">{{error}}</div>
+        <div class="btn-wrapper" hidden-md-down>
+          <button id="tt-btn" bv-button color="mango" hidden-sm-down ion-button (click)="send(false)"
+            [disabled]="!enable">{{msgButton}}</button>
+        </div>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-lg-up>
+  <ion-toolbar no-padding>
+    <button id="mob-amount-btn" class="continue-btn" full color="mango" ion-button (click)="send(false)"
+      [disabled]="!enable">{{msgButton}}</button>
+  </ion-toolbar>
+</ion-footer>

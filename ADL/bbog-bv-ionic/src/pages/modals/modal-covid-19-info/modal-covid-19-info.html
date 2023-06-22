@@ -1,0 +1,62 @@
+<ion-header no-border>
+  <div class="pulse-grid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="wrapper-close-icon">
+          <img (click)="closeModal()" class="icon-close-img" src="assets/imgs/icon_close.svg" width="30" height="30" alt="close">
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content no-padding>
+  <div class="pulse-grid">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="logo_banner">
+          <img class="icon-quedate-casa" src="assets/imgs/icon-quedate-casa.svg" width="61" height="56" alt="quedateEnCasa">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="wrapper-title align-center">
+          <p><strong class="blue-color">#QuédateEnCasa</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="wrapper-subtitle align-center">
+          <span class="blue-color">Algunas medidas para apoyarte en esta<br/>emergencia sanitaria a un clic de distancia:</span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="wrapper-tips-list">
+          <ul>
+            <li><span class="color-carbon"><strong>Pagar tus servicios públicos y privados</strong> es gratis.</span></li>
+            <li><span class="color-carbon"><strong>Descarga extractos y referencias bancarias</strong> en la sección de Documentos del portal.</span></li>
+            <li><span class="color-carbon"><strong>Registra tu TOKEN</strong> descargando Banca Móvil.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="wrapper-detail-info align-center">
+          <span class="color-carbon">Si necesitas alivio crediticio COVID-19 <span class="href-link" (click)="openBankUrl()">solicítalo aquí</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="wrapper-confirm-button align-center">
+          <button id="closeCovid19Modal" bvButton (click)="closeModal()" color="blue-gradient">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

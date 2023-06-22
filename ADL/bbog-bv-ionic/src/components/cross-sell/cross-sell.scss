@@ -1,0 +1,20 @@
+cross-sell {
+
+    .cross-sell-row{
+        margin: 0 auto;
+        width: 92%;
+        overflow: hidden;
+    }
+
+    @media (max-width: 1200px) {
+        .mosaic-col{
+            margin-bottom: 1rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mosaic-col{
+            margin-bottom: 2rem;
+        }
+    }
+}

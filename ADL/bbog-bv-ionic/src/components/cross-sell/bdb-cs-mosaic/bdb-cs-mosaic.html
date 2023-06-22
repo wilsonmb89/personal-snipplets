@@ -1,0 +1,22 @@
+<div class="mosaic-wrapper">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="mosaic-wrapper__col" col-3 col-sm-3 col-md-6 *ngFor="let item of mosaicList">
+        <div class="mosaic-wrapper__card-wrapper" (click)="itemClicked(item)">
+          <ion-row>
+            <ion-col col-12 col-xl-5>
+              <div class="mosaic-wrapper__card-wrapper__img">
+                <img [src]="item.iconPathSm">
+              </div>
+            </ion-col>
+            <ion-col class="mosaic-wrapper__card-wrapper__col-desc" col-12 col-xl-7>
+              <div class="mosaic-wrapper__card-wrapper__desc">
+                {{item.cardTitle}}
+              </div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

@@ -1,0 +1,146 @@
+<pulse-flowthc>
+  <div slot="header">
+    <pulse-flowth showLeft=true showRight=true>
+      <div slot="left-content">
+        <pulse-nav-button (click)="onBackPage()" only-icon-device="sm,md">Atrás</pulse-nav-button>
+      </div>
+      <div slot="content">
+        Compras y retiros en el exterior
+      </div>
+      <div slot="right-content">
+        <pulse-nav-button  icon="exit" only-icon-device="sm,md" icon-position="right" (click)="logout()">Salida segura
+        </pulse-nav-button>
+      </div>
+    </pulse-flowth>
+  </div>
+  <div slot="content">
+    <div class="pulse--grid">
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+
+          <div class="pulse-row">
+            <div class="pulse-tp-hl3-comp-m container__title">
+              Tarjetas Débito
+            </div>
+          </div>
+
+          <div class="pulse-row">
+            <div class="pulse-tp-bo3-comp-r container__sub-title">
+              ¿Cuáles tarjetas quieres llevar activas en tu viaje?. Recuerda que solo podrás ver los cambios realizados
+              por este canal.
+            </div>
+          </div>
+          <div *ngIf="!!activationsTemp" class="pulse-row">
+            <pulse-list-group isaccordion="true" class="container__card-item">
+
+              <pulse-list-item *ngFor="let i of activationsTemp"
+                               isdisabled="false"
+                               itemid="BM"
+                               itemtitle="Tarjeta Débito"
+                               description="No. {{i.displayNumber}}"
+                               descriptionexpanded="No. {{i.displayNumber}}"
+                               [avatarpath]="getCardLogo(i.description)"
+                               avatartype="logo"
+                               [tagtext]="getTagText(i)"
+                               tagcolor="success"
+                               primarynavicon="expand-more"
+                               primarynaviconcolor="primary"
+                               showdivisor="true"
+                               (itemClicked)="onItemClicked($event)">
+                <div>
+
+                  <div class="pulse-tp-bo2-comp-m">
+                    Habilitar uso de la tarjeta
+                  </div>
+
+                  <span class="space space--26"></span>
+
+                  <div>
+                    <pulse-radio-group (radioChange)="onRadioChange($event, i)" [value]="i.state">
+                      <div>
+                        <pulse-radio
+                          label="Solo en Colombia"
+                          value="non-activated">
+                        </pulse-radio>
+                        <pulse-icon #iconInfo2
+                                    (click)="showTooltip(iconInfo2, 'colombia')"
+                                    icon="information-bv"
+                                    color="warning"></pulse-icon>
+                      </div>
+                      <div>
+                        <pulse-radio
+                          label="En el exterior"
+                          value="activated">
+                        </pulse-radio>
+                        <pulse-icon #iconInfo1
+                                    (click)="showTooltip(iconInfo1, 'exterior')"
+                                    icon="information-bv"
+                                    color="warning"></pulse-icon>
+                      </div>
+
+                    </pulse-radio-group>
+                  </div>
+
+                  <div *ngIf="i.state === 'activated'">
+                    <span class="space space--42"></span>
+                    <div class="pulse-tp-bo2-comp-m">
+                      Fechas de viaje
+                    </div>
+                    <span class="space space--16"></span>
+                    <div>
+                      <pulse-date-picker
+                        (datePickerChange)="getDatesFromPicker($event, i)"
+                        color="primary"
+                        range="true"
+                        [maxDate]="MAX_DATE"
+                        [minDate]="NOW"
+                        [value]="(!!i.startDate) ? [i.startDate, i.endDate] : []"
+                      >
+                      </pulse-date-picker>
+                    </div>
+
+                    <span class="space space--26"></span>
+
+                    <div>
+                      <pulse-card class="container__card-message"
+                        color="info"
+                        colorvariant="100"
+                        colorgradient="false"
+                        elevation="0"
+                        elevationhover="0">
+                        <div>
+                          <pulse-avatar size="m"
+                                        icon="megaphone"
+                                        avatartype="icon"
+                                        colorvariant="700"
+                                        color="white"
+                          ></pulse-avatar>
+                        </div>
+                        <div class="container__card-message__message">
+                           <span class="pulse-tp-bo3-comp-b">Recuerda:</span>
+                           <span class="pulse-tp-bo3-comp-r">Tu tarjeta podrá ser usada en Colombia con chip durante estas fechas si no viajas.</span>
+                        </div>
+
+
+                      </pulse-card>
+                    </div>
+
+                  </div>
+
+                  <span class="space space--40"></span>
+
+                  <div>
+                    <pulse-button [disabled]="!isActiveContinueBtn(i)" (click)="saveBtnAction(i)"> Guardar
+                      Cambios
+                    </pulse-button>
+                  </div>
+
+                </div>
+              </pulse-list-item>
+            </pulse-list-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</pulse-flowthc>

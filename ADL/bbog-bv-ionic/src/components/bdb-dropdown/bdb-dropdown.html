@@ -1,0 +1,3 @@
+<select class="add-input arrow-rigth" text-wrap  #C (change)="onChange(C.value)">
+  <option *ngFor="let item of items" value="{{ item.value }}">{{ item.name }}</option>
+</select>

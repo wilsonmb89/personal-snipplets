@@ -1,0 +1,51 @@
+<pulse-flowthc>
+    <div slot="header">
+        <pulse-flowth>
+            <div slot="left-content">
+                <pulse-nav-button only-icon-device="sm,md" (click)="onBackPage()">Atrás</pulse-nav-button>
+            </div>
+            <div slot="content">Administrar claves</div>
+            <div slot="right-content">
+                <pulse-nav-button
+                    only-icon-device="sm,md"
+                    icon-position="right"
+                    icon="close"
+                    (click)="dimissChangeKey()">
+                    Abandonar
+                </pulse-nav-button>
+            </div>
+        </pulse-flowth>
+    </div>
+    <div slot="content">
+        <div class="form-credit-card-container">
+            <div class="pulse--grid">
+                <div class="pulse-row">
+                    <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+                        <div class="form-credit-card-container__title pulse-tp-hl3-comp-m">
+                            Clave de Avances de Tarjeta Crédito
+                        </div>
+                        <div class="form-credit-card-container__form">
+                            <pulse-card>
+                                <pulse-item [description]="'No. ' + displayNumber">
+                                    <img src="assets/imgs/change-keys/credit-card-lock.svg" alt="credit-card-lock"
+                                        slot="start">
+                                        Tarjeta Crédito
+                                </pulse-item>
+                                <div class="form-credit-card-container__form__set-pin">
+                                    <set-pin-card
+                                        (key)="changeKey($event)"
+                                        [textDescription]="textPinDescription"
+                                        [inputLabelKey]="inputLabelKeyPin"
+                                        [inputLabelConfirm]="inputLabelConfirmPin"
+                                        [btnText]="btnTextPin"
+                                        [btnPosition]="'start'">
+                                    </set-pin-card>
+                                </div>
+                            </pulse-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</pulse-flowthc>

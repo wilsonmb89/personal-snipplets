@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="robots" content="<%= robot_follow %>"/>
+    <meta name="googlebot" content="<%= robot_follow %>"/>
+    <meta name="description" content="Encuentra información sobre los productos y servicios de Banco de Bogotá. También puedes hacer transacciones y consultas en línea desde nuestro portal web."/>
+    <meta property="og:url" content="https://virtual.bancodebogota.co/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Banca Virtual - Banco de Bogotá"/>
+    <meta property="og:description" content="Encuentra información sobre los productos y servicios de Banco de Bogotá. También puedes hacer transacciones y consultas en línea desde nuestro portal web."/>
+    <meta property="og:image" content="<%= base_url %>container/assets/pwa/logo.png"/>
+    <meta property="og:image:width" content="512"/>
+    <meta property="og:image:height" content="512"/>
+    <meta property="og:site_name" content="Banco de Bogotá"/>
+
+    <link rel="icon" type="image/x-icon" href="container/assets/favicon.ico" />
+    <link rel="manifest" href="/container/manifest.json" />
+    <script>(function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})('cwr','78750ea0-4e75-442b-8dd0-3b31dbf335d1','1.0.0','us-east-1','https://client.rum.us-east-1.amazonaws.com/1.2.1/cwr.js',{sessionSampleRate:0.3,guestRoleArn:"arn:aws:iam::110074600897:role/RUM-Monitor-us-east-1-110074600897-5436778893461-Unauth",identityPoolId:"us-east-1:d4ac69df-51d9-4f4a-b44e-699af25f75b6",endpoint:"https://dataplane.rum.us-east-1.amazonaws.com",telemetries:["performance","errors","http"],allowCookies:true,enableXRay:false});</script>
+    <script src="https://tags.tiqcdn.com/utag/adl/bdbogota/<%= tealium_env %>/utag.js" async="async"></script>
+    <script src="https://tags.tiqcdn.com/utag/adl/bdbogota/<%= tealium_env %>/utag.sync.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<%= recaptcha_env %>"></script>
+    <script>
+      var utag_data = { appName: 'bdb-bancavirtual' };
+    </script>
+    <title>Banca Virtual</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="overlay-root"></div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+node_modules/
+coverage/
+build/
+/assets/
+sherpa-report-angular.json
+
+.idea/
+.scannerwork/
+.vscode/
+
+.DS_Store

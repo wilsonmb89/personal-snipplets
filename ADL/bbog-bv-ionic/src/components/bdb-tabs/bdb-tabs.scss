@@ -1,0 +1,60 @@
+bdb-tabs {
+    .tabs{
+        transition: opacity ease-in 250ms;
+
+        display: flex;
+        flex-flow: row;
+        cursor: pointer;
+        &--disabled{
+            pointer-events: none;
+            cursor: progress !important;
+            opacity: 0.5;
+        }
+        &__item{
+            flex-grow: 1;
+            align-self: center;
+            text-align: center;
+            transition: all ease-in 250ms;
+            color: color($colors, bdb-blue);
+
+            &--active{
+                position: relative;
+                font-weight: bold;
+                &:after {                    
+                    width: 100%;
+                   
+                }
+            }
+            &--inactive{
+                font-weight: normal;
+                position: relative;    
+                &:after {
+                    width: 0;
+                }
+               
+            }
+            &--active:after,&--inactive:after{
+                    transition: all ease-in 250ms;
+    
+                    content: '';
+                    position: absolute;
+                    height: 0.3em;
+                    bottom: -0.5em;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: color($colors, mango);
+                    border-radius: 0.2rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        /* For mobile phones: */
+        .tabs {
+
+            &__item {
+                margin-bottom: 0.3em;
+            }
+        }
+    }
+}

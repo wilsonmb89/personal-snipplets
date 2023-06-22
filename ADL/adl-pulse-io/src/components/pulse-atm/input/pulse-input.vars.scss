@@ -1,0 +1,35 @@
+
+//Vars to Pulse input
+$input-margin: 2px 4px;
+$input-padding: 0rem 1.6rem;
+$input-height: 4.8rem;
+$input-border-radius: 6px;
+$min-width: 24.4rem;
+$height: 4.8rem;
+$max-height-input: 4.8rem;
+
+$font-color: #333333; 
+$opacity:0.6;
+$font-weight: 500;
+$font-style: normal;
+$font-stretch: normal;
+$line-height: 1.67;
+$letter-spacing: normal;
+
+$input-font-family: var(--pulse-tp-ff-comp);
+$input-font-size: 1.6rem;
+$input-line-height: 1.6rem;
+
+$input-opacity-disabled: .4;
+$input-opacity-activated: 1;
+
+$input-shadown-hover: 0 4px 8px 0 var(--pulse-color-bg);
+
+//outline
+$input-outline-border: solid 1px;
+
+
+//clear
+$input-clear-border: transparent;
+$input-clear-background: transparent;
+

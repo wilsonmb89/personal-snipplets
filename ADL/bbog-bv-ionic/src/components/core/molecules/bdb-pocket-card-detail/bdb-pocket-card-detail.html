@@ -1,0 +1,123 @@
+<pulse-card
+  class="pulse-padding-none-xs-a"
+  [color]="cardData.cardOptions.color"
+  [colorgradient]="cardData.cardOptions.colorGradient"
+>
+  <div
+    class="pocket-card-detail-wrapper"
+    [ngClass]="{'is-scroll-contraction': isScrollContraction} "
+  >
+    <div class="pocket-card-detail-wrapper__background-img" hidden-p-md-down>
+      <img height="100%" [src]="cardData.cardOptions.backgroundImg" />
+    </div>
+    <div class="pulse-grid">
+      <!-- Detail -->
+      <div class="row" *ngIf="!cardData.cardOptions.showError">
+        <div
+          class="col-xs-12 pocket-card-detail-wrapper__detail--cols"
+          [@expandGauge]="isScrollContraction"
+          (@expandGauge.start)="animScrollStart($event)"
+          (@expandGauge.done)="animScrollEnd($event)"
+          *ngIf="!isScrollContraction"
+        >
+          <div
+            class="col-xs-12 col-md-6 pulse-padding-m-xs-h pulse-padding-none-md-a"
+          >
+            <div class="pocket-card-detail-wrapper__gauge">
+              <bdb-gauge
+                [outerStrokeColor]="'#b9dcfe'"
+                [innerStrokeColor]="'white'"
+                [subTitleColor]="'white'"
+                [maxValue]="cardData.pocketGoal"
+                [value]="cardData.pocketBalance"
+              ></bdb-gauge>
+            </div>
+          </div>
+
+          <div class="col-xs-12  pocket-card-detail-wrapper__detail__values col-md-6 pulse-padding-m-xs-h pulse-padding-none-md-a">
+            <div
+              class="col-xs-6 pocket-card-detail-wrapper__detail__balance"
+            >
+              <p>Total ahorrado</p>
+              <h1 [innerHTML]="getFormatBalance()"></h1>
+            </div>
+            <div
+              class="col-xs-6 pocket-card-detail-wrapper__detail__goal"
+            >
+              <small>Total meta</small>
+              <h6 [innerHTML]="getFormatGoal()"></h6>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="col-xs-12 pocket-card-detail-wrapper__less-detail--cols"
+          *ngIf="isScrollContraction"
+        >
+
+          <div class="col-xs-12 pocket-card-detail-wrapper__less-detail__values pulse-padding-m-xs-h pulse-padding-none-md-a">
+            <div
+              class="col-xs-6 pocket-card-detail-wrapper__less-detail__balance"
+            >
+              <p>Total ahorrado</p>
+              <h1 [innerHTML]="getFormatBalance()"></h1>
+            </div>
+            <div
+              class="col-xs-6 pocket-card-detail-wrapper__less-detail__goal"
+            >
+              <p><small>Total meta</small></p>
+              <h1 [innerHTML]="getFormatGoal()"></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Detail -->
+
+      <!-- showError -->
+      <div class="row" *ngIf="cardData.cardOptions.showError">
+        <div class="col-xs-12">
+          <div class="pocket-card-detail-wrapper__error__msg">
+            <div class="pocket-card-detail-wrapper__error__msg__txt">
+              <img src="assets/imgs/warning.svg" /><span
+                >{{ cardData.cardOptions.msgError }}</span
+              >
+            </div>
+          </div>
+          <div class="pocket-card-detail-wrapper__error__btn">
+            <button
+              bv-button
+              class="pocket-card-detail-wrapper__error__btn__btn"
+              [showLoader]="showLoader"
+              [outline]="false"
+              [small]="true"
+              [color]="white"
+              (click)="onReloadClick()"
+            >
+              <div class="btn-text">Volver a intentar</div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End Error -->
+    </div>
+
+    <div
+      class="pocket-card-detail-wrapper__buttons"
+      *ngIf="!!cardData.cardButton && cardData.cardButton.length > 0 && !isScrollContraction"
+      [ngClass]="{'pocket-card-detail-wrapper__buttons--translate': isScrollContraction} "
+    >
+      <div
+        *ngFor="let button of cardData.cardButton"
+        class="pocket-card-detail-wrapper__buttons__button"
+        (click)="onButtonClick(button)"
+      >
+        <pulse-fab-button color="primary" [text]="button.text">
+          <div
+            style="margin: auto;"
+            [innerHTML]="button.icon | safe: 'html'"
+          ></div>
+        </pulse-fab-button>
+      </div>
+    </div>
+  </div>
+</pulse-card>

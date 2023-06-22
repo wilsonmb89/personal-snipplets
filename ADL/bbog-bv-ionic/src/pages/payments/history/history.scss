@@ -1,0 +1,38 @@
+page-history {
+
+    .history-content {
+
+        &__title {
+            margin: 2.4rem 0;
+            font-family: $ArgoRegular;
+            font-size: 2.4rem;
+            line-height: 1.67;
+            letter-spacing: -0.5px;
+            color: color($colors, bdb-blue);
+        }
+
+        &__table{
+            margin-top: 0.6rem;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .history-content {
+
+            &__top {
+                background-color: color($colors, bdb-bg);
+            }
+
+            &__nav-options {
+                padding: 0 2rem !important;
+            }
+
+            &__title {
+                margin: 1.6rem 0;
+                text-align: center;
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,245 @@
+:host {
+    --pulse-card-padding: 0rem;
+}
+
+:host(.pulse-calendar) {
+    display: inline-block;
+    max-width: 31.2rem;
+    animation: fadeIn ease 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+:host(.pulse-calendar) .calendar-container {
+
+    &__switch-header {
+        padding: 1.6rem 1.6rem 0.8rem;
+        display: flex;
+        justify-content: space-between;
+
+        &--previous, 
+        &--next {
+            cursor: pointer;
+
+            &.disabled {
+                opacity: 0.5;
+            }
+
+        }
+
+        &--select-month {
+            display: flex;
+            cursor: pointer;
+
+            &__month-list-menu {
+                position: relative;
+
+                svg {
+                    transition: transform 0.2s ease-out;
+                }
+
+                &--menu {
+                    z-index: 99;
+                    position: absolute;
+                    right: -1rem;
+                    animation: fadeIn ease 0.5s;
+                }
+
+                &.active svg{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        &--year {
+            font-weight: var(--pulse-font-comp-r);
+        }
+
+        &--next svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__days-header {
+        padding: 0.8rem 1.6rem;
+        display: flex;
+        justify-content: space-between;
+
+        &--day-label {
+            width: 4rem;
+            text-align: center;
+        }
+    }
+
+    &__month {
+        padding: 0.8rem 1.6rem;
+        background-color: var(--pulse-color-white-700);
+        color: var(--pulse-color-carbon-900);
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        position: relative;
+
+        &--overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 2;
+            animation: fadeIn ease 0.5s;
+        }
+    }
+}
+
+:host(.pulse-calendar) .calendar-container-weeks {
+
+    &__week {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 0 0.4rem;
+
+        &--day, 
+        &--day-selected, &--day-disabled {
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &--day-disabled {
+            color: var(--pulse-color-carbon-100);
+        }
+
+        &--day, 
+        &--day-selected {
+            cursor: pointer;
+        }
+
+        &--day:hover, 
+        &--day.day-hover, 
+        &--day-selected {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            width: 4rem;
+            height: 4rem;
+            position: relative;
+            outline: currentcolor none medium;
+            box-sizing: border-box;
+            transform: scale(1);
+        }
+
+        &--day.day-hover {
+            color: var(--pulse-color-bg);
+        }
+
+        &--day:hover {
+            color: var(--pulse-color-carbon-900);
+        }
+         
+        &--day-selected {
+            color: var(--pulse-color-fg);
+
+            &::after {
+                border: 0.2rem solid var(--pulse-color-white-700);
+                background-color: var(--pulse-color-bg);
+            }
+        }
+
+        &--day:hover::after, 
+        &--day-selected::after {
+            content: '';
+            border-bottom-right-radius: 100%;
+            border-bottom-left-radius: 100%;
+            border-top-right-radius: 100%;
+            border-top-left-radius: 100%;
+            width: 100%;
+            height: 100%;
+            box-shadow: none;
+            display: inline-block;
+            box-sizing: border-box;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &--day:hover::after {
+            border: 0.2rem solid var(--pulse-color-900);
+            background-color: var(--pulse-color-white-700);
+        }
+
+        &--day:hover.day-hover::before, 
+        &--day-selected::before, 
+        &--day.day-hover::before, 
+        &--day:hover::before {
+            content: '';
+            position: absolute;
+            box-sizing: border-box;
+            z-index: -1;
+            display: inline-block;
+            height: 100%;
+            top: 0px;
+            background-color: var(--pulse-color-info-100);
+            border-top: 0.2rem solid var(--pulse-color-white-700);
+            border-bottom: 0.2rem solid var(--pulse-color-white-700);
+        }
+
+        &--day:hover.day-hover::before, 
+        &--day.day-hover::before {
+            width: 100%;
+        }
+
+        &--day.day-hover.day-hover-last::before, 
+        &--day-selected.day-hover-last.range-direction-right::before, 
+        &--day.day-hover-last.range-direction-right:hover::before {
+            border-bottom-right-radius: 100%;
+            border-top-right-radius: 100%;
+        }
+
+        &--day.day-hover.day-hover-first::before, 
+        &--day-selected.day-hover-first.range-direction-left::before, 
+        &--day.day-hover-first.range-direction-left:hover::before {
+            border-bottom-left-radius: 100%;
+            border-top-left-radius: 100%;
+        }
+
+        &--day-selected.range-direction-left::before, 
+        &--day-selected.range-direction-right::before,  
+        &--day.range-direction-left:hover::before, 
+        &--day.range-direction-right:hover::before {
+            width: 50%;
+        }
+
+        &--day-selected.range-direction-left::before, 
+        &--day.range-direction-left:hover::before {
+            right: 50%;
+        }
+
+        &--day-selected.range-direction-right::before, 
+        &--day.range-direction-right:hover::before {
+            left: 50%;
+        }
+
+        &--day-empty {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        &:last-child {
+            padding: 0;
+        }
+    }
+}

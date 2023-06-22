@@ -1,0 +1,91 @@
+<pulse-modaltb class="validate-token-main" [ngSwitch]="stepToken">
+  <div slot="header">
+    <div class="validate-token-main__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img *ngSwitchCase="'input'" @boxAnimation src="assets/imgs/token-otp/token/token.svg" alt="token">
+        <img *ngSwitchCase="stepToken === 'wrong' || stepToken === 'error' || stepToken === 'need' ? 
+        stepToken : ''" @boxAnimation src="assets/imgs/token-otp/token/token-warning.svg" alt="token-warning">
+      </div>
+      <div slot="title">
+        <ng-container *ngSwitchCase="'input'">
+          <span @boxAnimation>
+            <span class="pulse-tp-hl3-comp-r">Código</span>&nbsp;Token
+          </span>
+        </ng-container>
+        <ng-container *ngSwitchCase="'wrong'">
+          <span @boxAnimation> Token incorrecto </span>
+        </ng-container>
+        <ng-container *ngSwitchCase="'error'">
+          <span @boxAnimation> Error con tu Token </span>
+        </ng-container>
+        <ng-container *ngSwitchCase="'need'">
+          <span @boxAnimation>
+            <span class="pulse-tp-hl3-comp-r">Necesitas</span>&nbsp;Token
+          </span>
+        </ng-container>
+      </div>
+      <div slot="body">
+        <div class="validate-token-main__body">
+          <ng-container *ngSwitchCase="'input'">
+            <span @boxAnimation> Para realizar este proceso, ingresa el código de Token móvil o físico. </span>
+          </ng-container>
+          <ng-container *ngSwitchCase="'wrong'">
+            <span @boxAnimation> Para realizar este proceso, vuelve a ingresar el código de Token móvil o físico.
+            </span>
+          </ng-container>
+          <form [formGroup]="tokenForm" (ngSubmit)="submitInput()"
+            *ngSwitchCase="stepToken === 'input' || stepToken === 'wrong' ? stepToken : ''">
+            <div class="validate-token-main__body--input" @boxAnimation>
+              <pulse-input ngDefaultControl formControlName="token" id="token" [name]="'token'" [maxlength]="6"
+                [minlength]="6" [type]="'number'" (inputKeyDown)="onInputKeyDown($event)"
+                [state]="getInputStatus()" [labelerror]="tokenErrorMessage"
+                (inputKeyUp)="onInputKeyUp($event)" #inputToken inputtextalign="center">
+              </pulse-input>
+            </div>
+          </form>
+          <ng-container *ngSwitchCase="'error'">
+            <span @boxAnimation>
+              Hemos identificado un problema con tu Token, por eso habilitamos que puedas completar este proceso con un
+              <span class="pulse-tp-hl5-comp-b">código de verificación.</span>
+            </span>
+          </ng-container>
+          <ng-container *ngSwitchCase="'need'">
+            <div class="validate-token-main__body--p" @boxAnimation>
+              <span class="pulse-tp-hl5-comp-b">1.</span> Descarga el app de Banco de Bogotá en tu celular.
+            </div>
+            <div class="validate-token-main__body--p" @boxAnimation>
+              <span class="pulse-tp-hl5-comp-b">2.</span> Regístrate en la aplicación y activa tu Token.
+            </div>
+            <div class="validate-token-main__advice" @boxAnimation>
+              <div class="validate-token-main__advice--icon">
+                <img src="assets/imgs/token-otp/token/advice.svg" alt="advice">
+              </div>
+              <div class="validate-token-main__advice--text">
+                Si <span class="pulse-tp-hl5-comp-b">cambiaste de celular</span> o <span
+                  class="pulse-tp-hl5-comp-b">tienes Token físico,</span> vuelve a activarlo en un cajero.
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="validate-token-main__footer-btns">
+      <pulse-button *ngSwitchCase="stepToken === 'input' || stepToken === 'wrong' ? stepToken : ''" @boxAnimation
+        [colorgradient]="true" [block]="true" [disabled]="!tokenForm.valid" (click)="submitInput()">Continuar
+      </pulse-button>
+      <pulse-button *ngSwitchCase="'error'" @boxAnimation [block]="true" [colorgradient]="true" (click)="toOtp()">
+        Continuar
+      </pulse-button>
+      <pulse-button *ngSwitchCase="'need'" @boxAnimation [block]="true" [colorgradient]="true" (click)="closeModal()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

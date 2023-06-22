@@ -1,0 +1,42 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--sherpa-spacing-8);
+  margin-bottom: var(--sherpa-spacing-8);
+  padding: var(--sherpa-spacing-6) var(--sherpa-spacing-4);
+  border: 0.1rem solid var(--sherpa-carbon-200);
+  border-radius: 0.8rem;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+
+    &__label,
+    &__desc {
+      color: var(--sherpa-carbon-800);
+      margin-bottom: var(--sherpa-spacing-6);
+    }
+
+    &__title {
+      color: var(--sherpa-carbon-900);
+      margin-bottom: var(--sherpa-spacing-4);
+    }
+  }
+
+  &__controls {
+    margin-top: var(--sherpa-spacing-7);
+  }
+
+  @media (min-width: 599px) {
+    &__controls {
+      button {
+        width: fit-content;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    padding: var(--sherpa-spacing-7) var(--sherpa-spacing-11);
+    margin-right: var(--sherpa-spacing-7);
+  }
+}

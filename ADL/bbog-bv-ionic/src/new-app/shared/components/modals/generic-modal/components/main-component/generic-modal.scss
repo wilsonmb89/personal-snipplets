@@ -1,0 +1,94 @@
+app-generic-modal {
+
+  .generic-modal-main {
+
+    &__header {
+      &__btn-close {
+        display: none;
+        height: 2.8rem;
+        width: 2.8rem;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--pulse-color-info-100);
+        margin-left: auto;
+        cursor: pointer;
+
+        @media only screen and (max-width: 540px) {
+          display: flex;
+        }
+      }
+    }
+
+    &__content {
+      &__body {
+        flex-grow: 1;
+
+        &__info {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+    }
+
+    &__footer {
+      &__button-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        & > :not(only-child) {
+            width: 14.2rem;
+          }
+        & > pulse-button {
+          margin-bottom: 1.6rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 540px) {
+    .generic-modal-main {
+      &__footer {
+        &__button-wrapper {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
+          flex-wrap: wrap;
+
+          pulse-button {
+            width: auto;
+            margin-top: 0.5rem;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 540px) {
+    .generic-modal-main {
+      &__content {
+        &__body {
+        text-align: center;
+          &__info {
+            & > span > br {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &__footer {
+        &__button-wrapper {
+          & > :only-child {
+              width: 100%;
+            }
+        }
+      }
+    }
+  }
+}

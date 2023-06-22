@@ -1,0 +1,40 @@
+page-expired-session {
+
+    ion-col{
+        *{
+            font-family: $RobotoRegular;
+            display: flex;
+            justify-content: center;
+        }
+    }
+    .expired{
+        margin-top: 1.4rem;
+
+        &__icon{
+            margin-top: 1.8rem;
+        }
+
+        &__desc{
+            max-width: 37.5rem;
+            opacity: 0.8;
+            color: #333333;
+            line-height: 1.5;
+            font-size: 1.6rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        &__title{
+            margin-top: 5.8rem;
+            line-height: 1.33;
+            color: color($colors, bdb-blue);
+            font-size: 2.4rem;
+        }
+
+        &__action{
+            margin-top: 5.8rem;
+            width: 14.2rem;
+        }
+    }
+
+}

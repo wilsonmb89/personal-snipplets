@@ -1,0 +1,255 @@
+{
+    "ST": {
+        "type": "SDA",
+        "subtype": "062",
+        "payMap": "ST",
+        "mainProp": "disponibleBBOG",
+        "actions": [
+            {
+                "text": "Transferir",
+                "icon": "assets/imgs/actions/transfer.svg"
+            }
+        ]
+    },
+    "AF": {
+        "type": "SDA",
+        "subtype": "067",
+        "payMap": "AF",
+        "mainProp": "disponibleBBOG"
+    },
+    "IM": {
+        "type": "DDA",
+        "subtype": "010CC",
+        "payMap": "IM",
+        "mainProp": "disponibleBBOG"
+    },
+    "MC": {
+        "type": "CCA",
+        "subtype": "MC",
+        "payMap": "MC",
+        "mainProp": "cupoComprasBBOG",
+        "paymentAvailables": [
+            "pagMinimoBBOG",
+            "fecProxPagoBBOG"
+        ]
+    },
+    "CB": {
+        "type": "CCA",
+        "subtype": "CB",
+        "payMap": "CB",
+        "mainProp": "cupoComprasBBOG",
+        "paymentAvailables": [
+            "pagMinimoBBOG",
+            "fecProxPagoBBOG"
+        ]
+    },
+    "FB": {
+        "type": "FDA",
+        "subtype": "109",
+        "payMap": "1",
+        "mainProp": "disponibleBBOG"
+    },
+    "LB": {
+        "type": "DLA",
+        "subtype": "131ML",
+        "payMap": "LB",
+        "mainProp": "",
+        "propertyForPayments": [
+            "valTotPagarBBOG"
+        ],
+        "paymentAvailables": [
+            "valTotPagarBBOG",
+            "valTotPagarBBOG"
+        ]
+    },
+    "LF": {
+        "type": "LOC",
+        "subtype": "118ML",
+        "payMap": "LF",
+        "mainProp": "saldObligLeasingBBOG",
+        "propertyForPayments": [
+            "saldObligLeasingBBOG"
+        ],
+        "paymentAvailables": [
+            "valorCanonLeasingBBOG",
+            "saldObligLeasingBBOG"
+        ]
+    },
+    "AV": {
+        "type": "LOC",
+        "subtype": "119ML",
+        "payMap": "1",
+        "mainProp": "saldoCapitalBBOG",
+        "propertyForPayments": [
+            "vlrPagCreHipBBOG",
+            "fecProxPagoBBOG"
+        ],
+        "paymentAvailables": [
+            "vlrPagCreHipBBOG",
+            "saldoCapitalBBOG"
+        ]
+    },
+    "DN": {
+        "type": "LOC",
+        "subtype": "110ML",
+        "payMap": "1",
+        "mainProp": "cupoDispoCreSerBBOG",
+        "propertyForPayments": [
+            "vlrProxCuotaBBOG",
+            "fecProxPagoBBOG"
+        ],
+        "paymentAvailables": [
+            "vlrProxCuotaBBOG",
+            "vlrTotPagCreSerBBOG"
+        ],
+        "propertyForLoanTransfer": "cupoDispoCreSerBBOG"
+    },
+    "LA": {
+        "type": "LOC",
+        "subtype": "106ML",
+        "payMap": "1",
+        "mainProp": ""
+    },
+    "AN": {
+        "type": "LOC",
+        "subtype": "568ML",
+        "payMap": "1",
+        "mainProp": "cupoDispoCreSerBBOG",
+        "propertyForPayments": [
+            "vlrProxCuotaBBOG",
+            "fecProxPagoBBOG"
+        ],
+        "paymentAvailables": [
+            "vlrProxCuotaBBOG",
+            "vlrTotPagCreSerBBOG"
+        ],
+        "propertyForLoanTransfer": "cupoDispoCreSerBBOG"
+    },
+    "CD": {
+        "type": "CDA",
+        "subtype": "292CDT",
+        "payMap": "1",
+        "mainProp": ""
+    },
+    "AD": {
+        "type": "DLA",
+        "subtype": "073ML",
+        "payMap": "1",
+        "mainProp": "vlrTotPagCreSerBBOG",
+        "propertyForPayments": [
+            "vlrProxCuotaBBOG",
+            "fecProxPagoBBOG"
+        ],
+        "paymentAvailables": [
+            "vlrProxCuotaBBOG",
+            "vlrTotPagCreSerBBOG"
+        ]
+    },
+    "LH": {
+        "type": "DLA",
+        "subtype": "117ML",
+        "payMap": "1",
+        "mainProp": "",
+        "propertyForPayments": [
+            "vlrPagCreHipBBOG",
+            "fecProxPagoBBOG"
+        ],
+        "paymentAvailables": [
+            "vlrPagCreHipBBOG",
+            "saldoCapitalBBOG"
+        ]
+    },
+    "AP": {
+        "type": "LOC",
+        "subtype": "568ML",
+        "payMap": "1",
+        "mainProp": "cupoDispoCreSerBBOG",
+        "propertyForPayments": [
+            "vlrProxCuotaBBOG",
+            "fecProxPagoBBOG"
+        ],
+        "paymentAvailables": [
+            "vlrProxCuotaBBOG",
+            "vlrTotPagCreSerBBOG"
+        ],
+        "propertyForLoanTransfer": "cupoDispoCreSerBBOG"
+    },
+    "1": {
+        "type": "DDA"
+    },
+    "2": {
+        "type": "SDA"
+    },
+    "3": {
+        "type": "CDA"
+    },
+    "4": {
+        "type": "DLA"
+    },
+    "5": {
+        "type": "CCA"
+    },
+    "05O": {
+        "type": "DDA"
+    },
+    "10O": {
+        "type": "SDA"
+    },
+    "15O": {
+        "type": "CCA"
+    },
+    "20O": {
+        "type": "DLA"
+    },
+    "22O": {
+        "type": "DLA"
+    },
+    "25O": {
+        "type": "CDA"
+    },
+    "30O": {
+        "type": "DLA"
+    },
+    "99O": {
+        "type": "DLA"
+    },
+    "01": {
+        "type": "SDA"
+    },
+    "03": {
+        "type": "CCA"
+    },
+    "04": {
+        "type": "DLA"
+    },
+    "05": {
+        "type": "CDA"
+    },
+    "06": {
+        "type": "DDA"
+    },
+    "07": {
+        "type": "AFC"
+    },
+    "09": {
+        "type": "LPA"
+    },
+    "10": {
+        "type": "D"
+    },
+    "11": {
+        "type": ""
+    },
+    "12": {
+        "type": "SPA"
+    },
+    "20": {
+        "type": ""
+    },
+    "21": {
+        "type": "DLA"
+    },
+    "99": {
+        "type": ""
+    }
+}

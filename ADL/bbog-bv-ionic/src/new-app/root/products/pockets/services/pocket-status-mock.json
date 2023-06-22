@@ -1,0 +1,23 @@
+{
+    "error": null,
+    "pocketName": "Cartagena",
+    "pocketBalance": "150000",
+    "pocketType": "1",
+    "pocketId": "01805779260009",
+    "account": {
+      "productBank": "Banco de Bogota",
+      "bankId": "00010016",
+      "isAval": true,
+      "productName": "Cuenta de Ahorros",
+      "productType": "SDA",
+      "productNumber": "180577926",
+      "category": "AC",
+      "description": "Disponible",
+      "amount": 2728053,
+      "productNumberX": "180577926",
+      "favorite": false,
+      "favoriteTime": 1573058162006,
+      "valid": true,
+      "franchise": null
+    }
+}

@@ -1,0 +1,10 @@
+<div class="references-select-account-container">
+  <div [innerHTML]="title" class="references-select-account-container__title" hidden-p-md-down>
+  </div>
+  <div class="references-select-account-container__cards">
+    <bdb-item-card (onItemClicked)="selectAccount(item?.account)" *ngFor="let item of alldAccounts;"
+      [avatarColor]="item?.avatarColor" [contraction]="item?.contraction" [desc]="item?.cardDesc"
+      [logoPath]="item?.logoPath" [showLogo]="item?.showLogo" [subDesc]="item?.cardSubDesc" [title]="item?.cardTitle">
+    </bdb-item-card>
+  </div>
+</div>

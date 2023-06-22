@@ -1,0 +1,60 @@
+@import '../../app/core/styles/loading.scss';
+
+tu-plus-card {
+
+    .tu-plus-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 56px;
+
+        &__fade-in {
+            -webkit-transition: opacity 200ms; /* For Safari 3.1 to 6.0 */
+            transition: opacity 200ms;
+            opacity: 0;
+        }
+        
+        &__fade-out {
+            -webkit-transition: opacity 200ms; /* For Safari 3.1 to 6.0 */
+            transition: opacity 200ms;
+            opacity: 1;
+        }
+        
+        &__helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        &__logo{
+            vertical-align: middle;
+        }
+
+        &__content {
+            margin-left: auto;
+            text-align: right;
+
+            &__points {
+                font-family: $RobotoLight;
+                font-size: 2.4rem;
+                line-height: 36px;
+                color: color($colors, carbon);
+            }
+
+            &__text {
+                font-family: $RobotoRegular;
+                font-size: 1.2rem;
+                line-height: 20px;
+                color: rgba(color($colors, carbon), .6);
+            }
+        }
+    }
+
+    .info_loader {
+        @include loading-effect(1);
+        border-radius: 4px;
+        width: 106px;
+        height: 32px;
+        margin-left: auto;
+    }
+}

@@ -1,0 +1,56 @@
+.login-news-container .content-container {
+  color: var(--pulse-color-carbon-700);
+
+  &__logo-wrapper {
+    text-align: center;
+    margin: 2.4rem auto;
+  }
+
+  &__info {
+    div.row {
+      margin-bottom: 1.6rem;
+
+      &.no-padding > div {
+        padding: 0;
+      }
+
+      &:first-child {
+        margin-top: 2rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__link-items {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding-bottom: 2.6rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &__icon-col {
+        margin-right: 0.8rem;
+      }
+
+    }
+  }
+
+  @media only screen and (min-width: 540px) {
+    &__logo-wrapper {
+      margin: 1rem 0;
+    }
+
+    &__info {
+      div.row {
+        &:first-child {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

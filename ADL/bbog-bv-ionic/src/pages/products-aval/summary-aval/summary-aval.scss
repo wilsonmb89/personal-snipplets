@@ -1,0 +1,71 @@
+page-summary-aval {
+    .header {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    #aval-summary-grid {
+        height: 100vh;
+    }
+    .header_main {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .line {
+        border: solid 0.5px color($colors, light-blue-grey);
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .scroll-content {
+        overflow: hidden;
+    }
+    .prods-row {
+        height: calc(100vh - 6rem);
+        overflow: scroll;        
+    }
+    .col-size{
+        height: max-content;
+        padding-bottom: 9rem;
+    }
+    ion-header.header::after {
+        background-image: none;
+    }
+    .left-container {
+        background-color: white;
+        padding: 0px;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+    .right-container {
+        background-color: color($colors, bdb-bg);
+    }
+    .default-background {
+        background-color: color($colors, bdb-bg);
+    }
+    .right-container__connect-data {
+        width: 439px;
+        text-align: center;
+    }
+    .right-container__middle {
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        width: 274px;
+        height: 128px;
+        &__text {
+            opacity: 0.8;
+            font-family: $RobotoRegular;
+            text-align: center;
+            font-size: 14px;
+            color: color($colors, bdb-black);
+            &--force {
+                font-weight: bold;
+            }
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        .header {
+            width: 100%
+        }
+    }
+}

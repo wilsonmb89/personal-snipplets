@@ -1,0 +1,71 @@
+page-tax-select {
+    *{
+        box-sizing: border-box;
+
+    }
+    .ab-payment{
+        position: absolute;
+        top: 36px;
+        right: 32px;
+    }    
+    .tax-sel{
+        p{
+            margin:0;
+        }        
+        label{
+            margin-bottom: 0.8rem;
+            width: 100%;
+            display: block;
+        }
+
+        &__title{
+         color:  color($colors, bdb-blue);  
+         padding: 0;
+         line-height: 1.5;
+         font-size: 1.6rem;
+         font-family: $ArgoRegular;
+        }
+
+        &__city{
+            margin-top: 1.9rem; 
+            
+        }
+
+        &__type{
+            margin-top: 1.9rem; 
+            
+        }
+
+        &__ref{
+           margin-top: 3.2rem; 
+        }
+
+        &__action{
+            margin-top: 4.8rem; 
+         }
+
+         @media only screen and (max-width: 540px) {
+            margin-top: 0;
+            padding:1.6rem; 
+            
+            &__action{
+                margin: 0rem;                 
+             }
+             #btn-submit-tax-mob{
+                 font-family: $RobotoRegular;
+                 font-size: 1.4rem;
+                 color: white;
+
+             }
+        }
+    }
+
+    @media only screen and (max-width: 540px) {
+         #btn-submit-tax-mob{
+             font-family: $RobotoRegular;
+             font-size: 1.6rem;
+             color: white;
+
+         }
+    }
+}

@@ -1,0 +1,13 @@
+@mixin generic_disable() {    
+    cursor: not-allowed;
+    background-color: #{get-pulse-color('carbon-light', 400)} !important;
+    @include text_disabled();
+    @include borderColor(#{get-pulse-color('carbon', 100)});
+}
+
+@mixin text_disabled() {
+    color: #{get-pulse-color('carbon', 900)} !important;
+    opacity: .5 !important;
+    pointer-events: none;
+
+}

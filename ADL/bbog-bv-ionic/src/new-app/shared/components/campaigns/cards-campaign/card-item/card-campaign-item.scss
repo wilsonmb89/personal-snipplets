@@ -1,0 +1,107 @@
+
+.card-campaign-item {
+  height: 100%;
+  border-radius: 1rem;
+  cursor: pointer;
+
+  &--color-green {
+    background-color: #e8f7e4;
+  }
+
+  &--color-unicef {
+    background-color: var(--pulse-color-info-100);
+  }
+
+  &__content {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+
+    &__image-outer {
+      position: relative;
+      overflow: visible;
+      width: 20%;
+
+      &__image-inner {
+        position: absolute;
+        transform: translate(-0.5rem, 3rem) scale(2);
+      }
+    }
+
+    &__info-wrapper {
+      margin-bottom: 1.8rem;
+      margin-right: 0.8rem;
+      position: relative;
+      display: block;
+      flex-direction: column;
+      justify-content: center;
+      width: 80%;
+      color: var(--pulse-color-carbon-700);
+      padding: 1.6rem;
+
+      &__link {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        float: right;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-self: flex-end;
+
+
+        span {
+          color: var(--pulse-color-primary-700);
+        }
+      }
+    }
+
+
+    @media only screen and (max-width: 480px) {
+      &__image-outer {
+        &__image-inner {
+          position: absolute;
+          transform: translate(-1rem, 4rem) scale(2);
+        }
+      }
+    }
+
+    @media only screen and (min-width: 480px) {
+      &__image-outer {
+        &__image-inner {
+          position: absolute;
+          transform: translate(-0.5rem, 3rem) scale(2);
+        }
+      }
+    }
+
+
+    @media only screen and (min-width: 900px) {
+      &__image-outer {
+        &__image-inner {
+          position: absolute;
+          transform: translate(-0.5rem, 2rem) scale(1.5);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .card-campaign-item__content__info-wrapper__link span {
+      text-decoration: underline;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    &__content {
+
+      &__info-wrapper {
+
+        &__link {
+        }
+      }
+    }
+  }
+}
+

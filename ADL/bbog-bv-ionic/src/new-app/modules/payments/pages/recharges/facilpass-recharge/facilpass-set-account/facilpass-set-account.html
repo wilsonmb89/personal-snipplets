@@ -1,0 +1,36 @@
+<pulse-flowthcs>
+  <div slot="header">
+    <flow-header [rightOption]="'leave'" (onStart)="goPreviousPage()" (onEnd)="goToRechargesPage()">
+      Recarga electrónica
+      <div start>Atrás</div>
+      <div end>Abandonar transacción</div>
+    </flow-header>
+  </div>
+  <div slot="content">
+    <div class="set-account-content">
+      <div class="set-account-content__title">
+        <div class="set-account-content__title__main">
+          <span class="pulse-tp-bo2-comp-m">Selecciona la cuenta de origen</span>
+        </div>
+      </div>
+      <div class="set-account-content__accounts">
+        <radio-selection-options id="acctsOptionsList" [optionsList]="accountItems" (optionSelectedEmiter)="paymentSelected($event)"></radio-selection-options>
+      </div>
+      <div class="set-account-content__submit">
+        <pulse-button id="btn-account-submit"
+          [color]="'warning'"
+          [colorgradient]="true"
+          [block]="true"
+          (click)="submit()"
+          [disabled]="!validPaymentOrigin"
+        >Realizar recarga</pulse-button>
+      </div>
+    </div>
+  </div>
+  <div slot="summary">
+    <div class="set-account-summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </div>
+</pulse-flowthcs>

@@ -1,0 +1,39 @@
+@import "../../../global/animate";
+
+.slides{
+    box-sizing: border-box;
+    &__content {
+        width: calc(100vw - 16px);
+        overflow-x: hidden;
+        max-width: calc(100vw - 16px);
+        display: inline-flex;
+        scroll-behavior: smooth;
+    }
+    &__actions {
+        align-items: center;
+        padding-left: var(--pulse-spacing-xs, 12.66rem);
+        padding-right: var(--pulse-spacing-xs, 12.66rem);
+        &__back{
+            display: flex;
+            justify-content: flex-start;
+        }
+        &__middle{
+            display: flex;
+            justify-content: center;
+        }
+        &__forward{
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .slides{
+
+        &__actions {
+            align-items: center;
+
+        }
+    }
+}

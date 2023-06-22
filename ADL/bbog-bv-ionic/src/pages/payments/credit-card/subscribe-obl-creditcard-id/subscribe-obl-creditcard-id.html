@@ -1,0 +1,53 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="'Atrás'"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="obl-id-wrapper">
+        <div class="inner">
+          <div class="title">
+            {{title}}
+          </div>
+          <form [formGroup]="detailForm" class="bv-form">
+            <div class="input-header">Entidad Bancaria</div>
+            <ion-input #banknameinput (ionChange)="getItems()" class="input-item" id="socc-bank-name" type="text"
+              placeholder="Escribe el banco" formControlName="bankName"></ion-input>
+            <ion-list class="bank-list">
+              <div *ngFor="let item of itemsBare; let i=index">
+                <ion-item class="bank-item" *ngIf="i<10" (click)="onItemClick(item)">
+                  <div class="itm-inner">
+                    <p class="bank-name">{{ item.name }}</p>
+                  </div>
+                </ion-item>
+              </div>
+            </ion-list>
+            <div class="input-header">Número de la tarjeta</div>
+            <ion-input #crediccardnumber class="input-item" id="socc-cc-num" type="number" placeholder="Tarjeta #"
+              pattern="[0-9]{0,}" formControlName="ccNumber" [disabled]="disabled"></ion-input>
+            <div class="btn-wrapper" hidden-p-sm-down>
+              <button bvButton id="socc-btn" color="bdb-blue" [disabled]="!detailForm.controls.ccNumber.valid"
+                ion-button (click)="triggerHolderInfo()">Continuar
+              </button>
+              <div class="key-hint" [hidden]="!detailForm.controls.ccNumber.valid">o presiona Enter</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="mob-socc-btn" class="continue-btn" full color="bdb-blue" ion-button (click)="triggerHolderInfo()"
+      [disabled]="!detailForm.controls.ccNumber.valid">Continuar
+    </button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,119 @@
+login-form {
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    .login-form-container {
+
+        &__form {
+            padding: 3.2rem 2.4rem 2.4rem;
+        }
+
+        &__separator {
+            border-top: dashed 1px var(--pulse-color-info-400);
+            margin: 0 0.8rem;
+        }
+
+        &__events {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--pulse-color-carbon-700);
+            padding: 2.4rem;
+        }
+
+    }
+
+    .login-form-form {
+
+        &__title {
+            color: var(--pulse-color-carbon-700);
+        }
+
+        &__document {
+            display: grid;
+            grid-template-columns: 11.7rem calc(100% - 1.6rem - 11.7rem);
+            column-gap: 1.6rem;
+            margin-top: 2.4rem;
+
+            &--type .bdb-select {
+                height: 46px;
+                padding: 0 6.6rem 0 1.6rem;
+                overflow: hidden;
+                white-space: nowrap;
+                border-color: var(--pulse-color-carbon-100);
+                background-color: var(--pulse-color-white-700);
+                background: url(../assets/imgs/arrow-line-carbon-400.svg);
+                appearance: none;
+                background-position: calc(100% - 1.6rem) center;
+                background-repeat: no-repeat;
+            }
+
+        }
+
+        &__submit {
+            margin-top: 3.2rem;
+        }
+
+    }
+
+    .login-form-input {
+        margin-top: 2.4rem;
+
+        &__label {
+            color: var(--pulse-color-carbon-400);
+        }
+
+        &__input {
+            margin-top: 0.6rem;
+        }
+    }
+
+    .login-form-event {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &__text {
+            margin-left: 0.8rem;
+        }
+    }
+
+    @media only screen and (min-width: 540px) and (max-width: 769px) {
+        .login-form-container {
+            &__form {
+                padding: 3.2rem 6.4rem 2.4rem;
+            }
+
+            &__separator {
+                margin: 0 6.4rem;
+            }
+        }
+    }
+
+    @media screen and (min-width: 540px) {
+        .login-form-form {
+            &__submit {
+                display: flex;
+                justify-content: center;
+
+                pulse-button {
+                    width: auto;
+                    padding: 0 1.2rem 1.2rem;
+                    margin-bottom: -1.2rem;
+                }
+            }
+        }
+    }
+    
+}

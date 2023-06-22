@@ -1,0 +1,29 @@
+<ion-content no-padding>
+  <div class="agreements-wrapper">
+    <ion-grid>
+      <ion-row hidden-sm-down>
+        <ion-col col-12 col-md-6 offset-md-1 col-lg-6 offset-lg-2 col-xl-4 offset-xl-3>
+          <div class="title">{{title}}</div>
+        </ion-col>
+        <ion-col col-md-4 col-lg-3 col-xl-4>
+          <div float-right>
+            <abandon-payment (onAbandonClicked)="onAbandon()" [text]="abandonText">
+            </abandon-payment>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3>
+          <ion-list class="inner">
+            <div class="item-subtitle" text-wrap>
+              <div class="subtitle">{{subtitle}}</div>
+            </div>
+            <bdb-item-card *ngFor="let item of accounts" [logoPath]="logoPath" [showLogo]="true" [title]="item.productName" [desc]="['No. ' + item.productNumber]"
+              [subDesc]="[item.productBank]" (onItemClicked)="processSelection(item)">
+            </bdb-item-card>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

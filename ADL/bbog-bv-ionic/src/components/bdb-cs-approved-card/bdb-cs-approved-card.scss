@@ -1,0 +1,88 @@
+bdb-cs-approved-card {
+    
+    .wrapper {
+        cursor: pointer;
+        border-radius: 10px;
+        background-image: linear-gradient(to bottom, #0074d3, #0040a8);
+        padding: 16px 16px 16px 20px;
+        border-left: solid 4px rgba(225, 226, 230, 0.4);
+
+        &:hover {
+            box-shadow: 0 5px 10px 0 rgba(0, 44, 118, 0.5);
+        }
+
+        &__title {
+            font-family: $RobotoRegular;
+            font-size: 16px;
+            line-height: 1.5;
+            color: color($colors, white);
+            margin-bottom: 36px;
+        }
+
+        &__badge {
+            width: 67px;
+            height: 22px;
+            border-radius: 4px;
+            border: solid 1px color($colors, active-green);
+            background-color: color($colors, active-green);
+            text-align: center;
+
+            &__text {
+                font-family: $RobotoMedium;
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: -0.2px;
+                color: color($colors, white);
+            }
+        }
+
+        &__subtitle {
+            font-family: $RobotoMedium;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 1.5;
+            color: color($colors, white);
+
+            &__decimal {
+                font-family: $RobotoRegular;
+                font-size: 12px;
+                line-height: 1.67;
+                position: absolute;
+                top: 4px;
+                color: color($colors, white);
+            }
+        }
+
+        &__desc {
+            font-family: $RobotoRegular;
+            font-size: 14px;
+            line-height: 1.43;
+            color: color($colors, white);
+            margin-bottom: 40px;
+
+            &__bold {
+                font-family: $RobotoBold;
+                font-weight: bold;
+            }
+        }
+
+        &__link {
+            display: inline-block;
+
+            &__text {
+                font-family: $RobotoBold;
+                font-size: 12px;
+                font-weight: bold;
+                line-height: 1.67;
+                color: color($colors, white);
+            }
+
+            &__icon {
+                display: inline-block;
+                position: relative;
+                top: 2px;
+                left: 8px;
+            }
+        }
+    }
+}

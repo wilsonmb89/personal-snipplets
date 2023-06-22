@@ -1,0 +1,91 @@
+bdb-nav-options {
+    .nav-options {
+        width: 100%;
+        position: relative;
+
+        &__left {
+            float: left;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+
+            &__text {
+                margin-left: 0.8rem;
+                font-family: $RobotoRegular;
+                font-size: 1.2rem;
+                color: color($colors, steel);
+                cursor: pointer;
+            }
+
+            &__centersvg {
+                transform: translate(50%, 50%);
+            }
+
+        }
+
+        &__title {
+            color: color($colors, bdb-blue);
+            font-size: 1.6rem;
+            font-family: $ArgoRegular;
+            text-align: center;
+
+            &--content {
+                padding: 0;
+                margin: 5px 0;
+            }
+        }
+
+        &__right {
+            float: right;
+            display: inline-flex;
+            align-items: center;
+
+            &__text {
+                margin-right: 0.8rem;
+                font-family: $RobotoRegular;
+                font-size: 1.2rem;
+                color: color($colors, steel);
+                cursor: pointer;
+            }
+
+            &__centersvg {
+                transform: translate(-50%, 50%);
+            }
+
+        }
+
+        &__deco {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: color($colors, bdb-bg);
+            cursor: pointer;
+        }
+    }
+
+    @media only screen and (max-width: 540px) {
+        .nav-options {
+            margin-top: 1rem;
+
+            &__left {
+                &__text {
+                    margin-left: 0.6rem;
+                }
+            }
+
+            &__right {
+                &__text {
+                    margin-right: 0.6rem;
+                }
+            }
+        }
+
+        &__title {
+            font-size: 1.4rem;
+        }
+
+        .path-mobile {
+            fill: color($colors, steel);
+        }
+    }
+}

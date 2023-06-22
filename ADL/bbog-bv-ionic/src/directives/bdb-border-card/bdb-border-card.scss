@@ -1,0 +1,19 @@
+.bdb-border-card {
+    border-left-style: solid;
+    border-left-width: 6px;
+    display: block;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+
+    > :first-child {
+      border-bottom-left-radius: 0px !important;
+      border-top-left-radius: 0px !important;
+    }
+}
+
+@each $element, $color in $colors {
+
+  .bdb-border-color-#{$element} {
+    border-left-color: $color;
+  }
+}

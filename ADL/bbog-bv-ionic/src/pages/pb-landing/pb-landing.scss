@@ -1,0 +1,129 @@
+page-pb-landing {
+    position: relative;
+    .scroll-content{
+        overflow: hidden;
+        background: transparent !important;
+    }
+    .pb-select {
+        -moz-appearance: none;
+        border: 1px solid #b5bac3;
+        background: url(../assets/imgs/arrow-line.svg);
+        background-color: white;
+        appearance: none;
+        background-position: calc(100% - 6px) center;
+        background-size: 1rem 0.8rem;
+        background-repeat: no-repeat;
+        padding: 15px 13px;
+        width: 100%;
+        color: #828994 !important;
+        height: 50px;
+        border-radius: 3px;
+        font-size: 14px;
+    }
+
+    .options ul li{
+        list-style: none;
+        margin: 10px 9px 10px 0;
+        padding-bottom: 5px;
+    }
+
+    .options ul{
+        padding: 0;
+    }
+
+    .options a{
+        color: #002C76;
+        font-family: 'Trebuchet MS';
+        font-size: 13px;
+        letter-spacing: -0.25px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .arrow-blue::before{
+        content: url(../assets/imgs/arrow-blue-pb.png);
+    }
+
+    .btn-container{
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn-container .pb-submit{
+        width: 100%;
+        box-shadow: none;
+        transition: 0.2s ease;
+        display: block;
+    }
+
+    .btn-container .pb-submit:hover{
+        background-color: color($colors, bdb-blue);
+        transition: 0.3s ease-out;
+    }
+
+    .btn-container .pb-submit img{
+        margin-right: 12px;
+    }
+
+    .btn-container .pb-classic{
+        width: 100%;
+        height: 28px;
+        border-radius: 100px;
+        background-color: #002c76;
+        border: solid 1px color($colors, bdb-blue);
+        font-family: $ArgoRegular, $RobotoRegular;
+        color: white;
+        transition: 0.2s ease;
+        margin: 2px 0;
+        font-size: 1.3rem;
+    }
+
+    .pb-classic {
+        &__lock{
+            vertical-align: middle;
+        }
+    }
+
+    .btn-container .pb-classic:hover{
+        background-color: #0041ab;
+        transition: 0.3s ease-out;
+    }
+
+    .error-msg{
+        font-family: $RobotoMedium;
+        color: color($colors, bright-red);
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .recaptcha-policy {
+        margin-top: 0.5rem;
+        color: var(--pulse-color-carbon-700);
+
+        &__content {
+            &--anchor {
+                color: var(--pulse-color-primary-700);
+                text-decoration: none;
+            }
+        }
+    }
+
+    .version {
+        color: var(--pulse-color-carbon-900);
+        padding-top: 1.6rem;
+    }
+
+    // for IE 10 and 11
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        // IE10+ CSS here
+        .pb-select{
+            background: none;
+        }
+
+        .landing-col{
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,87 @@
+<div class="sched-card">
+  <form [formGroup]="formScheduleInfo" autocomplete="off">
+    <div class="pulse-grid">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12" no-padding>
+          <div class="sched-card__card-simplified">
+            <bdb-item-card-simplified [item]="item">
+            </bdb-item-card-simplified>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" no-padding>
+          <div class="sched-card__form-inputs">
+            <div class="pulse-grid">
+              <div class="row" hidden-p-sm-down>
+                <div class="col-lg-offset-1 col-lg-11 col-md-12 col-xs-12" no-padding>
+                  <div class="sched-card__item-border"></div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-offset-1 col-lg-8 col-md-12 col-xs-12" no-padding>
+                  <div class="sched-card__account-select">
+                    <p class="sched-card__label">Cuenta de origen</p>
+                    <select bdb-select formControlName="originAccount" id="bgsc-as">
+                      <option disabled value="def">Seleccione</option>
+                      <option *ngFor="let item of accountList" [value]="item.index + 1">{{item.display}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-xs-12" no-padding>
+                  <div class="sched-card__max-amount">
+                    <div class="sched-card__label">Monto máximo a pagar
+                      <div class="sched-card__popover" (click)="presentPopover($event); $event.stopPropagation();" hidden-p-sm-down>
+                        <img src="assets/imgs/info-outline-material.png">
+                      </div>
+                      <div class="sched-card__popover" (click)="presentInfo()" hidden-p-md-up>
+                        <img src="assets/imgs/info-outline-material.png">
+                      </div>
+                    </div>
+                    <bdb-currency-input formControlName="maxAmount" [placeHolder]="'$1000'" id="bgsc-ai">
+                    </bdb-currency-input>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-offset-1 col-lg-4 col-md-6 col-xs-12" no-padding>
+                  <div class="sched-card__freq-select">
+                    <p class="sched-card__label">Frecuencia</p>
+                    <select bdb-select formControlName="frequency" id="bgsc-as" (change)="onFrequencyChange()">
+                      <option disabled value="def">Seleccione</option>
+                      <option *ngFor="let item of frequencyOptions" [value]="item.key">{{item.value}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-xs-12" no-padding>
+                  <div class="sched-card__days-select">
+                    <p class="sched-card__label">Días a vencer o vencidos</p>
+                    <select bdb-select formControlName="days" id="bgsc-ds">
+                      <option disabled value="def">Seleccione</option>
+                      <option *ngFor="let item of daysOptions" [value]="item">{{item}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row sched-card__buttons-row">
+                <div class="col-lg-offset-1 col-lg-11 col-xs-12" no-padding>
+                  <div class="sched-card__save-button" hidden-p-sm-down>
+                    <button [disabled]="!formScheduleInfo.valid" bvButton color="mango-gradient"
+                      (click)="save()">{{ newSched ? 'Programar pago' : 'Guardar cambios' }}</button>
+                  </div>
+                  <div class="sched-card__center-div" [hidden]="newSched">
+                    <div (click)="delete()" class="sched-card__delete-button">
+                      <img src="assets/imgs/trash-icon.svg">
+                      <span class="sched-card__delete-button__text">Eliminar programación</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

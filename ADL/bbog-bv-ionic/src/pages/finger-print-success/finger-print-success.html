@@ -1,0 +1,32 @@
+<ion-content >
+
+    <ion-grid tc class="finger">
+      <ion-row >
+        <ion-col text-center >
+          <img class="finger__image" src="assets/imgs/touch-id-success.svg">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p class="finger__title">
+              Touch ID<span class="bdb-nl">
+              está habilitado
+            </span>
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p class="finger__copy">
+              Desde ahora podrás ingresar a Banca Virtual usando Touch ID.
+          </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <button bvButton color='blue-gradient' class="finger__config-btn" (click)="goToHome()">Continuar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+

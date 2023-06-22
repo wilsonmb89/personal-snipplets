@@ -1,0 +1,178 @@
+[
+    {
+        "key": "AG",
+        "value": "Agrupación"
+    },
+    {
+        "key": "ANV",
+        "value": "Anillo Vial"
+    },
+    {
+        "key": "APTO",
+        "value": "Apartamento"
+    },
+    {
+        "key": "BG",
+        "value": "Bodega"
+    },
+    {
+        "key": "BL",
+        "value": "Bloque"
+    },
+    {
+        "key": "BV",
+        "value": "Bulevar - Pasaje"
+    },
+    {
+        "key": "CA",
+        "value": "Casa"
+    },
+    {
+        "key": "CAB",
+        "value": "Cabaña"
+    },
+    {
+        "key": "CAN",
+        "value": "Centro Admon Nacional"
+    },
+    {
+        "key": "CAS",
+        "value": "Caserio"
+    },
+    {
+        "key": "CC",
+        "value": "Centro Comercial"
+    },
+    {
+        "key": "CEL",
+        "value": "Celula"
+    },
+    {
+        "key": "CONJ",
+        "value": "Conjunto"
+    },
+    {
+        "key": "CONS",
+        "value": "Consultorio"
+    },
+    {
+        "key": "CORR",
+        "value": "Corregimiento"
+    },
+    {
+        "key": "DP",
+        "value": "Deposito"
+    },
+    {
+        "key": "ED",
+        "value": "Edificio"
+    },
+    {
+        "key": "EN",
+        "value": "Entrada"
+    },
+    {
+        "key": "ESQ",
+        "value": "Esquina"
+    },
+    {
+        "key": "ET",
+        "value": "Etapa"
+    },
+    {
+        "key": "GJ",
+        "value": "Garaje"
+    },
+    {
+        "key": "INT",
+        "value": "Interior"
+    },
+    {
+        "key": "L",
+        "value": "Local"
+    },
+    {
+        "key": "LT",
+        "value": "Lote"
+    },
+    {
+        "key": "MD",
+        "value": "Modulo"
+    },
+    {
+        "key": "MN",
+        "value": "Mezzanine"
+    },
+    {
+        "key": "MZ",
+        "value": "Manzana"
+    },
+    {
+        "key": "OF",
+        "value": "Oficina"
+    },
+    {
+        "key": "P",
+        "value": "Piso"
+    },
+    {
+        "key": "PH",
+        "value": "Penthouse"
+    },
+    {
+        "key": "PORT",
+        "value": "Porteria"
+    },
+    {
+        "key": "PRT",
+        "value": "Puerto"
+    },
+    {
+        "key": "PT",
+        "value": "Puesto"
+    },
+    {
+        "key": "RESG",
+        "value": "Resguardo"
+    },
+    {
+        "key": "SEC",
+        "value": "Sector"
+    },
+    {
+        "key": "SM",
+        "value": "Supermanzana"
+    },
+    {
+        "key": "SS",
+        "value": "Semisotano"
+    },
+    {
+        "key": "ST",
+        "value": "Sotano"
+    },
+    {
+        "key": "TR",
+        "value": "Torre"
+    },
+    {
+        "key": "UN",
+        "value": "Unidad"
+    },
+    {
+        "key": "UR",
+        "value": "Unidad Residencial"
+    },
+    {
+        "key": "URB",
+        "value": "Urbanización"
+    },
+    {
+        "key": "VDA",
+        "value": "Vereda"
+    },
+    {
+        "key": "ZN",
+        "value": "Zona"
+    }
+]

@@ -1,0 +1,9 @@
+<div class="tabs" [ngClass]=" {'tabs--disabled': disabled}">
+  <div *ngFor="let tab of tabs" 
+    class="tabs__item" 
+    [ngClass]="{'tabs__item--active': tab.status, 'tabs__item--inactive': !tab.status}"
+    (click)="selectTab(tab)"
+    >
+    {{tab.name}}
+  </div>
+</div>

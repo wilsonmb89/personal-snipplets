@@ -1,0 +1,131 @@
+bdb-option-list {
+
+  .inner {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .acct-person-wrapper {
+    flex: 1;
+    overflow-x: hidden;
+    height: 100%;
+  }
+
+  .acct-agreements-list {
+    position: absolute;
+    z-index: 900;
+    width: 100%;
+    box-shadow: 0 0 15px 0 rgba(102, 128, 173, 0.2);
+  }
+
+  .acct-item:hover {
+    transition: all ease-in 0.2s;
+    background-color: color($colors, bdb-blue);
+    color: white;
+
+    .service-name {
+      color: white;
+    }
+
+    .category-name {
+      color: white;
+    }
+  }
+
+  .service-name {
+    color: color($colors, bdb-black);
+    font-size: 16px;
+  }
+
+  .category-name {
+    color: color($colors, steel);
+    font-size: 12px;
+  }
+
+
+  .subtitle.subtitle-acct-number {
+    margin-top: 40px;
+  }
+
+  ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: color($colors, bdb-black);
+    opacity: 0.2;
+    /* Firefox */
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: color($colors, bdb-black);
+    opacity: 0.8;
+  }
+
+  ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: color($colors, bdb-black);
+    opacity: 0.8;
+  }
+
+  .item-doc-type {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #dcdee0;
+    width: 100%;
+    padding: 2px 0px;
+
+    .item-inner {
+      border: 0px !important;
+    }
+
+    .item-md {
+      font-size: 24px;
+      font-family: $RobotoLight;
+      color: color($colors, bdb-black);
+    }
+
+    /* remove the original arrow */
+    select.input-lg {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      /* no standardized syntax available, no ie-friendly solution available */
+    }
+
+    select+i.fa {
+      float: right;
+      margin-top: -30px;
+      margin-right: 5px;
+      /* this is so when you click on the chevron, your click actually goes on the dropdown menu */
+      pointer-events: none;
+      /* everything after this is just to cover up the original arrow */
+      /* (for browsers that don't support the syntax used above) */
+      background-color: #fff;
+      padding-right: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 736px) {
+    *.continue-btn {
+      border-radius: 0;
+    }
+
+    .inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .subtitle {
+      font-family: $RobotoLight;
+      font-size: 16px;
+      color: color($colors, bdb-slate);
+    }
+
+    .inner .bv-form {
+      margin-top: 15px;
+      position: relative;
+      flex: 1;
+    }
+  }
+}

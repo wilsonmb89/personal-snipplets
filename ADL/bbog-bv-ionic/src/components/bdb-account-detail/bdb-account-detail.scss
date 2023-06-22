@@ -1,0 +1,77 @@
+bdb-account-detail {
+    .account-detail{
+        &__col-1{
+
+            &__name{
+                font-family: $ArgoRegular;
+                font-size: 2.4rem;
+                color: color($colors, bdb-blue);
+                padding: .6rem 0;
+                display: flex;
+
+                &__text{
+                    flex: 3;
+                }
+
+                &__logo{
+                    flex: 1;
+                }
+            }
+
+            &__number{
+                font-family: $RobotoRegular;
+                font-size: 1.4rem;
+                color: color($colors, steel);
+            }
+        }
+        &__col-2{
+
+            &__main{
+                font-family: $RobotoBold;
+                font-size: 1.4rem;
+                color: color($colors, bdb-black);
+                padding: .4rem 0;
+            }
+            &__value{
+                font-family: $RobotoLight;
+                font-size: 2.4rem;
+                color: color($colors, bdb-black);
+            }
+        }
+        &__col-3{
+            &__title{
+                font-family: $RobotoBold;
+                font-size: 1.2rem;
+                color: color($colors, steel);
+                padding: .4rem 0;
+            }
+            &__des{
+                font-family: $RobotoRegular;
+                font-size: 1.4rem;
+                color: color($colors, steel);
+            } 
+        }
+
+        &__error-col{
+            display: inline-flex;
+            &__icon-container{
+                border-radius: 50%;
+                background-color: #f69b31;
+                height: 48px;
+                width: 48px;
+                text-align: center;
+            }
+            &__icon-container img{
+                transform: translateY(50%);
+            }
+            &__msg{
+                font-family: $RobotoRegular;
+                font-size: 1.6rem;
+                color: color($colors, bdb-black);
+                vertical-align: middle;
+                line-height: 48px;
+                margin-left: 2rem;
+            }
+        }
+    }
+}

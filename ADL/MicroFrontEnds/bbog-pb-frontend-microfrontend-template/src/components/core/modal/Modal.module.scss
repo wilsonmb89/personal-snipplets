@@ -1,0 +1,40 @@
+.modal-container {
+  &__btn-close {
+    height: 2.8rem;
+    width: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--pulse-color-info-100);
+    margin-left: auto;
+    cursor: pointer;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__action-btn {
+      width: auto;
+
+      &:nth-child(even) {
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 540px) {
+    &__footer {
+      flex-direction: row;
+
+      &__action-btn {
+        &:nth-child(even) {
+          margin-left: 1rem;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

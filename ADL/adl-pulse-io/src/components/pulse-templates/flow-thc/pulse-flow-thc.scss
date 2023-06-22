@@ -1,0 +1,18 @@
+:host(.pulse-flow-thc) {
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  slot[name=header]::slotted(*) {
+      position: sticky;
+      top: 0;
+      z-index: 2000;
+      background-color: var(--pulse-color-white-700);
+  }
+
+  slot[name=header]::slotted(*),
+  slot[name=content]::slotted(*) {
+      display: flex;
+      justify-content: center;
+  }
+}

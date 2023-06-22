@@ -1,0 +1,64 @@
+page-form-secure-pass {
+
+    --pulse-card-padding: 0;
+
+    .form-secure-pass-container {
+        width: 100%;
+        display: contents;
+
+        &__title {
+            color: var(--pulse-color-primary-700);
+            margin-top: 1.6rem;
+            margin-bottom: 0.4rem;
+        }
+
+        &__subtitle {
+            color: var(--pulse-color-carbon-700);
+        }
+
+        &__form {
+            margin-top: 2.4rem;
+            margin-left: -1.6rem;
+            width: calc(100% + 3.2rem);
+        }
+
+    }
+
+    @media only screen and (max-width: 540px) {
+
+        .form-secure-pass-container {
+        
+            &__form pulse-card {
+                box-shadow: none;
+            }
+    
+        }
+
+    }
+
+    @media only screen and (min-width: 541px) {
+
+        .form-secure-pass-container {
+    
+            &__title {
+                margin-top: 2.4rem;
+                margin-bottom: 0.8rem;
+            }
+
+            &__title,
+            &__subtitle {
+                margin-left: 2.4rem;
+                margin-right: 2.4rem;
+            }
+    
+            &__form {
+                margin-top: 3.2rem;
+                margin-left: 0;
+                width: 100%;
+            }
+    
+        }
+
+    }
+
+}

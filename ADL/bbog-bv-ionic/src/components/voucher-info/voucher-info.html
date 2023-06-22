@@ -1,0 +1,85 @@
+<div class="voucher-info-content__voucher voucher-info-content__zig-zag-bottom">
+  <ion-grid no-padding>
+    <ion-row class="voucher-info-content__voucher-header">
+      <ion-col col-lg-6 col-12>
+        <img src="assets/imgs/horizontal-logo_white.svg" hidden-sm-down class="voucher-info-content__voucher-img">
+        <img src="assets/imgs/3.svg" hidden-md-up class="voucher-info-content__voucher-img">
+      </ion-col>
+
+      <ion-col class="voucher-info-content__title" col-12 hidden-md-up>
+        <span class="voucher-info-content__title-text">
+          {{ data.successful ? 'Transacción exitosa' : 'Transacción fallida' }}
+        </span>
+        <img [src]="data.successful ? 'assets/imgs/group-9.png' : 'assets/imgs/group-8.png'"
+          class="voucher-info-content__title-img">
+      </ion-col>
+
+      <ion-col col-lg-6 col-12>
+        <div class="voucher-info-content__voucher-header-title" *ngIf="data.successful && data.voucher.number">
+          Comprobante No.{{
+          data.voucher.number }}</div>
+      </ion-col>
+      <ion-col col-lg-6 offset-lg-6 col-12 hidden-md-up *ngIf="!data.successful">
+        <div class="voucher-info-content__voucher-header-subtitle">{{ data.voucher.date ? data.voucher.date : today |
+          date: 'medium' }}</div>
+      </ion-col>
+      <ion-col col-lg-6 offset-lg-6 text-right hidden-sm-down>
+        <div class="voucher-info-content__voucher-header-subtitle">{{ data.voucher.date ? data.voucher.date : today |
+          date: 'medium' }}</div>
+      </ion-col>
+
+      <ion-col col-12 hidden-md-up class="voucher-info-content__failed-text" *ngIf="!data.successful">
+        {{ data.err.title }}<br />
+        {{ data.err.message }}
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="data.successful" hidden-md-up>
+    <ion-row>
+      <ion-col no-padding>
+        <voucher-send-email [viewSendEmail]="viewSendEmail" (triggerSendEmail)="triggerSendEmailEvent()"
+          (submitSendEmail)="submitSendEmailEvent($event)"></voucher-send-email>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid [ngClass]="['voucher-info-content__voucher-list', viewSendEmail ? 'email-mobile-hidden' : '' ]">
+
+    <ion-row *ngFor="let content of data.voucher.content;"
+      [ngClass]="['voucher-info-content__voucher-item', !data.successful ? 'voucher-opacity' : '']">
+      <ion-col col-6 text-left no-padding>
+        <div class="voucher-info-content__voucher-item-text voucher-left">{{ content.name }}</div>
+      </ion-col>
+      <ion-col col-6 text-right no-padding>
+        <div [ngClass]="['voucher-info-content__voucher-item-text', text.type ? 'voucher-' + text.type : '']"
+          *ngFor="let text of content.text;">
+          <img [src]="text.img ? text.img : ''" width="36" *ngIf="text.img">
+          <span *ngIf="!isDetailCostNotAvailable(text.value)">{{text.value}}</span>
+          <span *ngIf="isDetailCostNotAvailable(text.value)">
+              <a rel=noopener href="https://www.bancodebogota.com/wps/portal/banco-de-bogota/bogota/productos/para-ti/tasas-y-tarifas" target="_blank">Consultar costo</a>
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row hidden-md-up *ngIf="data.sendEmail">
+      <ion-col class="voucher-info-content__action">
+        <div id="voucherEmailImg" class="voucher-info-content__action-circle" (click)="triggerSendEmailEvent()">
+          <img src="assets/imgs/noun-mail.svg" class="voucher-info-content__action-circle-img">
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col no-padding>
+        <div class="voucher-info-content__voucher-buttons">
+          <button bvButton *ngFor="let btn of buttons;" [id]="btn.id"
+            [outline]="btn.type && btn.type === 'outline' ? true : false"
+            (click)="onBtnClick(btn)">{{ btn.name }}</button>
+          <button bvButton *ngIf="!data.successful" hidden-md-up (click)="popFlow()">Volver</button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</div>

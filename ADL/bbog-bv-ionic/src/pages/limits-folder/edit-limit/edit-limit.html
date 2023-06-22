@@ -1,0 +1,52 @@
+<ion-header>
+</ion-header>
+
+<ion-content padding class="edit-content">
+
+  <form [formGroup]="editLimitForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div class="edit-content__title">
+            {{ limit.desc }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-10 #colAmount>
+          <div class="edit-content__label-title">
+            Monto
+          </div>
+          <div class="edit-content__label-input">
+            <bdb-currency-input (onVerifyChange)="onVerifyChange($event)" [placeHolder]="'$0'"
+              formControlName="amountNumber" [customMask]="customMask" [withDecimal]="withDecimal" [locale]="'en-US'">
+            </bdb-currency-input>
+            <label *ngIf="this.editLimitForm.controls.amountNumber.errors?.max">El límite es 50.000.000, si deseas un
+              monto mayor debes dirigirte a la oficina de radicación.</label>
+          </div>
+        </ion-col>
+        <ion-col col-5 col-md-3 offset-md-1 *ngIf="limit.trnCount">
+          <div class="edit-content__label-title">
+            Transacciones
+          </div>
+          <div class="edit-content__label-input">
+            <input (input)="onInputChange($event)" bdb-form-input placeholder="  # " type="number"
+              formControlName="creditNumber">
+            <label *ngIf="showTrnError">Ingrese unicamente dígitos.</label>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <button class="close-img" (click)="closeModal()" hidden-md-down>
+    <img src="assets/imgs/closeicon_token.svg">
+  </button>
+</ion-content>
+
+<ion-footer no-padding>
+  <ion-toolbar no-padding class="btn-wrapper">
+    <button id="el-save" full color="primary" ion-button (click)="submitEdit()" [disabled]="disableBtn">Guardar tope
+    </button>
+  </ion-toolbar>
+</ion-footer>

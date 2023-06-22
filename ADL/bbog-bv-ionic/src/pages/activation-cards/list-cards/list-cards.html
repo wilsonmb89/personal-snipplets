@@ -1,0 +1,26 @@
+<ion-content class="list-cards-content">
+  <payment-navigation-header (onAbandonClicked)="onAbandonClicked()" (onBackPressed)="onBackPressed()" [text]="abandonText"
+    hidden-md-down>
+  </payment-navigation-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col offset-sm-1>
+        <div hidden-md-down class="list-cards-content__title">
+          {{ title }}
+        </div>
+        <div class="list-cards-content__subtitle">
+          {{ subtitle }}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col offset-sm-1 col-12 col-sm-10>
+        <ion-list class="list-cards-content__ion-list">
+          <bdb-item-card *ngFor="let card of listCards; let i = index" id="card{{i}}" [logoPath]="logoPath" [showLogo]="true" [title]="card.nameCard"
+            [desc]="['No. '+ card.displayNumber +'']" (onItemClicked)="selectCard(card)">
+          </bdb-item-card>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

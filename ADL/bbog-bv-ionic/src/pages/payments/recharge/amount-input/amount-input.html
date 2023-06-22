@@ -1,0 +1,50 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+        [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <div class="inner">
+        <div class="subtitle">
+          {{subtitle}}
+        </div>
+        <form [formGroup]="amountForm" class="bv-form">
+          <pulse-input ngDefaultControl
+            id="re-ai"
+            type="currency"
+            formControlName="amount"
+            placeholder="Ingresa el valor"
+            [state]="amountForm.controls.amount.invalid && amountForm.controls.amount.dirty ? 'error' : 'basic'"
+            [labelerror]="amountForm.controls.amount.invalid && amountForm.controls.amount.dirty ? ammtErr : ''"
+          ></pulse-input>
+          <ion-slides class="slide-main">
+            <ion-slide class="def-slide" *ngFor="let amount of defaultamounts">
+              <button (click)="onSlideClick(amount)" class="slide-btn" ion-button color="light-blue-grey" outline>{{amount | currency:'USD':'symbol':'1.0-0'}}</button>
+            </ion-slide>
+          </ion-slides>
+          <div class="btn-wrapper" hidden-p-sm-down>
+            <button bvButton id="amount-btn"  [color]="colorBtnSubmit" [disabled]="amountForm.controls.amount.invalid" ion-button
+              (click)="triggerSelectAcct()">{{ nameBtnSubmit }}</button>
+            <div class="key-hint" [hidden]="amountForm.controls.amount.invalid">o presiona Enter</div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="mob-amount-btn" class="continue-btn" full [color]="colorBtnSubmit" ion-button (click)="triggerSelectAcct()" [disabled]="amountForm.controls.amount.invalid">{{ nameBtnSubmit }}</button>
+
+  </ion-toolbar>
+</ion-footer>

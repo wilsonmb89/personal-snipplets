@@ -1,0 +1,24 @@
+@function get-animation(){
+    @return (
+        0: 'loader-anim 2s linear infinite',
+        1: 'loader-anim 0.8s linear infinite alternate;',
+    )
+
+}
+
+@mixin loading-effect($type: 1) {
+    background: linear-gradient(to right, #f6f8fa, #e9ebf3,  #f6f8fa);
+    animation: #{map-get(get-animation(), $type)};
+    background-size: 200% 100%;
+}
+
+@mixin loading-effect-blue($type: 1) {
+    background: linear-gradient(to right, #0064EB, #0055C7, #0064EB);
+    animation: #{map-get(get-animation(), $type)};
+    background-size: 200% 100%;
+}
+
+@keyframes loader-anim {
+    0%{background-position:0 50%}
+    100%{background-position: 100% 50%}
+  }

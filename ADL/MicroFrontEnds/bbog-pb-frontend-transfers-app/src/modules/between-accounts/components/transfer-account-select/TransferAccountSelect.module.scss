@@ -1,0 +1,39 @@
+@import '../../../../variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sherpa-spacing-5);
+  &__actions {
+    display: flex;
+    gap: var(--sherpa-spacing-4);
+    flex-direction: column;
+    margin: var(--sherpa-spacing-5) var(--sherpa-spacing-0) var(--sherpa-spacing-4);
+    &--transfer {
+      width: 35%;
+    }
+
+    @media only screen and (max-width: $break-desktop) {
+      &--transfer {
+        width: 55%;
+      }
+    }
+
+    @media only screen and (min-width: $break-mobile) and (max-width: $break-table-md) {
+      &--transfer {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (min-width: $break-table-md) and (max-device-width: $break-table-md) {
+      flex-direction: row;
+      &__summary {
+        display: flex;
+        width: 40%;
+      }
+      &--transfer {
+        width: 35%;
+      }
+    }
+  }
+}

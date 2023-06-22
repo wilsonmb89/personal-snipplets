@@ -1,0 +1,28 @@
+/**
+ * Grupo Aval Acciones y Valores S.A. CONFIDENTIAL
+ *
+ * <p>Copyright (c) 2018 . All Rights Reserved.
+ *
+ * <p>NOTICE: This file is subject to the terms and conditions defined in file 'LICENSE', which is
+ * part of this source code package.
+ */
+package co.com.adl.pb.bdb.banking.reports.model.dto.references.api.connect;
+
+import com.google.gson.annotations.SerializedName;
+import java.util.List;
+import lombok.Builder;
+import lombok.Getter;
+
+@Getter
+@Builder
+public class NotificationRec {
+
+  @SerializedName("Type")
+  private final String type;
+
+  @SerializedName("Category")
+  private final String category;
+
+  @SerializedName("DeliveryInfo")
+  private final List<DeliveryInfo> deliveryInfo;
+}

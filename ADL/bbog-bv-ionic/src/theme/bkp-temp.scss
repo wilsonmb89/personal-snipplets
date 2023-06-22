@@ -1,0 +1,27 @@
+$screen-bkps: (
+    xs: 0,
+    sm: 480px,
+    md: 540px,
+    lg: 770px
+) !default;
+
+// Adds hidden attributes
+@each $breakpoint in map-keys($screen-bkps) {
+  $infix: breakpoint-infix($breakpoint, $screen-bkps);
+
+  @include media-breakpoint-up($breakpoint, $screen-bkps) {
+    // Provide `[hidden-{bp}-up]` attributes for hiding the element based
+    // on the breakpoint
+    [hidden-p#{$infix}-up] {
+      display: none !important;
+    }
+  }
+
+  @include media-breakpoint-down($breakpoint, $screen-bkps) {
+    // Provide `[hidden-{bp}-down]` attributes for hiding the element based
+    // on the breakpoint
+    [hidden-p#{$infix}-down] {
+      display: none !important;
+    }
+  }
+}

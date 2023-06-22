@@ -1,0 +1,44 @@
+<div [formGroup]="parentForm" class="pulse-grid bdb-references-generate-container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12" no-padding>
+      <div class="bdb-references-generate-container__item-detail">
+        <bdb-item-card-simplified [item]="item">
+        </bdb-item-card-simplified>
+      </div>
+    </div>
+  </div>
+  <div class="row" hidden-p-sm-down>
+    <div class="col-lg-offset-1 col-lg-10 col-md-offset-1 col-md-10" no-padding>
+      <div class="bdb-references-generate-container__border"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-1 col-lg-6 col-md-offset-1 col-md-10 col-xs-12" no-padding>
+      <div class="bdb-references-generate-container__input">
+        <div class="bdb-references-generate-container__input__text">
+          Nombre del destinatario
+        </div>
+        <input [formControlName]="'receiver'" bdb-form-input placeholder="Nombre" type="text">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-offset-1 col-lg-11 col-md-offset-1 col-md-10 col-xs-12" no-padding>
+      <div class="bdb-references-generate-container__checkbox">
+        <bdb-radio>
+          <input [formControlName]="'includedAmt'" bdbRadioRef type="checkbox">
+        </bdb-radio>
+        <div class="bdb-references-generate-container__checkbox__text">
+          Incluir saldo en la referencia
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" hidden-p-sm-down>
+    <div class="col-lg-offset-1 col-lg-11 col-md-offset-1 col-md-10 col-xs-12" no-padding>
+      <div class="bdb-references-generate-container__button">
+        <button [disabled]="!parentForm.valid" bvButton type="submit">Generar</button>
+      </div>
+    </div>
+  </div>
+</div>

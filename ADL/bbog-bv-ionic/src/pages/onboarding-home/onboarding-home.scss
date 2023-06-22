@@ -1,0 +1,164 @@
+page-onboarding-home {
+
+    .onboarding-home-content {
+        background-image: url('../assets/imgs/onboarding-home/background-onboarding.svg');
+        background-repeat: no-repeat;
+        background-position: top;
+
+        .scroll-content {
+            overflow-y: hidden;
+        }
+
+        &__slide-img {
+            height: 219px;
+            position: relative;
+
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &__title {
+            font-family: $RobotoLight;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.33;
+            text-align: center;
+            color: color($colors, bdb-blue);
+
+            span {
+                font-family: $RobotoMedium;
+                font-weight: 300;                
+            }
+        }
+
+        &__subtitle {
+            font-family: $RobotoRegular;
+            font-size: 14px;
+            line-height: 1.43;
+            text-align: center;
+            color: color($colors, steel);
+            margin: 16px 83px 0px 83px;
+        }
+
+        &__close {
+            width: 28px;
+            height: 28px;
+            background-color: color($colors, bdb-bg);
+            border-radius: 50%;
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            cursor: pointer;
+            z-index: 999;
+
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &__slides {
+            .swiper-pagination {
+                bottom: 30px;
+            }
+        }
+
+        &__slide {
+            .slide-zoom {
+                height: 100%;
+            }
+        }
+
+        &__slide-btn {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            z-index: 999;
+            min-width: 185px;
+        }
+
+        &__btn-prev {
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            background-color: color($colors, bdb-bg);
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            cursor: pointer;
+            z-index: 999;
+
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        &__btn-next {
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px 0 rgba(102, 128, 173, 0.3);
+            background-image: linear-gradient(to bottom, #0074d3, #0040a8);
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            cursor: pointer;
+            z-index: 999;
+            transition: 0.3s ease;
+
+            img {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    @media only screen and (max-width: 447px) {
+
+        $horizontal: (34 * 100) / 320;
+        $topVertical: (24 * 100) / 320;
+        $height: (275 * 100) / 540;
+
+        .onboarding-home-content {
+            background-image: url('../assets/imgs/onboarding-home/background-onboarding-mobile.svg');
+    
+            &__slide-img {
+                height: unquote($height + '%');
+            }
+    
+            &__title {
+                font-size: 22px;
+                line-height: 1.27;
+                margin-left: unquote($horizontal + '%');
+                margin-right: unquote($horizontal + '%');
+    
+                span {
+                    font-weight: 500;
+                }
+            }
+    
+            &__subtitle {
+                margin-left: unquote($horizontal + '%');
+                margin-right: unquote($horizontal + '%');
+                margin-top: unquote($topVertical + '%');
+                line-height: 1.29;
+            }
+    
+            &__close {
+                background-color: white;
+            }
+        }
+    }
+}

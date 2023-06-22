@@ -1,0 +1,42 @@
+item-list-header {
+    
+    .item__title{
+        font-family: $RobotoRegular;
+        font-size: 24px;
+        line-height: 1.67;
+        letter-spacing: normal;
+        color: color($colors, bdb-blue);
+        margin-bottom: 4.1rem;
+        text-align: start;
+        padding-left: 72px;
+    }
+
+    .item__sub{
+            background-color: transparent;
+
+            &__subtitle{
+                color: color($colors, bdb-blue);
+                font-size: 16px;
+                padding-left: 72px;
+                font-family: $RobotoRegular;
+                margin-bottom: 3.1rem;
+            }
+        }
+
+    @media only screen and (max-width: 768px) {
+
+        .item__sub{
+            background-color: transparent;
+
+            &__subtitle{
+                padding-left: 0px;
+                font-family: $RobotoLight;
+                color: color($colors, bdb-slate);
+                margin-left: 16px;
+                margin-top: 2.3rem;
+                margin-bottom: 2.1rem;
+            }
+        }
+    
+    }
+}

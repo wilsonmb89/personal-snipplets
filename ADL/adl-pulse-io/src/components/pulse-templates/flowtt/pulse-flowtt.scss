@@ -1,0 +1,74 @@
+.flowtt-main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    &--container{
+        max-width: 100%;
+        width: 100%;
+       &--header{
+            padding: 0.8rem 0;
+            position: sticky;
+             background-color: var(--pulse-flowtx-header);
+            top:0;
+            z-index: 999;
+       }
+       &--content{
+        
+        &--summary{
+            position: sticky;
+            background-color: var(--pulse-flowtx-summary);
+            height: 100%;
+            z-index: 998;
+        }
+       }     
+       
+    }
+
+    @media only screen and  (max-width: 540px) {
+        &--container{
+   
+              &--content{
+                &--summary{
+                    margin-right: calc( var(--pulse-gutter-width) * -1);
+                    margin-left: calc( var(--pulse-gutter-width) * -1);
+                    width: calc(100% + calc( var(--pulse-gutter-width) * 3 ));
+                    padding-bottom: 3rem;
+                }
+               }       
+        }        
+    }
+
+    @media only screen and  (min-width: 540px) {
+        &--container{
+            &--header{
+                padding: 1.6rem 0;
+              }
+              &--content{
+                &--summary{
+                    padding-bottom: 3rem;
+                }
+               }       
+        }
+
+    }
+
+    @media only screen and  (min-width: 768px) {
+
+        &--container{
+            max-width: var(--pulse-max-container-width, 1140px);
+            width: var(--pulse-max-container-width, 1140px);
+            min-width: 540px;
+
+            &--header{
+                padding: 2.4rem 0;
+                margin-bottom: 2.4rem;
+              }
+        }
+    
+    
+    }
+
+    
+}

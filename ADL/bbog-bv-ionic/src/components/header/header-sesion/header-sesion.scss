@@ -1,0 +1,57 @@
+header-sesion {
+
+    display: inline-flex;
+    height: 64px;
+    width: 207px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    float: right;
+    border-left: 2px solid #f6f8fa;
+    cursor: pointer;
+
+    .content-cad {
+      display: flex;
+      margin-top: 22px;
+      &__span{
+        color: #0040A8;
+      }
+    }
+
+    div.content-sesion {
+        display: flex;
+        margin-top: 22px;
+        margin-left: 22px;
+    }
+
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
+
+    .icon-cad {
+      background-image: url("../assets/imgs/icon_cad.svg");
+      width: 22px;
+      height: 22px;
+      margin-left: 4px;
+      margin-top: -1px;
+    }
+
+    .icon-logout {
+        background-image: url("../assets/imgs/logout.svg");
+        width: 17px;
+        height: 16px;
+        margin-left: 8px;
+        margin-top: 3px;
+    }
+
+    span {
+        font-family: $RobotoRegular;
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 1.85;
+        letter-spacing: normal;
+        color: #8a8d94;
+    }
+}

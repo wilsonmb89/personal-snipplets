@@ -1,0 +1,25 @@
+page-list-cards {
+
+    .list-cards-content {
+
+        &__title {
+            font-family: $ArgoRegular;
+            font-size: 20px;
+            letter-spacing: -0.4px;
+            color: color($colors, bdb-blue);
+            margin-top: 56px;
+        }
+
+        &__subtitle {
+            font-family: $RobotoRegular;
+            font-size: 14px;
+            color: color($colors, steel);
+            margin-top: 22px;
+        }
+
+        &__ion-list {
+            margin-top: 18px;
+        }
+    }
+
+}

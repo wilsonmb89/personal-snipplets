@@ -1,0 +1,29 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__image-wrapper {
+    margin-top: var(--sherpa-spacing-10);
+  }
+
+  &__body-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      margin-top: var(--sherpa-spacing-6);
+      color: var(--sherpa-carbon-900);
+    }
+
+    &__description {
+      margin-top: var(--sherpa-spacing-6);
+      color: var(--sherpa-carbon-800);
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: var(--sherpa-spacing-9);
+  }
+}

@@ -1,0 +1,91 @@
+<ion-content class="detail-content" #content>
+  <pulse-flowtr>
+    <div slot="header" #header>
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onLogout()" [lOption]="'Atras'"
+                       [rOption]="'Salida segura'">
+        <svg-back (click)="onBackPressed()" left></svg-back>
+        <svg-logout (click)="onLogout()" right></svg-logout>
+      </bdb-nav-options>
+    </div>
+    <div slot="master" #master>
+      <bdb-card-detail *ngIf="!!cardData" breakpoint-detector [contentMain]="contentMain" [cardData]="cardData"
+        [showLoader]="showLoaderDetail" [showPlusSymbol]="showPlusSymbol" [showErrorFiduciary]="showErrorFiduciary"
+        [showFiduciaryDetails]="showFiduciaryDetails" [textFiduciary]="textAssetsFiduciary"
+        [updateLayout]="updateLayout" (onReload)="onProductReload()" (onReloadFiduciary)="onReloadFiduciary()"
+        [shirinkEffect]="true" (shrinkStatusChange)="cardShrinkChange($event)" [showLockCard]="showBlockedCreditCardInfo"
+        [lockCreditCard]="lockCreditCard" (lockCardDetail)="lockCardDetail()"
+        [shareAccountInfo]="shareAccountInfo"></bdb-card-detail>
+    </div>
+    <div slot="detail">
+
+      <div *ngIf="lockCreditCard" class="blocked-card-banner">
+        <pulse-card color="info" colorvariant="100" elevation="0" elevationhover="0">
+          <div class="blocked-card-banner__icon">
+            <pulse-icon color="carbon" size="m" icon="megaphone"></pulse-icon>
+          </div>
+          <div class="blocked-card-banner__title">
+            <span class="pulse-tp-hl4-comp-b">Estado de la Tarjeta: </span>
+            <pulse-tag fill="outline" color="error" colorvariant="700" text="Bloqueada" size="s" *ngIf='!frozenTag'></pulse-tag>
+            <pulse-tag fill="outline" color="primary" colorvariant="400" text="Congelada" size="s" *ngIf='frozenTag'></pulse-tag>
+          </div>
+          <div class="blocked-card-banner__text pulse-tp-bo3-comp-r" [innerHtml]="descriptionLockCard"></div>
+        </pulse-card>
+      </div>
+
+
+      <cards-campaign [productSelected]="productDetail"></cards-campaign>
+
+      <div #txtable *ngIf="showTable">
+        <div class="txtable-container pulse-padding-s-xs-v" *ngIf="applyHistory">
+          <div>
+            <div class="movements">
+              <div class="movements__text pulse-tp-hl3-comp-m">Tus movimientos</div>
+              <div class="movements__actions">
+                <div>
+                  <pulse-nav-button only-icon-device="sm,md" icon-position="right" icon="calendar-search-1"
+                                    (click)="showFilterModal()">Buscar movimientos
+                  </pulse-nav-button>
+                </div>
+                <div>
+                  <pulse-nav-button only-icon-device="sm,md" icon-position="right" icon="calendar-download"
+                                    [disabled]="disabled()"
+                                    (click)="exportData($event)">Descargar
+                  </pulse-nav-button>
+                </div>
+              </div>
+            </div>
+            <div class="tag" [hidden]="showTransactionsError">
+              <div class="tag__text pulse-tp-bo3-comp-m">Estás viendo los movimientos de:</div>
+              <pulse-tags-group class="tag__group" [tagdata]="tagdata" closeable="true"
+                                (closeClick)="showFilterModal()"></pulse-tags-group>
+            </div>
+
+          </div>
+
+          <bdb-generic-table [columns]="columns" [expandable]="expandable" [dataSource]="transactionsWeb"
+                             [error]="showTransactionsError" [validateDateMobile]="validateDateMobile()"
+                             (reload)="getForWeb()"
+                             [loader]="showTransactionsLoader">
+          </bdb-generic-table>
+        </div>
+
+        <div *ngIf="!applyHistory" class="detail-content__not-apply-history">
+          <div class="detail-content__not-apply-history__img">
+            <img [attr.src]="'assets/imgs/not-apply-history/' + notApplyHistory.img.desktop" hidden-p-sm-down
+                 alt="not-apply-history-desktop">
+            <img [attr.src]="'assets/imgs/not-apply-history/' + notApplyHistory.img.mobile" hidden-p-md-up
+                 alt="not-apply-history-mobile">
+          </div>
+          <div class="detail-content__not-apply-history__text">
+            {{ notApplyHistory.text }}
+          </div>
+        </div>
+      </div>
+      <div #txtable *ngIf="!showTable">
+        <bdb-cdt-renovation-card [cdtNumber]="cardData.product.productNumber"></bdb-cdt-renovation-card>
+      </div>
+      <div *ngIf="isShrinkCard && showTable" [style.height.px]="divHeight" #fixi></div>
+      <div *ngIf="isShrinkCard && !showTable" [style.height.px]="divHeight-100" #fixi></div>
+    </div>
+  </pulse-flowtr>
+</ion-content>

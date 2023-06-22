@@ -1,0 +1,24 @@
+.schedule-transfers {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+
+  &__portal-mode {
+    bottom: 7.2rem;
+    height: calc(100% - 202px);
+    overflow: scroll;
+
+    @media (min-width: 540px) {
+      bottom: 6rem;
+      height: calc(100% - 209px);
+    }
+
+    @media (min-width: 768px) {
+      bottom: 0;
+      right: 0;
+      width: calc(100% - 108px);
+      height: calc(100% - 174px);
+    }
+  }
+}

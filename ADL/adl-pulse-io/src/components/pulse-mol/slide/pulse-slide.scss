@@ -1,0 +1,14 @@
+pulse-slide {
+  display: block;
+  width: calc(100vw - 16px); 
+  min-width: calc(100vw - 16px);
+  height: 100%;
+  box-sizing: border-box;
+
+}
+
+.slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

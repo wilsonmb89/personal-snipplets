@@ -1,0 +1,56 @@
+<pulse-flowthcs>
+  <div slot="header">
+    <flow-header [rightOption]="'leave'" (onStart)="goPreviousPage()" (onEnd)="goToRechargesPage()">
+      Recarga electrónica
+      <div start>Atrás</div>
+      <div end>Abandonar transacción</div>
+    </flow-header>
+  </div>
+  <div slot="content">
+    <div class="set-amount-content">
+      <div class="set-amount-content__title">
+        <div class="set-amount-content__title__main">
+          <span class="pulse-tp-bo2-comp-m">¿Cuánto quieres recargar?</span>
+        </div>
+        <span class="pulse-tp-bo3-comp-r">
+          Recarga desde $20,000.
+        </span>
+      </div>
+      <form [formGroup]="amountForm" (ngSubmit)="onSubmitFormAmount()">
+        <div class="set-amount-content__form">
+          <pulse-input ngDefaultControl
+            id="amount-input"
+            formControlName="amount"
+            label="Valor de la recarga"
+            placeholder="$"
+            type="currency"
+            (inputKeyDown)="onInputKeyDown($event)"
+            (inputKeyUp)="onInputKeyUp($event)"
+            (inputBlur)="validateAmount()"
+            [state]="amountState"
+            [labelerror]="amountLabelHelper"
+          ></pulse-input>
+          <div class="set-amount-content__form__submit-wrapper">
+            <div class="set-amount-content__form__submit-wrapper__submit-btn">
+              <pulse-button id="btn-amount-submit"
+                type="submit"
+                [block]="true"
+                [colorgradient]="true"
+                [disabled]="amountForm.invalid"
+              >Continuar</pulse-button>
+            </div>
+            <div class="set-amount-content__form__submit-wrapper__submit-label">
+              <span *ngIf="amountForm.valid" class="pulse-tp-bo3-comp-r">o presiona enter</span>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div slot="summary">
+    <div class="set-amount-summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </div>
+</pulse-flowthcs>

@@ -1,0 +1,48 @@
+version: '1'
+ms:
+  name: banking-reports
+  port: 8099
+  memory: 700
+  softMemory: 440
+  javaOptions: '-Xms32m -Xmx128m -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90'
+  readonlyRootFilesystem: false
+  environment:
+    - param_store_enable: true
+    - keystore_file: /usr/app/adl-pb.avaldigitallabs.com.jks
+
+  stacks:
+    - stack: 'dev'
+      environment:
+        - yb_profile_env: 'dev'
+      files:
+        - key: 'dev-pb-test.avaldigitallabs.jks'
+          path: '/usr/app'
+          name: 'adl-pb.avaldigitallabs.com.jks'
+
+    - stack: 'stg'
+      environment:
+        - yb_profile_env: 'stg'
+      files:
+        - key: 'stg-pb-test.avaldigitallabs.jks'
+          path: '/usr/app'
+          name: 'adl-pb.avaldigitallabs.com.jks'
+
+    - stack: 'pro'
+      environment:
+        - yb_profile_env: 'pro'
+      files:
+        - key: 'pro-pb-test.avaldigitallabs.jks'
+          path: '/usr/app'
+          name: 'adl-pb.avaldigitallabs.com.jks'
+
+secrets:
+  dynamic:
+    - 'API_CONNECT_CLIENT_SECRET'
+    - 'API_CONNECT_ENDPOINT'
+    - 'API_CONNECT_CLIENT_ID'
+    - 'BDB_APPLICATION_CHANNEL'
+    - 'ANALYTICS_CYPHER_KEY'
+    - 'ANALYTICS_STREAM'
+    - 'ELASTIC_SEARCH_ENDPOINT'
+    - 'LAB-BBOG-ADAPTER-URI'
+    - 'LAB-BBOG-API-KEY'

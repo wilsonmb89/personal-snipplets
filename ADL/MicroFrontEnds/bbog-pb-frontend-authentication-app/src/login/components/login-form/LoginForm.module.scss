@@ -1,0 +1,54 @@
+.login {
+  border: 0.1rem solid var(--sherpa-carbon-200);
+  border-radius: 1rem;
+  overflow: hidden;
+  &__form {
+    padding: var(--sherpa-spacing-6);
+    &__identification {
+      display: flex;
+      align-items: flex-end;
+      &__type {
+        width: 100%;
+        max-width: 11rem;
+        margin-right: var(--sherpa-spacing-4);
+      }
+      &__number {
+        width: calc(100% - 12.6rem);
+      }
+    }
+    &__debit,
+    &__secure {
+      margin-top: var(--sherpa-spacing-6);
+      &__password {
+        margin-top: var(--sherpa-spacing-6);
+      }
+    }
+    &__access,
+    &__actions {
+      margin-top: var(--sherpa-spacing-6);
+    }
+    &__actions {
+      display: flex;
+      align-items: center;
+      &-register,
+      &-forget {
+        width: 100%;
+        padding: var(--sherpa-spacing-0);
+      }
+      &-register {
+        border-right: 0.1rem solid var(--sherpa-carbon-200);
+        &__button {
+          padding: var(--sherpa-spacing-0);
+        }
+      }
+    }
+    @media (max-width: 600px) {
+      padding: var(--sherpa-spacing-7) var(--sherpa-spacing-6);
+      &__secure,
+      &__debit,
+      &__access {
+        margin-top: var(--sherpa-spacing-7);
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+<ion-content [autoResize]="'resize'" no-padding>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+      [lOption]="backText" [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="tc-ammount-wrapper">
+        <div class="inner">
+          <div class="subtitle">
+            {{subtitle}}
+          </div>
+          <form [formGroup]="radioForm">
+            <div class="pulse-grid container">
+              <div class="row bv-row">
+                <label no-padding class="col-xs-6 bv-col">
+                  <div class="control control--radio">
+                    <input id="radio-min" type="radio" value="min" formControlName="choice">
+                    <div class="control__indicator"></div>
+                  </div>
+                  <div class="container__radio-label">Pago mínimo:</div>
+                </label>
+                <div no-padding class="col-xs-6">
+                   <div currencyLabelDirective = "{{minPayment}}" class="container__radio-value"></div>
+                </div>
+              </div>
+              <div class="row bv-row">
+                <label no-padding class="col-xs-6 bv-col">
+                  <div class="control control--radio">
+                    <input id="radio-total" type="radio" value="total" formControlName="choice">
+                    <div class="control__indicator"></div>
+                  </div>
+                  <div class="container__radio-label">Pago total:</div>
+                </label>
+                <div no-padding class="col-xs-6">
+                  <div currencyLabelDirective = "{{totalPayment}}" class="container__radio-value"></div>
+                </div>
+              </div>
+              <div class="row bv-row">
+                <label no-padding class="col-xs-6 bv-col">
+                  <div class="control control--radio">
+                    <input id="radio-other" type="radio" value="other" formControlName="choice">
+                    <div class="control__indicator"></div>
+                  </div>
+                  <div class="container__radio-label">Otro valor:</div>
+                </label>
+                <div no-padding class="col-xs-6">
+                  <div class="input-wrp" (click)="enableOther()">
+                    <pulse-input ngDefaultControl
+                      id="credit-card-amount-input"
+                      type="currency"
+                      hasdecimals="true"
+                      inputtextalign="right"
+                      formControlName="otherAmount"
+                      [state]="radioForm.controls.otherAmount.invalid && radioForm.controls.otherAmount.dirty ? 'error' : 'basic'"
+                      [labelerror]="radioForm.controls.otherAmount.invalid && radioForm.controls.otherAmount.dirty ? 'Sólo se permiten transacciones mayores a $0.1 pesos.' : ''"
+                      (valueEmmitInput)="onTextChange($event)"
+                    ></pulse-input>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="btn-wrapper" hidden-p-sm-down>
+              <button bv-button (click)="submitAmountSelect()" [color]="colorBtnSubmit" [disabled]="!radioForm.valid"
+                id="amount-btn" ion-button>{{ nameBtnSubmit }}
+              </button>
+              <div class="key-hint" [hidden]="!radioForm.valid">o presiona Enter</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div slot="summary">
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button bvButton id="mob-amount-btn" (click)="submitAmountSelect()" class="continue-btn" full [color]="colorBtnSubmit"
+      ion-button [disabled]="!radioForm.valid">{{ nameBtnSubmit }}
+    </button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ExpiredSessionPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content no-padding>
+  <ion-grid>
+    <ion-col class="expired" col-10 offset-1 col-sm-8 offset-sm-2 col-md-4 offset-md-4>
+      <ion-row>
+          <img src="assets/imgs/horizontal-logo_white.svg" align-items-center>
+        </ion-row>
+      <ion-row>
+          <img  class="expired__icon" src="assets/imgs/expired-session.svg">
+      </ion-row>
+      <ion-row>
+        <h2 class="expired__title">Tu sesión ha finalizado</h2>
+      </ion-row>
+      <ion-row>
+        <p class="expired__desc">Por seguridad se ha cerrado la sesión en tu navegador, recuerda cerrar la ventana al terminar.</p>
+      </ion-row>
+      <ion-row>
+        <button class="expired__action" id="returnApp" bvButton (click)="returnApp()" color="blue-gradient">Aceptar</button>
+      </ion-row>
+    </ion-col>
+  </ion-grid>
+</ion-content>

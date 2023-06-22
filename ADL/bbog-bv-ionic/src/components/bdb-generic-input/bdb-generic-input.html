@@ -1,0 +1,8 @@
+<div [formGroup]="inputForm">
+
+  <div class="input-header">{{inputHeader}}</div>
+  <ion-input class="input-item" id="socc-cc-num" type="number" placeholder="{{inputPlaceholder}}" pattern="[0-9]{0,}" formControlName="creditNumber"
+    [disabled]="inputDisabled" (keyup)="onKeyup($event)">
+
+  </ion-input>
+</div>

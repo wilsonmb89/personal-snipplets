@@ -1,0 +1,13 @@
+.otp-auth {
+  background-color: var(--sherpa-midnight-50);
+  height: 100vh;
+  &__title {
+    margin: 6.4rem var(--sherpa-spacing-0) var(--sherpa-spacing-6);
+    color: var(--sherpa-carbon-900);
+  }
+  @media (max-width: 599px) {
+    &__title {
+      margin: var(--sherpa-spacing-7) var(--sherpa-spacing-0) var(--sherpa-spacing-4);
+    }
+  }
+}

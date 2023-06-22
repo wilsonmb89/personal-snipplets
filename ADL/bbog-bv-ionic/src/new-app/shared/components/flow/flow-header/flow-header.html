@@ -1,0 +1,28 @@
+<div class="pulse--grid">
+  <div class="pulse-row">
+    <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10 pulse-offset-lg-1">
+      <div class="flow-header-container">
+        <div class="flow-header-container__start pulse-tp-hl6-comp-m" [class.hidden]="!showStart" (click)="onClickStart()">
+          <div class="flow-header-container__start--icon">
+            <pulse-icon icon="chevron-left"></pulse-icon>
+          </div>
+          <div class="flow-header-container__start--text">
+            <ng-content select="[start]"></ng-content>
+          </div>
+        </div>
+        <div class="flow-header-container__center pulse-tp-hl4-comp-r">
+          <ng-content></ng-content>
+        </div>
+        <div class="flow-header-container__end pulse-tp-hl6-comp-m" [class.hidden]="!showEnd" (click)="onClickEnd()">
+          <div class="flow-header-container__end--text">
+            <ng-content select="[end]"></ng-content>
+          </div>
+          <div class="flow-header-container__end--icon" [ngSwitch]="rightOption">
+            <img *ngSwitchCase="'logout'" src="assets/imgs/shared/flow-header/icon-logout.svg" alt="icon-logout">
+            <pulse-icon *ngSwitchCase="'leave'" icon="close"></pulse-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

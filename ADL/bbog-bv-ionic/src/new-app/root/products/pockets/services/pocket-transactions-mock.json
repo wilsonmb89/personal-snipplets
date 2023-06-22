@@ -1,0 +1,53 @@
+{
+  "movementsDetailRs": [
+    {
+      "date": "2020-02-04T09:56:01",
+      "description": "Deposito desde la cuenta ****7926",
+      "amount": "50000.00",
+      "transactionType": "C"
+    },
+    {
+      "date": "2020-02-04T10:03:37",
+      "description": "Retiro a cuenta ****7926",
+      "amount": "10000.00",
+      "transactionType": "D"
+    },
+    {
+      "date": "2020-02-04T10:09:15",
+      "description": "Deposito desde la cuenta ****7926",
+      "amount": "5000.00",
+      "transactionType": "C"
+    },
+    {
+      "date": "2020-02-04T10:09:55",
+      "description": "Deposito desde la cuenta ****7926",
+      "amount": "1000.00",
+      "transactionType": "C"
+    },
+    {
+      "date": "2020-02-04T10:10:18",
+      "description": "Deposito desde la cuenta ****7926",
+      "amount": "1000.00",
+      "transactionType": "C"
+    },
+    {
+      "date": "2020-02-04T10:11:02",
+      "description": "Deposito desde la cuenta ****7926",
+      "amount": "2000.00",
+      "transactionType": "C"
+    },
+    {
+      "date": "2020-02-04T14:28:49",
+      "description": "Deposito desde la cuenta ****7926",
+      "amount": "2000.00",
+      "transactionType": "C"
+    },
+    {
+      "date": "2020-02-04T14:29:46",
+      "description": "Deposito desde la cuenta ****7926",
+      "amount": "2000.00",
+      "transactionType": "C"
+    }
+  ],
+  "message": "Success"
+}

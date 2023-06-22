@@ -1,0 +1,91 @@
+form-change-pass {
+
+    .form-change-pass-container {
+        padding-top: 1.6rem;
+        padding-left: 5.6rem;
+        padding-right: 5.6rem;
+
+        &__current-key,
+        &__new-key {
+            input::-ms-clear, input::-ms-reveal {
+                display: none;
+            }
+        }
+
+        &__new-key {
+
+            &--input {
+                margin-top: 2.4rem;
+            }
+        }
+
+        &__btn-submit {
+            padding-top: 3.2rem;
+            padding-bottom: 3.2rem;
+        }
+
+    }
+
+
+    @media only screen and (min-width: 541px) {
+    
+        .form-change-pass-container {
+            padding-top: 2.4rem;
+            padding-left: 7.2rem;
+            padding-right: 7.2rem;
+
+            &__current-key--input {
+                width: calc(50% - 1.2rem);
+
+                input {
+                    width: 100% !important;
+                }
+            }
+    
+            &__new-key {
+                display: flex;
+                justify-content: space-between;
+    
+                &--input {                   
+                    width: calc(50% - 1.2rem);
+
+                    &:first-child {
+                        margin-right: 2.4rem;
+                    }
+    
+                    input {
+                        width: 100% !important;
+                    }
+                }
+            }
+    
+            &__btn-submit {
+                padding-top: 4rem;
+            }
+    
+        }
+
+    }
+
+    @media only screen and (min-width: 771px) {
+
+        .form-change-pass-container {
+
+            &__current-key--input {
+                max-width: 24.4rem;
+            }
+    
+            &__new-key {
+                display: flex;
+                justify-content: start;
+    
+                &--input {
+                    max-width: 24.4rem;
+                }
+            }
+       
+        }
+
+    }
+
+}

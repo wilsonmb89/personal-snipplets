@@ -1,0 +1,33 @@
+<pulse-modaltb class="error-card-in-progress-main">
+  <div slot="header" class="error-card-in-progress-main__header">
+    <div class="error-card-in-progress-main__header__btn-close" id="btn-otp-close-modal" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content" class="error-card-in-progress-main__content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/products/modals/icon-unicef-req-error.svg" alt="error">
+      </div>
+      <div slot="title">
+        <span class="pulse-tp-hl3-comp-b">Solicitud fallida</span>
+      </div>
+      <div slot="body" class="error-card-in-progress-main__content__body">
+        <div class="error-card-in-progress-main__content__body__info">
+          <span class="pulse-tp-bo3-comp-r">Tenemos activa otra solicitud de una tarjeta Débito.</span>
+          <span class="pulse-tp-bo3-comp-r">Tan pronto te la entreguemos podrás solicitar esta tarjeta.</span>
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer" class="error-card-in-progress-main__footer">
+    <div class="error-card-in-progress-main__footer__button-wrapper">
+      <pulse-button id="btn-opt-main-action"
+                    [block]="true"
+                    [colorgradient]="true"
+                    (click)="closeModal()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

@@ -1,0 +1,77 @@
+<pulse-flowthc class="card-block-selection">
+    <div slot="header">
+        <pulse-flowth>
+            <div slot="left-content">
+                <pulse-nav-button only-icon-device="sm,md" navBehavior>{{ navBack }}</pulse-nav-button>
+            </div>
+            <div slot="content">{{ navTitle }}</div>
+            <div slot="right-content">
+                <pulse-nav-button only-icon-device="sm,md" icon-position="right" icon="exit" navBehavior (click)="secureExit()">
+                    {{ navExit }}
+                </pulse-nav-button>
+            </div>
+        </pulse-flowth>
+    </div>
+
+    <div slot="content">
+        <div class="card-block-selection__container pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10">
+
+            <div *ngIf="showDebit$ | async" class="card-block-selection__container__section">
+                <div class="card-block-selection__container__section__title pulse-tp-hl3-comp-b">{{ debitCardTitle }}</div>
+                <div class="card-block-selection__container__section__subtitle pulse-tp-hl5-comp-m">{{ debitCardDescription }}</div>
+                <pulse-list-group accordion="true">
+                    <pulse-list-item *ngFor="let card of debitCards$ | async; index as i" [itemid]="'Tarjeta Débito ' + (i + 1)" [itemtitle]="'Tarjeta Débito'" [description]="['No. ' + card.displayNumber]" [descriptionexpanded]="['No. ' + card.displayNumber]" [avatarpath]="'credit-card-1'"
+                        [tagtext]="showTagDebitCard(card.cardState)" tagcolor="error" [isdisabled]="!lockDebitCardItem(card.cardState)">
+                        <div class="card-block-selection__container__section__debit-section-lock">
+                            <div class="card-block-selection__container__section__debit-section-lock__label">
+                                <span class="pulse-tp-bo4-comp-r">{{ reasonForBlockingText}}</span>
+                            </div>
+                            <pulse-dropdown (pulseChange)="changeDropDownDebitCard($event.target, card)" [insideelement]="true">
+                                <pulse-option *ngFor="let itemReasonBlocking of reasonBlockingList" [value]="itemReasonBlocking.key">{{ itemReasonBlocking.value }}</pulse-option>
+                            </pulse-dropdown>
+                        </div>
+                    </pulse-list-item>
+                </pulse-list-group>
+            </div>
+
+            <div *ngIf="showToggleCreditCard && showCredit$ | async" class="card-block-selection__container__section">
+                <div class="card-block-selection__container__section__title pulse-tp-hl3-comp-b">{{ creditCardTitle }}</div>
+                <div class="card-block-selection__container__section__subtitle pulse-tp-hl5-comp-m" [innerHtml]="creditCardDescription"></div>
+                <pulse-card class="cards" color="white" colorvariant="700" colorgradient="false" elevation="8" elevationhover="8">
+                    <div class="cards__div" *ngFor="let card of creditCards$ | async; index as i">
+                        <div class="cards__div__card-selection">
+                            <div class="cards__div__card-selection__content">
+                                <div class="cards__div__card-selection__content__logo">
+                                    <img
+                                        [src]="card.logoPath"
+                                        alt="card_logo"
+                                        [ngClass]="{'frozen': showBlockCreditCardButton(card.lockId), 'normal': !showBlockCreditCardButton(card.lockId)}"
+                                    >
+                                </div>
+                                <div class="cards__div__card-selection__content__labels">
+                                    <div class="cards__div__card-selection__content__labels__title pulse-tp-hl4-comp-m">{{card.nameCard}}</div>
+                                    <div class="cards__div__card-selection__content__labels__number pulse-tp-bo3-comp-r">
+                                        No. {{card.displayNumber}}
+                                        <div *ngIf="showBlockCreditCardTag(card.lockId)">
+                                            <pulse-tag fill="outline" color="error" colorvariant="700" text="Bloqueada" size="s" *ngIf='!showBlockCreditCardButton(card.lockId)'></pulse-tag>
+                                            <pulse-tag fill="outline" color="primary" colorvariant="400" text="Congelada" size="s" *ngIf='showBlockCreditCardButton(card.lockId)'></pulse-tag> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div hidden-p-sm-up class="labels__description_credit_block pulse-tp-bo3-comp-r" [innerHtml]="descriptionLockCard(card.lockId)"></div>
+                            <div class="cards__div__card-selection__button" *ngIf="showUnblockButton(card.lockId)">
+                                <pulse-button [pulseButtonSize]="'small'" *ngIf="!showBlockCreditCardButton(card.lockId)" (click)="confirmCreditCardBlock(true, card)">Congelar</pulse-button>
+                                <pulse-button [pulseButtonSize]="'small'" *ngIf="showBlockCreditCardButton(card.lockId)" (click)="confirmCreditCardBlock(false, card)">Descongelar</pulse-button>
+                            </div>
+                        </div>
+                        <div hidden-p-sm-down class="labels__description_credit_block pulse-tp-bo3-comp-r" [innerHtml]="descriptionLockCard(card.lockId)"></div>
+                        <div class="cards__div__divider" *ngIf="i !== (creditCards$ | async).length-1"></div>
+                    </div>
+                </pulse-card>
+            </div>
+
+
+        </div>
+    </div>
+</pulse-flowthc>

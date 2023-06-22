@@ -1,0 +1,21 @@
+tx-in-progress-body {
+  width: 100%;
+
+  .tx-in-progress-body-content {
+    color: var(--pulse-color-carbon-700);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__button-s {
+      text-align: center;
+      margin-top: 3.2rem;
+    }
+
+    @media only screen and (min-width: 900px) {
+      &__button-s {
+        display: none;
+      }
+    }
+  }
+}

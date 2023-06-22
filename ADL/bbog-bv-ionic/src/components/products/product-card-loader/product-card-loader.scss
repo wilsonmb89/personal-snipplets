@@ -1,0 +1,42 @@
+@import '../../../app/core/styles/loading.scss';
+
+product-card-loader {
+	#cards-wrapper {
+		width: 100%;
+		margin-top: 1.6rem;
+		background-color: white;
+	}
+
+	#cards-wrapper .check {
+		position: absolute;
+		right: 0;
+	}
+	#cards-wrapper div.product {
+		width: 100%;
+		border-radius: 10px;
+		box-shadow: 0 5px 15px 0 rgba(102, 128, 173, 0.3);
+		padding: 1.6rem;
+		cursor: wait;
+	}
+	
+	.row-3 {
+		margin-top: 15px;
+	}
+
+	.product-name__loader, .product-number__loader, .info-label__loader, .info__loader{
+		@include loading-effect(1);
+		border-radius: 4px;
+		height: 17px;
+	}
+	.product-name__loader {
+		width: 138px;
+	}
+	.info__loader {
+		width: 106px;
+  		height: 32px;
+	}
+	.product-number__loader, .info-label__loader{
+		width: 83px;
+	}
+	
+}

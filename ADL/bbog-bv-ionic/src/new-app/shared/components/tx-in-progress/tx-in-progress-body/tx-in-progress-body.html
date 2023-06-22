@@ -1,0 +1,9 @@
+<div class="tx-in-progress-body-content">
+  <body-amt-panel *ngIf="!!body.amtInfo" [amtData]="body.amtInfo"></body-amt-panel>
+  <ng-content select="[coreInfo]"></ng-content>
+  <div *ngIf="!!action" class="tx-in-progress-body-content__button-s">
+    <pulse-button id="ach-transfers-main-btn-s" [colorgradient]="true" (click)="doActionButton()">
+      {{ action.btnTitle }}
+    </pulse-button>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="login-container">
+  <div class="login-container__background">
+    <div class="login-container__background--head"></div>
+    <div class="login-container__background--foot"></div>
+  </div>
+  <div class="login-container__grid pulse-grid">
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 login-container__grid--section-form">
+        <div class="login-form">
+          <div class="login-form__logo"></div>
+          <div class="login-form__title">
+            <div class="login-form__title--welcome pulse-tp-hl4-comp-r">
+              Bienvenido a tu nueva
+            </div>
+            <div class="login-form__title--name pulse-tp-hl2-comp-m">
+              Banca Virtual
+            </div>
+          </div>
+          <div class="login-form__form pulse-elevation-8" [ngSwitch]="stepLogin$ | async">
+            <div *ngSwitchCase="stepsLoginEnum.SIGN_IN" @boxAnimation>
+              <login-form (submitLogin)="submitLogin($event)"></login-form>
+            </div>
+            <div *ngSwitchCase="stepsLoginEnum.TOKEN_MFA" @boxAnimation>
+              <login-token (closeStep)="onFirstStep()" (submitToken)="onSubmitToken($event)" [isError]="isTokenError$ | async">
+              </login-token>
+            </div>
+            <div *ngSwitchCase="stepsLoginEnum.INVALID_TOKEN_MFA" @boxAnimation>
+              <login-token (closeStep)="onFirstStep()" (submitToken)="onSubmitToken($event)" [isError]="isTokenError$ | async">
+              </login-token>
+            </div>
+            <div *ngSwitchCase="stepsLoginEnum.NUMBER_SAFE_SITE" @boxAnimation>
+              <login-token-confirmation (closeStep)="onFirstStep()" (submit)="onSubmitSafeSite()"
+                [numberSafeSite]="numberSafeSite">
+              </login-token-confirmation>
+            </div>
+            <div *ngSwitchCase="stepsLoginEnum.TOKEN_LOCKED" @boxAnimation>
+              <login-token-locked (closeStep)="onFirstStep()"></login-token-locked>
+            </div>
+          </div>
+          <div class="login-form__recaptcha-policy">
+            <div class="login-form__recaptcha-policy__content pulse-tp-hl6-comp-r">
+              <span>Este sitio está protegido por reCAPTCHA y aplican las </span>
+              <a rel=noopener class="login-form__recaptcha-policy__content--anchor" href="https://policies.google.com/privacy">políticas de privacidad</a> y los
+              <a rel=noopener class="login-form__recaptcha-policy__content--anchor" href="https://policies.google.com/terms">términos de servicio de Google.</a>
+            </div>
+          </div>
+          <div class="login-form__version pulse-tp-bo4-comp-r">
+            V.{{ appVersion$ | async }}
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-lg-5 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 login-container__grid--section-suggestion">
+        <app-login-news></app-login-news>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<pulse-flowthcs [lgcontentsize]="5" class="bgColor">
+  <div slot="header">
+    <pulse-flowth showLeft=true showRight=true>
+      <div slot="left-content">
+        <pulse-nav-button only-icon-device="sm,md" (click)="onBackPressed()">Atrás</pulse-nav-button>
+      </div>
+      <div slot="content">
+        {{navTitle}}
+      </div>
+      <div slot="right-content">
+        <pulse-nav-button only-icon-device="sm,md" icon="close"  icon-position="right" navBehavior [goToPage]="'DashboardPage'">Abandonar activación</pulse-nav-button>
+      </div>
+    </pulse-flowth>
+  </div>
+  
+  <div slot="content" class="content_cardactivation">
+    <div class="content_cardactivation__form">
+      <div class="content_cardactivation__subtitle-accounts">
+        <span class="pulse-tp-bo2-comp-m">Activación de Tarjetas</span>
+      </div>
+      <p class="content_cardactivation__subtitle-first">Ingresa los últimos 8 dígitos de tu Tarjeta de Crédito</p>
+      <form [formGroup]="tokenForm" (ngSubmit)="submitInput()">
+        <div class="input_space">
+          <pulse-input  
+            ngDefaultControl 
+            formControlName="number" 
+            id="number"
+            type="text"
+            pattern="[0-9]*" 
+            inputmode="numeric"
+            [name]="'number'"
+            [(ngModel)]="number" 
+            [maxlength]="9"
+            [minlength]="9" 
+            onpaste="return false"
+            (inputKeyUp)="onInputKeyUp($event)" 
+            (inputKeyDown)="onInputKeyDown($event)"
+            placeholder="8 últimos números de la tarjeta"
+            onkeypress="return ((event.charCode >= 48 && event.charCode <= 57))"
+            [state]="!numberValidation.validationError ? 'basic' : 'error'" [labelerror]="numberValidation.labelerror"
+            max-length-input
+            type-number-input>
+          </pulse-input>
+        </div>
+      </form>
+
+      <div class="footer_atc">
+        <div class="footer_atc__button">
+          <pulse-button
+            class="ng-tns-c3-2 ng-trigger ng-trigger-boxAnimation pulse-color pulse-color-gradient pulse-color-primary-700 button button-solid pulse-focusable pulse-block hydrated"
+            [colorgradient]="true" style="opacity: 1;" [block]="true" fill="solid" [colorgradient]="true"
+            [disabled]="validateButton" type="submit" id="btn-continue-send" (click)="submitInput()">
+            Activar
+          </pulse-button>
+        </div>
+        <div *ngIf="!validateButton" class="footer_atc__text">
+          o presiona enter
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div slot="summary">
+    <div class="summary">
+        <credit-card-component 
+          class ="plastic"
+          [category]="plasticType"
+          customerName="nombre"
+          [cardType]="cardType"
+          [fullFields]='false'
+          [cardNumber]="number"
+        ></credit-card-component>
+    </div>
+  </div>
+</pulse-flowthcs>

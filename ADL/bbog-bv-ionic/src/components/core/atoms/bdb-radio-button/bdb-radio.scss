@@ -1,0 +1,85 @@
+bdb-radio {
+
+    .bdb-radio__container {
+        display: inline-block;
+        position: relative;
+        padding: 0.25rem;
+        margin: 0.6rem;
+        cursor: pointer;
+        font-size: 1.6rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        height: 2.4rem;
+        width: 2.4rem;
+    }
+    
+    /* Hide the browser's default radio button */
+    .bdb-radio__container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 2.4rem;
+        width: 2.4rem;
+        top:0;
+        left: 0;
+    }
+    
+    /* Create a custom radio button */
+    .bdb-radio__container--checkmark{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 2.4rem;
+        width: 2.4rem;
+        border-radius: 50%;
+        background-color: #eef0f2;
+        border: solid 1px #dcdee3;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .bdb-radio__container:hover input ~ .bdb-radio__container--checkmark{
+        background-color: #ccc;
+    }
+    
+    /* Checked state */
+    .bdb-radio__container input:checked ~ .bdb-radio__container--checkmark{
+        background: color($colors, active-green);
+        border: solid 1px color($colors, active-green);
+    }
+
+    /* Disabled state */
+    .bdb-radio__container input:disabled ~ .bdb-radio__container--checkmark{
+        pointer-events: none;
+        opacity: .6;
+        background: #e6e6e6;
+    }
+
+    
+    /* Create  Check mark */
+    .bdb-radio__container--checkmark:after {
+        position: absolute;
+        display: none;
+        content: '';
+    }
+
+    /* Checkbox tick */
+    .bdb-radio__container .bdb-radio__container--checkmark:after {
+        top: 0.4rem;
+        left: 0.8rem;
+        width: 0.4rem;
+        height: 0.9rem;
+        transform: rotate(45deg);
+        border: solid #fff;
+        border-width: 0 0.2rem 0.2rem 0;
+    }
+    
+    /* Show the indicator tick when checked */
+    .bdb-radio__container input:checked ~ .bdb-radio__container--checkmark:after {
+        display: block;
+    }
+    
+   
+    
+}

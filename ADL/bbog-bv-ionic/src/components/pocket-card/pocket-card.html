@@ -1,0 +1,24 @@
+<!-- Generated template for the PocketCardComponent component -->
+<div class="pocket-card-wrapper">
+  <pulse-card elevationhover="8" elevation="0" color="white" style="padding: 5px; ">
+
+    <div *ngIf="!loading" class="pocket-card-wrapper__content">
+      <div class="row">
+
+        <div class="pocket-card-wrapper__col col-xs-6">
+          <div>
+            <bdb-gauge [maxValue]="pocket.pocketGoal" [value]="pocket.pocketBalance"></bdb-gauge>
+          </div>
+        </div>
+        <div class="pocket-card-wrapper__col col-xs-6">
+          <div class="pocket-card-wrapper__content__title pulse-tp-hl5-comp-r" *ngIf="!loading">
+            {{pocket?.pocketName}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="loading" class="pocket-card-wrapper__content">
+      <div class="pocket-card-wrapper__content--loading"></div>
+    </div>
+  </pulse-card>
+</div>

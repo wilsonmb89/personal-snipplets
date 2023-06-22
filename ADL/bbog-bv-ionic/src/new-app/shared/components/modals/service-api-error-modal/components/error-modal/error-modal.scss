@@ -1,0 +1,36 @@
+error-modal {
+  .error-modal {
+    &__header {
+      &__btn-close {
+        height: 2.8rem;
+        width: 2.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--pulse-color-info-100);
+        margin-left: auto;
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 540px) {
+    .error-modal {
+      &__header {
+        display: none;
+      }
+
+      &__footer-btns {
+        display: flex;
+        justify-content: space-evenly;
+
+        pulse-button {
+          width: auto;
+          padding: 0 1.2rem 1.2rem;
+          margin-bottom: -1.2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+page-amount-input {
+
+    /* amount card slider styles */
+    .subtitle{
+        font-family: $ArgoRegular;
+        font-size: 16px;
+        color : color($colors, bdb-blue);
+        margin-bottom: 4rem;
+        padding-left: 1rem;
+    }
+    
+    .slide-main{
+        width: 180%;
+    }
+
+    .def-slide{
+        width: auto!important;
+        padding: 40px 2px;
+    }
+
+    .def-slide .slide-btn{
+        border-radius: 4px;
+        border-width: 2px;
+        width: 8rem;
+    }
+
+    .def-slide .slide-btn span{
+        font-family: $RobotoRegular;
+        font-size: 14px;
+        color: color($colors, steel);
+    }
+
+    .btn-wrapper{
+        margin-top: 48px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-wrapper .key-hint{
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, steel);
+        margin-left: 16px;
+    }
+
+    *.continue-btn{
+        padding: 0 25px;
+        border-radius: 6px;
+    }
+
+    .button-inner{
+        font-size: 12px;
+        color: white;
+        font-family: $RobotoRegular;
+    }
+
+    ion-slides{
+        overflow-x: hidden;
+    }
+   
+
+    @media only screen and (max-width: 768px){
+
+        ion-slides{
+            height: auto;
+        }
+
+        .slide-main{
+            width: 100% !important;
+        }
+
+        *.continue-btn{
+            border-radius: 0;
+        }
+
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+    }
+}

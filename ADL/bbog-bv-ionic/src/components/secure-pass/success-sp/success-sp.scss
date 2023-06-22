@@ -1,0 +1,63 @@
+success-sp {
+    .title{
+        opacity: 0.8;
+        font-family: $ArgoRegular;
+        font-size: 18px;
+        color: color($colors, bdb-black);
+        font-family: $RobotoRegular;
+    }
+
+    .grid-spaces {
+        padding: 0;
+        height: 100%;
+        > ion-row:nth-child(1) {
+          margin-bottom: 5%;
+        }
+        color: color($colors, steel);
+        font-size: 14px;
+    }
+
+    .aceptar {
+        opacity: 0.8;
+        font-family: $RobotoRegular;
+        font-size: 13px;
+        color: color($colors, steel);
+    }
+
+    .btn-secure-login {
+        margin-top: 10%;
+        width: 45%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .message {
+        padding-left: 12px;
+        text-align: center;
+    }
+
+    .devices {
+        text-align: center;
+    }
+
+    .image {
+        padding-bottom: 10px;
+    }
+
+    .lab {
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, bdb-blue);
+    }
+
+    @media (max-width: 992px) {
+        .title {
+            font-size: 16px;
+        }
+        .titCol{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+}

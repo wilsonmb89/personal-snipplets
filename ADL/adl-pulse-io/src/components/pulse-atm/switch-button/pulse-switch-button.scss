@@ -1,0 +1,47 @@
+@import "pulse-switch-button.vars.scss";
+
+:host {
+    --track-color: #{get-pulse-color(carbon-light, 900)};
+}
+
+:host(.pulse-color) .switch-container__track--active {
+    --track-color: var(--pulse-color-bg);
+}
+
+.switch-container {
+    height: 32px;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    @include space(margin, .4rem);
+
+    &__track {
+        width: 56px;
+        border-radius: 100px;
+        height: 8px;
+        background-color: var(--track-color);
+        transition: all .4s ease;
+    }
+
+    &__thumb {
+        border-radius: 50%;
+        background-color: white;
+        @include build_shadow(8);
+        position: absolute;
+        transition: all .2s ease;
+        display: flex;
+        align-items: center;
+
+        &--active {
+            transform: translateX(calc(56px - 100%));
+        }
+    }
+}
+
+::slotted(*) {
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    
+}

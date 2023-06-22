@@ -1,0 +1,69 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options  (onRightClicked)="onAbandonClicked()" 
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <form [formGroup]="formTax" (ngSubmit)="submit()" autocomplete="off">
+
+        <ion-grid class="tax-sel">
+          <ion-col col-12 >
+            <ion-row class="tax-sel__title">
+              <p>Datos del impuesto</p>
+            </ion-row>
+            <ion-row class="tax-sel__city">
+
+              <label class="tax-sel__city__label">Ciudad</label>
+              <bdb-autocomplete autocomplete="off" [listOptions]="listCities?.cities" [nameProperty]="'name'" [valueProperty]="'code'"
+                [parentForm]="formTax" [controlName]="'city'" [placeholder]="'Escribe la ciudad'" [id]="'city'"
+                [listSize]="10" [isStaticListOption]="true" (clickOption)="onChangesCity($event)"
+                (inputChange)="search($event)" class="tax-sel__city__field">
+              </bdb-autocomplete>
+
+            </ion-row>
+            <ion-row class="tax-sel__type">
+
+              <label class="tax-sel__type__label">Impuesto</label>
+
+              <select bdb-select class="tax-sel__type__field" id="tax" formControlName="tax" (change)="validateMessage()">
+                <option [ngValue]="'d'" disabled selected>Selecciona el impuesto</option>
+                <option *ngFor="let item of listTax?.taxes" [ngValue]="item">{{item.name}}</option>
+              </select>
+             
+            </ion-row>
+            <ion-row>
+              <bdb-blue-message *ngIf="showMessage" [icon]="alert_icon" [message]="message_tax"></bdb-blue-message>
+            </ion-row>
+            <ion-row class="tax-sel__ref">
+              <label class="tax-sel__ref__label">Número de referencia</label>
+              <input bdb-form-input class="tax-sel__ref__field" type="text"
+                placeholder="Escribe el número de referencia" id="ref" formControlName="ref">
+
+            </ion-row>
+            <ion-row class="tax-sel__action">
+              <button id="btn-submit-tax" type="submit" bvButton color="mango-gradient"
+                [disabled]="!formTax.valid || formTax.controls['city'].value ==='d' || formTax.controls['tax'].value ==='d'"
+                hidden-p-sm-down>Continuar</button>
+
+            </ion-row>
+          </ion-col>
+        </ion-grid>
+      </form>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="btn-submit-tax-mob" type="button" (click)="submit()" class="mob-submit" full color="mango" ion-button
+    [disabled]="!formTax.valid">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

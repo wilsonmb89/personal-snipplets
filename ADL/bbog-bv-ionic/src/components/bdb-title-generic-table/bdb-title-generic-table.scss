@@ -1,0 +1,74 @@
+bdb-title-generic-table {
+    .title-table-container {
+        display: grid;
+        grid-template-columns: 0px 1fr 1fr 0px;
+        grid-column-gap: 16px;
+        margin: 12px 0px;
+
+        @media only screen and (min-width: 540px) {
+            margin: 16px 0px;
+        }
+
+        &__col-filters {
+            justify-self: end;
+            display: flex;
+
+            [filter] {
+                display: flex;
+                align-items: center;
+                padding: 0 0 0 10px;
+                margin:  0 0 0 8px;
+                cursor: pointer;
+    
+                @media only screen and (min-width: 540px) {
+                    &:hover, &.active {
+                        background-color: color($colors, white-toast);
+                        border-radius: 15px;
+                    }
+                }
+    
+                [text] {
+                    opacity: 0.8;
+                    font-family: $RobotoMedium;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 1.67;
+                    margin: 0 8px 0 0;
+                    display: none;
+                    color: color($colors, carbon);
+
+                    @media only screen and (min-width: 540px) {
+                        display: block;
+                    }
+                }
+    
+                [img] {
+                    width: 32px;
+                    height: 32px;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    border-radius: 50%;
+                    background-color: color($colors, white-toast);
+    
+                    @media only screen and (min-width: 540px) {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+            }
+        }
+
+        &__col-title {
+            align-items: center;
+            display: flex;
+
+            [title] {
+                font-family: $ArgoRegular;
+                font-size: 16px;
+                line-height: 1.5;
+                color: color($colors, bdb-blue);
+            }
+        }
+    }
+}

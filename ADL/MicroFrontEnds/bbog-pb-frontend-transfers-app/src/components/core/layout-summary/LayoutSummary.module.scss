@@ -1,0 +1,38 @@
+@import '../../../variables.scss';
+
+.layout-summary {
+  &__content {
+    background-color: var(--sherpa-white);
+    border: 0.1rem solid var(--sherpa-carbon-200);
+    padding: 24px 16px;
+    border-radius: 1rem;
+  }
+
+  &__summary {
+    display: none;
+
+    &__title {
+      margin-bottom: 1.7rem;
+    }
+  }
+
+  @media only screen and (min-width: $break-mobile-md) {
+    &__content {
+      padding: var(--sherpa-spacing-7) 8.1rem;
+    }
+  }
+
+  @media only screen and (min-width: $break-desktop) {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: var(--sherpa-spacing-7);
+
+    &__content {
+      padding: var(--sherpa-spacing-7) 6rem;
+    }
+
+    &__summary {
+      display: block;
+    }
+  }
+}

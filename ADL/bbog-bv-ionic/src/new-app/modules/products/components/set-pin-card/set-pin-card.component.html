@@ -1,0 +1,69 @@
+<div class="pin-card__text pulse-tp-bo4-comp-r">
+  {{ textDescription }}
+</div>
+<form [formGroup]="keyForm">
+  <div class="pin-card__inputs_key">
+    <div class="pin-card__inputs_key__input_space">
+      <pulse-input  
+        ngDefaultControl 
+        id="key"
+        [label]="inputLabelKey"
+        placeholder="&#x25cf;&#x25cf;&#x25cf;&#x25cf;"
+        [labelerror]="keyValidation.labelerror"
+        [state]="!keyValidation.validationError ? 'basic' : 'error'"
+        [type]="typeInputKey"
+        [inputmode]="'numeric'"
+        [pattern]="'[0-9]*'"
+        [maxlength]="4"
+        [minlength]="4" 
+        formControlName="key" 
+        (inputKeyUp)="onInputKey($event)"
+        onpaste="return false"
+        onkeypress="return ((event.charCode >= 48 && event.charCode <= 57))"
+        [icon]="typeIconKey"
+        actionableicon="true"
+        (iconClick)="showKeyPassword()"
+        max-length-input
+        type-number-input>
+      </pulse-input>
+    </div>
+
+    <div class="pin-card__inputs_key__input_space">
+      <pulse-input  
+        ngDefaultControl 
+        id="keyConfirm"
+        [label]="inputLabelConfirm"
+        placeholder="&#x25cf;&#x25cf;&#x25cf;&#x25cf;"
+        [labelerror]="keyConfirmValidation.labelerror"
+        [state]="!keyConfirmValidation.validationError ? 'basic' : 'error'"
+        [type]="typeInputKeyConfirm"
+        [inputmode]="'numeric'"
+        [pattern]="'[0-9]*'"
+        [maxlength]="4"
+        [minlength]="4" 
+        formControlName="keyConfirm" 
+        (inputKeyUp)="onInputKeyConfirm($event)"
+        onpaste="return true"
+        onkeypress="return ((event.charCode >= 48 && event.charCode <= 57))"
+        [icon]="typeIconKeyConfirm"
+        actionableicon="true"
+        (iconClick)="showKeyConfirmPassword()"
+        max-length-input
+        type-number-input>
+      </pulse-input>
+    </div>
+  </div>
+  <div class="pin-card__button btn--{{btnPosition}}">
+    <pulse-button
+      class="pulse-block"
+      color="primary"
+      colorvariant="700"
+      [disabled]="disableCreditData()"
+      colorgradient="true"
+      pulseButtonType="primary"
+      pulseButtonSize="default"
+      (click)="setPin()"> 
+        {{btnText}} 
+    </pulse-button>
+  </div>
+</form>

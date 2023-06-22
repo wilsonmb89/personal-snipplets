@@ -1,0 +1,40 @@
+@import "../../../global/colors";
+
+:host {
+  .pulse-transaction-container {
+
+    &__header-logos {
+      display: flex;
+      align-items: center;
+
+      &--logo-s {
+        display: initial;
+      }
+
+      &--logo-m {
+        display: none;
+      }
+    }
+  
+    &__body {
+      width: 100%;
+
+      &__result,
+      &__summary {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (min-width: 541px) {
+      &__header-logos {
+        &--logo-s {
+          display: none;
+        }
+
+        &--logo-m {
+          display: initial;
+        }
+      }
+    }
+  }
+}

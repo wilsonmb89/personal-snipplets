@@ -1,0 +1,16 @@
+page-docs-menu {
+
+    .border-section {
+        height: 4px;
+        background-color: color($colors, bdb-bg);
+        margin-top: 1px;
+        width: 120%;
+        margin-left: -10%;
+    }
+}
+
+@media all and(min-width: 540px) {
+    .border-section {
+        margin-top: 8px;
+    }
+}

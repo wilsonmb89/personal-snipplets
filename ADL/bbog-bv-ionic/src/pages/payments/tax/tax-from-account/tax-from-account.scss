@@ -1,0 +1,82 @@
+page-tax-from-account {
+    .summary-main{
+        position: relative;
+        p{
+            margin: 0;
+        }
+        &:after{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 1px;
+            left: 0;
+            bottom: -1rem;
+            background: color($colors,light-blue-grey);
+        }
+    }
+    .summary-value{       
+        font-family: $RobotoRegular;
+        color: color($colors, bdb-black);
+        text-align: right;
+        font-size: 1.8rem;
+    }
+
+    .summary-label{
+        font-family: $RobotoRegular;
+        color: color($colors, steel);
+        line-height: 1.71;
+        font-size: 1.4rem;
+    }
+
+    .summary-charge{
+        font-family: $RobotoRegular;
+        color: color($colors, steel);
+        line-height: 1.71;
+        font-size: 1.4rem;
+        text-align: right;
+    }
+
+    .subtitle {
+        color: #0041a8;
+        padding: 0;
+        line-height: 1.5;
+        font-size: 1.6rem;
+        font-family: Argo-Regular;
+        margin-top: 2.4rem;
+    }
+
+    .scroll-content{
+        overflow-y: auto;
+    }
+
+    #tt-btn{
+        margin-top: 3.8rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .inner{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+        *.confirm-btn{
+            border-radius: 0;
+            margin: 0.4rem 0.2rem;
+        }
+
+        .scroll-content{
+            padding: 0!important;
+        }
+    }
+
+
+}

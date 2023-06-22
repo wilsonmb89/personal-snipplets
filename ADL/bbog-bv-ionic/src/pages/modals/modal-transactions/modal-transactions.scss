@@ -1,0 +1,71 @@
+page-modal-transactions {
+
+  > .content > .scroll-content {
+    overflow-y: hidden;
+    padding: 0;
+  }
+
+  .header-md {
+    background-color: #000;
+  }
+
+  .header-ios {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .header {
+
+    ion-navbar {
+      border-bottom: solid 1px rgba(196, 212, 227, 0.4);
+    }
+
+    .toolbar-title {
+      text-align: start;
+      font-family: $RobotoRegular;
+      font-size: 14px;
+      color: color($colors, bdb-slate);
+    }
+    
+    .toolbar-ios {
+      padding-bottom: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    .toolbar-background-ios, .toolbar-background-md {
+      background-color: transparent;
+    }
+
+    .toolbar-content-ios, .toolbar-md{
+      background-color: #fff;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    
+  }
+
+  .header .title {
+    font-family: $ArgoRegular;
+    font-size: 14px;
+    color: color($colors, bdb-blue);
+    text-align: center;
+    line-height: 1.71;
+  }
+
+  .col-close-btn {
+    text-align: right;
+  }
+
+  button{
+    background-color: transparent;
+  }
+
+  .modal-header-row {
+    min-height: 38px;
+  }
+}
+
+// page-modal-transactions > .scroll-content {
+//   overflow-y: hidden;
+//   padding: 0;
+// }

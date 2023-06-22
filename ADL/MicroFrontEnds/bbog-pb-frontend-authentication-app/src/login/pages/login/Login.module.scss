@@ -1,0 +1,105 @@
+.login {
+  height: 100vh;
+  background-color: var(--sherpa-midnight-50);
+  &__form {
+    margin-top: var(--sherpa-spacing-7);
+    &__head {
+      &__logo-mobile {
+        display: none;
+      }
+      &__title {
+        color: var(--sherpa-carbon-900);
+        margin-top: var(--sherpa-spacing-4);
+      }
+    }
+    &__outline,
+    &__habeas {
+      margin-top: var(--sherpa-spacing-6);
+    }
+    &__habeas {
+      color: var(--sherpa-carbon-800);
+      & > a {
+        text-decoration: none;
+        color: var(--sherpa-midnight-800);
+      }
+    }
+  }
+
+  &__right-side {
+    background-color: var(--sherpa-midnight-50);
+    width: 53.5%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    &__version {
+      position: absolute;
+      bottom: var(--sherpa-spacing-7);
+      right: var(--sherpa-spacing-2);
+      transform: rotate(270deg);
+      color: var(--sherpa-carbon-900);
+    }
+  }
+
+  &__info {
+    margin-top: 11.6rem;
+    &__carousel {
+      width: calc(100% - var(--sherpa-spacing-6));
+      &__title {
+        margin: var(--sherpa-spacing-6) var(--sherpa-spacing-0);
+        color: var(--sherpa-carbon-800);
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__right-side {
+      width: 100%;
+      height: 34%;
+      position: absolute;
+      top: auto;
+      margin-top: var(--sherpa-spacing-6);
+      &__version {
+        bottom: var(--sherpa-spacing-4);
+        right: calc(50% - var(--sherpa-spacing-3));
+        transform: rotate(0deg);
+      }
+    }
+    &__info {
+      margin-top: var(--sherpa-spacing-9);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__form__head__title {
+      font-size: var(--sherpa-spacing-5);
+    }
+  }
+
+  @media (max-width: 599px) {
+    &__form__head {
+      display: flex;
+      align-items: center;
+      &__logo-mobile {
+        display: block;
+      }
+      &__logo-desktop {
+        display: none;
+      }
+      &__title {
+        margin: var(--sherpa-spacing-0);
+      }
+    }
+  }
+
+  @media (max-height: 599px) {
+    padding-bottom: var(--sherpa-spacing-4);
+  }
+}
+
+.contact-numbers {
+  display: flex;
+  justify-content: space-between;
+  max-width: 30rem;
+}

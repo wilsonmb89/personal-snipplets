@@ -1,0 +1,8 @@
+<div class="tax-select-container">
+  <div class="tax-select-container__header">
+    <span class="pulse-tp-bo3-comp-b">Selecciona</span><span class="pulse-tp-bo3-comp-r"> un tipo de impuesto para pagar</span>
+  </div>
+  <div class="tax-select-container__body">
+    <card-option *ngFor="let option of taxOptions" [cardOptionData]="option"></card-option>  
+  </div>
+</div>

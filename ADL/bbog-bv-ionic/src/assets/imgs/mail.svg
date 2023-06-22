@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="35px" height="25px" viewBox="0 0 35 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>F73C2A6D-7163-4111-9905-B9BD4EFCD9C8</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="00_login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="00_01_TM-hover" transform="translate(-64.000000, -345.000000)">
+            <g id="Group-4" transform="translate(64.000000, 345.000000)">
+                <g id="Group-2">
+                    <rect id="Rectangle-2" fill="#C1E0FF" opacity="0.5" x="3" y="3" width="32" height="22" rx="3"></rect>
+                    <rect id="Rectangle-2" stroke="#6680AD" stroke-width="1.5" x="0.75" y="0.75" width="30.5" height="20.5" rx="3"></rect>
+                    <polyline id="Path-5" stroke="#6680AD" stroke-width="1.5" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" points="1.46337891 1.58447266 15.9765625 10.7753906 30.4501953 1.58447266"></polyline>
+                </g>
+                <path d="M21.7936508,17.6078431 C21.3553296,17.6078431 21,17.2479152 21,16.8039216 C21,16.3599279 21.3553296,16 21.7936508,16 L26.7218085,16 C27.1601297,16 27.5154593,16.3599279 27.5154593,16.8039216 C27.5154593,17.2479152 27.1601297,17.6078431 26.7218085,17.6078431 L21.7936508,17.6078431 Z" id="Path-14" fill="#FDC130" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,184 @@
+@import "pulse-input.vars";
+
+@mixin borderColorInput($color) {
+  border: #{$input-outline-border} $color;
+}
+
+@mixin normalizeInput() {
+  // normalize
+  outline: none;
+  overflow: visible;
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+:host(.pulse-input) {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--pulse-tp-ff-comp);
+  color: #{$font-color};
+
+  .pulse-input__container {
+    display: flex;
+    flex-direction: column;
+
+    &__info-label {
+      color: #{get-pulse-color('carbon', 400)};
+      padding-bottom: 0.6rem;
+      text-align: left;
+    }
+
+    &__input {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+
+      &--input-native {
+
+        flex-grow: 1;
+        @include normalizeInput();
+        font-family: var(--pulse-tp-ff-comp);
+        padding: #{$input-padding};
+        border-radius: #{$input-border-radius};
+        font-size: #{$input-font-size};
+        width: 100%;
+        height: #{$height};
+        color: #{$font-color};
+        max-height: #{$max-height-input};
+
+        &[type="number"]::-webkit-inner-spin-button,
+        &[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+
+        &.align {
+          &-center {
+            text-align: center;
+          }
+          &-left {
+            text-align: left;
+          }
+          &-right {
+            text-align: right;
+          }
+          &-justify {
+            text-align: justify;
+          }
+          &-initial {
+            text-align: initial;
+          }
+          &-inherit {
+            text-align: inherit;
+          }
+        }
+
+        &--with-icon {
+          padding-right: 5.6rem;
+        }
+
+        &:focus {
+          @include borderColorInput(#{get-pulse-color('primary', 700)});
+          caret-color: #{get-pulse-color('warning', 400)};
+        }
+
+        &:disabled {
+          @include borderColorInput(#{get-pulse-color('carbon', 100)});
+          cursor: not-allowed;
+          background-color: #{get-pulse-color('carbon-light', 400)};
+        }
+      }
+
+      &--icon {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        left: unset;
+        padding: 1.2rem 1.6rem;
+
+        &.actionable-icon {
+          cursor: pointer;
+        }
+      }
+
+      &.left-icon {
+        .pulse-input__container__input {
+          &--input-native {
+            padding-left: 4.6rem;
+          }
+          &--icon {
+            right: unset;
+            left: 0;
+            padding-right: 0.8rem;
+          }
+        }
+      }
+    }
+
+    &__helper-label {
+      padding-top: 0.6rem;
+      opacity: 1 !important;
+
+      .helperLabel {
+        &--basic {
+          color: #{get-pulse-color('carbon', 400)};
+        }
+
+        &--success {
+          color: #{get-pulse-color('success', 700)};
+        }
+
+        &--warning {
+          color: #{get-pulse-color('warning', 700)};
+        }
+
+        &--error {
+          color: #{get-pulse-color('error', 700)};
+        }
+      }
+    }
+
+    &.input {
+      &-basic {
+        .pulse-input__container__input--input-native {
+          @include borderColorInput(#{get-pulse-color('carbon', 100)});
+          &:focus {
+            @include borderColorInput(#{get-pulse-color('primary', 700)});
+          }
+        }
+      }
+      &-success {
+        .pulse-input__container__input--input-native {
+          @include borderColorInput(#{get-pulse-color('success', 700)});
+        }
+      }
+      &-warning {
+        .pulse-input__container__input--input-native {
+          @include borderColorInput(#{get-pulse-color('warning', 700)});
+        }
+      }
+      &-error {
+        .pulse-input__container__input--input-native {
+          @include borderColorInput(#{get-pulse-color('error', 700)});
+        }
+      }
+    }
+
+    &.input-optional {
+      .pulse-input__container__input--input-native {
+        border: none;
+        margin-bottom: 0.2rem;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='6' ry='6' stroke='%23C4D4E3FF' stroke-width='2' stroke-dasharray='6%2c 6' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e");
+
+        &:focus {
+          background-image: none;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

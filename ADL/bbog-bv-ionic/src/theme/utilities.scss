@@ -1,0 +1,3 @@
+@function elasticFontSize($min_width, $max_width, $min_font, $max_font) {
+    @return calc(#{$min_font}px + (#{$max_font} - #{$min_font}) * ((100vw - #{$min_width}px) / (#{$max_width} - #{$min_width})));
+}

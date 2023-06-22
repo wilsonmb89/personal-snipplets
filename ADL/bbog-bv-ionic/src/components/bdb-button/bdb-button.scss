@@ -1,0 +1,11 @@
+bdb-button {
+  .button {
+    min-width: 160px;
+    height: 40px;
+    background-color: #002c76;
+  }
+
+  .button:hover, .button:hover:not(.disable-hover) {
+    background-color: #002c76;
+  }
+}

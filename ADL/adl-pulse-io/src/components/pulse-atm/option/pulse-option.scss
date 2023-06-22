@@ -1,0 +1,48 @@
+
+:host {
+  width: 100%;
+  height: 4rem;
+  display: inline-block;
+}
+
+
+.option__content {
+  cursor: pointer;
+  padding: 0.8rem;
+  font-family: var(--pulse-tp-ff-comp);
+  font-size: 1.6rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  border-radius: 0.6rem;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &--show {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &:hover, active{
+    background-color: var(--pulse-color-info-100);
+    font-weight: 500;
+  }
+
+
+  &--disabled {
+    &:hover, active{
+      background-color: var(--pulse-color-carbon-light-400);
+      color: var(--pulse-color-carbon-100);
+      font-weight: 500;
+      cursor: not-allowed;
+    }
+  }
+
+}
+
+

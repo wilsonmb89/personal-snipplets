@@ -1,0 +1,30 @@
+<pulse-modaltb class="login-token-locked">
+  <div slot="header">
+    <div class="login-token-locked__btn-close" (click)="onCloseStep()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/login/form/token-blocked.svg" alt="token">
+      </div>
+      <div slot="title">
+        Error en autenticación
+      </div>
+      <div slot="body">
+        <div class="login-token-locked__body">
+          Superaste el límite de intentos de Token, por seguridad debes ingresar nuevamente tus datos para iniciar
+          sesión.
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="login-token-locked__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="onCloseStep()">
+        Aceptar
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

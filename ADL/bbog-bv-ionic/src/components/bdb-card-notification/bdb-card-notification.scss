@@ -1,0 +1,34 @@
+bdb-card-notification {
+    .card-notification-content {
+        border-radius: 10px;
+        background-image: linear-gradient(291deg, #16459d, #437bda);
+        box-shadow: 0 5px 22px 0 rgba(46, 110, 222, 0.51);
+        cursor: pointer;
+        margin: 15px 0px;
+        z-index: 1;
+
+        &__first-text {
+            font-family: $RobotoRegular;
+            font-size: 16px;
+            color: white;
+
+            strong {
+                font-family: $RobotoBold;
+            }
+        }
+
+        &__second-text {
+            opacity: 0.9;
+            font-family: $RobotoRegular;
+            font-size: 12px;
+            line-height: 2;
+            color: white;
+
+            img {
+                top: 3px;
+                left: 9px;
+                position: relative;
+            }
+        }
+    }
+}

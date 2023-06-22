@@ -1,0 +1,19 @@
+ @import "./mixins-grid";
+
+
+  .pulse-grid {
+    padding: 0;
+    margin: 0;
+    
+  }
+
+  .row{
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+
+   @include generate-cols();

@@ -1,0 +1,89 @@
+page-customer-basic-info {
+    .header-grid{
+        margin-top: 7rem;
+    }
+
+    .page-header{
+
+        &__title{
+            font-family: $ArgoRegular;
+            color: color($colors, bdb-blue);
+            font-size: 2rem;
+        }
+
+        &__subtitle{
+            font-family: $RobotoRegular;
+            color: color($colors, steel);
+            font-size: 1.4rem;
+            margin-top: 1.6rem;
+        }
+    }
+
+    .nav{
+        float: right;
+        &__back{
+            color: color($colors, steel);
+            font-size: 1.3rem;
+            font-family: $RobotoRegular;
+            line-height: 24px;
+        }
+    }
+
+    .section-header{
+        display: inline-flex;
+        padding: 23px 0;
+        border-bottom: 1px solid #e1e2e6;
+        width: 100%;
+    }
+    .section-header img{
+        margin-right: 3.3rem;
+    }
+    .section-header .section-title {
+        margin-top: 0;
+    }
+
+    .section-title{
+        font-family: $ArgoRegular;
+        font-size: 1.6rem;
+        color: color($colors, bdb-blue);
+        line-height: 19px;
+        margin-top: 4rem;
+    }
+
+    .select-title{
+        font-family: $RobotoRegular;
+        font-size: 1.3rem;
+        color: rgba(color($colors, bdb-black), .8);
+        line-height: 15px;
+        margin-top: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .web-btn-wrapper{
+        margin-top: 5.6rem;
+    }
+
+    .error-msg{
+        font-family: $RobotoMedium;
+        color: color($colors, bright-red);
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-top: 0.2rem;
+    }
+
+    @media (max-width: 768px) {
+        .header-grid{
+            margin-top: 0;
+        }
+
+        .mobile-button-group{
+            &__save-btn, &__cancel-btn{
+                border-radius: 0;
+            }
+        }
+
+        .scroll-content{
+            overflow-y: scroll!important;
+        }
+    }
+}

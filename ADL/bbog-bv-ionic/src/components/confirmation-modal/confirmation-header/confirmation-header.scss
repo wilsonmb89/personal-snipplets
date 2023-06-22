@@ -1,0 +1,40 @@
+confirmation-header {
+    .conf__wrapper{
+        padding: 16px 70px;
+        background-color: color($colors, bdb-bg);
+        font-size: 10px;
+        &__conf-icon{
+            img{
+                margin-top: 8px;
+            }
+        }
+
+        &__title{
+            font-family: $ArgoRegular;
+            font-size: 1.8em;
+            color: color($colors, bdb-blue);
+            padding: 4px 0;
+        }
+
+        &__authnum{
+            font-family: $ArgoRegular;
+            font-size: 1.2em;
+            color: color($colors, bdb-black);
+            padding: 4px 0;
+        }
+
+        &__date{
+            font-family: $RobotoLight;
+            font-size: 1.2em;
+            color: color($colors, bdb-black);
+            padding: 4px 0;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        .conf__wrapper{
+            padding: 16px 33px;
+            border-radius: 8px 8px 0 0;
+        }
+    }
+}

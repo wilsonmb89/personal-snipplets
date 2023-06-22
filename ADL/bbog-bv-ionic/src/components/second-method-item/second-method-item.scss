@@ -1,0 +1,35 @@
+second-method-item {
+
+  .second-item-mouse-over {
+    border-radius: 6px;
+    background-color: #eef0f2;
+  }
+
+  .second-item-row {
+  }
+
+  .div-image-regular {
+    background-size: contain;
+    background-repeat:no-repeat;
+    background-position: center;
+  }
+
+  .div-text-regular {
+    font-family: $RobotoRegular;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #8a8d94;
+  }
+
+  .div-text-bold {
+    font-weight: 500;
+    color: #282828;
+  }
+
+
+
+}

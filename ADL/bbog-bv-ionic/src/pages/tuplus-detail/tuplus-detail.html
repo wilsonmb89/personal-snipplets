@@ -1,0 +1,55 @@
+<ion-content #content>
+  <pulse-flowtr>
+    <div slot="header" #header>
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onLogout()" [lOption]="'Atrás'"
+        [rOption]="'Salida segura'">
+        <svg-back (click)="onBackPressed()" left></svg-back>
+        <svg-logout (click)="onLogout()" right></svg-logout>
+      </bdb-nav-options>
+    </div>
+    <div slot="master" #master>
+      <bdb-card-detail *ngIf="cardData | async as cardDataLoaded"
+      [contentMain]="contentMain"
+      breakpoint-detector
+      [shirinkEffect]="true"
+      [cardData]="cardDataLoaded"
+      [showLoader]="showLoaderDetail"
+      (onReload)="getTuPlusPoints()"
+      [updateLayout]="updateLayout"
+      (shrinkStatusChange)="cardShrinkChange($event)">
+      </bdb-card-detail>
+
+    </div>
+    <div slot="detail">
+      <div #txtable>
+
+        <div *ngIf="true">
+          <!--Este div es para apagarlo Se puede borrar cuando se pruebe el backend-->
+          <tx-history-web class="t-web" [hidden]="false" [showTransactionsLoader]="showDetail==='L'"
+                          [showTransactionsError]="false" [columns]="columns" [dataSource]="dataSource" [optionFilter]="false"
+                          [optionDownloadCsv]="false" [validateDateMobile]="validateDateMobile()" [expandableData]="expandData"
+                          [hideSearch]="true"  [title]="title" [description]="description" [tagdata]="tagdata" [isExpandable]="true">
+          </tx-history-web>
+          <div class="status" [ngSwitch]="showDetail">
+            <div class="status__no-data" *ngSwitchCase="'V'">
+              <img src="assets/imgs/mov-status/status-empty.svg" alt="empty">
+              <p class="status--msg">No tienes movimientos en esta búsqueda</p>
+            </div>
+            <div class="status__error" *ngSwitchCase="'E'">
+              <img src="assets/imgs/mov-status/status-fail-desktop.svg" alt="status-fail">
+              <div class="status__no-data--title">
+                <img src="assets/imgs/mov-status/warn.svg" alt="warn">
+                <p class="status--msg">Hubo un error al cargar tus movimientos</p>
+              </div>
+              <button bvButton color="blue-gradient" id="btn-tuplus-detail" class="status--btn"
+                (click)="initSearchDetail()">Volver a intentar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [style.height.px]="divHeight" #fixi></div>
+    </div>
+  </pulse-flowtr>
+
+
+</ion-content>

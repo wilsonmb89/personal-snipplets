@@ -1,0 +1,8 @@
+<div *ngIf="!!additionalInfo" class="additional-info-container">
+  <div class="additional-info-container--icon">
+    <img [src]="additionalInfo.icon.src" [alt]="additionalInfo.icon.alt">
+  </div>
+  <div class="additional-info-container--text"
+      [innerHTML]="additionalInfo.additionalInfoData">
+  </div>
+</div>

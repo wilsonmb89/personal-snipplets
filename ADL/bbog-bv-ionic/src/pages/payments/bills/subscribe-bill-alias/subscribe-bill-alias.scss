@@ -1,0 +1,130 @@
+page-subscribe-bill-alias {
+
+    .bill-alias-wrapper{
+        flex: 1;
+        overflow-x: hidden;
+    }
+
+    .bill-alias-wrapper .title{
+        font-family: $RobotoRegular;
+        font-size: 16px;
+        color : color($colors, bdb-blue);
+    }
+
+    /* form styles */
+
+    .bill-alias-wrapper .inner .bv-form{
+        margin-top: 55px;
+    }
+
+    .bill-alias-wrapper .inner .bv-form .err-hint{
+        margin-top: 22px;
+        color: #a94442;
+    }
+
+    .bill-alias-wrapper .inner .bv-form .input-item{
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #dcdee0;   
+        width: 100%;
+        padding: 2px 0px;
+        font-size: 24px;
+        font-family: $RobotoLight;
+        color: color($colors, bdb-black);
+    }
+
+    .btn-wrapper{
+        margin-top: 48px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-wrapper .key-hint{
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, steel);
+        margin-left: 16px;
+    }
+
+    *.now-btn{
+        margin-left: 30px;
+        padding: 0 25px;
+        border-radius: 6px;
+    }
+
+    .after-btn{        
+        border: solid 2px cornflowerblue;
+        font-size: 12px;
+        color: cornflowerblue !important;
+        font-family: $RobotoRegular;
+        margin-right: 1rem;
+    }
+    .button-inner{
+        font-size: 12px;
+        color: white;
+        font-family: $RobotoRegular;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: color($colors, bdb-black);
+        opacity: 0.2; /* Firefox */
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: color($colors, bdb-black);
+        opacity: 0.8;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: color($colors, bdb-black);
+        opacity: 0.8;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+        .bill-alias-wrapper .subtitle{
+            font-family: $RobotoLight;
+            font-size: 16px;
+            color : color($colors, bdb-slate);
+        }
+
+        .bill-alias-wrapper .inner .bv-form{
+            margin-top: 15px;
+            position: relative;
+            flex: 1;
+        }
+
+        *.now-btn{
+            width: 50%;
+            margin-left: 0;
+            margin-right: 0;
+            border-radius: 0;
+        }
+    
+        .after-btn{
+            width: 50%;
+            margin-left: 0;
+            margin-right: 0;
+            border: solid 2px cornflowerblue;
+            background-color: transparent;
+            padding: 0 12px;
+        }
+
+        .after-btn .button-inner{
+            font-size: 12px;
+            color: cornflowerblue;
+            font-family: $RobotoRegular;
+        }
+    
+
+        .toolbar-content{
+            display: inline-flex;
+        }
+    }
+}

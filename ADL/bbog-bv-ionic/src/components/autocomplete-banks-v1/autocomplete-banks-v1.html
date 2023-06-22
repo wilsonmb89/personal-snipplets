@@ -1,0 +1,16 @@
+<div [formGroup]="autocompleteForm" class="bv-form">
+  <div class="input-header">Entidad Bancaria</div>
+  <ion-input #banknameinput (ionChange)="getItems()" class="input-item" id="socc-bank-name" type="text"
+             placeholder="Escribe el banco" formControlName="bankName"></ion-input>
+  <ion-list class="bank-list">
+    <div *ngFor="let item of bankList; let i=index">
+      <ion-item class="bank-item" *ngIf="i<10" (click)="onItemClick(item)">
+        <div class="itm-inner">
+          <p class="bank-name">{{ item.name }}</p>
+        </div>
+      </ion-item>
+    </div>
+
+  </ion-list>
+</div>
+

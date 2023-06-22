@@ -1,0 +1,17 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>
+      <ion-list class="inner">
+        <add-new-service-btn id="account-add" [btnText]="'Inscribir nueva cuenta'" id="tda-btn-enr"
+          (onEnrollClicked)="enrollAcct()"></add-new-service-btn>
+        <bdb-item-card *ngFor="let item of alldAccounts" [logoPath]="item?.logoPath" [contraction]="item?.contraction"
+          [avatarColor]="item?.avatarColor" [showLogo]="item?.showLogo" [title]="item?.cardTitle" [desc]="item.cardDesc"
+          [subDesc]="item?.cardSubDesc" (onItemClicked)="triggerAmmt(item?.account,item.showLogo)"
+          (onContextSelection)="onContextSelection($event, item?.account)" [withFavoriteStar]="item?.withFavoriteStar"
+          [withContextMenu]="item.contextMenuList && item.contextMenuList.length > 0" [contextMenuList]="item.contextMenuList" [(isFavorite)]="item.favorite"
+          (changeFavorite)="actionFavorite(item)">
+        </bdb-item-card>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

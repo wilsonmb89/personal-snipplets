@@ -1,0 +1,40 @@
+<ion-content class="debit-card-content">
+  <payment-navigation-header (onAbandonClicked)="onAbandonClicked()" (onBackPressed)="onBackPressed()" [text]="abandonText"
+    hidden-md-down>
+  </payment-navigation-header>
+  <form [formGroup]="numberCardForm" (ngSubmit)="submit()" autocomplete="off">
+    <ion-grid>
+      <ion-row>
+        <ion-col offset-sm-1>
+          <div hidden-md-down class="debit-card-content__title" [innerHtml]="title">
+          </div>
+          <div class="debit-card-content__subtitle" [innerHtml]="subtitle">
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col offset-sm-1 col-md-5 col-sm-7>
+          <input text-wrap bdb-form-input id="number-card" placeholder="8 últimos números de la tarjeta" type="tel" pattern="[0-9]*"
+            formControlName="numberCard" [isInvalid]="error" required maxlength="8" dbdNumberFormatter autocomplete="off">
+        </ion-col>
+      </ion-row>
+      <ion-row class="debit-card-content__error" *ngIf="error" no-padding>
+        <ion-col offset-sm-1>
+          <label>El número no corresponde.</label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col offset-sm-1>
+          <button hidden-md-down bvButton class="bdb-btn debit-card-content__submit" id="numberFormSubmit" color="blue-gradient" type="submit"
+            [disabled]="!numberCardForm.valid">Continuar</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
+
+<ion-footer no-padding hidden-lg-up no-border>
+  <ion-toolbar no-padding>
+    <button ion-button full color="blue-gradient" (click)="numberCardForm.valid && submit()" id="numberMobileSubmit" [disabled]="!numberCardForm.valid">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

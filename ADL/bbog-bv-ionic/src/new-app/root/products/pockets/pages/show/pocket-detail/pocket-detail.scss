@@ -1,0 +1,35 @@
+.header-slot{
+  height: 5rem;
+
+  @media only screen and (min-width: 768px) {
+    height: 2rem;
+  }
+}
+
+.pocker-card-title {
+  text-align: center;
+  transform: translateY(-5rem);
+  height: 0px;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+
+  @media only screen and (min-width: 768px) {
+    transform: translateY(-4rem);
+  }
+
+  h6,
+  h4 {
+    color: var(--pulse-color-primary-700);
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+
+  h6 {
+    margin-top: 4px;
+    font-size: 14px;
+  }  
+}
+

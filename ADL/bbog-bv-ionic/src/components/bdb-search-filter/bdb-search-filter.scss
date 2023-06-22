@@ -1,0 +1,99 @@
+bdb-search-filter {
+
+    .search-wrapper {
+        
+        &, &__date-picker{
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        padding: 0 1.6rem;
+
+        @media (max-width: 539px) {
+            padding: 0;
+        }
+
+        &__title {
+            width: 100%;
+            color: var(--pulse-color-carbon-400);
+
+            @media (max-width: 539px) {
+                margin: 0 0.6rem 1.6rem;
+            }
+        }
+
+        &__quick-select,
+        &__date-picker--radio,
+        &__date-picker--mobile,
+        &__date-picker--date-picker {
+            margin: 0 0 1.6rem;
+        }
+
+        &__quick-select {
+            margin-right: 3rem;
+        }
+
+        &__date-picker--pulse-button {
+            height: 6.4rem;
+            padding: 0 0.6rem 0 1.2rem;
+        }
+
+        &__quick-select, 
+        &__date-picker--radio {
+            height: 4.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        &__quick-select--radio, 
+        &__date-picker--radio {
+            padding: 0 0.2rem;
+        }
+
+        &__quick-select--select, &__quick-select--select select {
+            height: 4.8rem;
+            min-width: 16.8rem;
+        }
+    }
+
+    .picker-mobile-container {
+
+        display: flex;
+    
+        &__form-control {
+            width: 14.8rem;
+    
+            &--label {
+                color: var(--pulse-color-carbon-400);
+                margin: 0 0 0.6rem;
+                display: block;
+            }
+
+            &--ion-datetime {
+                height: 4.8rem;
+                position: relative;
+                border: 0.1rem solid var(--pulse-color-carbon-100);
+                border-radius: 0.6rem;
+
+                cursor: not-allowed;
+                background-color: var(--pulse-color-carbon-light-400);
+            }
+        }
+
+        &__separator {
+            width: 0.8rem;
+            height: 4.8rem;
+            align-self: flex-end;
+            display: flex;
+            align-items: center;
+            margin: 0 0.4rem;
+    
+            &--line {
+                width: inherit;
+                height: 0;
+                border-bottom: solid 1px var(--pulse-color-carbon-700);
+            }
+        }
+    }
+}

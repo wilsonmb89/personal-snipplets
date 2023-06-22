@@ -1,0 +1,20 @@
+.voucherInfo {
+  &__container {
+    display: grid;
+    grid-template: 1fr / 45% 55%;
+    &__bottom {
+      padding-bottom: var(--sherpa-spacing-4);
+    }
+  }
+  &__normal {
+    color: var(--sherpa-carbon-800);
+  }
+  &__fieldRigth {
+    text-align: end;
+  }
+  &__separator {
+    padding-bottom: var(--sherpa-spacing-2);
+    border-bottom: 1px solid var(--sherpa-carbon-200);
+    margin-bottom: var(--sherpa-spacing-4);
+  }
+}

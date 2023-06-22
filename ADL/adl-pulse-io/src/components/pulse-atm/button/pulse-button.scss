@@ -1,0 +1,225 @@
+@import 'pulse-button.vars';
+@import '../../../utils/resets/button_reset';
+@import '../../../global/disabled';
+@import '../../../utils/pulse-grid/grid.mixins.scss';
+@import '../../../utils//pulse-grid/grid.scss';
+
+$min-breakpoint: breakpoint-min("lg");
+
+:host {
+  --button-height: var(--pulse-button-height);
+  --button-min-width: var(--pulse-button-width);
+  --button-border-radius: #{$button-border-radius};
+  --button-padding: #{$button-padding};
+  --button-background: var(--pulse-color-bg);
+  --button-color: var(--pulse-color-fg);
+  --button-cursor: pointer;
+  --button-outline: none;
+  --button-border: none;
+  --button-box-shadow: none;
+  --button-outline: none;
+  --button-icon-width: 2.4rem;
+  --button-icon-height: 2.4rem;
+}
+
+:host(.button-size-small) {
+  --button-height: 3.2rem;
+  --button-min-width: 8rem;
+  --button-padding: 0 1.6rem;
+  --button-icon-width: 1.6rem;
+  --button-icon-height: 1.6rem;
+}
+
+:host(.pulse-block),
+:host(.pulse-block) .button-native {
+  display: block;
+  width: 100%;
+}
+
+/*
+* functions
+*/
+
+@mixin button-style {
+  background: var(--button-background);
+  color: var(--button-color);
+  border-radius: var(--button-border-radius);
+  min-width: var(--button-min-width);
+  height: var(--button-height);
+  padding: var(--button-padding);
+  cursor: var(--button-cursor);
+  outline: var(--button-outline);
+  border: var(--button-border);
+  box-shadow: var(--button-box-shadow);
+  outline: var(--button-outline);
+}
+
+@mixin button-hover {
+  --button-box-shadow: #{get-elevation(8)} #{get-pulse-color('info', 400)};
+}
+
+@mixin button-active {
+  --button-background: var(--pulse-color-init);
+  --button-box-shadow: none;
+}
+
+@mixin button-focus {
+  --button-box-shadow: 0 0 0 0.3rem #{get-pulse-color('info', 100)};
+}
+
+/*
+* Button native type Primary
+*/
+
+:host .button-native {
+  @include button-style();
+}
+
+@media only screen and (min-width: $min-breakpoint) {
+  :host .button-native:hover {
+    @include button-hover();
+   }
+}
+
+:host .button-native:active {
+  @include button-active();
+}
+
+:host .button-native:focus,
+:host .button-native:focus-within {
+  @include button-focus();
+}
+
+
+
+/*
+* Button native icon
+*/
+
+:host(.button-icon) .button-native {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon,
+  &__icon pulse-icon {
+    width: var(--button-icon-width);
+    height: var(--button-icon-height);
+  }
+
+  &__icon {
+    margin: var(--button-icon-margin);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+:host(.button-icon.icon-position-right) .button-native {
+  flex-direction: row;
+  --button-icon-margin: 0 0 0 .8rem;
+  --button-padding: 0 2.4rem 0 3.2rem;
+}
+
+:host(.button-icon.icon-position-right.button-size-small) .button-native {
+  --button-icon-margin: 0 0 0 .4rem;
+  --button-padding: 0 .8rem 0 1.6rem;
+}
+
+:host(.button-icon.icon-position-left) .button-native {
+  flex-direction: row-reverse;
+  --button-icon-margin: 0 .8rem 0 0;
+  --button-padding: 0 3.2rem 0 2.4rem;
+}
+
+:host(.button-icon.icon-position-left.button-size-small) .button-native {
+  --button-icon-margin: 0 .4rem 0 0;
+  --button-padding: 0 1.6rem 0 .8rem;
+}
+
+
+/*
+* Button disabled
+*/
+
+:host(.button-disabled) .button-native {
+  --button-border: solid 1px #{get-pulse-color('carbon', 100)} !important;
+  --button-background: #{get-pulse-color('carbon-light', 400)} !important;
+  --button-color: #{get-pulse-color('carbon', 100)} !important;
+  --button-cursor: not-allowed !important;
+}
+
+:host(.button-disabled) {
+ pointer-events: none;
+}
+
+@media only screen and (min-width: $min-breakpoint) {
+  :host(.button-disabled) .button-native:hover {
+    --button-box-shadow: none;
+  }
+}
+
+:host(.button-disabled) .button-native:focus,
+:host(.button-disabled) .button-native:focus-within {
+  --button-box-shadow: none;
+}
+
+
+/*
+* Button type Secondary
+* deprecated button-outline
+*/
+
+:host(.button-outline) .button-native,
+:host(.button-type-secondary) .button-native {
+  --button-background: #{get-pulse-color('white', 700)};
+  --button-border: solid .1rem var(--pulse-color-init);
+  --button-color: var(--pulse-color-init);
+}
+
+@media only screen and (min-width: $min-breakpoint) {
+  :host(.button-outline) .button-native:hover,
+  :host(.button-type-secondary) .button-native:hover {
+    --button-background: #{get-pulse-color('info', 100)};
+  }
+}
+
+:host(.button-outline) .button-native:active,
+:host(.button-type-secondary) .button-native:active {
+  --button-background: #{get-pulse-color('info', 100)};
+  --button-box-shadow: none;
+}
+
+
+/*
+* Button type Tertiary
+* deprecated button-clear
+*/
+
+:host(.button-clear.button-disabled) .button-native,
+:host(.button-type-tertiary.button-disabled) .button-native {
+  --button-border: none !important;
+  --button-background: none !important;
+  --button-color: #{get-pulse-color('carbon', 100)} !important;
+  --button-cursor: not-allowed !important;
+}
+
+:host(.button-clear) .button-native,
+:host(.button-type-tertiary) .button-native {
+  --button-background: #{get-pulse-color('white', 700)};
+  --button-border: none;
+  --button-color: var(--pulse-color-init);
+}
+
+@media only screen and (min-width: $min-breakpoint) {
+  :host(.button-clear) .button-native:hover,
+  :host(.button-type-tertiary) .button-native:hover {
+    --button-background: #{get-pulse-color('info', 100)};
+  }
+}
+
+:host(.button-clear) .button-native:active,
+:host(.button-type-tertiary) .button-native:active {
+  --button-background: #{get-pulse-color('info', 100)};
+  --button-box-shadow: none;
+}

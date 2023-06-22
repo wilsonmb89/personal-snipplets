@@ -1,0 +1,43 @@
+.option-list-container {
+
+  &__wrapper {
+    padding-bottom: 1.6rem;
+
+    &__option {
+
+      &__info {
+        justify-content: space-between;
+        min-height: 8rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: var(--pulse-color-carbon-700);
+
+        &__data {
+          &--title.selected {
+            color: var(--pulse-color-primary-700);
+          }
+        }
+
+        &__amount {
+          align-self: flex-end;
+          margin-bottom: 1.5rem;
+        }
+
+        &:hover {
+          .option-list-container__wrapper__option__info__data--title {
+            color: var(--pulse-color-primary-700);
+          }
+        }
+
+      }
+
+    }
+    
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+}

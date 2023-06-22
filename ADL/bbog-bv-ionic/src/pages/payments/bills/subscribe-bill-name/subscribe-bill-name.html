@@ -1,0 +1,55 @@
+<ion-content>
+    <pulse-flowtt>
+        <div slot="header">
+            <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+                [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+                <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+                <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+            </bdb-nav-options>
+        </div>
+        <!--formulario-->
+        <div slot="content">
+            <div class="bill-name-wrapper">
+                <div class="inner">
+                    <div class="title">
+                        {{title}}
+                    </div>
+                    <div class="subtitle">
+                        {{subtitle}}
+                    </div>
+                    <form [formGroup]="billNameForm" class="bv-form">
+                       
+                         <bdb-autocomplete 
+                            [listOptions]="agreements_list" 
+                            [nameProperty]="'name'"
+                            [valueProperty]="'code'" 
+                            [parentForm]="parentForm" 
+                            [controlName]="controlName"
+                            [placeholder]="'Ejemplo: Acueducto'" 
+                            [id]="'autoPaymentAgreement'" 
+                            [listSize]="10"
+                            (clickOption)="onSelectPaymentAgreement($event)" 
+                            (resetInput)="onResetPaymentAgreement()" 
+                            (inputChange)="search($event)">
+                        </bdb-autocomplete>
+                    
+                        <div class="loader-wrapper" style="width:100%; text-align:center;">
+                            <bdb-loader color="bdb-blue" *ngIf="showBalanceLoader" style="position:absolute;"></bdb-loader>
+                        </div>
+                        <div class="btn-wrapper" hidden-p-sm-down>
+                            <button id="sbn-btn" bvButton color="bdb-blue" [disabled]="billNameForm.controls.billName.invalid"
+                                (click)="triggerBillId()">Continuar</button>
+                            <div class="key-hint" [hidden]="billNameForm.controls.billName.invalid">o presiona Enter
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div slot="summary">
+            <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+        </div>
+    </pulse-flowtt>
+
+</ion-content>

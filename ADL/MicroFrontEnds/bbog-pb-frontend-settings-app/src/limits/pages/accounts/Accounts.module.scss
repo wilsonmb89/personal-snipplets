@@ -1,0 +1,29 @@
+.accounts-container {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    margin-top: 2.4rem;
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      color: var(--pulse-color-primary-700);
+      margin-bottom: 0.8rem;
+    }
+
+    &__desc {
+      color: var(--pulse-color-carbon-700);
+    }
+  }
+
+  &__body {
+    margin-top: 1.7rem;
+  }
+
+  @media only screen and (min-width: 541px) {
+    &__body {
+      margin-top: 3.2rem;
+    }
+  }
+}

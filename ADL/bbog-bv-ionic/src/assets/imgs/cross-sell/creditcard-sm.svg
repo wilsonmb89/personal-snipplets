@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="35" viewBox="0 0 40 35">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#F2F6F8" fill-rule="nonzero" d="M36.761 23.545c.33.907-.115 1.903-.995 2.223l-24.427 8.89c-.88.321-1.861-.155-2.192-1.063l-5.583-15.34c-.33-.907.115-1.902.995-2.222l24.428-8.891c.88-.32 1.86.156 2.191 1.063l5.583 15.34z"/>
+        <path fill="#ACC8DF" fill-rule="nonzero" d="M3.03 19.978l26.86-9.776 1.068 2.934-26.86 9.776z"/>
+        <path stroke="#6680AD" stroke-linecap="round" stroke-linejoin="round" stroke-width=".667" d="M1.836 19.203l26.86-9.776 1.165 3.202L3 22.405z"/>
+        <path stroke="#FDC130" stroke-linecap="round" stroke-linejoin="round" stroke-width=".667" d="M8.555 27.633L15 25.287M7.875 25.766l8.864-3.226"/>
+        <path stroke="#6680AD" stroke-linecap="round" stroke-linejoin="round" stroke-width=".873" d="M33.267 21.989c.317.87-.12 1.829-.975 2.14l-23.76 8.648c-.856.312-1.807-.142-2.124-1.013L1.051 17.046c-.317-.871.12-1.83.976-2.141l23.76-8.648c.856-.312 1.806.142 2.123 1.013l5.357 14.719z"/>
+        <g>
+            <path fill="#F2F6F8" fill-rule="nonzero" d="M39.463 18.495c.168.952-.45 1.857-1.38 2.02L12.255 25.07c-.93.164-1.82-.475-1.988-1.427L7.43 7.556c-.168-.952.45-1.857 1.38-2.02L34.639.981c.93-.164 1.82.474 1.988 1.426l2.837 16.087z"/>
+            <path fill="#ACC8DF" fill-rule="nonzero" d="M8.293 10.313L36.69 5.305l.543 3.078L8.836 13.39z"/>
+            <path stroke="#6680AD" stroke-linecap="round" stroke-linejoin="round" stroke-width=".667" d="M7.244 9.344l28.397-5.007.592 3.357-28.397 5.007z"/>
+            <path stroke="#FDC130" stroke-linecap="round" stroke-linejoin="round" stroke-width=".667" d="M12.428 18.815l6.815-1.202M12.082 16.856l9.371-1.652"/>
+            <path stroke="#6680AD" stroke-linecap="round" stroke-linejoin="round" stroke-width=".873" d="M37.964 17.51a1.671 1.671 0 0 1-1.347 1.943l-25.12 4.43a1.671 1.671 0 0 1-1.93-1.366L6.845 7.081A1.671 1.671 0 0 1 8.192 5.14l25.12-4.43a1.671 1.671 0 0 1 1.93 1.365l2.722 15.436z"/>
+        </g>
+    </g>
+</svg>

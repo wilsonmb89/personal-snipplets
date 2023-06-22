@@ -1,0 +1,68 @@
+apply from: "https://gradle.avaldigitallabs.com/resources/java-ms-project.gradle"
+apply from: "https://gradle.avaldigitallabs.com/resources/static-code-analysis/spotless.gradle"
+
+buildscript {    ext {
+    springBootVersion = '2.3.11.RELEASE'
+}
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8"
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: "org.sonarqube"
+apply plugin: "jacoco"
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            element = 'CLASS'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.85
+            }
+        }
+    }
+}
+
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+    compile('co.com.adl.pb.bdb.common:bbog-pb-commons-lib:1.2.7')
+    compile("org.apache.poi:poi:4.1.2")
+    annotationProcessor("org.projectlombok:lombok:1.18.12")
+    testCompile('com.squareup.okhttp3:mockwebserver:3.14.9')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.hibernate.validator:hibernate-validator:6.1.5.Final')
+    compile('org.yaml:snakeyaml:1.26')
+    compile('org.apache.httpcomponents:httpclient:4.5.13')
+    compile('com.fasterxml.jackson.core:jackson-databind:2.11.3')
+    compile('net.minidev:json-smart:2.4.7')
+    compile('com.fasterxml.jackson.dataformat:jackson-dataformat-cbor:2.12.3')
+    compile('org.apache.tomcat.embed:tomcat-embed-core:9.0.43')
+}
+
+sonarqube {
+    properties {
+        property "sonar.language" , "java"
+        property "sonar.projectName", "bbog-pb-backend-banking-reports"
+        property "sonar.exclusions", "**/common/**, **/*BankingReportsApplication.java, **/aspect/**, **/config/**, **/model/**"
+        property "sonar.projectKey", "bbog-pb-backend-banking-reports"
+        property "sonar.host.url", "${sonarURL}"
+        property "sonar.login", "${stk}"
+    }
+}

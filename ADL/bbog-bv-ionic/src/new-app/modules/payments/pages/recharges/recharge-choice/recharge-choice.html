@@ -1,0 +1,40 @@
+<div class="recharge-choice-container">
+  <div class="recharge-choice-container__section">
+    <span class="recharge-choice-container__section__title pulse-tp-bo2-comp-m">Celular</span>
+    <span class="recharge-choice-container__section__desc pulse-tp-bo3-comp-r">
+      Por seguridad el total de tus recargas diarias son hasta $50.000 pesos.
+    </span>
+    <div class="recharge-choice-container__section__options_wrapper">
+      <pulse-list-group isaccordion="false" islitedesign="true">
+        <pulse-list-item *ngFor="let item of rechargeItems"
+          [itemid]="item.key"
+          [itemtitle]="item.value"
+          avatartype="logo"
+          [avatarpath]="item.value.toLowerCase()"
+          primarynavicon="chevron-right"
+          (itemClicked)="itemSelected(item)"
+        ></pulse-list-item>
+      </pulse-list-group>
+    </div>
+  </div>
+  <div *ngIf="showFacilpassPanel" class="recharge-choice-container__section">
+    <span class="recharge-choice-container__section__title pulse-tp-bo2-comp-m">
+      Peajes electrónicos
+    </span>
+    <span class="recharge-choice-container__section__desc pulse-tp-bo3-comp-r">
+      Recarga tu dispositivo para pago electrónico de peajes.
+    </span>
+    <div class="recharge-choice-container__section__options_wrapper">
+      <pulse-list-group isaccordion="false" islitedesign="true">
+        <pulse-list-item *ngFor="let item of tollItems"
+          [itemid]="item.key"
+          [itemtitle]="item.value"
+          avatartype="logo"
+          [avatarpath]="item.value.toLowerCase()"
+          primarynavicon="chevron-right"
+          (itemClicked)="itemSelected(item)"
+        ></pulse-list-item>
+      </pulse-list-group>
+    </div>
+  </div>
+</div>

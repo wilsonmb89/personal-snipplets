@@ -1,0 +1,85 @@
+:host {
+  .pulse-mobile-calendar-group-main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__header {
+      z-index: 3;
+      position: sticky;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--pulse-color-white-700);
+      color: var(--pulse-color-carbon-900);
+      border-bottom: 0.1rem solid #e1e2e6;
+
+      &--select-month {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 0.8rem 0;
+
+        &__month-list-menu {
+          position: relative;
+          z-index: 3;
+
+          &--arrow-icon {
+            padding-top: 0.5rem;
+
+            svg {
+              transition: transform 0.2s ease-out;
+            }
+          }
+
+          &--menu {
+            z-index: 99;
+            position: absolute;
+            right: -1rem;
+            animation: fadeIn ease 0.5s;
+          }
+
+          &.active svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      &--year {
+        font-weight: var(--pulse-font-comp-r);
+      }
+
+      &--next svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__body {
+
+      &--overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 2;
+        animation: fadeIn ease 0.5s;
+
+        &.hidden {
+          display: none;
+        }
+      }
+
+      &__mobile-calendar {
+        overflow-y: auto;
+      }
+    }
+  }
+}

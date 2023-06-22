@@ -1,0 +1,14 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>
+      <ion-list class="inner">
+        <div class="loader-wrapper">
+          <bdb-loader color="bdb-blue" *ngIf="showBalanceLoader"></bdb-loader>
+        </div>
+        <bdb-item-card *ngFor="let item of loans" [logoPath]="logoPath" [showLogo]="true" [title]="item.cardTitle"
+          [desc]="item.cardDesc" [subDesc]="item.cardSubDesc" (onItemClicked)="processSelection(item.loan)">
+        </bdb-item-card>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

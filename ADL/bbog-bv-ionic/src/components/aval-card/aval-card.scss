@@ -1,0 +1,25 @@
+aval-card {
+    .aval-wrapper{
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &__logo{
+            vertical-align: middle;
+            right: 0;
+            position: absolute;
+        }
+
+        &__title {
+            display: inline-block;
+            font-family: $RobotoRegular;
+            font-size: 1.6rem;
+            line-height: 24px;
+            color: color($colors, bdb-blue);
+            max-width: 75%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    } 
+}

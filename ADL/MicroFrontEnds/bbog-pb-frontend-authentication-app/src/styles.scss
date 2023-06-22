@@ -1,0 +1,27 @@
+/* Root styles file */
+@import '@npm-bbta/bbog-dig-dt-webcomponents-lib/dist/bdb-webcomponents/bdb-webcomponents.css';
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+.roboto-regular {
+  font-family: Roboto-Regular, 'Helvetica Neue', sans-serif;
+}
+
+.roboto-medium {
+  font-family: Roboto-Medium, 'Helvetica Neue', sans-serif;
+}
+
+.roboto-bold {
+  font-family: Roboto-Bold, 'Helvetica Neue', sans-serif;
+}
+
+// hide recaptcha badge
+.grecaptcha-badge {
+  visibility: hidden;
+}

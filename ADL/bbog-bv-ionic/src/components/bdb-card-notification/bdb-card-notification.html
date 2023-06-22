@@ -1,0 +1,18 @@
+<div class="card-notification-content" (click)="executeEmit()" id="cardNotification">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col col-7>
+        <div col-12 class="card-notification-content__first-text" [innerHtml]="cardNotification.firstText">
+        </div>
+        <div col-12 class="card-notification-content__second-text" align-self-center [innerHtml]="cardNotification.secondText">
+        </div>
+      </ion-col>
+      <ion-col col-4>
+        <img [src]="cardNotification.principalImg">
+      </ion-col>
+      <ion-col col-1>
+        <img src="assets/imgs/shape.svg" (click)="close(); $event.stopPropagation();" id="closeCard">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

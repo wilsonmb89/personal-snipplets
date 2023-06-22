@@ -1,0 +1,92 @@
+[
+    {
+            "key": "1",
+            "value": "Empleado Privado",
+            "hasSector": false
+    },
+    {
+            "key": "2",
+            "value": "Independiente",
+            "hasSector": true
+    },
+    {
+            "key": "3",
+            "value": "Comerciante",
+            "hasSector": true
+    },
+    {
+            "key": "4",
+            "value": "Pensionado",
+            "hasSector": false
+    },
+    {
+            "key": "5",
+            "value": "Socio",
+            "hasSector": false
+    },
+    {
+            "key": "6",
+            "value": "Ama de Casa",
+            "hasSector": false
+    },
+    {
+            "key": "7",
+            "value": "Estudiante",
+            "hasSector": false
+    },
+    {
+            "key": "8",
+            "value": "Rentista de Capital",
+            "hasSector": false
+    },
+    {
+            "key": "9",
+            "value": "Empleado Socio",
+            "hasSector": false
+    },
+    {
+            "key": "10",
+            "value": "Funcionario Banco de Bogotá",
+            "hasSector": false
+    },
+    {
+            "key": "11",
+            "value": "Accionista Banco de Bogotá",
+            "hasSector": false
+    },
+    {
+            "key": "12",
+            "value": "Artista",
+            "hasSector": false
+    },
+    {
+            "key": "13",
+            "value": "Empleado Público",
+            "hasSector": false
+    },
+    {
+            "key": "14",
+            "value": "Político",
+            "hasSector": false
+    },
+    {
+            "key": "15",
+            "value": "Pensionado Banco de Bogotá",
+            "hasSector": false
+    },
+    {
+            "key": "16",
+            "value": "Empleado Filial Banco de Bogotá",
+            "hasSector": false
+    },
+    {
+            "key": "17",
+            "value": "Desempleado",
+            "hasSector": false
+    },
+    {
+            "key": "18",
+            "value": "Profesional Independiente",
+            "hasSector": true
+    }
+]

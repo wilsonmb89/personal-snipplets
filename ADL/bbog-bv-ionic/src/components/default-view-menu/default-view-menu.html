@@ -1,0 +1,14 @@
+<div class="default-view-container">
+  <div class="default-view-container__img">
+    <img [src]="'assets/imgs/' + img.desktop" alt="default-img-desktop" hidden-p-sm-down>
+    <img [src]="'assets/imgs/' + img.mobile" alt="default-img-mobile" hidden-p-md-up>
+  </div>
+  <div class="default-view-container__wrap">
+    <div class="default-view-container__wrap__message">
+      {{message}}
+    </div>
+  </div>
+  <div class="default-view-container__button" *ngIf="!!button">
+    <button (click)="button.callback()" bvButton>{{button.message}}</button>
+  </div>
+</div>

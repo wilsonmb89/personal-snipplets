@@ -1,0 +1,178 @@
+generic-page-voucher {
+
+  .navigation {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+
+    &--header {
+      padding: 0.8rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: var(--pulse-flowtx-header);
+    }
+
+    @media only screen and (min-width: 540px) {
+      &--header {
+        padding: 1.6rem 0;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      max-width: var(--pulse-max-container-width, 114rem);
+      width: var(--pulse-max-container-width, 114rem);
+      min-width: 54rem;
+      &--header {
+        padding: 2.4rem 0;
+        margin-bottom: 2.4rem;
+      }
+    }
+  }
+
+  .voucher-page {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .generic-voucher-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    &__grid {
+      z-index: 999;
+      max-width: var(--pulse-max-container-width, 114rem);
+      width: 100%;
+
+          &--section-form, &--section-suggestion {
+            padding: 1.6rem;
+            margin: 0 auto;
+            @media only screen and (max-width: 991px) {
+              width: fit-content;
+            }
+          }
+
+      &--section-form {
+        padding: 0 1.6rem;
+      }
+    }
+  }
+
+  .voucher-content {
+    &__grid {
+      margin-top: 7.2rem;
+    }
+
+    &__title {
+      display: flex;
+      padding: 0 0 2.3rem 0 !important;
+    }
+
+    &__title-text {
+      color: var(--pulse-color-primary-700);
+    }
+
+    &__title-img {
+      margin-bottom: -0.6rem;
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    &__failed-text {
+      opacity: 0.8;
+      color: color($colors, bdb-black);
+      padding: 0 0 2.4rem 0 !important;
+      margin-top: 1.8rem;
+    }
+
+    &__failed-text-bold {
+      font-family: $RobotoBold;
+      font-weight: bold;
+    }
+
+    &__action {
+      display: flex;
+      align-items: center;
+      padding: 1.6rem 0 !important;
+    }
+
+    &__action-circle {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      border: 0.1rem solid var(--pulse-color-carbon-100);
+      background-color: white;
+      align-items: center;
+      display: flex;
+    }
+
+    &__action-circle:hover {
+      border: 0px;
+      cursor: pointer;
+      box-shadow: 0 0.5rem 1rem 0 rgba(102, 128, 173, 0.3);
+    }
+
+    &__action-circle-img {
+      width: 2.4rem;
+      height: 1.7rem;
+      margin: 0 auto;
+    }
+
+    &__action-text {
+      opacity: 0.8;
+      font-family: $RobotoRegular;
+      font-size: 1.4rem;
+      color: color($colors, bdb-black);
+      margin-left: 1.6rem;
+    }
+
+  }
+
+  @media only screen and (max-width: 767px) {
+    /* For mobile phones: */
+    .voucher-content {
+
+      &__grid {
+        margin: 0;
+        padding: 0.8rem !important;
+      }
+
+      &__title {
+        padding: 0 !important;
+      }
+
+      &__title-text {
+        font-size: 1.6rem;
+        line-height: 1.25;
+        letter-spacing: normal;
+      }
+
+      &__failed-text {
+        padding: 2.4rem 0 0 0 !important;
+      }
+
+      &__action-circle {
+        margin: 0 auto;
+      }
+
+    }
+
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 540px) {
+    .generic-voucher-container {
+      overflow-y: scroll;
+      overflow-x: hidden;
+      height: 80%;
+
+    }
+    .generic-voucher-container::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+}
+
+

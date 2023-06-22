@@ -1,0 +1,58 @@
+<div class="dc-wrp">
+    <div class="detail-card">
+        <ion-grid class="card-grid">
+            <ion-row>
+                <ion-col col-10 offset-1>
+                    <ion-row>
+                        <ion-col col-auto>
+                            <div text-left class="detail-card__title">{{item.pName}}</div>
+                        </ion-col>
+                        <ion-col>
+                            <div text-right>
+                                <img *ngIf="item.logo" [src]="item.logo">
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-auto>
+                            <div text-left class="detail-card__acct-number">{{item.pNumber}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row *ngIf="showError">
+                        <ion-col col-auto>
+                            <div text-left class="detail-card__error">{{errorMsg}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-auto>
+                            <div text-left class="detail-card__info">{{item.pBalance?.key}}</div>
+                        </ion-col>
+                        <ion-col>
+                            <div text-right class="detail-card__balance">{{item.pBalance?.value}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row *ngFor="let details of item.pDetails">
+                        <ion-col col-auto>
+                            <div text-left class="detail-card__info">{{details.key}}</div>
+                        </ion-col>
+                        <ion-col>
+                            <div text-right class="detail-card__value">{{details.value}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                            <div class="button-payments" *ngIf="showButtons" hidden-md-down [hidden]="isSticky">
+                                <detail-card-button *ngFor="let buttonRedirect of buttons" [callback]="buttonRedirect.buttonAction" [buttonLabel]="buttonRedirect.buttonLabel"
+                                    [mobile]="'false'"></detail-card-button>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</div>
+<div class="button-payments" *ngIf="showButtons" hidden-lg-up [hidden]="isSticky">
+    <detail-card-button *ngFor="let buttonRedirect of buttons" [callback]="buttonRedirect.buttonAction" [buttonLabel]="buttonRedirect.buttonLabel"
+        [mobile]="'true'"></detail-card-button>
+</div>

@@ -1,0 +1,14 @@
+@import "../../../global/colors";
+
+:host(.pulse-list-group) {
+  .pulse-list-group-container {
+    border-radius: 1rem;
+  }
+
+  .pulse-list-group-header {
+    background-color: var(--pulse-color-carbon-light-100);
+    width: auto;
+    height: auto;
+    padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+  }
+}

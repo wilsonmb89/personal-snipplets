@@ -1,0 +1,74 @@
+.pin-card {
+  &__text {
+    margin: 2.3rem 0 0;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    color: var(--pulse-color-carbon-700);
+  }
+  &__inputs_key {
+    display: flex;
+    margin: 1.5rem 0 2.4rem;
+    &__input_space {
+      width: 25.3rem;
+      margin-right: 3.8rem;
+    }
+    input::-ms-reveal,
+    input::-ms-clear {
+      display: none;
+    }
+  }
+  &__button {
+    width: 100%;
+    display: flex;
+    pulse-button {
+      width: 20.3rem;
+    }
+  }
+}
+
+.btn {
+  &--start {
+    justify-content: flex-start;
+  }
+  &--center {
+    justify-content: center;
+  }
+  &--end {
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .pin-card {
+    width: 80%;
+    margin: 2.4rem auto 0;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .pin-card {
+    &__inputs_key {
+      flex-direction: column;
+      &__input_space {
+        width: 100%;
+        margin: 0 0 3.2rem;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+    &__button {
+      pulse-button {
+        width: 100%;
+      }
+    }
+  }
+
+  .btn {
+    &--start {
+      pulse-button {
+        width: 15.7rem;
+      }
+    }
+  }
+}

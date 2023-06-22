@@ -1,0 +1,12 @@
+page-loan-destination-acct {
+   
+    .loader-wrapper {
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 768px) {     
+        .inner {
+            margin-bottom: 5px;
+        }
+    }
+}

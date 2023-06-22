@@ -1,0 +1,18 @@
+<ion-content no-padding>
+
+  <div class="top" #contentTop>
+    <div id="me-title" class="title">
+      {{title}}
+    </div>
+    <div class="message" [innerHtml]="message">
+    </div>
+  </div>
+  <div class="btn-wrapper">
+
+  </div>
+  <ion-footer>
+    <ion-toolbar class="btn-wrapper" no-padding>
+      <button id="err-left" ion-button full class="main-btn" (click)="mainClick()">{{msgButton}}</button>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>

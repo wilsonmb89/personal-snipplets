@@ -1,0 +1,76 @@
+<ion-content>
+    <pulse-flowtt>
+        <div slot="header">
+            <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+                [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+                <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+                <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+            </bdb-nav-options>
+        </div>
+        <div slot="content">
+            <div class="acct-data-wrapper">
+                <div class="inner">
+                    <div class="title">
+                        {{title}}
+                    </div>
+                    <form [formGroup]="acctDataForm" class="bv-form">
+                        <div class="subtitle subtitle-acct-bank">
+                            {{ subtitleBank }}
+                        </div>
+                        <ion-input #bankInput (ionChange)="getItems()" class="input-item" id="sad-inp-bank" type="text"
+                            placeholder="Escribe el banco" formControlName="bankInfo"></ion-input>
+                        <ion-list class="acct-agreements-list">
+                            <div *ngFor="let item of itemsBare; let i=index">
+                                <ion-item class="acct-item" *ngIf="i<10" (click)="onItemClick(item)">
+                                    <div class="itm-inner">
+                                        <p class="service-name">{{ item.name }}</p>
+                                    </div>
+                                </ion-item>
+                            </div>
+                        </ion-list>
+
+                        <div class="subtitle subtitle-acct-number">
+                            {{ subtitleNumber }}
+                        </div>
+                        <ion-input #acctNumberInput class="input-item" id="sad-inp-num" type="number"
+                            placeholder="Cuenta #" pattern="[0-9]{0,}" formControlName="acctNumber"></ion-input>
+
+                        <div class="acct-type-row" [hidden]="isElectronicDeposit">
+                            <div class="acct-type-col">
+                                <div id="sad-btn-sav" class="btn-select" (click)="toggleExtraBtn('left')"
+                                    [ngClass]="acctTypeSelected ? 'active' : null">
+                                    <div class="text-strong">
+                                        Ahorros
+                                    </div>
+                                </div>
+                                <div id="sad-btn-check" class="btn-select" (click)="toggleExtraBtn('right')"
+                                    [ngClass]="!acctTypeSelected ? 'active' : null">
+                                    <div class="text-strong">
+                                        Corriente
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btn-wrapper" hidden-p-sm-down>
+                            <button bvButton id="sad-btn-next" color="bdb-blue"
+                                [disabled]="!acctDataForm.controls.acctNumber.valid || disabled" ion-button
+                                (click)="triggerAcct(isElectronicDeposit)">Continuar</button>
+                            <div hidden-p-md-down class="key-hint" [hidden]="!acctDataForm.controls.acctNumber.valid || disabled">o
+                                presiona Enter</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div slot="summary">
+            <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+        </div>
+    </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+    <ion-toolbar no-padding>
+        <button id="mob-sad-btn-next" class="confirm-btn" full color="bdb-blue" hidden-lg-up ion-button
+            (click)="triggerAcct(isElectronicDeposit)" [disabled]="!acctDataForm.controls.acctNumber.valid || disabled">Continuar</button>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,37 @@
+<ion-content no-padding>
+  <div class="acct-nick-name-wrapper">
+    <payment-navigation-header (onAbandonClicked)="onAbandonClicked()" (onBackPressed)="onBackPressed()" [text]="abandonText" hidden-md-down>
+    </payment-navigation-header>
+    <div class="inner">
+      <div class="title">
+        {{ title }}
+      </div>
+      <form [formGroup]="productAliasForm" class="bv-form">
+        <div class="subtitle">
+          {{ subtitle }}
+        </div>
+        <ion-input class="input-item" id="san-inp-name" type="text" placeholder="{{productPlaceholder}}"
+                   formControlName="nickName"></ion-input>
+        <div class="btn-wrapper" hidden-md-down>
+          <button bvButton id="san-btn-after" class="after-btn" color="white"
+                  [disabled]="productAliasForm.controls.nickName.invalid"
+                   (click)="productToPayNow(false)">Pagar después
+          </button>
+          <button bvButton id="san-btn-pay" color="bdb-blue" [disabled]="productAliasForm.controls.nickName.invalid" 
+                  (click)="productToPayNow(true)">Ir al pago
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ion-content>
+<ion-footer hidden-lg-up>
+  <ion-toolbar class="bottom-btn" no-padding>
+    <button id="mob-san-btn-after" class="after-btn" color="bdb-blue" ion-button (click)="productToPayNow(false)"
+            [disabled]="productAliasForm.controls.nickName.invalid">Pagar después
+    </button>
+    <button id="mob-san-btn-pay" class="now-btn" color="bdb-blue" ion-button (click)="productToPayNow(true)"
+            [disabled]="productAliasForm.controls.nickName.invalid">Ir al pago
+    </button>
+  </ion-toolbar>
+</ion-footer>

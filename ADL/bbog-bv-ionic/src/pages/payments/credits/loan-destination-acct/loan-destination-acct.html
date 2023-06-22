@@ -1,0 +1,38 @@
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-list class="inner">
+        <div class="loader-wrapper">
+          <bdb-loader *ngIf="
+          showBalanceLoader
+           || (workingEnrolledCredits$ | async)" color="bdb-blue"></bdb-loader>
+        </div>
+        <default-view-menu *ngIf="credits.length === 0
+          && (enrolledCredits$ | async).length === 0
+          && !showBalanceLoader
+          && !(workingEnrolledCredits$ | async) "
+                           [button]="dataEmpty.button" [img]="dataEmpty.img"
+                           [message]="dataEmpty.message">
+        </default-view-menu>
+        <div *ngIf="credits.length > 0
+          || (enrolledCredits$ | async).length > 0">
+
+          <add-new-service-btn (click)="enrollCredits()" [btnText]="'Otro Crédito'" id="credit-btn-enr" id="loan-add">
+          </add-new-service-btn>
+
+          <bdb-item-card (onItemClicked)="triggerAmmtInput(item.credit)" *ngFor="let item of credits"
+                         [desc]="item.cardDesc" [logoPath]="logoPath"
+                         [showLogo]="true" [subDesc]="item.cardSubDesc"
+                         [title]="item.cardTitle">
+          </bdb-item-card>
+
+          <bdb-item-card-v2 *ngFor="let item of (enrolledCredits$ | async); let i = index;" [item]="item"
+          (onItemClicked)="triggerAmmtInputEnroll(item.product)" [index]="i"
+          (onContextSelection)="onContextSelection($event, item.product)">
+          </bdb-item-card-v2>
+
+        </div>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>

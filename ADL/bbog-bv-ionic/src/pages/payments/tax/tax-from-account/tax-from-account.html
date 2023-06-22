@@ -1,0 +1,57 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="'Atrás'"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <div class="inner">
+
+        <div class="component-wrapper" col-12>
+          <ion-grid class="summary-main" hidden-p-sm-down>
+            <ion-row>
+              <ion-col col-9 col-md-7>
+                <p class="summary-label">Valor a pagar:</p>
+              </ion-col>
+              <ion-col>
+                <p class="summary-value">{{taxInfoSel.taxInfo.bill.amount | currency}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-9 col-md-7>
+                <p class="summary-label">Costo de transacción (sin IVA)</p>
+              </ion-col>
+              <ion-col>
+                <p class="summary-charge">{{taxInfoSel.charge}}</p>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="subtitle">
+            Selecciona la cuenta de origen
+          </div>
+
+          <bdb-card-check *ngFor="let item of items" [title]="item.cardTitle" [label]="item.cardLabel"
+            [value]="item.cardValue" [BdbChecked]="item.isActive" (clickCard)="paymentSelected(item)">
+          </bdb-card-check>
+
+        </div>
+        <button id="tt-btn" bv-button color="mango" hidden-p-sm-down ion-button (click)="send()">Realizar pago</button>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="mob-tt-btn" class="confirm-btn" full color="mango" ion-button (click)="send()">Realizar
+      pago</button>
+  </ion-toolbar>
+</ion-footer>

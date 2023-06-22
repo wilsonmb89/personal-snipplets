@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="282" height="190" viewBox="0 0 282 190">
+    <defs>
+        <ellipse id="a" cx="22.85" cy="22.6" rx="22.254" ry="22.278"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(-16 -21)">
+        <path d="M0 0h318v212H0z"/>
+        <g transform="rotate(-20 266.609 -118.152)">
+            <rect width="158" height="134" fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.005" rx="7.053"/>
+            <rect width="140" height="104" x="9" y="22" fill="#C6D3E0" fill-rule="nonzero" opacity=".5" rx="7.053"/>
+            <ellipse cx="48.876" cy="46.975" fill="#FFF" fill-rule="nonzero" rx="1.484" ry="1.485"/>
+            <g fill="#FFF" fill-rule="nonzero" transform="rotate(-105 83.368 19.358)">
+                <ellipse cx="1.553" cy="2.397" rx="1.484" ry="1.485"/>
+                <ellipse cx="7.899" cy="38.265" rx="2.225" ry="3.713"/>
+            </g>
+            <ellipse cx="100.073" cy="48.824" fill="#FFF" fill-rule="nonzero" rx="2.225" ry="3.713"/>
+            <g stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.485">
+                <path d="M1.884 86.977c7.328-5.703 18.827-12.052 27.942-13.807a19.386 19.386 0 0 1 12.255.802 8.44 8.44 0 0 1 4.48 10.396M36.71 92.834a54.086 54.086 0 0 1 23.5-8.733 17.589 17.589 0 0 0-8.278 14.377M59.41 93.666a6.345 6.345 0 0 1 8.545.505 10.107 10.107 0 0 1 2.285 8.91 25.232 25.232 0 0 1-3.828 8.615c-5.428 8.769-6.55 9.336-14.118 16.337M18.841 131.717c3.638-20.321 20.739-21.734 28.551-23.407a4.506 4.506 0 0 1 4.065.564 4.46 4.46 0 0 1 .534 4.218 33.6 33.6 0 0 1-11.869 18.625"/>
+                <path d="M5.518 94.557c4.549-5.054 13.655-9.773 20.362-10.872a6.521 6.521 0 0 1 4.065.327 4.874 4.874 0 0 1 2.077 5.257 13.372 13.372 0 0 1-2.79 5.288 261.48 261.48 0 0 1-21.482 24"/>
+            </g>
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.005" d="M0 14.038h158"/>
+            <g fill-rule="nonzero" transform="translate(7 4)">
+                <ellipse cx="2.794" cy="2.948" fill="#6B80A8" rx="2.794" ry="2.948"/>
+                <ellipse cx="13.97" cy="2.948" fill="#F2F5F7" rx="2.794" ry="2.948"/>
+                <ellipse cx="25.145" cy="2.948" fill="#C6D3E0" rx="2.794" ry="2.948"/>
+            </g>
+        </g>
+        <ellipse cx="21.982" cy="22.026" fill="#FDC130" fill-rule="nonzero" rx="21.982" ry="22.026" transform="translate(182.64 21)"/>
+        <g transform="translate(252 159.634)">
+            <mask id="b" fill="#fff">
+                <use xlink:href="#a"/>
+            </mask>
+            <use fill="#C6D3E0" fill-rule="nonzero" xlink:href="#a"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width=".743" d="M9.35 41.403a17.593 17.593 0 0 1 9.94-6.075 2.253 2.253 0 0 1 2.032.283c.44.612.54 1.406.267 2.109a16.8 16.8 0 0 1-5.934 9.312" mask="url(#b)"/>
+            <ellipse cx="14.691" cy="12.946" fill="#FFF" fill-rule="nonzero" mask="url(#b)" rx="1.484" ry="1.485"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width=".743" d="M20.491-7L18.92 5.431c-.119.876 0 2.065.846 2.228a1.735 1.735 0 0 0 1.364-.564l4.792-3.906-1.097 9.341c-.12.996-.075 2.273.86 2.644a2.312 2.312 0 0 0 1.75-.312A78.074 78.074 0 0 0 43.875 4.14" mask="url(#b)"/>
+            <ellipse cx="37.686" cy="24.085" fill="#FFF" fill-rule="nonzero" mask="url(#b)" rx="2.225" ry="3.713"/>
+        </g>
+        <ellipse cx="21.451" cy="42.456" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".743" rx="4.451" ry="4.456"/>
+        <ellipse cx="34.875" cy="58.881" fill="#E33031" fill-rule="nonzero" rx="5.875" ry="5.881"/>
+        <circle cx="279.5" cy="78.5" r="12.5" fill="#002C76"/>
+        <g transform="translate(34.64 170)">
+            <path stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".743" d="M13.554 39.73l29.524-24.877M4 28.369L33.524 3.492"/>
+            <ellipse cx="38.288" cy="9.165" fill="#E33031" fill-rule="nonzero" rx="3.711" ry="8.165" transform="rotate(-40.09 38.288 9.165)"/>
+            <ellipse cx="8.773" cy="34.03" fill="#0B2D72" fill-rule="nonzero" rx="3.711" ry="8.165" transform="rotate(-40.09 8.773 34.03)"/>
+        </g>
+    </g>
+</svg>

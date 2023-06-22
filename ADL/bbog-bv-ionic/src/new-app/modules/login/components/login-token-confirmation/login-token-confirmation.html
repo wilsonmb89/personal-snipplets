@@ -1,0 +1,32 @@
+<pulse-modaltb class="login-token-confirmation">
+  <div slot="header">
+    <div class="login-token-confirmation__btn-close" (click)="onCloseStep()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/token-otp/token/token.svg" alt="token">
+      </div>
+      <div slot="title">
+        <span class="pulse-tp-hl3-comp-r">Número de </span>&nbsp;Sitio Seguro
+      </div>
+      <div slot="body">
+        <div class="login-token-confirmation__body">
+          <div class="login-token-confirmation__body--number-safe-site pulse-tp-hl3-comp-m">
+            {{numberSafeSite}}
+          </div>
+          Este número debe coincidir con el que aparece en tu token físico o Token móvil en tu celular.
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="login-token-confirmation__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="onSubmit()">
+        Continuar
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

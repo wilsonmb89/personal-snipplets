@@ -1,0 +1,20 @@
+<ion-content padding>
+  <form [formGroup]="editSecurityForm" autocomplete="off">
+    <ion-grid class="edit-card-lock-content" no-padding>
+      <ion-row>
+        <ion-col>
+          <div class="edit-card-lock-content__label" margin-top>
+            <span float-left>Nivel de seguridad</span>
+          </div>
+          <select bdb-select formControlName="reasonBlocking" class="edit-card-lock-content__select"
+            (click)="$event.stopPropagation();">
+            <option disabled value="">Seleccionar</option>
+            <option *ngFor="let itemReasonBlocking of reasonBlockingList" [value]="itemReasonBlocking.key">
+              {{ itemReasonBlocking.value }}
+            </option>
+          </select>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

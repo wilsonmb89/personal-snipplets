@@ -1,0 +1,203 @@
+<pulse-card class="pulse-padding-none-xs-a" [color]="cardData.cardOptions.color"
+  [colorgradient]="cardData.cardOptions.colorGradient">
+  <div class="card-detail-wrapper" [ngStyle]="{'padding': isScrollContraction ? '0' : '0px 0 56px 0'}">
+    <div class="card-detail-wrapper__background-img" [ngStyle]="{
+      'padding': isScrollContraction ? '0' : '0px 0 56px 0',
+      'background-image': 'url(' + cardData.cardOptions.backgroundImg + ')',
+      'background-repeat': 'no-repeat',
+      'width': '100%',
+      'height': '100%'
+    }" hidden-p-md-down>
+    </div>
+    <div class="pulse-grid">
+      <!-- Title  -->
+      <div class="row">
+        <div class="col-xs-12">
+        <div [ngClass]="{
+            'card-detail-wrapper__share_button': true
+            }" *ngIf="shareAccountInfo && showButtonShare" (click)="showShareAccountInfo()">
+            <pulse-icon class="card-detail-wrapper__lock_button--icon" color="primary" size="s" icon="share"></pulse-icon>
+        </div>
+          <div class="card-detail-wrapper__title">
+            {{ cardData.cardHeader.title }}
+          </div>
+          <div [ngClass]="{
+            'card-detail-wrapper__lock_button--enable': !disableLockButton,
+            'card-detail-wrapper__lock_button--disable' : disableLockButton,
+            'card-detail-wrapper__lock_button': true
+            }" *ngIf="showLockCard" (click)="lockCardDetailClick()">
+            <span class="pulse-tp-hl6-comp-r pulse-color-white-700 card-detail-wrapper__lock_button--text" *ngIf="!lockCreditCard">{{ FREEZE_BUTTON_TEXT }}</span>
+            <pulse-icon class="card-detail-wrapper__lock_button--icon" color="primary" size="l" icon="snowflake" *ngIf="!lockCreditCard"></pulse-icon>
+            <span class="pulse-tp-hl6-comp-r pulse-color-white-700 card-detail-wrapper__lock_button--text" *ngIf="lockCreditCard">{{ UNFREEZE_BUTTON_TEXT }}</span>
+            <pulse-icon class="card-detail-wrapper__lock_button--icon" color="primary" size="l" icon="snowflake" *ngIf="lockCreditCard"></pulse-icon>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="card-detail-wrapper__subtitle">
+            {{ cardData.cardHeader.subtitle }}
+          </div>
+        </div>
+      </div>
+      <!-- End Title  -->
+      <div *ngIf="!isScrollContraction" [@expandRow]="isScrollContraction" (@expandRow.start)="animScrollStart($event)"
+        (@expandRow.done)="animScrollEnd($event)">
+        <!-- Detail -->
+        <div class="row" *ngIf="!cardData.cardOptions.showError">
+          <div class="col-xs-12 card-detail-wrapper__detail--cols pulse-padding-m-xs-h pulse-padding-none-md-a"
+            [ngClass]="cardData.dataToShow.length > 1 ? distributionClass : 'col-md-6'">
+            <div class="row card-detail-wrapper__detail card-detail-wrapper__detail__border-right--exclusive">
+              <div id = "bdb-card-detail-id-label-0"class="col-xs-6 col-md-12 order-md-2 card-detail-wrapper__detail__label">
+                {{cardData.firstColData.key}}<span hidden-p-md-up>:</span>
+              </div>
+              <div class="col-xs-6 col-md-12 order-md-1 card-detail-wrapper__detail__value--highlight">
+                <div id = "bdb-card-detail-id-value-0" *ngIf="cardData.firstColData.type === 0">
+                  {{ cardData.firstColData.value.substring(0, cardData.firstColData.value.indexOf(',')) }}<sup
+                    class="card-detail-wrapper__decimal--highlight">{{ cardData.firstColData.value.substring(cardData.firstColData.value.indexOf(','), cardData.firstColData.value.length) }}</sup>
+                </div>
+                <div *ngIf="cardData.firstColData.type !== 0">
+                  {{cardData.firstColData.value}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ng-container *ngFor="let detail of cardData.dataToShow | slice:start:end; let last = last; let i=index">
+            <div class="col-xs-12 card-detail-wrapper__detail--cols pulse-padding-m-xs-h pulse-padding-none-md-a"
+              [ngClass]="cardData.dataToShow.length > 1 ? distributionClass : 'col-md-6'">
+              <div class="row card-detail-wrapper__detail"
+                [ngClass]="{'card-detail-wrapper__detail__border-right': !last}">
+                <div id="bdb-card-detail-id-label-{{i+1}}" class="col-xs-6 col-md-12 order-md-2 card-detail-wrapper__detail__label">
+                  <div class="card-detail-wrapper__tooltip">
+                    <div>{{ detail.key }}<span hidden-p-md-up>: </span></div>
+                    <div #tooltip class="card-detail-wrapper__tooltip--position" *ngIf="cardTotalBalance(detail.key)"
+                    (click)="infoAdditionTooltip()">
+                     <img src="assets/imgs/icons/info-orange-circle.svg" alt="info-orange-circle"></div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-12 order-md-1 card-detail-wrapper__detail__value">
+                  <div id = "bdb-card-detail-id-value-{{i+1}}"  *ngIf="detail.type === 0">{{ detail.value.substring(0, detail.value.indexOf(',')) }}<sup
+                      class="card-detail-wrapper__decimal">{{ detail.value.substring(detail.value.indexOf(','), detail.value.length) }}</sup>
+                  </div>
+                  <div *ngIf="detail.type !== 0">
+                    {{ detail.value }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <!-- linea division para mobil -->
+          <div class="col-xs-12" hidden-p-md-up *ngIf="showMore">
+            <div class="card-detail-wrapper__detail--division pulse-margin-l-xs-v"></div>
+          </div>
+          <!-- opcion para mostrar mas detalles -->
+          <div class="col-xs-12 pulse-padding-none-xs-a card-detail-wrapper__detail__see-more-col"
+            [ngClass]="distributionClass" *ngIf="showMore" hidden-p-sm-down>
+            <div class="card-detail-wrapper__detail__see-more--inner" (click)="viewMore()">
+              <u>{{ !moreDetail ? 'Ver más información' : 'Ver menos' }}</u>
+              <svg-icon-arrow [color]="'#fff'" [opacity]="1" [invest]="moreDetail"></svg-icon-arrow>
+            </div>
+          </div>
+        </div>
+        <!-- End Detail -->
+
+        <!-- Table -->
+        <div class="row" *ngIf="!cardData.cardOptions.showError && !isScrollContraction">
+          <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2" no-padding>
+            <div class="card-detail-wrapper__table" *ngIf="moreDetail" [@expandRow]="moreDetail">
+              <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-xl-8 col-xl-offset-2"
+                  no-padding>
+
+                  <div class="card-auxspace" *ngIf="!showErrorFiduciary">
+                    <div *ngFor="let detail of cardData.dataToShow | slice:end:cardData.dataToShow.length;"
+                      class="row card-detail-wrapper__table__row">
+                      <div class="col-xs-6" no-padding>
+                        <div class="card-detail-wrapper__table__left">
+                          <div class="body__question">
+                            {{ detail.key }}:
+                            <tooltip-fiduciary [icon]="imgQuestion" [enabledToolTip]="showFiduciaryDetails" [balanceDetail]="detail" ></tooltip-fiduciary>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-6" no-padding>
+                        <div float-right *ngIf="detail.enableLoader" class="info-label__loader"></div>
+                        <div class="card-detail-wrapper__table__right" *ngIf="!detail.enableLoader">
+                          <div *ngIf="detail.type === 0 && !showPlusSymbol">{{ detail.value.substring(0, detail.value.indexOf(',')) }}<sup
+                              class="card-detail-wrapper__decimal">{{ detail.value.substring(detail.value.indexOf(','), detail.value.length) }}</sup>
+                          </div>
+                          <div *ngIf="detail.type === 0 && showPlusSymbol">{{ (detail.priority == 3) ? '+ ' + detail.value.substring(0, detail.value.indexOf(',')) : detail.value.substring(0, detail.value.indexOf(',')) }}<sup
+                            class="card-detail-wrapper__decimal">{{ detail.value.substring(detail.value.indexOf(','), detail.value.length) }}</sup>
+                          </div>
+                          <div *ngIf="detail.type !== 0">
+                            {{ detail.value }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- showErrorFiduciary -->
+                  <div *ngIf="showErrorFiduciary">
+                    <div class="row card-error-fbog__row">
+                      <div class="col-xs-12">
+                        <div class="card-detail-wrapper__error__msg">
+                          <div class="card-detail-wrapper__error__msg__txt">
+                            <img src="assets/imgs/warning.svg"><span>{{(textFiduciary.yieldError) ? textFiduciary.yieldError.title : ""}}</span>
+                          </div>
+                        </div>
+                        <div class="card-detail-wrapper__error__btn">
+                          <button bv-button ion-button class="card-detail-wrapper__error__btn__btn" [showLoader]="showLoader" [outline]="false"
+                            [small]="true" [color]="white" (click)="onReloadFiduciaryClick()">
+                            <div class="btn-text">Volver a intentar</div>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End showErrorFiduciary -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- opcion para mostrar mas detalles -->
+          <div class="col-xs-12 pulse-padding-none-xs-a card-detail-wrapper__detail__see-more-col"
+            [ngClass]="distributionClass" *ngIf="showMore" hidden-p-md-up>
+            <div class="card-detail-wrapper__detail__see-more--inner" (click)="viewMore()">
+              <u>{{ !moreDetail ? 'Ver más información' : 'Ver menos' }}</u>
+              <svg-icon-arrow [color]="'#fff'" [opacity]="1" [invest]="moreDetail"></svg-icon-arrow>
+            </div>
+          </div>
+        </div>
+        <!-- End Table -->
+
+        <!-- showError -->
+        <div class="row" *ngIf="cardData.cardOptions.showError">
+          <div class="col-xs-12">
+            <div class="card-detail-wrapper__error__msg">
+              <div class="card-detail-wrapper__error__msg__txt">
+                <img src="assets/imgs/warning.svg"><span>{{ cardData.cardOptions.msgError }}</span>
+              </div>
+            </div>
+            <div class="card-detail-wrapper__error__btn">
+              <button bv-button class="card-detail-wrapper__error__btn__btn" ion-button [showLoader]="showLoader" [outline]="false"
+                [small]="true" [color]="white" (click)="onReloadClick()">
+                <div class="btn-text">Volver a intentar</div>
+              </button>
+
+            </div>
+          </div>
+        </div>
+        <!-- End Error -->
+      </div>
+      <div class="card-detail-wrapper__buttons" *ngIf="!!cardData.cardButton && cardData.cardButton.length > 0"
+        [ngClass]="{'card-detail-wrapper__buttons--translate': isScrollContraction} ">
+        <div *ngFor="let button of cardData.cardButton" [ngClass]="[isScrollContraction ? 'card-detail-wrapper__buttons--dissapear' : 'card-detail-wrapper__buttons__button' ]"
+          (click)="onButtonClick(button)">
+          <pulse-fab-button color="primary" [text]="button.text">
+            <div style="margin: auto;" [innerHTML]="button.icon | safe: 'html'"></div>
+          </pulse-fab-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</pulse-card>

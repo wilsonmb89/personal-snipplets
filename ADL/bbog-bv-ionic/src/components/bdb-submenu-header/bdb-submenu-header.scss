@@ -1,0 +1,20 @@
+bdb-submenu-header {
+
+  .header {
+
+    &__title {
+      margin-top: 0;
+    }
+
+    .subtitle {
+      font-family: $RobotoLight;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: normal;
+      color: color($colors, steel);
+      display: block;
+    }
+
+  }
+
+}

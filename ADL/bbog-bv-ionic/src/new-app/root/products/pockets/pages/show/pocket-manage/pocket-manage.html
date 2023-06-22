@@ -1,0 +1,145 @@
+<ion-content no-padding>
+  <pulse-flowtm>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="leftHdrOption"
+        [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="pocket-manage-container">
+        <div class="col-xs-12 col-md-12 col-lg-7">
+
+          <div class="pocket-manage-container__title">
+            <div class="pocket-manage-container__title--icon">
+              <div [innerHTML]="pocketIcons['pocket-name'] | safe: 'html'"></div>
+            </div>
+
+            <div *ngIf="editPocketName" @boxAnimation class="pocket-manage-container__title-edit">
+              <form [formGroup]="formEditName" (ngSubmit)="onSubmitEditTitle()">
+                <pulse-input (valueEmmitInput)="onTextChange($event)" ngDefaultControl formControlName="name" id="name" [name]="'name'" [placeholder]="'Nombre'"
+                  [maxlength]="15">
+                </pulse-input>
+                <div class="pocket-manage-container__title-edit--buttons">
+                  <pulse-button type="submit" [disabled]="formEditName.invalid">Guardar cambios</pulse-button>
+                  <div class="pocket-manage-container__title-edit--button-cancel pulse-tp-btn-comp-r"
+                    (click)="toggleEditName(); buildForms()">Cancelar</div>
+                </div>
+              </form>
+            </div>
+
+            <div *ngIf="!editPocketName" class="pocket-manage-container__title--text">
+              <div class="pulse-tp-hl3-comp-m">
+                {{pocketData.pocketName}}
+              </div>
+              <div class="pocket-manage-container__title--icon-edit" (click)="toggleEditName()"
+                [innerHTML]="pocketIcons['edit-name'] | safe: 'html'"></div>
+            </div>
+          </div>
+
+          <div class="pocket-manage-container__section">
+            <div class="pocket-manage-container__section--title pulse-tp-hl3-comp-r">
+              Información del producto
+            </div>
+            <div class="pocket-manage-container__section--description pulse-tp-bo3-comp-r">
+              Realiza los cambios necesarios para la personalización de tu alcancía.
+            </div>
+            <div class="pocket-manage-container__section--list">
+              <pulse-list>
+                <pulse-item [description]="namePocketType">
+                  <div slot="start" [innerHTML]="pocketIcons['category'] | safe: 'html'"></div>
+                  Categoría
+                </pulse-item>
+                <pulse-item [description]="pocketData.pocketGoal | customCurrency:'$':0:',':'.':3" has-expand="true"
+                  (reduceExpand)="buildForms()">
+                  <div slot="start" [innerHTML]="pocketIcons['goal'] | safe: 'html'"></div>
+                  Meta
+                  <div slot="expand">
+
+                    <form [formGroup]="formEditAmount" (ngSubmit)="onSubmitEditAmount()">
+                      <div class="pocket-manage-container__expand">
+                        <div class="pocket-manage-container__expand--amount">
+                          <bdb-currency-input placeHolder="$" formControlName="amount" [withDecimal]="withDecimal">
+                          </bdb-currency-input>
+                        </div>
+                        <div class="pocket-manage-container__expand--button">
+                          <pulse-button type="submit" [disabled]="formEditAmount.invalid">Guardar cambios</pulse-button>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                  <pulse-icon icon="expand-more" color="carbon" slot="end"></pulse-icon>
+                </pulse-item>
+                <pulse-item [description]="plannedDate" has-expand="true"
+                  (reduceExpand)="buildForms(); onChangePeriod(formEditPeriod.value.periods)">
+                  <div slot="start" [innerHTML]="pocketIcons['goal-date'] | safe: 'html'"></div>
+                  Fecha planeada
+                  <div slot="expand">
+
+                    <form [formGroup]="formEditPeriod" (ngSubmit)="onSubmitEditPeriod()">
+                      <div class="pocket-manage-container__expand">
+                        <div class="pocket-manage-container__expand--period">
+                          <div class="pocket-manage-container__expand--period-number">
+                            <input formControlName="number" id="number" name="number" type="text" placeholder="#"
+                              bdb-form-input number-input (keyup)="onInputKeyUp($event)">
+                          </div>
+                          <div class="pocket-manage-container__expand--period-select">
+                            <select bdb-select formControlName="periods" id="periods"
+                              (change)="onChangePeriod($event.target.value)">
+                              <option *ngFor="let period of periods; let i = index" [value]="period.id">
+                                {{period.name}}
+                              </option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="pocket-manage-container__expand--approximate-date pulse-tp-hl5-comp-r">
+                          Fecha aproximada: {{newPlannedDate}}
+                        </div>
+                        <div class="pocket-manage-container__expand--button">
+                          <pulse-button type="submit"
+                            [disabled]="formEditPeriod.invalid || plannedDate === newPlannedDate">Guardar cambios
+                          </pulse-button>
+                        </div>
+                      </div>
+                    </form>
+
+                  </div>
+                  <pulse-icon icon="expand-more" color="carbon" slot="end"></pulse-icon>
+                </pulse-item>
+              </pulse-list>
+            </div>
+          </div>
+
+          <div class="pocket-manage-container__section">
+            <div class="pocket-manage-container__section--title pulse-tp-hl3-comp-r">
+              Datos de creación
+            </div>
+            <div class="pocket-manage-container__section--description pulse-tp-bo3-comp-r">
+              Información que debes tener en cuenta de la configuración de tu alcancía.
+            </div>
+            <div class="pocket-manage-container__section--list">
+              <pulse-list>
+                <pulse-item [description]="pocketData.account.productName + ' No. ' + pocketData.account.productNumber">
+                  <div slot="start" [innerHTML]="pocketIcons['account'] | safe: 'html'"></div>
+                  Cuenta asociada
+                </pulse-item>
+              </pulse-list>
+            </div>
+          </div>
+
+          <div class="pocket-manage-container__separator"></div>
+
+          <div class="pocket-manage-container__btn-delete" (click)="confirmDelete()">
+            <div class="pocket-manage-container__btn-delete--icon">
+              <div [innerHTML]="pocketIcons['delete'] | safe: 'html'"></div>
+            </div>
+            <div class="pocket-manage-container__btn-delete--text pulse-tp-btn-comp-r">
+              Eliminar alcancía
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </pulse-flowtm>
+</ion-content>

@@ -1,0 +1,14 @@
+<ion-content class="page-pocket-onboarding">
+    <pulse-flowtm>
+        <div slot="header" class="pocket-onboarding__header">
+            <bdb-nav-options [rOption]="'Saltar'">
+                <cancel-icon (click)="onCancel()" right></cancel-icon>
+            </bdb-nav-options>
+        </div>
+    </pulse-flowtm>
+    <pulse-onboarding [data]="data" (showButtonEvent)='isShowButton($event)'>
+    </pulse-onboarding>
+    <div *ngIf="showButton" class="pocket-onboarding__div col-xs-12" no-padding>
+          <pulse-button class="pocket-onboarding__button" (click)="checkOnBoarding()" colorgradient="true">Comenzar</pulse-button>
+      </div>
+</ion-content>

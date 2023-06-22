@@ -1,0 +1,34 @@
+page-loan-transfer-transfer {
+    .err-result{
+        color: #721c24;
+        font-family: $RobotoLight;
+        font-size: 16px;
+    }
+    .subtitle{
+        font-family: $RobotoRegular;
+        font-size: 16px;
+        color : color($colors, bdb-blue);
+    }
+    .component-wrapper{
+        margin-bottom: 48px;
+    }
+
+    .scroll-content{
+        overflow-y: auto;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+        *.confirm-btn{
+            border-radius: 0;
+            margin: 0.4rem 0.2rem;
+        }
+
+    }
+}

@@ -1,0 +1,74 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1",
+    "title": "yb-pb-bbog-generic",
+    "termsOfService": "http://en.wikipedia.org/wiki/Terms_of_service",
+    "license": {
+      "name": "See License",
+      "url": "https://www.grupoaval.com"
+    }
+  },
+  "host": "localhost",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "bbog-pb-backend-generic",
+      "description": "Api Gateway for PB BBOG"
+    }
+  ],
+  "paths": {
+    "/api-gateway": {
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Access-Control-Allow-Methods": "'Content-Type, X-Amz-Date, Authorization, X-Api-Key, x-requested-with, X-Client-Trace-Id, x-xss-protection, x-frame-options, x-content-type-options,X-SECURITY-SESSION, X-SECURITY-HMAC, X-SECURITY-RECAPTCHA, X-2FA-TRANSACTION-ID, X-2FA-USER-TOKEN, X-2FA-VERIFICATION-CODE'",
+                "method.response.header.Access-Control-Allow-Headers": "'Content-Type,Authorization,X-Amz-Date,X-Api-Key,X-Amz-Security-Token'",
+                "method.response.header.Access-Control-Allow-Origin": "'*'"
+              }
+            }
+          },
+          "passthroughBehavior": "when_no_match",
+          "requestTemplates": {
+            "application/json": "{\"statusCode\": 200}"
+          },
+          "type": "mock"
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    }
+  }
+}

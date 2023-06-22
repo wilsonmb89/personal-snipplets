@@ -1,0 +1,40 @@
+@import '../../../../variables.scss';
+
+.account-destination-form {
+  &__epigraph {
+    color: var(--sherpa-carbon-800);
+  }
+
+  &__title {
+    margin: var(--sherpa-spacing-2) var(--sherpa-spacing-0);
+    color: var(--sherpa-carbon-900);
+  }
+
+  &__subtitle {
+    margin-bottom: 1.4rem;
+    color: var(--sherpa-carbon-800);
+  }
+
+  &__banking-entity {
+    margin-bottom: 2.8rem;
+  }
+
+  &__account-number {
+    margin-bottom: 2.6rem;
+  }
+
+  &__selector {
+    margin-bottom: 4.8rem;
+
+    &__label {
+      margin-bottom: 1.4rem;
+      color: var(--sherpa-carbon-800);
+    }
+  }
+
+  @media only screen and (min-width: $break-mobile-md) {
+    &__button {
+      width: 13.6rem;
+    }
+  }
+}

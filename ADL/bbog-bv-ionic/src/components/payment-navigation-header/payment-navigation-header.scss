@@ -1,0 +1,58 @@
+payment-navigation-header {
+    .ab-payment{
+        text-align: right;
+        width: 100%;
+    }
+    
+    .wrapper{
+        display: flex;
+        //margin-left: 15%;
+        align-items: center;
+        position: relative;
+        margin: 32px 32px 0 15%;
+    }
+    /* back styles web */
+    .wrapper .back-web{
+        cursor: pointer;
+        box-sizing: border-box;
+        width: 3.2rem;
+        height: 3.2rem;
+        background-color: color($colors, bdb-bg);
+        border-radius: 50%;
+        border-style: none;
+        position: relative;
+        &:after{
+            position:absolute;
+            left: 4.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            content: 'Regresar';
+            font-family: $RobotoRegular;
+            font-size: 1.2rem;
+            color: color($colors,steel);
+        }
+        &:before{
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: 50%;
+            width: 0.8rem;
+            height: 0.8rem;
+            border-radius: 20%;
+            background: transparent;
+            border-top: 0.25rem solid color($colors,cornflower-blue);
+            border-right: 0.26rem solid color($colors,cornflower-blue);
+            -webkit-transform: translate(-25%, -50%) rotate(225deg);
+            transform: translate(-25%, -50%) rotate(225deg);
+            box-shadow: 0 0 0 color($colors, bdb-bg);
+            transition: all 200ms ease;        
+        }
+       /* &:hover:before{
+                box-shadow: 0.2rem -0.2rem 0 lighten( color($colors,cornflower-blue), 10% ),
+                    0.4rem -0.4rem 0 lighten( color($colors,cornflower-blue), 20% );
+                transform: translate(0%, -50%) rotate(225deg);
+
+        }*/
+    }
+
+}

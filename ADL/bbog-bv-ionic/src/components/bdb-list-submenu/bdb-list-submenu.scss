@@ -1,0 +1,80 @@
+bdb-list-submenu {
+    .list-submenu {
+        &__item-btn {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            z-index: 1;
+            padding-left: 0px;
+            transition: 0.3s ease;
+            &:hover {
+                box-shadow: 0 5px 15px 0 rgba(102, 128, 173, 0.2);
+                z-index: 999;
+                transition: 0.2s ease-out;
+                border-radius: 6px;
+                p {
+                    transition: 0.2s ease-out;
+                    color: #437bda;
+                }
+            }
+            p {
+                transition: 0.3s ease;
+                font-family: $RobotoRegular;
+                font-size: 16px;
+                color: color($colors, bdb-black);
+            }
+            &__wrapper {
+                display: inline-flex;
+            }
+        }
+        &__item-btn.item-block {
+            .item-inner {
+                border: none;
+                .input-wrapper .label {
+                    margin: 22px 36px;
+                }
+            }
+        }
+    }
+    @media only screen and (max-width: 760px) {
+        .list-ios>.item-block:first-child {
+            border-top: 0px;
+        }
+        .list-submenu {
+            &__item-btn {
+                width: 100%;
+                border-bottom: 0.55px solid rgba(196, 212, 227, 0.7);
+
+                .label {
+                    background-image: url("data:image/svg+xml;charset=utf-8,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2012%2020'><path%20d='M2,20l-2-2l8-8L0,2l2-2l10,10L2,20z'%20fill='%23c8c7cc'/></svg>");
+                    padding-right: 32px;
+                    background-position: right 14px center;
+                    background-position: right calc(14px + constant(safe-area-inset-right)) center;
+                    background-position: right calc(14px + env(safe-area-inset-right)) center;
+                    background-repeat: no-repeat;
+                    background-size: 14px 14px;
+                }
+
+                &:hover {
+                    box-shadow: none;
+                    border-radius: none;
+                    p {
+                        color: color($colors, bdb-black);
+                    }
+                }
+            }
+            &__item-btn.item-block {
+                .item-inner {
+                    .input-wrapper .label {
+                        margin: 14px 12px;
+                    }
+                }
+                p {
+                    margin-left: 16px;
+                    font-family: $RobotoLight;
+                    color: color($colors, bdb-slate);
+                }
+            }
+        }
+    }
+}

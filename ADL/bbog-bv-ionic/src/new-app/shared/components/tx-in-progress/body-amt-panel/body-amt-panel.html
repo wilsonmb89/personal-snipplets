@@ -1,0 +1,8 @@
+<div *ngIf="!!amtData" class="amt-panel-container">
+  <span class="amt-panel-container__amt pulse-tp-hl2-comp-r">
+    {{ amtData.amtVal | currency:'USD':'symbol':'1.0-0' }}
+  </span>
+  <span class="pulse-tp-bo4-comp-r">
+    {{ amtData.amtDesc }}
+  </span>
+</div>

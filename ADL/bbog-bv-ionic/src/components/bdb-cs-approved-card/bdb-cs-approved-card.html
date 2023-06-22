@@ -1,0 +1,38 @@
+<div class="wrapper" (click)="open()">
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-8 col-md-7 col-lg-8>
+        <div class="wrapper__title">
+          {{ approvedCard.cardTitle }}
+        </div>
+      </ion-col>
+      <ion-col col-4 col-md-5 col-lg-4>
+        <div class="wrapper__badge" float-right>
+          <span class="wrapper__badge__text">Aprobado</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 col-md-7 col-lg-8>
+        <div class="wrapper__subtitle">
+          ${{ amount.substring(0, amount.indexOf(',')) }}<span
+            class="wrapper__subtitle__decimal">{{ amount.substring(amount.indexOf(','), amount.length) }}</span>
+        </div>
+        <div class="wrapper__desc">
+          Monto <span class="wrapper__desc__bold">aprobado</span>
+        </div>
+        <div class="wrapper__link">
+          <u class="wrapper__link__text">{{ approvedCard.btnText }}</u>
+          <div class="wrapper__link__icon">
+            <img src="assets/imgs/shape-link-mango.svg">
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-4 col-md-5 col-lg-4>
+        <div class="wrapper__img" float-right>
+          <img [src]="approvedCard?.iconPath || ''">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

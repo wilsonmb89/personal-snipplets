@@ -1,0 +1,13 @@
+export enum MaskType {
+    CURRENCY,
+    CURRENCY_NOCENTS,
+    CUSTOM_CURRENCY,
+    DATE,
+    PERCENTAGE,
+    SIMPLE_PERCENTAGE,
+    DATE_BILL,
+    SELF,
+    DATE_EVENT,
+    DATE_CUT,
+    TIME_SHORT
+}

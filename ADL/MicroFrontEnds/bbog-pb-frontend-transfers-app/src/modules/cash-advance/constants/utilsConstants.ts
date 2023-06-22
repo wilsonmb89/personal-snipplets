@@ -1,0 +1,3 @@
+export const MIN_VALUE_AMOUNT_CASH_ADVANCE = '$0,1';
+
+export const DEFAULT_TRANSACTION_COST = '$ 5.630 + IVA';

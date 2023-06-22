@@ -1,0 +1,18 @@
+<pulse-modaltb class="tyc-card-template-main">
+  <div slot="header" class="tyc-card-template-main__header">
+    <div class="tyc-card-template-main__header__btn-close" id="btn-otp-close-modal" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content" class="tyc-card-template-main__content">
+    <pulse-modaltc>
+      <div slot="title">
+        <span class="pulse-tp-hl3-comp-b">Términos y condiciones</span>
+      </div>
+      <div slot="body" class="tyc-card-template-main__content__body">
+        <div class="tyc-card-template-main__content__body__info" [innerHTML]="tyc">
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+</pulse-modaltb>

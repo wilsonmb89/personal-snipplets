@@ -1,0 +1,33 @@
+@import "../../../global/animate";
+
+:host(.tab-group) {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+:host(.tab-group) .tabs-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+    position: relative;
+    z-index: 99;
+    background: white;
+
+    ::slotted(*)::after {
+        content: '';
+        right: 0;
+        top: 15%;
+        height: 70%;
+        border-right: 1px #{get-pulse-color('carbon-light', 400)} solid;
+        position: absolute;
+    }
+
+    ::slotted(:last-child)::after {
+        border-right: none;
+        //padding-right: .5rem !important;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    
+}

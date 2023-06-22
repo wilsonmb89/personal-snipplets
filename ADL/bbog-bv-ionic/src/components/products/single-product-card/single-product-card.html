@@ -1,0 +1,78 @@
+<div id="cards-wrapper" (click)="cardClicked()">
+  <div class="product">
+    <ion-grid no-padding [@upAndDownAvailable]="privateMode && p.paymentAvailable"
+      [@upAndDown]="privateMode && !p.paymentAvailable">
+      <ion-row class="row-1">
+        <ion-col col-9>
+          <div class="product-name">{{p.pName}}</div>
+        </ion-col>
+        <ion-col col-3>
+          <img float-right *ngIf="p.logo" [src]="p.logo">
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-2">
+        <ion-col col-12>
+          <div id="spc-prod-num" class="product-number">No. {{p.pNumber}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-3" [@openClose]="privateMode"
+        [ngClass]="{ 'single-product-card__fade-in': privateMode, 'single-product-card__fade-out': !privateMode }">
+        <ion-col col-4>
+          <div class="info-label">{{p.pBalance.key}}:</div>
+        </ion-col>
+        <ion-col col-8 *ngIf="!p.showBalanceLoader">
+          <div text-end class="info">{{p.pBalance.value}}</div>
+        </ion-col>
+        <ion-col col-8 *ngIf="p.showBalanceLoader">
+          <div float-right class="info">
+            <div class="info__loader"></div>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-4" *ngIf="p.paymentAvailable"
+        [ngClass]="{ 'private-mode': privateMode && p.paymentAvailable }">
+        <ion-col col-5 *ngIf="!privateMode">
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col no-padding>
+                <div class="info-label">{{p.minPay.key}}:</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col no-padding>
+                <div class="payment">{{p.minPay.value}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+        <ion-col col-4 *ngIf="!privateMode">
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col no-padding>
+                <div class="info-label">{{p.nextDate.key}}:</div>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col no-padding>
+                <div class="payment">{{p.nextDate.value}}</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+        <ion-col col-9 *ngIf="privateMode && p.paymentAvailable" align-self-center>
+          <div class="payment private-mode">
+            {{ validPayment(p) ? 'Pago mínimo disponible' : 'Pago disponible' }}
+          </div>
+        </ion-col>
+        <ion-col class="btn-pay" col-3>
+          <button id="pay-btn" class="pay" bv-button color="mango-gradient" small="true"
+            (click)="payClicked($event)">Pagar</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row-5" *ngIf="p.creditLine" [@openClose]="privateMode"
+        [ngClass]="{ 'single-product-card__fade-in': privateMode, 'single-product-card__fade-out': !privateMode }">
+        <div class="progress" [style.width]="p.progress"></div>
+      </ion-row>
+    </ion-grid>
+  </div>
+</div>

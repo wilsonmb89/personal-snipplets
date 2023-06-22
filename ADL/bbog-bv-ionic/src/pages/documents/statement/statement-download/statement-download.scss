@@ -1,0 +1,54 @@
+page-statement-download {
+    --pulse-select-card-width: 14rem;
+
+    .content {
+      margin-top: 8rem;
+    }
+
+    .mobile-head {
+        background-color: color($colors, bdb-bg);
+        padding-top: 24px;
+    }
+
+    .container {
+        padding-left: 8%;
+        padding-right: 2rem;
+
+        &__line {
+            width: 100%;
+            height: 1px;
+            border: solid 1px rgba(151, 151, 151, 0.22);
+            background-color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        &__title {
+            font-family: $RobotoRegular;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: color($colors, carbon);
+
+            &--force {
+                font-family: $RobotoBold;
+            }
+        }
+
+        &__date {
+            &__year {
+                border-radius: 6px;
+                background-color: color($colors, white-toast);
+                font-family: $RobotoMedium;
+                color: color($colors, bdb-blue);
+                font-size: 14px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 540px) {
+        --pulse-select-card-width: 24.1rem;
+    }
+
+    @media only screen and (max-width: 540px) {
+        --pulse-select-card-width: 14rem;
+    }
+}

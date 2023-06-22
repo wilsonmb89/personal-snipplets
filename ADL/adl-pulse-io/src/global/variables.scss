@@ -1,0 +1,35 @@
+:root {
+  /*
+    Variables para sistema de grillas. los tamaños estan basados en fuente base de 10px
+  */
+  --pulse-max-container-width: 114rem;
+  --pulse-gutter-width: .8rem;
+  --pulse-padding-vertical: .2rem;
+
+  /*
+      Variables templates Nota: Se debe mover
+    */
+  --pulse-flowtx-header: #fff;
+  --pulse-flowtx-summary: transparent;
+
+  /* color base para sombra de tarjetas */
+  --pulse-card-color: #C4D4E3;
+
+  --time-animation: 0.5s;
+
+  --pulse-select-card-width: 140px;
+  --pulse-tab-min-width: 4rem;
+
+  --pulse-tab-font-color: #6680ad;
+
+  /* pulse button */
+  --pulse-button-width: 14.2rem;
+  --pulse-button-height: 4.8rem;
+
+  /* pulse select card */
+  --pulse-select-card-height: 5.2rem;
+
+  /* pulse vars typography */
+  --pulse-tp-ff-comp: "Roboto", "Helvetica Neue", sans-serif;
+  --pulse-tp-ff-brand: "Times New Roman", Times, serif;
+}

@@ -1,0 +1,15 @@
+default-view-menu {
+    .default-view-container {
+        display: grid;
+        grid-row-gap: 24px;
+
+        &__img, &__wrap, &__button {
+            display: flex;
+            justify-content: center;
+        }
+        &__wrap__message {
+            text-align: center;
+            width: 26.5rem
+        }
+    }
+}

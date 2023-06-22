@@ -1,0 +1,33 @@
+<!-- Generated template for the MobileSummaryBodyComponent component -->
+<div class="sum-body-wrapper">
+  <ion-grid no-padding>
+    <ion-row>
+      <div class="sum-body-wrapper__division"></div>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="sum-body-wrapper__textUp">
+          {{textUp}}
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="sum-body-wrapper__valueUp">
+          {{valueUp}}</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="sum-body-wrapper__textDown">
+          {{textDown}}</div>
+      </ion-col>
+      <ion-col>
+        <div class="sum-body-wrapper__valueDown">
+          <span *ngIf="!isDetailCostNotAvailable(valueDown)">{{valueDown}}</span>
+          <span *ngIf="isDetailCostNotAvailable(valueDown)">
+              <a rel=noopener href="https://www.bancodebogota.com/wps/portal/banco-de-bogota/bogota/productos/para-ti/tasas-y-tarifas" target="_blank">Consultar costo</a>
+          </span>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

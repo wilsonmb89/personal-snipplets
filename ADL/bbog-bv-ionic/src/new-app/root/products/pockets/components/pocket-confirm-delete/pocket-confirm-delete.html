@@ -1,0 +1,27 @@
+<pulse-modaltb class="pocket-confirm-delete-container">
+  <div slot="header">
+    <div class="pocket-confirm-delete-container__btn-close" (click)="confirmDelete(false)">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/pocket/delete.svg" alt="delete">
+      </div>
+      <div slot="title">
+        Eliminar Alcancía
+      </div>
+      <div slot="body">
+        El dinero que tengas pasará automáticamente a tu cuenta de ahorros
+        <span class="pulse-tp-bo3-comp-b">¿Deseas continuar?</span>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="pocket-confirm-delete-container__buttons">
+      <pulse-button fill="outline" (click)="confirmDelete(false)">Cancelar</pulse-button>
+      <pulse-button colorgradient="true" (click)="confirmDelete(true)">Sí, eliminar</pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

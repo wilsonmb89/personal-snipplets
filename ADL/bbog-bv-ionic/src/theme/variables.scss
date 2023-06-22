@@ -1,0 +1,252 @@
+@import "../../node_modules/@pulse.io/components/dist/pulse/pulse";
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  steel:      #8a8d94,
+  ghost:      #ebedf0,
+  carolina-blue: #90b5ff,
+  mango:        #fdc130,
+  toxic-green: #51d736,
+  light-blue-grey: #c4d4e3,
+  light-navy: #16459d,
+  dodger-blue: #4b88f2,
+  bdb-blue: #0041a8,
+  bdb-black: #282828,
+  bdb-slate: #59626d,
+  cool-grey: #a1a6ad,
+  bdb-bg: #f6f8fa,
+  active-green: #7ad468,
+  dusty-shadow: #6680ad,
+  dusty-shadow-20: rgba(102, 128, 173, 0.2),
+  red-villas: #ff0021,
+  green-popular: #008932,
+  blue-occidente: #0095e2,
+  orange-porvenir: #ff8c00,
+  cornflower-blue: #437bda,
+  duck-egg-blue: #f3f8fd,
+  pale-grey: #eef0f2,
+  bright-red: #ff0019,
+  twilight-blue: #225bbd,
+  pb-classic: #002c76,
+  greyish-brown: #4a4a4a,
+  bv-disable: #ededee,
+  white: #fff,
+  carbon: rgba(#333333, 0.8),
+  white-toast: #eaf5fd,
+  red-card: #d0021b,
+  selfish-black: #333333,
+  darkish-blue: #0040a8,
+  pb-carbon-700: #5c5c5c,
+  carbon-700: #5c5c5c
+);
+
+$colorGradients: (
+  mango-gradient: linear-gradient(104deg, #fdc130, #f69b31),
+  blue-gradient: linear-gradient(285deg, #225bbd, #0041a8),
+  green-gradient: linear-gradient(to right, #b4ec51, color($colors, active-green))
+);
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+$button-md-text-transform : none;
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+// @import "roboto";
+
+$RobotoThin: Roboto-Thin;
+$RobotoRegular: Roboto-Regular;
+$RobotoMedium: Roboto-Medium;
+$RobotoLight: Roboto-Light;
+$RobotoBold: Roboto-Bold;
+$RobotoBlack: Roboto-black;
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url('../assets/fonts/Roboto/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Regular;
+  src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  src: url('../assets/fonts/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Light;
+  src: url('../assets/fonts/Roboto/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url('../assets/fonts/Roboto/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: Roboto-Black;
+  src: url('../assets/fonts/Roboto/Roboto-Black.ttf');
+}
+
+/* Argo */
+
+$ArgoBold: Argo-Bold;
+$ArgoRegular: Argo-Regular;
+
+@font-face {
+  font-family: Argo-Bold;
+  src: url('../assets/fonts/Argo/argo-bold.ttf');
+}
+
+@font-face {
+  font-family: Argo-Regular;
+  src: url('../assets/fonts/Argo/argo-regular.ttf');
+}
+
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";
+
+
+$screen-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@media (max-width: 576px) {
+  [hidden-xs-down]{
+    display: none !important;
+  }
+}
+
+// Adds hidden attributes
+@each $breakpoint in map-keys($screen-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $screen-breakpoints);
+
+  @include media-breakpoint-up($breakpoint, $screen-breakpoints) {
+    // Provide `[hidden-{bp}-up]` attributes for hiding the element based
+    // on the breakpoint
+    [hidden#{$infix}-up] {
+      display: none !important;
+    }
+  }
+
+  @include media-breakpoint-down($breakpoint, $screen-breakpoints) {
+    // Provide `[hidden-{bp}-down]` attributes for hiding the element based
+    // on the breakpoint
+    [hidden#{$infix}-down] {
+      display: none !important;
+    }
+  }
+}
+
+@each $element, $colorGradient in $colorGradients {
+
+  .bdb-bg-color-#{$element} {
+    background: $colorGradient;
+    color: #fff
+  }
+}
+@each $element, $color in $colors {
+
+  .bdb-fill-#{$element} {
+    fill: $color;
+  }
+}
+
+[bdb-card-checked] {
+  border: solid 2px #7ad468 !important;
+  box-shadow: 0 0 5px 0 rgba(102, 128, 173, 0.2) !important;
+  background-image: url(../assets/imgs/check-card.svg) !important;
+  background-repeat: no-repeat !important;
+  background-position: right top !important;
+  z-index: 999 !important;
+  border-radius: 8px !important;
+  display: block !important;
+
+  > :first-child {
+    z-index: -1 !important;
+  }
+}
+
+@import "bkp-temp";
+@import "utilities";

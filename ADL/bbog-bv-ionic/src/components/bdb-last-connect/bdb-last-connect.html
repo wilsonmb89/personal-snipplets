@@ -1,0 +1,11 @@
+<ion-grid class="pad-0">
+  <ion-row class="pad-8">
+    <ion-col class="pad-0">
+      <p  class="pad-0" *ngIf="lastLogin$ | async as lastLogin">
+        <span >Último ingreso:</span>{{ lastLogin.lastLoginTime }} 
+        <span hidden-md-down class="tab title">IP:</span><span id="blc-user-ip" class="value" hidden-md-down>{{ lastLogin.currentIp }} </span>       
+        <span hidden-md-down class="tab title">Fecha:</span><span class="value" hidden-md-down>{{ lastLogin.currentTime }} </span>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-grid>

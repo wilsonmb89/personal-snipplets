@@ -1,0 +1,21 @@
+<ion-content>
+  <pulse-flowtr>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onLogout()" [lOption]="'Atrás'"
+        [rOption]="'Salida segura'" [navTitle]="title">
+        <svg-back (click)="onBackPressed()" left></svg-back>
+        <svg-logout (click)="onLogout()" right></svg-logout>
+      </bdb-nav-options>
+    </div>
+    <div slot="master">
+      <pulse-select-card-group id="menu-tabs" groupstyle="tabs">
+        <pulse-select-card (click)="changeTab(tab)" [selected]="tab.active" color="primary" *ngFor="let tab of tabs">
+          {{tab.title}}</pulse-select-card>
+      </pulse-select-card-group>
+      <div class="border-section"></div>
+    </div>
+    <div slot="detail">
+      <div #target></div>
+    </div>
+  </pulse-flowtr>
+</ion-content>

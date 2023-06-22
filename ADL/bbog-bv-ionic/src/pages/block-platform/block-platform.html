@@ -1,0 +1,45 @@
+<ion-content no-padding style="background: transparent;">
+
+  <table class="block-platform-table" style="margin:0 auto;">
+    <tr>
+      <td colspan="4">
+        <img [src]="ROUTE_IMGS + img" style="display: block; margin: 32px auto;">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <div [innerHtml]="title" style="text-align: center; color: #0040a8; font-size: 20px;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <div [innerHtml]="subtitle" style="text-align: center; font-size: 14px; margin: 14px 0; color: #333333;"></div>
+      </td>
+    </tr>
+    <tr>
+      <td *ngFor="let browser of browsers" width="25%">
+        <div (click)="openUrl(browser.url)" style="margin: 16px auto; display: table; cursor: pointer;">
+          <img [src]="ROUTE_IMGS + browser.img">
+          <div [innerHtml]=" browser.text" style="text-align: center; color: #333333; font-size: 12px;"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="4">
+        <div class="btn-container">
+          <button (click)="redirect(pbClassic)" class="pb-classic" id="pl-classic-btn" ion-button style="
+            width: 100%;
+            height: 28px;
+            border-radius: 100px;
+            background-color: #002c76;
+            border: solid 1px #002c76;
+            color: white;
+            transition: 0.2s ease;
+            margin: 2px 0;
+            font-size: 1.3rem;
+          ">Ingresa al portal anterior</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</ion-content>

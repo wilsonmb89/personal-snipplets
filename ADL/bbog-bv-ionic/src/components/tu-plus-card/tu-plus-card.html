@@ -1,0 +1,12 @@
+<div class="tu-plus-wrapper" [@upAndDown]="privateMode">
+    <span class="tu-plus-wrapper__helper"></span>
+    <img class="tu-plus-wrapper__logo" src="assets/imgs/tuplus/tuplus.svg">
+    <div class="tu-plus-wrapper__content"
+        [ngClass]="{ 'tu-plus-wrapper__fade-in': privateMode, 'tu-plus-wrapper__fade-out': !privateMode }">
+        <div class="tu-plus-wrapper__content__points" *ngIf="!showLoader && !error">{{points | number}}</div>
+        <div class="tu-plus-wrapper__content__points" *ngIf="error">---</div>
+        <div class="info_loader" *ngIf="showLoader"></div>
+        <div class="tu-plus-wrapper__content__text" *ngIf="!showLoader && !error">Puntos</div>
+        <div class="tu-plus-wrapper__content__text" *ngIf="error">{{errorMessage}}</div>
+    </div>
+</div>

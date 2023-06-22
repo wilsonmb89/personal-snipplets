@@ -1,0 +1,41 @@
+<ion-grid class="grid-spaces">
+  <ion-row>
+    <ion-col offset-1 offset-lg-1 offset-sm-2 offset-md-3 class="titCol">
+      <p class="bdb-tc title">
+        {{titleNormal}}
+        <br>
+        <span class="title-principal">
+          {{titleBold}}
+        </span>
+      </p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="devices" padding align-items-center align-self-center>
+    <ion-col>
+      <div class="image">
+        <img src="assets/imgs/mouse.svg">
+      </div>
+      <label class="lab">Internet</label>
+    </ion-col>
+    <ion-col>
+      <div class="image">
+        <img src="assets/imgs/devices.svg">
+      </div>
+      <label class="lab">Banca Móvil</label>
+    </ion-col>
+    <ion-col>
+      <div class="image">
+        <img src="assets/imgs/phone-handle.svg">
+      </div>
+      <label class="lab">Servilínea</label>
+    </ion-col>
+  </ion-row>
+  <ion-row padding align-items-center align-self-center>
+    <label class="message">Úsala para realizar consultas, descargar extractos y certificados, cambiar sus claves y mucho más.</label>
+  </ion-row>
+  <ion-row style="text-align: center;" no-padding>
+    <ion-col>
+      <button bvButton class="bdb-btn btn-secure-login" color="mango-gradient" id="btn-submit" type="submit" (click)="submit()">Finalizar</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

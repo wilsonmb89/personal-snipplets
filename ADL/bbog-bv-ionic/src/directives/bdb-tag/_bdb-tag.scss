@@ -1,0 +1,13 @@
+.bdb-tag {
+    padding: .4rem .8rem;
+    border-radius: 4px;
+    border: 1px solid;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: $RobotoMedium;
+    float: right;
+}
+
+.bdb-tag:hover{
+    background-color: transparent !important;
+}

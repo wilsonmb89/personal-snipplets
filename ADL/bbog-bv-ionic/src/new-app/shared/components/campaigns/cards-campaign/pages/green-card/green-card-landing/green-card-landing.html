@@ -1,0 +1,112 @@
+<ion-content no-padding>
+  <div class="green-card-landing-container">
+    <pulse-flowtm>
+      <div slot="header">
+        <div class="green-card-landing-container__header-background" hidden-p-md-down></div>
+        <flow-header-navigation (onLeftClicked)="onBackPressed()">
+          <div class="green-card-landing-container__header-logos">
+            <img src="assets/imgs/shared/cards-campaign-carousel/green-card/green-card-landing/green-card-header-logos.svg" alt="header-logos" >
+          </div>
+        </flow-header-navigation>
+      </div>
+      <div slot="content">
+        <div class="pulse-grid green-card-landing-container__content-header">
+          <div class="row">
+            <div class="col-xs-12 col-md-7 col-md-offset-1">
+              <div *ngIf="basicUserInfo$ | async as basicUserInfo" class="green-card-landing-container__content-header--header-title pulse-tp-hl2-comp-r">
+                Hola <span class="pulse-tp-hl2-comp-b">{{ basicUserInfo.firstName }}
+                  {{ basicUserInfo.middleName }},</span><br>
+                Esta es tu tarjeta <span class="pulse-tp-hl2-comp-b">AMAZONÍA</span>
+              </div>
+            </div>
+            <div class="col-md-3" hidden-p-sm-down>
+              <div class="green-card-landing-container__content-header--debit-card">
+                <img src="assets/imgs/shared/cards-campaign-carousel/green-card/green-card-landing/green-debit-card.png" alt="green-debit-card"
+                     hidden-p-md-down>
+                <img src="assets/imgs/shared/cards-campaign-carousel/green-card/green-card-landing/green-debit-card.png" alt="green-debit-card"
+                     hidden-p-sm-down hidden-p-lg-up>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 col-md-7 col-md-offset-1">
+              <div class="green-card-landing-container__content-header--header-content pulse-tp-hl5-comp-r">
+                Aporta el 1% <span class="pulse-tp-hl5-comp-b">de tus compras a la reforestación del Amazonas</span>,
+                por cada dos arboles sembrados el Banco siembra uno adicional.
+              </div>
+            </div>
+            <div class="col-xs-6" hidden-p-md-up>
+              <div class="green-card-landing-container__content-header--debit-card">
+                <img src="assets/imgs/shared/cards-campaign-carousel/green-card/green-card-landing/green-debit-card.png" alt="green-debit-card">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pulse-grid green-card-landing-container__content">
+          <div class="row">
+            <div class="col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12">
+              <div class="green-card-landing-container__content--title pulse-tp-hl3-comp-m">
+                Beneficios
+              </div>
+              <div class="green-card-landing-container__content--section-text pulse-tp-bo3-comp-r">
+                <ul>
+                  <li><span class="pulse-tp-bo3-comp-b">El banco sembrará un arbol</span>, por cada dos arboles que siembren los 	colombianos.</li>
+                  <li><span class="pulse-tp-bo3-comp-b">Saving The Amazon mensualmente sembrará un bosque</span> con las 	donaciones de los colombianos.</li>
+                  <li><span class="pulse-tp-bo3-comp-b">Cada bosque se identifcará con tu nombre</span> y el de las personas que 	contribuyeron en la siembra.</li>
+                </ul>
+              </div>
+              <div class="green-card-landing-container__content--more-info-link pulse-tp-bo3-comp-r"
+                    (click)="openGreenCardExternalUrl()">
+                <span>Más información</span>
+                <pulse-icon icon="chevron-right" color="warning"></pulse-icon>
+              </div>
+              <div class="green-card-landing-container__content--separator"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12">
+              <div class="green-card-landing-container__content--title pulse-tp-hl3-comp-m">
+                Envío
+              </div>
+              <div class="green-card-landing-container__content--section-text pulse-tp-hl5-comp-r">
+                Recibirás en los <span class="pulse-tp-hl5-comp-b">próximos 3 a 5 días hábiles</span> tu tarjeta en la
+                siguiente dirección registrada en el Banco
+                de Bogotá:
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12 green-card-landing-container__content--address">
+              <div class="pulse-tp-hl3-comp-r">{{ address }}</div>
+              <div class="green-card-landing-container__content--icon-edit">
+                <img (click)="openModalEditAddress()" src="assets/imgs/products/unicef-landing/icon-edit.svg"
+                  alt="icon-edit">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="green-card-landing-container__content--terms col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12">
+              <pulse-checkbox value='accept' id="tyc" color="success" disabled="false" (valueEmmit)="acceptTyC($event)"
+                [checked]="tyc">
+              </pulse-checkbox>
+              <div class="pulse-tp-hl5-comp-r">
+                Aceptar <span (click)="openModalTerms()" class="green-card-landing-container__content--underline">términos y
+                  condiciones.</span>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-lg-offset-1 col-md-10 col-md-offset-1 col-xs-12">
+              <div class="green-card-landing-container__content--submit">
+                <pulse-button [disabled]="!tyc" [colorgradient]="true" (click)="goToEnrolling()">Solicitar ahora
+                </pulse-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </pulse-flowtm>
+  </div>
+</ion-content>

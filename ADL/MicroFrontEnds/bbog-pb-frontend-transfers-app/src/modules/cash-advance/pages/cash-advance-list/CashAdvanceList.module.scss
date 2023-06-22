@@ -1,0 +1,24 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  &__title-text {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: var(--sherpa-spacing-8);
+
+    &__title {
+      color: var(--sherpa-carbon-900);
+    }
+
+    &__desc {
+      color: var(--sherpa-carbon-800);
+      margin-top: var(--sherpa-spacing-2);
+    }
+  }
+
+  &__card-list {
+    margin-top: var(--sherpa-spacing-7);
+  }
+}

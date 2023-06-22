@@ -1,0 +1,20 @@
+.form {
+  background-color: var(--sherpa-white);
+  border: 0.1rem solid var(--sherpa-carbon-200);
+  border-radius: 1rem;
+  padding: var(--sherpa-spacing-8);
+  &__icon {
+    color: var(--sherpa-carbon-600);
+  }
+  &__title {
+    margin-top: var(--sherpa-spacing-4);
+    color: var(--sherpa-carbon-900);
+  }
+  &__description {
+    margin-top: var(--sherpa-spacing-2);
+    color: var(--sherpa-carbon-800);
+  }
+  @media (max-width: 1024px) {
+    padding: var(--sherpa-spacing-6);
+  }
+}

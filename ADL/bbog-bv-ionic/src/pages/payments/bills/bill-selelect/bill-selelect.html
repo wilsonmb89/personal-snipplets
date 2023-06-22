@@ -1,0 +1,29 @@
+<ion-grid>
+  <ion-row>
+    <ion-col col-12>
+      <ion-list class="inner">
+        <default-view-menu
+          *ngIf="(sortingBillsHasInvoice$ | async).length === 0 && (billsNotHasInvoice$ | async).length === 0 && (billersPaymentCompleted$ | async)"
+          [img]="dataEmpty.img" [message]="dataEmpty.message" [button]="dataEmpty.button">
+        </default-view-menu>
+        <add-new-service-btn
+          *ngIf="((sortingBillsHasInvoice$ | async).length > 0 || (billsNotHasInvoice$ | async).length > 0) && (billersPaymentCompleted$ | async)"
+          id="bs-add" [btnText]="'Inscribir nuevo servicio'" (click)="enrollBill()">
+        </add-new-service-btn>
+        <bdb-item-card-v2 *ngFor="let item of (sortingBillsHasInvoice$ | async); let i = index;" [item]="item"
+          (onItemClicked)="processSelection(item.product)" [index]="i"
+          (onContextSelection)="onContextSelection($event, item.product)">
+        </bdb-item-card-v2>
+        <bdb-item-card-v2 *ngFor="let item of (billsNotHasInvoice$ | async); let i = index;" [item]="item"
+          (onItemClicked)="processSelection(item.product)" [index]="i"
+          (onContextSelection)="onContextSelection($event, item.product)">
+        </bdb-item-card-v2>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <bdb-loader color="bdb-blue" *ngIf="(billersPaymentWorking$ | async)"></bdb-loader>
+    </ion-col>
+  </ion-row>
+</ion-grid>

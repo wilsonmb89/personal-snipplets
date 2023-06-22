@@ -1,0 +1,70 @@
+bdb-card-check {
+
+  margin-top: 16px;
+  display: block;
+
+  .card-check {
+    height: fit-content;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 rgba(102, 128, 173, 0.5);
+    padding: 16px 24px;
+    position: relative;
+    cursor: pointer;
+
+    .row-title, .row-img {
+      padding-bottom: 0px;
+    }
+
+    .row-content {
+      padding-top: 0px;
+
+      &__card_value {
+        font-family: $RobotoRegular;
+        color: color($colors, bdb-black);
+        font-size: 18px;
+      }
+    }
+
+    .card-title {
+      height: 24px;
+      font-family: $ArgoRegular;
+      font-size: 16px;
+      line-height: 1.5;
+      color: color($colors, bdb-blue);
+    }
+
+    .card-content {
+      height: 24px;
+      opacity: 0.8;
+      font-family: $RobotoRegular;
+      font-size: 12px;
+      line-height: 2;
+      color: color($colors, bdb-black);
+    }
+  }
+
+  // .card-check.active {
+  //   border: solid 2px #7ad468;
+  //   box-shadow: 0 0 5px 0 rgba(102, 128, 173, 0.2);
+
+  //   .grid {
+  //     padding-left: 3px;
+  //     padding-right: 3px;
+  //     padding-top: 3px;
+  //   }
+
+  //   .check {
+  //     width: 24px;
+  //     height: 24px;
+  //     background-color: #7ad468;
+  //     position: absolute;
+  //     right: 0;
+  //     top: 0;
+  //     background-image: url("../assets/imgs/check-card.svg");
+  //     background-repeat: no-repeat;
+  //     background-position: center;
+  //     z-index: 999;
+  //   }
+  // }
+}

@@ -1,0 +1,162 @@
+@import "pulse-fab-button.vars";
+@import "../../../utils/resets/button_reset";
+@import "../../../global/disabled";
+
+:host {
+    --background: white;
+    --color: #{get-pulse-color('carbon', 100)};
+    --color-focused: #{get-pulse-color('primary', 700)};
+    --color-focus-shadow: #{get-pulse-color('info', 100)};
+    --color-active: #{get-pulse-color('info', 100)};
+    --border-color: #{get-pulse-color('carbon', 100)};
+    --border-width: 1px;
+    --border-style: solid;
+    --border-radius: 50%;
+    --padding: 1.2;
+    --min-width: 4.8rem;
+    --height: 4.8rem;
+    --color-title: #{get-pulse-color('carbon', 900)};
+
+
+}
+
+:host(.button-disabled) {
+    pointer-events: none;
+}
+
+
+:host(.button-disabled) .button-native {
+    @include generic_disable();
+}
+
+:host(*) .button-native {
+    --background: white;
+    width: 4.8rem;
+    @include pulse-elevation-anim();
+
+}
+
+
+:host(.pulse-color) .button-main:hover {
+    > * {
+        --border-style: none;
+        color: var(--pulse-color-bg) !important;
+    }
+
+   ::slotted(*)  {
+      fill: var(--pulse-color-bg);
+    }
+   
+}
+
+
+:host(.button-title-right) .button-main {
+    display: flex;
+    align-items: center;
+}
+
+:host(.button-title-right) .button-title {
+    margin: 0 0.4rem;
+}
+
+
+
+:host(.button-disabled) .button-title {
+    @include text_disabled();
+}
+
+
+
+:host(.pulse-color) .button-native {
+    background: white;
+    height: #{$button-height};
+    --color-active: #{get-pulse-color('info', 100)};
+    --color-focused: var(--pulse-color-100);
+    --color-focus-shadow: #{get-pulse-color('info', 100)};
+}
+
+
+
+:host(.pulse-color) .button-main {
+    --color-focused: var(--pulse-color-bg);
+    --color-focus-shadow: #{get-pulse-color('info', 100)};
+}
+
+
+
+//Componente real
+
+.button-native {
+    background: var(--background);
+    border-width: var(--border-width);
+    border-style: var(--border-style);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    min-width: var(--min-width);
+    height: var(--height);
+    cursor: pointer;
+
+    &:active {
+        background-color: var(--color-active) !important;
+
+    }
+}
+
+.button-title {
+    color: var(--color-title);
+    line-height: $button-line-height;
+    cursor: pointer;
+    font-size: $button-font-size;
+    font-family: $button-font-family;
+    transition: color  0.2s  ease;
+
+}
+
+.button-main {
+    z-index: 99999;
+    width: fit-content;
+    height: min-content;
+    text-align: center;
+    &:hover {
+        >* {
+            border-color: #{get-pulse-color('primary', 700)};
+            color: #{get-pulse-color('primary', 700)};
+            border-style: none;
+        }
+
+        .button-native {
+            @include build_shadow(8);
+        }
+        div ::slotted(*)  {
+          fill: #{get-pulse-color('primary', 700)};
+        }
+    }
+
+    &:focus-within {
+        outline: 0;
+
+        p {
+            outline: 0;
+            color: var(--color-focused);
+        }
+
+        button {
+            outline: 0;
+            box-shadow: 0 0 0 4px var(--color-focus-shadow);
+            color: var(--color-focused);
+        }
+
+        ::slotted(*)  {
+          fill: var(--color-focused);
+        }
+    }
+}
+
+
+::slotted(*)  {
+  max-width:24px;
+  max-height:24px; 
+  margin: auto;
+  fill: var(--color-title);
+  transition: fill  0.2s  ease;
+}

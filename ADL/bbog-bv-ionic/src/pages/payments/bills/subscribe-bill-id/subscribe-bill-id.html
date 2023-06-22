@@ -1,0 +1,72 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+                       [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <div class="bill-name-wrapper">
+        <div class="inner">
+          <div class="title">
+            {{title}}
+          </div>
+          <form [formGroup]="billIdForm" class="bv-form">
+            <ion-input class="input-item" id="billId" type="tel" placeholder="Identificación del servicio"
+                       formControlName="billId" bdb-normalize-diacritic (keyup)="onTextChange($event)"></ion-input>
+
+            <pulse-card
+              *ngIf="$showImgBillContainer | async"
+              class="card-img-section"
+              color="carbon-light"
+              colorvariant="100"
+              colorgradient="false"
+              elevation="0">
+
+              <div class="img-section">
+                <div class="img-section_title pulse-tp-bo3-comp-m">
+                  ¿En dónde encontrar el número de referencia?
+                </div>
+
+                <div class="img-section_switch">
+                  <pulse-switch-button color="success" [inputstate]="showBillImg"
+                                       (switchChange)="toggleBillImg($event)">
+                    <img
+                      [src]="showBillImg ? 'assets/imgs/round-visibility-off-24-px.svg' : 'assets/imgs/baseline-visibility-24-px.svg'">
+                  </pulse-switch-button>
+                </div>
+              </div>
+
+
+              <div *ngIf="showBillImg">
+                <img class="img-section_bill-img" [src]="billCovenant.image">
+              </div>
+
+            </pulse-card>
+
+            <div class="btn-wrapper" hidden-p-sm-down>
+              <button id="sbi-btn" type="button" bvButton color="bdb-blue"
+                      [disabled]="billIdForm.controls.billId.invalid"
+                      (click)="triggerBillAlias()">Continuar
+              </button>
+              <div class="key-hint" [hidden]="billIdForm.controls.billId.invalid">o presiona Enter</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="mob-sbi-btn" class="continue-btn" full color="bdb-blue" ion-button (click)="triggerBillAlias()"
+            [disabled]="billIdForm.controls.billId.invalid">Continuar
+    </button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,45 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+        [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <div class="pulse-grid inner">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="subtitle" hidden-p-md-down>
+              {{subtitle}}
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12" no-padding>
+            <bdb-card-check   *ngFor="let item of items" [title]="item.cardTitle" [label]="item.cardLabel"
+              [value]="item.cardValue" [BdbChecked]="item.isActive" (clickCard)="paymentSelected(item)">
+            </bdb-card-check>
+            <div style="margin-top: 70px;" class="err-result">{{error}}</div>
+            <button  hidden-p-sm-down id="tt-btn" bv-button color="mango-gradient" ion-button (click)="send()"
+              [disabled]="!enable">{{msgButton}}</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="mob-pi-btn" bvButton class="continue-btn" full color="mango-gradient" ion-button (click)="send()"
+      [disabled]="!enable">{{msgButton}}</button>
+  </ion-toolbar>
+</ion-footer>

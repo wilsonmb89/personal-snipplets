@@ -1,0 +1,50 @@
+<ion-grid no-padding class="quick-access-content">
+  <ion-row hidden-sm-down>
+    <ion-col col-12>
+      <div id="qa-title" class="text-style-sub quick-access-content__title">
+        {{ title }}
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row no-padding class="quick-access-content__first-row" nowrap>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngIf="(pendingBills$ | async).length === 0 && (completedBills$ | async)">
+      <pulse-card-shortcut-add [mode]="shorcutAddMode" [text]="addBill" (click)="callAddBill($event)"
+        id="shortcut-add-bill"><img src="assets/imgs/yellow-plus.svg" /></pulse-card-shortcut-add>
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngFor="let bill of (pendingBills$ | async); let i=index;">
+      <bdb-shortcut-card [avatarColor]="getColor(i)" [shortcut]="bill" (onCardClicked)="payBill($event)"
+        [elementId]="'shortcut-bill-' + i" [currency]="true"></bdb-shortcut-card>
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__separator" *ngIf="enrolledAccts && (completedBills$ | async)">
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngIf="validateAddAcct">
+      <pulse-card-shortcut-add [mode]="shorcutAddMode" [text]="addAccount" (click)="callAddAcct($event)"
+        id="shortcut-add-acct"><img src="assets/imgs/yellow-plus.svg" /></pulse-card-shortcut-add>
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngFor="let acct of enrolledAccts; let j=index;">
+      <bdb-shortcut-card [avatarColor]="getColor(j)" [shortcut]="acct" (onCardClicked)="handleClick($event)"
+        [elementId]="'shortcut-acct-' + j"></bdb-shortcut-card>
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngIf="(loadingBills$ | async)">
+      <bdb-shortcut-card-load class="quick-access-content__add"></bdb-shortcut-card-load>
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngIf="loadingAccts">
+      <bdb-shortcut-card-load class="quick-access-content__add"></bdb-shortcut-card-load>
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngIf="loadingAccts">
+      <bdb-shortcut-card-load class="quick-access-content__add"></bdb-shortcut-card-load>
+    </ion-col>
+    <ion-col class="quick-access-content__first-row__col" col-xl-2 col-lg-3 col-md-4 col-sm-2 col-3
+      *ngIf="validateRecharges">
+      <pulse-card-shortcut-add [mode]="shorcutAddMode" [text]="addRecharge" (click)="callAddRecharge($event)"
+        id="shortcut-add-recharge"><img src="assets/imgs/yellow-plus.svg" /></pulse-card-shortcut-add>
+    </ion-col>
+  </ion-row>
+</ion-grid>

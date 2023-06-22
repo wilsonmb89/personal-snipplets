@@ -1,0 +1,59 @@
+@import '../../../variables.scss';
+
+.layout-header {
+  &__container {
+    box-sizing: border-box;
+    min-height: calc(100vh - 6.4rem);
+    padding-top: var(--sherpa-spacing-4);
+    padding-bottom: 3.2rem;
+    background-color: var(--sherpa-midnight-50);
+  }
+
+  &__version {
+    position: fixed;
+    bottom: 1.6rem;
+    right: 50%;
+    transform: translate(50%);
+    -webkit-transform: translate(50%);
+    -ms-transform: translate(50%);
+  }
+
+  @media only screen and (min-width: $break-mobile) {
+    &__container {
+      min-height: calc(100vh - 8.1rem);
+      padding-top: var(--sherpa-spacing-6);
+    }
+
+    &__version {
+      bottom: 2.6rem;
+      right: 0.6rem;
+      transform: rotate(270deg);
+      -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    &__container {
+      min-height: calc(100vh - 8.1rem);
+      padding-top: var(--sherpa-spacing-6);
+    }
+
+    &__version {
+      position: static;
+      right: auto;
+      background-color: var(--sherpa-midnight-50);
+      display: flex;
+      justify-content: center;
+      transform: none;
+      -webkit-transform: none;
+      -ms-transform: none;
+    }
+  }
+
+  @media only screen and (min-width: $break-desktop) {
+    &__container {
+      padding-top: var(--sherpa-spacing-10);
+    }
+  }
+}

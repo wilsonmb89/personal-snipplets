@@ -1,0 +1,3 @@
+<bdb-item-card *ngFor="let cert of certs; let i = index" id="card{{i}}" [logoPath]="cert.cardIcon" [showLogo]="true" [title]="cert.cardTitle"
+            [desc]="[cert.cardLabel]" (onItemClicked)="certSelected(cert)">
+</bdb-item-card>

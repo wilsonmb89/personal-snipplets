@@ -1,0 +1,22 @@
+pocket-confirm-delete {
+
+    .pocket-confirm-delete-container {
+
+        &__btn-close {
+            height: 2.8rem;
+            width: 2.8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: var(--pulse-color-info-100);
+            margin-left: auto;
+            cursor: pointer;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: space-evenly;
+        }
+    }
+}

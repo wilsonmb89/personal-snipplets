@@ -1,0 +1,28 @@
+<ion-content >
+
+  <ion-grid tc class="finger">
+    <ion-row >
+      <ion-col text-center >
+        <img class="finger__image" src="assets/imgs/touch-id.svg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <p class="finger__copy">
+          ¿Quieres configurar
+          <span class="finger__copy__bold">Touch ID</span> para entrar a Banca Virtual más rápido y seguro?
+        </p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <button bvButton color='mango-gradient' class="finger__config-btn" (click)="configureTouchId()">Usar touch ID</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <button class="finger__back" (click)="goToHome()">No en este momento</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

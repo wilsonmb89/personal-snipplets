@@ -1,0 +1,52 @@
+version: '1'
+ms:
+  name: products
+  port: 8108
+  memory: 440
+  javaOptions: '-Xms32m -Xmx300m -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90'
+  readonlyRootFilesystem: false
+  environment:
+    - param_store_enable: true
+    - keystore_file: /usr/app/adl-pb.avaldigitallabs.com.jks
+
+  stacks:
+    - stack: 'dev'
+      environment:
+        - yb_profile_env: 'dev'
+        - unicef_api_key: nhY5Zow1u416100SLCJEYcAzzI4FCIQ8DUj67wtd
+        - unicef_adapter_endpoint: https://api-logistics-management.labdigitalbdbtvsqa.com/V1
+      files:
+        - key: 'dev-pb-test.avaldigitallabs.jks'
+          path: '/usr/app'
+          name: 'adl-pb.avaldigitallabs.com.jks'
+
+    - stack: 'stg'
+      environment:
+        - yb_profile_env: 'stg'
+        - unicef_api_key: nhY5Zow1u416100SLCJEYcAzzI4FCIQ8DUj67wtd
+        - unicef_adapter_endpoint: https://api-logistics-management.labdigitalbdbtvsqa.com/V1
+      files:
+        - key: 'stg-pb-test.avaldigitallabs.jks'
+          path: '/usr/app'
+          name: 'adl-pb.avaldigitallabs.com.jks'
+
+    - stack: 'pro'
+      environment:
+        - yb_profile_env: 'pro'
+        - unicef_api_key: mAL8Y5SeUoaRCuD1PkySw8HU8QdW4p8h32fA4LbG
+        - unicef_adapter_endpoint: https://api.bancodebogota.co/logistics-management/V1
+      files:
+        - key: 'pro-pb-test.avaldigitallabs.jks'
+          path: '/usr/app'
+          name: 'adl-pb.avaldigitallabs.com.jks'
+
+secrets:
+  dynamic:
+    - 'API_CONNECT_CLIENT_SECRET'
+    - 'API_CONNECT_ENDPOINT'
+    - 'API_CONNECT_CLIENT_ID'
+    - 'BDB_APPLICATION_CHANNEL'
+    - 'ANALYTICS_STREAM'
+    - 'ANALYTICS_CYPHER_KEY'
+    - 'ELASTIC_SEARCH_ENDPOINT'
+    - 'LAB-BBOG-API-KEY'

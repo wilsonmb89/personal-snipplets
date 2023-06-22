@@ -1,0 +1,178 @@
+page-voucher-window {
+
+    .voucher-window-content  .scroll-content {
+        padding: 24px 47px 0px 47px !important;
+    }
+
+    [hidden-sm-down] {
+        display: initial !important;
+    }
+
+    [hidden-md-up] {
+        display: none !important;
+    }
+
+    padding: 20px 8px 0px 8px !important;
+
+    @media only screen and (max-width: 768px) {
+        /* For mobile phones: */
+        .voucher-window-content  .scroll-content {
+            padding: 20px 8px 0px 8px !important;
+        }
+
+        .voucher-info-content {
+
+            &__title {
+                padding: 0px 0px 23px 0px !important;
+            }
+    
+            &__title-text {
+                font-family: $ArgoRegular !important;
+                font-size: 20px !important;
+                line-height: 1.2 !important;
+                letter-spacing: -0.4px !important;
+                color: color($colors, bdb-blue) !important;
+            }
+    
+            &__title-img {
+                margin-left: 8px !important;
+                width: 24px !important;
+                height: 24px !important;
+            }
+    
+            &__failed-text {
+                opacity: 0.8 !important;
+                font-family: $RobotoRegular !important;
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+                color: color($colors, bdb-black) !important;
+                padding: 0px 0px 24px 0px !important;
+            }
+    
+            &__failed-text-bold {
+                font-family: $RobotoBold !important;
+                font-weight: bold !important;
+            }
+    
+            &__action {
+                display: flex !important;
+                align-items: center !important;
+                padding: 16px 0px !important;
+            }
+    
+            &__action-circle {
+                width: 40px !important;
+                height: 40px !important;
+                border-radius: 50% !important;
+                border: 1px solid #e1e2e6 !important;
+                background-color: white !important;
+                align-items: center !important;
+                display: flex !important;
+            }
+    
+            &__action-circle:hover {
+                border: 0px !important;
+                cursor: pointer !important;
+                box-shadow: 0 5px 10px 0 rgba(102, 128, 173, 0.3) !important;
+            }
+    
+            &__action-circle-img {
+                width: 24px !important;
+                height: 17px !important;
+                margin: 0 auto !important;
+            }
+    
+            &__voucher {
+                box-shadow: 0 5px 10px 0 rgba(102, 128, 173, 0.3) !important;
+            }
+    
+            &__voucher-header {
+                padding: 32px 48px !important;
+                background-color: color($colors, bdb-bg) !important;
+                background-image: url('../assets/imgs/logo-copy.svg') !important;
+                background-repeat: no-repeat !important;
+                background-position: bottom right !important;
+            }
+    
+            &__voucher-img {
+                width: 168px !important;
+                height: 33px !important;
+            }
+    
+            &__voucher-header-title {
+                font-family: $RobotoRegular !important;
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+                letter-spacing: -0.3px !important;
+                color: color($colors, bdb-black) !important;
+                text-align: right !important;
+            }
+    
+            &__voucher-header-subtitle {
+                opacity: 0.8 !important;
+                font-family: $RobotoRegular !important;
+                font-size: 12px !important;
+                color: color($colors, bdb-black) !important;
+            }
+    
+            &__voucher-list {
+                padding: 0px 24px !important;
+            }
+    
+            &__voucher-item {
+                padding: 16px !important;
+                border-bottom: 1px solid #dddddd !important;
+            }
+    
+            &__voucher-item.voucher-opacity {
+                opacity: 0.5 !important;
+            }
+    
+            &__voucher-item-text {
+                opacity: 0.8 !important;
+                font-family: $RobotoRegular !important;
+                font-size: 14px !important;
+                color: color($colors, bdb-black) !important;
+            }
+    
+            &__voucher-item-text.voucher-value {
+                opacity: 1 !important;
+                font-size: 16px !important;
+            }
+    
+            &__voucher-item-text.voucher-bold {
+                opacity: 1 !important;
+                font-family: $ArgoRegular !important;
+                font-size: 16px !important;
+                color: #000 !important;
+            }
+    
+            &__voucher-buttons {
+                padding: 23px 0px 0px 0px !important;
+                display: table !important;
+                float: right !important;
+    
+                button:nth-child(2) {
+                    margin: 0px 16px !important;
+                }
+            }
+    
+            &__zig-zag-bottom:after{
+                background: linear-gradient(-45deg, transparent 12px, white 0), 
+                            linear-gradient(45deg, transparent 12px, white  0) !important;
+                background-repeat: repeat-x !important;
+                background-position: left bottom !important;
+                background-size: 18px 11px !important;
+                content: "" !important;
+                display: block !important;
+                width: 100% !important;
+                height: 32px !important;
+                position: relative !important;
+                top: 6px !important;
+                left: 0px !important;
+            }
+        }
+
+    }
+
+}

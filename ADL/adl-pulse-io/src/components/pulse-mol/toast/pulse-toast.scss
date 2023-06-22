@@ -1,0 +1,53 @@
+@import "../../../global/animate";
+
+:host(.pulse-toast) {
+  .pulse-toast__container {
+    background-color: var(--pulse-color-bg);
+    color: var(--pulse-color-fg);
+    padding: 0.1rem 0.8rem;
+    border-radius: 0.6rem;
+    max-width: 29rem;
+    width: 29rem;
+    height: 7.3rem;
+    display: flex;
+    bottom: 2rem;
+    left: 11rem;
+    position: fixed;
+    z-index: 2000;
+
+    &--text {
+      flex-grow: 1;
+      display: flex;
+      margin: auto;
+
+      &__inner {
+        max-width: 21rem;
+      }
+    }
+
+    &__header {
+      margin-top: 0.5rem;
+    }
+
+  }
+
+  .toast-icon {
+    display: flex;
+    align-items: center;
+    padding-left: 0.7rem;
+    margin-right: 1.6rem;
+  }
+
+  @media only screen and (max-width: 540px) {
+    .pulse-toast__container {
+      top: 1.6rem;
+      left: 1em;
+      margin: 0 auto;
+      position: fixed;
+      width: 100%;
+      max-width: calc(100% - 46px);
+
+    }
+  }
+
+}

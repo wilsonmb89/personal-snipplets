@@ -1,0 +1,3 @@
+<div #toolElement name="tooltipFiduciary" class="body__question-tooltip" *ngIf="showToolTip" [hidden]="balanceDetail.priority < 3">
+  <img [src]="imgIcon" alt="-" class="body__question-image" (click)="showToolTipFiduciary(this.toolElement)">
+</div>

@@ -1,0 +1,111 @@
+bdb-item-card-simplified {
+
+    .item-card-wrapper {
+        padding: 0px 0px 16px 0;
+
+        &__item-avatar {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            &__avatar {
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+
+        &__detail {
+
+            &__title {
+                font-family: $ArgoRegular;
+                color: #0040a8;
+                font-size: 14px;
+                line-height: 1.43;
+
+                @media only screen and (min-width: 540px) {
+                    font-size: 16px;
+                    line-height: 1.5;
+                }
+
+                @media only screen and (min-width: 768px) {
+                    margin: 0 0 4px 0;
+                }
+            }
+
+            &__subtitle {
+                opacity: 0.8;
+                font-family: $RobotoRegular;
+                font-size: 12px;
+                line-height: 1.67;
+                color: color($colors, carbon);
+
+                @media only screen and (min-width: 540px) {
+                    font-size: 14px;
+                    line-height: 1.43;
+                }
+            }
+        }
+
+        &__more-detail {
+            margin: 8px 0 0 0;
+
+            @media only screen and (min-width: 768px) {
+                margin: 0 0 0 0;
+            }
+
+            &__item {
+
+                @media only screen and (min-width: 768px) {
+                    padding: 0 0 0 24px;
+                    border-left: solid 1px rgba(151, 151, 151, 0.22);
+                    margin: 8px 0px 0px 0px;
+                }
+
+                &__title {
+                    font-family: $RobotoMedium;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: 1.67;
+                    color: #0040a8;
+
+                    @media only screen and (min-width: 540px) {
+                        font-size: 14px;
+                        line-height: 1.43;
+                    }
+
+                    @media only screen and (min-width: 768px) {
+                        margin: 0 0 7px 0;
+                    }
+                }
+
+                &__subtitle {
+                    opacity: 0.8;
+                    font-family: $RobotoRegular;
+                    font-size: 13px;
+                    line-height: 1.54;
+                    text-align: right;
+                    color: color($colors, carbon);
+
+                    @media only screen and (min-width: 540px) {
+                        font-size: 14px;
+                        line-height: 1.43;
+                    }
+
+                    @media only screen and (min-width: 768px) {
+                        text-align: unset;
+                    }
+                }
+            }
+        }
+
+        &__tag {
+            text-align: right;
+
+            @media only screen and (min-width: 768px) {
+                margin: 8px 0px 0px 0px;
+            }
+        }
+    }
+
+}

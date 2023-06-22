@@ -1,0 +1,60 @@
+activation-band-page {
+
+  .container {
+    width: 100%;
+    display: contents;
+    &__title {
+      color: var(--pulse-color-primary-700);
+      margin-left: 2.4rem;
+      margin-top: 1.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    &__sub-title {
+      color: var(--pulse-color-carbon-700);
+      margin-left: 2.4rem;
+      margin-bottom: 3.2rem;
+    }
+
+    &__card-item {
+      width: 100%;
+
+      &__pulse-radio {
+        width: 100%;
+        display: grid;
+      }
+    }
+
+    &__card-message {
+      display: inline-flex;
+      &__message {
+        margin-left: 20px;
+      }
+    }
+
+  }
+
+  .space {
+    display: block;
+    width: 100%;
+    &--42 {
+      height: 4.2rem;
+    }
+    &--40 {
+      height: 4.0rem;
+    }
+    &--32 {
+      height: 3.2rem;
+    }
+    &--28 {
+      height: 2.8rem;
+    }
+    &--26 {
+      height: 2.6rem;
+    }
+    &--16 {
+      height: 1.6rem;
+    }
+  }
+
+}

@@ -1,0 +1,20 @@
+<div no-padding class="shortcut-card-content" (click)="cardClicked()" [id]="elementId">
+  <div class="shortcut-card-content__wrap">
+    <bdb-avatar class="shortcut-card-content__avatar" [avatarColor]="avatarColor" [contraction]="shortcut.contraction">
+    </bdb-avatar>
+    <div class="shortcut-card-content__date" *ngIf="shortcut.rectangle">
+      <span>{{ shortcut.rectangleText | date:'d MMM':'UTC':'es-CO' }}</span>
+    </div>
+  </div>
+  <div>
+    <div class="shortcut-card-content__first-text">
+      {{ shortcut.firstText.length > 11 ? shortcut.firstText.substring(0, 10) + '…' : shortcut.firstText }}
+    </div>
+    <div class="shortcut-card-content__second-text" *ngIf="currency">
+      {{ shortcut.secondText | currency:'USD':'symbol':'1.0':'es-CO' }}
+    </div>
+    <div class="shortcut-card-content__second-text" *ngIf="!currency">
+      {{ shortcut.secondText.length > 11 ? shortcut.secondText.substring(0, 10) + '…' : shortcut.secondText }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'roboto-medium';
+  src: url('../../assets/fonts/roboto/Roboto-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'roboto-regular';
+  src: url('../../assets/fonts/roboto/Roboto-Regular.ttf');
+}
+
+.cache-error-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  font-family: 'roboto-regular', 'Helvetica Neue', sans-serif;
+
+  &__header {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &__small-icon {
+      width: 32px;
+      height: 32px;
+      display: initial;
+    }
+
+    &__medium-icon {
+      width: 160px;
+      height: 32px;
+      display: none;
+    }
+  }
+
+  &__body {
+    background-color: #f6f8fa;
+    height: calc(100vh - 144px);
+    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__text {
+      margin: 24px 0;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      color: #5c5c5c;
+      text-align: center;
+    }
+
+    &__button {
+      font-family: 'roboto-medium', 'Helvetica Neue', sans-serif;
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100px;
+      cursor: pointer;
+      outline: none;
+
+      height: 48px;
+      padding-left: 32px;
+      padding-right: 32px;
+      padding-top: 14px;
+      padding-bottom: 16px;
+
+      border: 1px solid #0040a8;
+      background-color: #0040a8;
+      color: #fff;
+      transition: 0.3s;
+
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.2px;
+
+      &:hover {
+        background: #002c76;
+        box-shadow: 0 4px 12px 0 rgb(0 64 168 / 40%);
+        border: 1px solid #002c76;
+      }
+    }
+  }
+
+  &__footer {
+    padding: 12px 48px;
+    display: flex;
+    flex-direction: column;
+
+    &__text {
+      flex-grow: 1;
+      font-weight: 400;
+      font-size: 12px;
+      color: #5c5c5c;
+      line-height: 20px;
+      letter-spacing: -0.0230769px;
+      text-align: center;
+    }
+
+    &__logos {
+      display: flex;
+      flex-direction: column;
+
+      &__vigilado-icon {
+        margin: 17px 0;
+        text-align: center;
+      }
+
+      &__version {
+        color: #5c5c5c;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+      }
+    }
+  }
+
+  @media (min-width: 540px) {
+    &__header {
+      &__small-icon {
+        display: none;
+      }
+
+      &__medium-icon {
+        display: initial;
+      }
+    }
+
+    &__footer {
+      flex-direction: row;
+      padding: 12px 16px;
+
+      &__text {
+        text-align: justify;
+      }
+
+      &__logos {
+        padding-left: 32px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &__version {
+          margin-left: 30px;
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+          writing-mode: vertical-rl;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__footer {
+      flex-direction: row;
+      padding: 12px 16px;
+
+      &__text {
+        padding-left: 140px;
+      }
+    }
+  }
+}

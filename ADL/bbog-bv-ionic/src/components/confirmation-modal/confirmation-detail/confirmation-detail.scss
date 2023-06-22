@@ -1,0 +1,19 @@
+confirmation-detail {
+    .conf-detail-wrapper{
+        padding: 12px 17px;
+        border-bottom: solid 1px #dddddd;
+
+        &__title{
+            font-family: $ArgoRegular;
+            font-size: 1.2em;
+            color: color($colors, steel);
+            margin-bottom: 8px;
+        }
+
+        &__desc{
+            font-family: $RobotoRegular;
+            font-size: 1.4em;
+            color: color($colors, bdb-black);
+        }
+    }
+}

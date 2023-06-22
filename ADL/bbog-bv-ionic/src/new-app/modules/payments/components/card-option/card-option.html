@@ -1,0 +1,20 @@
+<div *ngIf="!!cardOptionData"
+      class="card-option-container pulse-elevation-hover-8"
+      (click)="navigationTo()">
+  <div class="card-option-container__tag" *ngIf="!!cardOptionData.tagText">
+    <pulse-tag [text]="cardOptionData.tagText" color="success"></pulse-tag>
+  </div>
+  <div class="card-option-container__icon">
+    <img [src]="cardOptionData.iconPath" alt="option">
+  </div>
+  <div class="card-option-container__title">
+    <span class="pulse-tp-bo2-comp-m">{{ cardOptionData.title }}</span>
+  </div>
+  <div class="card-option-container__desc">
+    <span class="pulse-tp-bo3-comp-r">{{ cardOptionData.description }}</span>
+  </div>
+  <div class="card-option-container__link">
+    <span class="pulse-tp-bo3-comp-r">Buscar</span>
+    <pulse-icon icon="chevron-right" color="warning"></pulse-icon>
+  </div>
+</div>

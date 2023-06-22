@@ -1,0 +1,29 @@
+<pulse-modaltb class="pocket-exceed-max">
+  <div slot="header">
+    <div class="pocket-exceed-max__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img src="assets/imgs/pocket/err-exceed-max-number.svg" alt="Cannot create more pockets">
+      </div>
+      <div slot="title">
+        Ya tienes 5 alcancías
+      </div>
+      <div slot="body">
+        <div class="pocket-exceed-max__body">
+          Llegaste al límite de alcancías de ahorro <br> disponibles para cada Cuenta de Ahorros.
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="pocket-exceed-max__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="closeModal()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

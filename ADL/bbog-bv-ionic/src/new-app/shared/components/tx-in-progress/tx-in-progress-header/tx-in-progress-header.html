@@ -1,0 +1,16 @@
+<div *ngIf="!!header" class="tx-in-progress-header-container">
+  <div *ngIf="!!header.iconPath" class="tx-in-progress-header-container--icon">
+    <img [src]="header.iconPath" alt="icon">
+  </div>
+  <div class="tx-in-progress-header-container--title">
+    <span class="tx-in-progress-header-container--title__main pulse-tp-hl3-comp-b">{{ header.title }}</span>
+    <span *ngIf="header.showTime" class="pulse-tp-bo4-comp-r">{{ currDateStr }}</span>
+  </div>
+  <ng-content select="[headerDesc]">
+  </ng-content>
+  <div *ngIf="!!action" class="tx-in-progress-header-container--button-m">
+    <pulse-button id="ach-transfers-main-btn-m" [colorgradient]="true" (click)="doActionButton()">
+      {{ action.btnTitle }}
+    </pulse-button>
+  </div>
+</div>

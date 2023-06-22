@@ -1,0 +1,40 @@
+bdb-autocomplete {
+    width: 100%;
+    .input-item{
+        padding: 0;
+        input {
+            margin: 0;
+            padding: 1.5rem;
+        }
+    }
+  
+    .list-options{
+        position: absolute;
+        z-index: 900;
+        width: 100%;
+        margin-top: 0.8rem;
+        box-shadow: 0 0 1.5rem 0  color($colors, dusty-shadow);
+        border-radius: 0.6rem;
+
+       
+
+        &__item{
+            transition: all ease-in 0.2s;
+            background-color: white;
+            border-radius: 0.6rem;
+
+
+            &:hover{
+                background-color: color($colors, bdb-blue);
+                border-radius: 0rem;
+
+                *{
+                color: white;
+                }
+
+
+            }
+        }
+    }
+
+}

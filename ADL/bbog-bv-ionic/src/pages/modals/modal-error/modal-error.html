@@ -1,0 +1,22 @@
+<ion-content no-padding>
+
+  <div class="top" #contentTop>
+    <div class="icon-container">
+      <img src="assets/imgs/alert.svg">
+    </div>
+    <div id="me-title" class="title">
+      {{title}}
+    </div>
+    <div class="message" [align]="positionText" [innerHtml]="message"></div>
+  </div>
+  <div class="btn-wrapper">
+
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar class="btn-wrapper" no-padding no-border>
+    <button id="err-left" ion-button full class="main-btn" (click)="mainClick()">{{msgButton}}</button>
+    <button id="err-right" [hidden]="auxButton === null || auxButton === undefined" (click)="auxClick()" ion-button full class="aux-btn">{{auxButton}}</button>
+  </ion-toolbar>
+</ion-footer>

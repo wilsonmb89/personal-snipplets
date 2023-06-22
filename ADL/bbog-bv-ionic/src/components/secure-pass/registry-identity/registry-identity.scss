@@ -1,0 +1,104 @@
+registry-identity {
+    .titCol{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .title{
+        opacity: 0.8;
+        font-family: $ArgoRegular;
+        font-size: 18px;
+        color: color($colors, bdb-black);
+        width: 70%;
+    }
+
+    .subtitle{
+        font-family: $RobotoRegular;
+        font-size: 1.4rem;
+        color: color($colors, steel);
+        width: 80%;
+
+    }
+
+    .grid-spaces {
+        padding: 0;
+        height: 100%;
+        > ion-row:nth-child(1) {
+          margin-bottom: 10%;
+        }
+    }
+
+    .aceptar {
+        opacity: 0.8;
+        font-family: $RobotoRegular;
+        font-size: 13px;
+        color: color($colors, steel);
+    }
+
+    .terminos {
+        opacity: 0.8;
+        font-family: $RobotoRegular;
+        font-size: 13px;
+        color: color($colors, bdb-blue);
+        cursor: pointer;
+    }
+
+    .add-input{
+        font-family: $RobotoRegular;
+        font-size: 14px;
+        border: solid 1px color($colors, light-blue-grey);
+        width: 100%;
+        // margin-top: 24px;
+        padding: 16px;
+        border-radius: 6px;
+        color: color($colors, steel);
+    }
+
+    .add-input:focus{
+        border: solid 1px cornflowerblue;
+    }
+
+    .btn-secure-login {
+        margin-top: 15%;
+        width: 45%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .check {
+        margin-top: 5%;
+    }
+
+    .checkbox {
+        border-radius: 50%;
+        height: 25px;
+        background: #eef0f2;
+        border: 1px solid #dcdee3;
+        width: 25px;
+    }
+
+    .checkbox:checked {
+        background: color($colors, active-green);
+        border: solid 1px color($colors, active-green);
+    }
+
+    .bdb-checked:after {
+        top: 0.4rem;
+        left: 0.8rem;
+        width: 0.4rem;
+        height: 0.9rem;
+        transform: rotate(45deg);
+        border: solid #fff;
+        border-width: 0 0.2rem 0.2rem 0;
+    }
+
+    @media (max-width: 992px) {
+        .title {
+            font-size: 16px;
+        }
+        .titCol{
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

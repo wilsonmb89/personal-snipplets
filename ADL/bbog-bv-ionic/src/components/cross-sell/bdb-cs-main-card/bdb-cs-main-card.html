@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-8 col-md-7 col-lg-8>
+        <div class="wrapper__left">
+          <div class="wrapper__left__title">
+            {{mainCard.cardTitle}}
+          </div>
+          <div class="wrapper__left__desc">
+            {{mainCard.cardDesc}}
+          </div>
+          <div class="wrapper__left__btn">
+            <button id="cs-main-card-btn" bv-button color="mango-gradient" ion-button (click)="open()">{{mainCard.btnText}}</button>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-4 col-md-5 col-lg-4>
+        <div class="wrapper__right">
+          <img  [src]="mainCard?.iconPath || ''">
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

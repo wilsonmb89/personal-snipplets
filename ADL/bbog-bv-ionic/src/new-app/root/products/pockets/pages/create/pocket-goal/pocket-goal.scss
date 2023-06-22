@@ -1,0 +1,44 @@
+page-pocket-goal {
+
+    .pocket-goal-container {
+
+        &__description, &__select, &__button {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__title {
+            text-align: center;
+            margin: 32px 0;
+
+            @media only screen and (max-width: 480px) { 
+                margin: 16px 0;
+            }
+
+            &__bold {
+                font-size: 32px;
+                font-weight: bold;
+            }
+        }
+
+        &__select {
+            margin: 48px 0;
+
+            @media only screen and (max-width: 480px) { 
+                margin: 31px 0;
+            }
+        }
+
+        &__description {
+            opacity: 0.8;
+            line-height: 1.43;
+            text-align: center;
+
+            &__bold {
+                font-weight: bold;
+                font-family: $RobotoBold;
+                display: contents;
+            }
+        }
+    }
+}

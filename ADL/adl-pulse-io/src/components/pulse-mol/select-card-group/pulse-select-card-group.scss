@@ -1,0 +1,93 @@
+@import "../../../global/animate";
+
+:host {
+    position: relative;
+}
+
+:host(.tabs-select) .slide-wrapper__slide {
+    text-align: center;
+    min-width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    scroll-behavior: smooth;
+    margin: 0 -.8rem;
+    ::slotted(*) {
+        flex: 0 0 var(--pulse-select-card-width, 14rem);
+        margin: .4rem .8rem;
+    }
+
+    ::slotted(:last-child) {
+        padding-right: .5rem !important;
+    }
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+:host(.grid-select) .slide-wrapper__slide {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--pulse-select-card-width, 14rem), 1fr));
+    grid-gap: 16px;
+}
+
+:host(.composable-row) .slide-wrapper__slide {
+    display: flex; 
+    flex-flow: wrap;
+    margin: -0.8rem;
+    ::slotted(*) {
+        flex: 0 0 var(--pulse-select-card-width, 14rem);
+        margin: 0.8rem;
+    }
+}
+
+:host(.composable-column) .slide-wrapper__slide {
+    display: flex; 
+    flex-flow: wrap;
+    flex-direction: column;
+    margin: -0.8rem;
+    ::slotted(*) {
+        margin: .8rem;
+    }
+}
+.slide-wrapper {
+    position: relative;
+    &__slide {
+        z-index: 99;
+        position: relative;
+    }
+}
+
+.slide-wrapper__actions-layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &__back {
+        z-index: 100;
+        position: absolute;
+        left: -28px;
+    }
+
+    &__forward {
+        z-index: 100;
+        position: absolute;
+        right: -28px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .slide-wrapper__actions-layer {
+
+        &__back {
+            display: none !important;
+        }
+
+        &__forward {
+            display: none !important;
+        }
+    }
+}

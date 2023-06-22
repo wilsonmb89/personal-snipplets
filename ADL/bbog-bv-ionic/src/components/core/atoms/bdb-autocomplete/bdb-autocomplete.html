@@ -1,0 +1,22 @@
+<div [formGroup]="_parentForm" class="bv-form">
+  <ion-input 
+    bdb-form-input
+    (ionChange)="getItems($event)" 
+    (ionFocus)="setAsBlank()"
+    class="input-item"
+    [id]="id" 
+    type="text"
+    autocomplete="new-password"
+    [placeholder]="placeholder"
+    [formControlName]="controlName"></ion-input>
+  <ion-list class="list-options">
+    <div *ngFor="let item of _listOptions; let i=index">
+      <ion-item class="list-options__item" *ngIf="i < listSize" (click)="selectOption(item, $event)">
+        <div class="itm-inner">
+          <p class="list-options__item__name">{{ item[nameProperty] }}</p>
+        </div>
+      </ion-item>
+    </div>
+
+  </ion-list>
+</div>

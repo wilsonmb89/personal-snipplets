@@ -1,0 +1,29 @@
+app-tyc-card-template {
+
+  .tyc-card-template-main {
+
+    &__header {
+      &__btn-close {
+        height: 2.8rem;
+        width: 2.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--pulse-color-info-100);
+        margin-left: auto;
+        cursor: pointer;
+      }
+    }
+
+    &__content {
+      &__body {
+        flex-grow: 1;
+
+        &__info {
+          text-align: justify;
+        }
+      }
+    }
+  }
+}

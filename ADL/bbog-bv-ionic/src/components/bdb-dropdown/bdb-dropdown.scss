@@ -1,0 +1,30 @@
+bdb-dropdown {
+  .add-input{
+    font-family: $RobotoRegular;
+    font-size: 14px;
+    border: solid 1px color($colors, light-blue-grey);
+    // min-width: 292px;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    color: color($colors, steel);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+  }
+
+  .add-input:focus{
+    border: solid 1px cornflowerblue;
+  }
+
+  .arrow-rigth{
+    background-color: white;
+    appearance: none;
+    background: url(../../../assets/imgs/arrow-line.svg) ;
+    background-position:
+    calc(100% - 20px) calc(1em + 5px),
+    calc(100% - 15px) calc(1em + 8px),
+    calc(100% - 1.5em) 0.7em;
+    background-size: 10px 8px;
+    background-repeat: no-repeat;
+  }
+}

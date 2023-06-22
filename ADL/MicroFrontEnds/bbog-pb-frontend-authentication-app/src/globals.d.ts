@@ -1,0 +1,11 @@
+// register-web-components.ts
+/* eslint-disable */
+import { HTMLAttributes } from 'react';
+
+type StencilToReact<T> = {
+  [P in keyof T]?: T[P] &
+    Omit<HTMLAttributes<Element>, 'className'> & {
+      class?: string;
+      ref?: any;
+    };
+};

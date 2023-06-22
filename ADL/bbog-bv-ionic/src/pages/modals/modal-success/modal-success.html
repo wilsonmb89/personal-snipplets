@@ -1,0 +1,20 @@
+<ion-content no-padding>
+  <div class="top" #contentTop>
+    <div class="icon-container">
+      <img src="assets/imgs/group-9.png">
+    </div>
+    <div class="title">
+      {{ dataModal.title }}
+    </div>
+    <div class="message">
+      <p align="left" [innerHTML]="dataModal.content"></p>
+    </div>
+  </div>
+  <div class="btn-wrapper"></div>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar class="btn-wrapper" no-padding no-border>
+    <button id="ms-btn" ion-button full class="main-btn" (click)="btnFooterAction()">{{ dataModal.button }}</button>
+  </ion-toolbar>
+</ion-footer>

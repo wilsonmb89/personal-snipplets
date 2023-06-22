@@ -1,0 +1,21 @@
+<ion-content [@expandCol]="!shrink">
+  <div class="logo-container">
+    <img *ngIf="!shrink" src="assets/imgs/bbog_menu_logo2.svg">
+  </div>
+  <ion-list *ngIf="!shrink" class="list-item-container">
+    <div #itemConf id="navbar{{i}}"  (click)='itemMenu.enabled ? navigate(itemMenu): null' class="button"
+      [ngClass]="{'enabled' : itemMenu.enabled}" *ngFor="let itemMenu of itemsMenu; let i = index">
+      <button menuClose ion-item detail-none
+        [ngClass]="{'active': itemMenu.active, 'enabled' : itemMenu.enabled}">
+        <img *ngIf="itemMenu.active" class="icon-menu" [src]="itemMenu.imgOn">
+        <img *ngIf="!itemMenu.active" class="icon-menu" [src]="itemMenu.img">
+        <span class="name-menu">{{itemMenu.name}}</span>
+      </button>
+    </div>
+  </ion-list>
+
+  <img class="vigilado-image" src="assets/imgs/vigilado.svg">
+  <div class="version pulse-tp-bo4-comp-r">
+    V.{{ appVersion$ | async }}
+  </div>
+</ion-content>

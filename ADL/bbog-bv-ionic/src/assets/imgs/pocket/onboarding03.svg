@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewBox="0 0 256 256">
+    <defs>
+        <filter id="prefix__a" width="111.7%" height="111.7%" x="-5.8%" y="-4.2%" filterUnits="objectBoundingBox">
+            <feOffset dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.768627451 0 0 0 0 0.831372549 0 0 0 0 0.890196078 0 0 0 0.6 0"/>
+        </filter>
+        <filter id="prefix__d" width="112.5%" height="112.5%" x="-6.2%" y="-4.5%" filterUnits="objectBoundingBox">
+            <feOffset dy="3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.768627451 0 0 0 0 0.831372549 0 0 0 0 0.890196078 0 0 0 0.6 0"/>
+        </filter>
+        <circle id="prefix__b" cx="120" cy="120" r="120"/>
+        <circle id="prefix__c" cx="84" cy="84" r="84"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(0 4)">
+        <g transform="translate(8)">
+            <use fill="#000" filter="url(#prefix__a)" xlink:href="#prefix__b"/>
+            <use fill="#FFF" xlink:href="#prefix__b"/>
+            <g transform="translate(36 36)">
+                <mask id="prefix__e" fill="#fff">
+                    <use xlink:href="#prefix__c"/>
+                </mask>
+                <use fill="#000" filter="url(#prefix__d)" xlink:href="#prefix__c"/>
+                <use fill="#FFF" xlink:href="#prefix__c"/>
+                <g mask="url(#prefix__e)">
+                    <g transform="translate(31 102)">
+                        <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M50.421 76.5c26.537 0 48.049-5.373 48.049-12v-6.233C80.708 54.422 64.692 52.5 50.421 52.5c-14.267 0-30.283 1.922-48.048 5.767V64.5c0 6.627 21.512 12 48.048 12z"/>
+                        <ellipse cx="50.421" cy="57" fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" rx="48.049" ry="12"/>
+                        <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M53.98 67.5c26.537 0 48.05-5.708 48.05-12.75v-6.622C84.266 44.043 68.25 42 53.98 42c-14.267 0-30.283 2.043-48.048 6.128v6.622c0 7.042 21.512 12.75 48.049 12.75z"/>
+                        <ellipse cx="53.981" cy="46.5" fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" rx="48.049" ry="12"/>
+                        <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M49.235 58.5c26.537 0 48.049-5.373 48.049-12v-6.233C79.522 36.422 63.505 34.5 49.235 34.5c-14.268 0-30.284 1.922-48.049 5.767V46.5c0 6.627 21.512 12 48.049 12z"/>
+                        <ellipse cx="49.235" cy="39" fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" rx="48.049" ry="12"/>
+                        <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M52.201 48c26.536 0 48.049-5.373 48.049-12v-6.233C82.488 25.922 66.47 24 52.2 24c-14.268 0-30.284 1.922-48.049 5.767V36c0 6.627 21.512 12 48.049 12z"/>
+                        <ellipse cx="52.201" cy="28.5" fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" rx="48.049" ry="12"/>
+                        <path fill="#F69B31" fill-rule="nonzero" d="M54.574 39c26.536 0 48.048-5.373 48.048-12v-6.233C84.86 16.922 68.844 15 54.574 15c-14.268 0-30.284 1.922-48.049 5.767V27c0 6.627 21.512 12 48.049 12z"/>
+                        <ellipse cx="54.574" cy="19.5" fill="#FDC130" fill-rule="nonzero" rx="48.049" ry="12"/>
+                        <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M48.049 31.5c26.536 0 48.048-5.373 48.048-12v-6.233C78.335 9.422 62.32 7.5 48.05 7.5 33.78 7.5 17.765 9.422 0 13.267V19.5c0 6.627 21.512 12 48.049 12z"/>
+                        <ellipse cx="48.049" cy="12" fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" rx="48.049" ry="12"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="translate(113 45)">
+            <circle cx="39.5" cy="47.5" r="36.5" fill="#FDC130" fill-rule="nonzero"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" d="M0 49c6.077-4.284 13.186-7.204 20.746-8.522 3.37-.802 6.937-.59 10.163.602 3.268 1.351 4.875 4.727 3.716 7.808M25 56.29c5.994-3.934 12.844-6.43 20-7.29-4.244 2.592-6.888 7.095-7.045 12M43.636 57.148c2.156-1.675 5.288-1.498 7.224.409 1.815 1.968 2.534 4.654 1.931 7.218-.612 2.5-1.71 4.867-3.236 6.977C44.967 78.855 39.398 85.33 33 91M18 78.482c4.081-5.234 9.74-8.856 16.044-10.27 1.103-.403 2.323-.225 3.28.477.71 1.035.872 2.377.431 3.566-1.409 6.23-4.784 11.779-9.578 15.745"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" d="M2.608 56.015c3.726-4.18 8.75-6.954 14.244-7.863 1.11-.272 2.277-.177 3.33.27 1.426.935 2.11 2.681 1.701 4.35-.425 1.613-1.206 3.109-2.285 4.373C14.141 64.123 8.264 70.754 2 77"/>
+            <circle cx="26.5" cy="32.5" r="2.5" fill="#FFF" fill-rule="nonzero"/>
+            <path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.1" d="M36.58 0l-2.518 20.132c-.19 1.42 0 3.344 1.354 3.608.826.04 1.627-.295 2.184-.914l7.67-6.326-1.758 15.13c-.19 1.611-.118 3.68 1.378 4.281.963.216 1.971.035 2.801-.505C57.147 30.76 65.986 24.926 74 18.04"/>
+            <ellipse cx="64.5" cy="51" fill="#FFF" fill-rule="nonzero" rx="3.5" ry="6"/>
+        </g>
+        <circle cx="66.8" cy="71.8" r="8.8" fill-rule="nonzero" stroke="#FDC130" stroke-width=".8" transform="scale(-1 1) rotate(30 0 -177.501)"/>
+        <g transform="rotate(-19 283.573 46.168)">
+            <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.604" d="M101.393 46.956c-12.227-.01-23.379 6.96-28.73 17.956"/>
+            <ellipse cx="3.609" cy="20.67" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".594" rx="3.561" ry="3.564"/>
+            <ellipse cx="210.28" cy="4.05" stroke="#0070D9" stroke-linecap="round" stroke-linejoin="round" stroke-width=".594" rx="3.561" ry="3.564"/>
+            <ellipse cx="18.728" cy="121.185" fill="#D0413B" fill-rule="nonzero" rx="4.7" ry="4.705"/>
+            <ellipse cx="194.021" cy="122.342" fill="#0040A8" fill-rule="nonzero" rx="4.7" ry="4.705"/>
+        </g>
+    </g>
+</svg>

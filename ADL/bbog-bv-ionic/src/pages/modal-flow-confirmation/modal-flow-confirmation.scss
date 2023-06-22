@@ -1,0 +1,78 @@
+page-modal-flow-confirmation {
+
+    .modal-flow-confirmation-content {
+        padding: 25px 0px 24px 0px;
+
+        @media only screen and (min-width: 540px) {
+            padding: 25px 46px 24px 46px;
+        }
+        
+        &__img {
+            display: flex;
+
+            img {
+                margin: 0 auto;
+            }
+        }
+
+        &__title {
+            font-family: $RobotoMedium;
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: center;
+            color: #0040a8;
+            margin: 16px 0;
+        }
+
+        &__subtitle {
+            font-family: $RobotoRegular;
+            font-size: 14px;
+            line-height: 1.43;
+            text-align: center;
+            color: color($colors, carbon);
+            margin: 0 0 36px 0;
+            padding: 0 24px;
+
+            @media only screen and (min-width: 540px) {
+                padding: 0;
+            }
+        }
+
+        &__btn-left {
+            font-family: $RobotoMedium;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.14;
+            text-align: center;
+            color: #0040a8;
+            margin: 0 8px 0 0;
+        }
+
+        &__btn-right {
+            font-family: $RobotoMedium;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.14;
+            text-align: center;
+            color: color($colors, white);
+            margin: 0 0 0 8px;
+        }
+
+        &__close {
+            right: 18px;
+            position: absolute;
+            top: 18px;
+
+            &__cancel-icon {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                background-color: color($colors, bdb-bg);
+                cursor: pointer;
+                display: block;
+            }
+
+        }
+    }
+}

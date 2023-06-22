@@ -1,0 +1,163 @@
+<ion-header no-border class="dashboard-header" hidden-md-up>
+  <ion-navbar hideBackButton="true">
+    <ion-grid>
+      <ion-row justify-content-center align-items-center>
+        <ion-col col-2 align-self-center>
+          <img src="assets/imgs/logo-header-mobile.png" width="29.9" float-right class="dashboard-header__logo-bdb">
+        </ion-col>
+        <ion-col col-8 align-self-center>
+          <div class="dashboard-header__title-greeting">
+            {{ greet }}
+          </div>
+          <div class="dashboard-header__title-name" *ngIf="customerBasicData | async as userData">
+            {{toCamelCase(userData.firstName)}}
+          </div>
+        </ion-col>
+        <ion-col col-1 align-self-center style="display: flex; justify-content: center">
+          <button *ngIf="isHelpCenterActive$ | async" float-left class="dashboard-header__btn-cad" (click)="onButtonCad()">
+            <img src="assets/imgs/icon_cad_tab.svg" width="21">
+          </button>
+        </ion-col>
+        <ion-col col-1 align-self-center>
+          <button float-left class="dashboard-header__btn-gear" (click)="onConfiguration()">
+            <img src="assets/imgs/icon-menu.svg" width="19.5">
+          </button>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<ion-content [autoResize]="'resize'" (onBreakPointChange)="breakpointChanged($event)" class="dashboard-content"
+  (ionScroll)="scrollHandler($event)">
+  <ion-grid no-padding class="dashboard-content__grid">
+    <ion-row wrap-reverse>
+      <ion-col #secondCol col-12 col-md-6 col-lg-5 col-xl-4 class="dashboard-content__second-col">
+        <div class="dashboard-content__cards" no-padding col-12 col-sm-6 offset-sm-3 col-md-10 offset-md-1>
+          <div class="dashboard-content__title-greeting" hidden-sm-down>
+            {{ greet }}
+          </div>
+          <div class="dashboard-content__title-name" hidden-sm-down *ngIf="customerBasicData | async as userData">
+            {{toCamelCase(userData.firstName)}}
+          </div>
+          <div no-padding class="dashboard-content__separator" hidden-sm-down></div>
+          <bdb-card-notification-new *ngIf="isActivationCard && isShowCard" [cardNotification]="cardNotification"
+          [whithCloseBtn]="true" (clickCard)="validateCardAction()" (clickClose)="this.hiddenCard()">
+          </bdb-card-notification-new>
+          <bdb-card-notification-fiduciary *ngIf="isFiduciaryNotification" [cardNotification]="cardFiduciaryNotification"
+            (clickCard)="investFiduciaryProduct()">
+          </bdb-card-notification-fiduciary>
+
+          <ion-grid no-padding>
+            <ion-row>
+              <ion-col col-8>
+                <div>
+                  <bdb-submenu-header class="dashboard-content__header" [title]="title"></bdb-submenu-header>
+                </div>
+              </ion-col>
+              <ion-col col-4>
+                <div #switch class="dashboard-content__private-mode">
+                  <pulse-switch-button color="success" [inputstate]="isPrivateMode"
+                    (switchChange)="changePrivateMode($event)"><img
+                      [src]="isPrivateMode ? 'assets/imgs/round-visibility-off-24-px.svg' : 'assets/imgs/baseline-visibility-24-px.svg'">
+                  </pulse-switch-button>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <product-card-loader *ngIf="showProdsSpinner">
+          </product-card-loader>
+          <div id="bdb-card{{i}}" #cards *ngFor="let p of _productCards; index as i">
+            <single-product-card [p]="p" [privateMode]="isPrivateMode" (onCardClicked)="onCardClicked(p)"
+              (onPayClicked)="onPayClicked(p)"></single-product-card>
+          </div>
+
+          <div class="temp-hover" *ngIf="showTuPlusCard">
+            <pulse-card id="tp-card" elevationhover="16" (click)="tuPlusDetail()">
+              <tu-plus-card [privateMode]="isPrivateMode" [points]="tuPlusPoints" [error]="tuPlusError"
+                [showLoader]="tuPlusLoader"></tu-plus-card>
+            </pulse-card>
+          </div>
+          <div class="temp-hover">
+            <pulse-card id="aval-card" elevationhover="16" (click)="productsAval()">
+              <aval-card></aval-card>
+            </pulse-card>
+          </div>
+          <div id="pocket-section" *ngIf="showPocketSection" hidden-md-up>
+            <div class="text-style-sub">
+              Tus alcancías
+            </div>
+            <ng-template [ngIf]="hasSavingAccounts" [ngIfElse]="pocketsEmptyStateSm">
+              <div class="pockets-container">
+                <pulse-card-shortcut-add *ngIf="!pocketsLoading" [text]="newPockets" (click)="gotoPocket()">
+                  <img src="assets/imgs/yellow-plus.svg">
+                </pulse-card-shortcut-add>
+                <pocket-card *ngIf="pocketsLoading" [loading]="pocketsLoading"></pocket-card>
+                <ng-container *ngFor="let pocket of pocketList">
+                  <pocket-card [pocket]="pocket" (click)="gotoPocketDetail(pocket)"
+                    (depositOutput)="depositPocket($event)" (withdrawOutput)="withdrawPocket($event)"></pocket-card>
+                </ng-container>
+              </div>
+            </ng-template>
+            <ng-template #pocketsEmptyStateSm>
+              <pocket-empty-state></pocket-empty-state>
+            </ng-template>
+          </div>
+          <cross-sell class="dashboard-content__cross-sell" hidden-md-up *ngIf="mosaicList.length > 0"
+            [mosaicList]="mosaicList" [mainCard]="mainCard" [approvedCard]="approvedCard"></cross-sell>
+        </div>
+      </ion-col>
+      <ion-col #firstCol col-12 col-md-6 col-lg-7 col-xl-8 class="dashboard-content__first-col">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col col-12 col-md-10 offset-md-1>
+              <quick-access class="dashboard-content__quick-access" [shorcutAddMode]="shorcutAddMode"
+                [pendingBills$]="pendingBillsApi$" [enrolledAccts]="enrolledAccts"
+                [loadingBills$]="billersPaymentWorking$" [completedBills$]="billersPaymentCompleted$"
+                [loadingAccts]="loadingAccts">
+              </quick-access>
+            </ion-col>
+            <ion-col col-12 col-md-1 class="dashboard-content__col-empty"></ion-col>
+          </ion-row>
+          <ion-row id="pocket-section" *ngIf="showPocketSection" hidden-sm-down>
+            <ion-col col-12 col-md-10 offset-md-1>
+              <div class="text-style-sub">
+                Tus alcancías
+              </div>
+            </ion-col>
+            <ion-col col-12 col-md-10 offset-md-1>
+              <ng-template [ngIf]="hasSavingAccounts" [ngIfElse]="pocketsEmptyStateMd">
+                <div class="pocket-section-wrapper">
+                  <pulse-card-shortcut-add *ngIf="!pocketsLoading" [text]="newPockets" (click)="gotoPocket()"><img
+                      src="assets/imgs/yellow-plus.svg">
+                  </pulse-card-shortcut-add>
+                  <pocket-card *ngIf="pocketsLoading" [loading]="pocketsLoading"></pocket-card>
+                  <ng-container *ngFor="let pocket of pocketList">
+                    <pocket-card [pocket]="pocket" (click)="gotoPocketDetail(pocket)"></pocket-card>
+                  </ng-container>
+                </div>
+              </ng-template>
+              <ng-template #pocketsEmptyStateMd>
+                <pocket-empty-state></pocket-empty-state>
+              </ng-template>
+            </ion-col>
+          </ion-row>
+          <ion-row hidden-sm-down>
+            <ion-col col-12 col-md-10 offset-md-1>
+              <cross-sell class="dashboard-content__cross-sell" *ngIf="mosaicList.length > 0" [mosaicList]="mosaicList"
+                [mainCard]="mainCard" [approvedCard]="approvedCard"></cross-sell>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 col-md-10 offset-md-1>
+              <bdb-last-connect hidden-sm-down></bdb-last-connect>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <header-sesion hidden-sm-down></header-sesion>
+</ion-content>

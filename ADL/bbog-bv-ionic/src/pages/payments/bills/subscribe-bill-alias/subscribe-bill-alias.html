@@ -1,0 +1,45 @@
+<ion-content no-padding>
+    <pulse-flowtt>
+        <div slot="header">
+            <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+                [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+                <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+                <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+            </bdb-nav-options>
+        </div>
+        <!--formulario-->
+        <div slot="content">
+            <div class="bill-alias-wrapper">
+                <div class="inner">
+                    <div class="title">
+                        {{title}}
+                    </div>
+                    <form [formGroup]="billAliasForm" class="bv-form">
+                        <ion-input bdb-normalize-diacritic class="input-item" id="billAlias" (keyup)="onTextChange($event)"  type="text" placeholder="Ejemplo: Agua Mamá"
+                            formControlName="billAlias"></ion-input>
+
+                        <div class="btn-wrapper" hidden-p-sm-down>
+                            <button id="sba-btn-pay-later" bvButton class="after-btn" color="white"
+                                [disabled]="billAliasForm.controls.billAlias.invalid"
+                                (click)="triggerAction(false)">Pagar después</button>
+                            <button id="sba-btn-pay-now" bvButton color="bdb-blue"
+                                [disabled]="billAliasForm.controls.billAlias.invalid" ion-button
+                                (click)="triggerAction(true)">Ir al pago</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div slot="summary">
+            <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+        </div>
+    </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+    <ion-toolbar class="bottom-btn" no-padding>
+        <button class="after-btn" id="mob-sba-btn-pay-later" color="bdb-blue" ion-button (click)="triggerAction(false)"
+            [disabled]="billAliasForm.controls.billAlias.invalid">Pagar después</button>
+        <button class="now-btn" id="mob-sba-btn-pay-now" color="bdb-blue" ion-button (click)="triggerAction(true)"
+            [disabled]="billAliasForm.controls.billAlias.invalid">Ir al pago</button>
+    </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="137" viewBox="0 0 152 137">
+    <g fill="none" fill-rule="evenodd" transform="translate(0 1)">
+        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.504">
+            <g stroke="#002256">
+                <path fill="#FFF" fill-rule="nonzero" d="M14.538 22.167L9.832 11.113 20.473 13.096" transform="translate(8.325 9.854) scale(-1 1) rotate(30 -42.863 -159.477)"/>
+                <path fill="#FFF" d="M88.576 39.077c-.006 19.67-14.613 36.265-34.089 38.728-19.476 2.463-37.74-9.976-42.621-29.028-4.883-19.052 5.14-38.769 23.392-46.013 18.25-7.244 39.03.246 48.492 17.48" transform="translate(8.325 9.854) scale(-1 1) rotate(30 -42.863 -159.477)"/>
+                <path d="M34.621 13.066c9.923-5.74 22.244-5.308 31.743 1.111M43.613 76.621L46.611 87.134 49.608 82.628 54.105 87.134 55.603 76.621" transform="translate(8.325 9.854) scale(-1 1) rotate(30 -42.863 -159.477)"/>
+                <path fill="#FFF" fill-rule="nonzero" d="M65.675 71.996L74.128 78.904 74.008 73.468 80.273 74.609 75.507 65.118M81.232 57.939L91.993 59.831 89.265 55.176 95.26 53.103 86.478 47.156" transform="translate(8.325 9.854) scale(-1 1) rotate(30 -42.863 -159.477)"/>
+                <path d="M10.461 45.624L0 51.662 11.78 72.176 27.847 62.895" transform="translate(8.325 9.854) scale(-1 1) rotate(30 -42.863 -159.477)"/>
+                <path fill="#FFF" fill-rule="nonzero" d="M24.4 14.688L19.694 3.635 34.261 7.209" transform="translate(8.325 9.854) scale(-1 1) rotate(30 -42.863 -159.477)"/>
+                <path d="M83.06 29.796c2.836.243 5.689-.178 8.333-1.232 2.673-1.108 4.76-3.286 5.756-6.007.965-2.747.252-5.806-1.829-7.84" transform="translate(8.325 9.854) scale(-1 1) rotate(30 -42.863 -159.477)"/>
+            </g>
+            <g fill="#FFF" stroke="#6680AD">
+                <path d="M16.746 24.855c.253 6.47 5.722 7.926 16.406 4.368M7.226 14.472c-2.28 1.284-2.85 2.948-1.71 4.992 1.71 3.066 7.499 9.195 19.126 2.101" transform="translate(8.325 9.854) rotate(-15 215.665 -95.917)"/>
+                <path d="M31.886 12.147C16.257.993 6.191-2.48 1.686 1.73c-6.756 6.313 8.533 17.328 15.1 13.02" transform="translate(8.325 9.854) rotate(-15 215.665 -95.917)"/>
+            </g>
+        </g>
+        <g transform="translate(22.25 11)">
+            <ellipse cx="23.412" cy="22.694" fill="#FDC130" fill-rule="nonzero" rx="16.486" ry="16.52" transform="scale(-1 1) rotate(30 0 -64.679)"/>
+            <path fill="#FFF" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.504" d="M48.106 27.546c-11.464-.009-21.918 6.525-26.935 16.834"/>
+        </g>
+        <ellipse cx="82.338" cy="3.342" stroke="#002256" stroke-linecap="round" stroke-linejoin="round" stroke-width=".557" rx="3.338" ry="3.342"/>
+        <ellipse cx="4.406" cy="101.411" fill="#D0413B" fill-rule="nonzero" rx="4.406" ry="4.411"/>
+        <ellipse cx="147.406" cy="69.411" fill="#0040A8" fill-rule="nonzero" rx="4.406" ry="4.411"/>
+    </g>
+</svg>

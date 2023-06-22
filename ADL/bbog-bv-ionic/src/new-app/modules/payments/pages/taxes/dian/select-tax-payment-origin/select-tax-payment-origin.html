@@ -1,0 +1,41 @@
+<pulse-flowthcs [lgcontentsize]="5">
+  <div slot="header">
+    <flow-header [rightOption]="'leave'" (onStart)="goPreviousPage()" (onEnd)="goTaxSelectionPage()">
+      Pago DIAN
+      <div start>Atrás</div>
+      <div end>Abandonar transacción</div>
+    </flow-header>
+  </div>
+  <div slot="content">
+    <div class="payment-account-container">
+      <div *ngIf="!!accountItems && accountItems.length > 0" class="payment-account-container__subtitle--accounts">
+        <span class="pulse-tp-bo2-comp-m">Selecciona la cuenta de origen</span>
+      </div>
+      <div class="payment-account-container__inputs">
+        <radio-selection-options id="acctsOptionsList" [optionsList]="accountItems" (optionSelectedEmiter)="paymentSelected($event, 'A')"></radio-selection-options>
+      </div>
+      <div *ngIf="!!creditCardItems && creditCardItems.length > 0" class="payment-account-container__subtitle--credit-cards">
+        <span class="pulse-tp-bo2-comp-m">{{ ccSubtitle }}</span>
+      </div>
+      <div class="payment-account-container__inputs">
+        <radio-selection-options id="creditcardsOptionsList" [optionsList]="creditCardItems" (optionSelectedEmiter)="paymentSelected($event, 'C')"></radio-selection-options>
+      </div>
+      <div class="payment-account-container__controls">
+        <pulse-button id="btn-submit-payment-account"
+                      [color]="'warning'"
+                      [colorgradient]="true"
+                      [block]="true"
+                      (click)="submit()"
+                      [disabled]="!validPaymentOrigin">
+          Realizar pago
+        </pulse-button>
+      </div>
+    </div>
+  </div>
+  <div slot="summary">
+    <div class="payment-account-summary-container">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </div>
+</pulse-flowthcs>

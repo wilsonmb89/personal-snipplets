@@ -1,0 +1,310 @@
+generic-voucher-info {
+
+  .voucher-info-content {
+
+    &__head {
+      background-color: color($colors, bdb-bg);
+      background-image: url('../assets/imgs/logo-copy.svg');
+      background-repeat: no-repeat;
+      background-position: 103%;
+      background-size: 10em 10em;
+      @media only screen and (min-width: 991px) {
+        display: grid;
+        grid-template-columns: 20.7rem calc(100% - 1.6rem - 20.7rem);
+        column-gap: 1.6rem;
+        height: 108px;
+      }
+      @media only screen and (max-width: 990px) {
+        height: 170px;
+        background-position: 116% -50%;
+        background-size: 14em 9em;
+      }
+      &__info {
+        position: relative;
+      }
+    }
+
+    &__head__details {
+      position: absolute;
+      @media only screen and (min-width: 991px) {
+        right: 0;
+        padding: 2.4em 3em 0 0;
+      }
+       @media only screen and (min-width: 320px) and (max-width: 990px) {
+        padding: 0.4em 2em;
+      }
+    }
+
+    &__title {
+      display: flex;
+      padding: 0px 0px 23px 0px !important;
+    }
+
+    &__title-text {
+      color: var(--pulse-color-primary-700);
+    }
+
+    &__title-img {
+      margin-left: 8px;
+      width: 24px;
+      height: 24px;
+    }
+
+    &__failed-text {
+      opacity: 0.8;
+      color: color($colors, bdb-black);
+      padding: 0px 0px 24px 0px !important;
+    }
+
+    &__action {
+      position: relative;
+      align-items: center;
+      padding: 16px 0px !important;
+    }
+
+    &__action-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--pulse-color-carbon-100);
+      background-color: white;
+      align-items: center;
+      display: flex;
+      margin: 0 auto;
+    }
+
+    &__action-circle:hover {
+      border: 0px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px 0 rgba(102, 128, 173, 0.3);
+    }
+
+    &__action-circle-img {
+      width: 22px;
+      height: 22px;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    &__actname {
+      text-align: center;
+      padding-top:5px;
+      color: var(--pulse-color-carbon-700);
+    }
+
+    &__voucher {
+      box-shadow: 0 5px 10px 0 rgba(102, 128, 173, 0.3);
+    }
+
+    &__voucher-corner {
+      overflow: hidden;
+      position: relative;
+      @media only screen and (min-width: 540px) and (max-width: 991px) {
+        margin: auto;
+        width: 469px;
+      }
+    }
+
+    &__voucher-corner:before {
+      position: absolute;
+      padding: 11px;
+      border-radius: 50%;
+      box-shadow: 0 0 7px var(--pulse-color-white-700);
+      background: rgb(232,232,232);
+      content: '';
+      z-index: 1;
+      margin: 7em -1em;
+      @media only screen and (min-width: 540px) and (max-width: 991px) {
+        margin: 11.2em -1em;
+      }
+      @media only screen and (max-width: 539px) {
+        margin-top: 11.3em;
+      }
+    }
+
+    &__voucher-corner-2 {
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+    }
+
+    &__voucher-corner-2:before {
+      position: absolute;
+      padding: 11px;
+      border-radius: 50%;
+      box-shadow: 0 0 0px var(--pulse-color-white-700);
+      background: rgb(232,232,232);
+      content: '';
+      margin-right: 1em;
+      margin-left: 98.5%;
+      margin-top: 7em;
+      @media only screen and (min-width: 540px) and (max-width: 991px) {
+        margin-top: 11.2em;
+        margin-left: 98%;
+      }
+      @media only screen and (max-width: 539px) {
+        margin-top: 11.3em;
+        margin-left: 97.6%;
+      }
+    }
+
+    &__voucher-img {
+      max-width: 160px;
+      margin: 2em 3em 15px;
+      @media only screen and (min-width: 320px) and (max-width: 991px) {
+        margin: 1em 2em 0.5em
+      }
+
+      &__stamp {
+        position: absolute;
+        margin: -2.5em 0em 0em -14em;
+        @media only screen and (min-width: 320px) and (max-width: 991px) {
+          margin: -3.5em 0em 0em -13em;
+        }
+      }
+    }
+
+    &__voucher-header-title {
+      color: var(--pulse-color-carbon-900);
+      padding-bottom: 4px;
+
+      &__empty {
+        color: transparent;
+      }
+    }
+
+
+    &__voucher-header-subtitle {
+      height: 18px;
+      color: var(--pulse-color-carbon-700);
+    }
+
+    &__voucher-list {
+      padding: 0px 24px !important;
+      text-transform: capitalize;
+    }
+
+    &__voucher-item {
+      padding: 22px !important;
+      border-bottom: 1px solid var(--pulse-color-carbon-light-700);
+    }
+
+    &__voucher-item_last {
+      padding: 22px 24px 25px;
+      &_fail {
+        opacity: 0.5;
+      }
+    }
+
+    &__voucher-item.voucher-opacity {
+      opacity: 0.5;
+    }
+
+    &__voucher-item-text {
+    color: var(--pulse-color-carbon-700);
+    }
+
+    &__voucher-bold {
+      color: var(--pulse-color-carbon-900);
+    }
+
+    &__voucher-buttons {
+      padding: 23px 5px 0px 0px !important;
+      display: table;
+      margin: 0 auto;
+
+      pulse-button:nth-child(2) {
+        margin: 0px 1.6rem;
+      }
+    }
+  }
+
+  &__document {
+    display: grid;
+    grid-template-columns: 11.7rem calc(100% - 1.6rem - 11.7rem);
+    column-gap: 1.6rem;
+    margin-top: 2.4rem;
+  }
+
+  @media only screen and (max-width: 991px) {
+    /* For mobile and tablets: */
+    .voucher-info-content {
+      &__title {
+        padding: 0px !important;
+      }
+
+      &__title-text {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: normal;
+        padding-bottom: 1em;
+      }
+
+      &__failed-text {
+        padding: 10px 0px 0px 0px !important;
+        font-size: 14px;
+      }
+
+      &__action-circle {
+        margin: 0 auto;
+      }
+
+      &__voucher-header {
+        padding: 16px 24px !important;
+      }
+
+      &__voucher-img {
+        width: 34px;
+        height: 34px;
+      }
+
+      &__voucher-header-title {
+        text-align: left;
+        padding-bottom: 4px;
+      }
+
+      &__voucher-header-subtitle {
+      text-align: left;
+      }
+
+      &__voucher-list {
+        padding: 8px 8px !important;
+      }
+
+      &__voucher-list.email-mobile-hidden {
+        display: none;
+      }
+
+      &__voucher-item {
+        padding: 22px !important;
+      }
+
+      &__voucher-item_last {
+      padding-bottom: 9px;
+      }
+
+      &__voucher-item-text.voucher-left {
+        color: var(--pulse-color-carbon-700);
+      }
+
+      &__voucher-buttons {
+        display: table;
+        margin: 0 auto;
+        padding: 1rem 0 0 0 !important;
+        pulse-button:nth-child(2) {
+          margin: 0 0 0 6rem;
+        }
+        @media only screen and (max-width: 575px) {
+        flex-direction: column;
+        width: 100%;
+        pulse-button {
+          max-width: 100% !important;
+          width: 100% !important;
+          display: grid !important;
+          margin: 0.5rem 0 !important;
+          }
+        }
+      }
+    }
+  }
+}

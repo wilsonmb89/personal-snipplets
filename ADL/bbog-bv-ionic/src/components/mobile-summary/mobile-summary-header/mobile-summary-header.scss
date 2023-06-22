@@ -1,0 +1,32 @@
+mobile-summary-header {
+    .sum-hdr-wrapper{
+        display: inline-flex;
+        width: 100%;
+        padding: 16px 20px;
+        align-content: center;
+        background-color: color($colors, bdb-bg);
+
+        &__card-body{
+            margin-left: 12px;
+
+            &__title{
+                font-family: $RobotoRegular;
+                font-size: 16px;
+                color: color($colors, bdb-blue);
+                padding: 3px 0;
+            }
+
+            &__details{
+                font-family: $RobotoRegular;
+                font-size: 12px;
+                color: color($colors, bdb-black);
+            }
+
+            &__subDetails{
+                font-family: $RobotoRegular;
+                color: color($colors, steel);
+                font-size: 12px;
+            }
+        }
+    }
+}

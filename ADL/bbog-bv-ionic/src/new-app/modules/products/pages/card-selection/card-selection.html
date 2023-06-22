@@ -1,0 +1,72 @@
+<pulse-flowthc class="bgColor">
+    <div slot="header">
+        <pulse-flowth>
+            <div slot="left-content">
+                <pulse-nav-button only-icon-device="sm,md" (click)="onBackPressed()">Atrás
+                </pulse-nav-button>
+            </div>
+            <div slot="content">
+                {{navTitle}}
+            </div>
+            <div slot="right-content">
+                <pulse-nav-button only-icon-device="sm,md" icon-position="right" icon="close" navBehavior
+                    [goToPage]="'DashboardPage'">Abandonar activación
+                </pulse-nav-button>
+            </div>
+        </pulse-flowth>
+    </div>
+    <div slot="content">
+        <div class="container_card_selection pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-10">
+            <div *ngIf="showDebit$ | async" class="container_card_selection__section">
+                <div class="container_card_selection__title pulse-tp-bo1-comp-m">Tarjetas Débito</div>
+                <div class="container_card_selection__subtitle pulse-tp-hl6-comp-m">Selecciona la tarjeta para realizar la activación</div>
+                <pulse-card class="cards" color="white" colorvariant="700" colorgradient="false" elevation="8"
+                    elevationhover="8">
+                    <div class="cards__div" *ngFor="let card of debitCards$ | async; index as i">
+                        <div class="cardSelection" (click)="selectCard(card)">
+                            <div class="cardSelection__content">
+                                <div class="content__logo">
+                                    <img [src]="card.logoPath" class="logo__src">
+                                </div>
+                                <div>
+                                    <div class="labels__title pulse-tp-bo3-comp-m">{{card.nameCard}}</div>
+                                    <div class="labels__number  pulse-tp-bo4-comp-r">No. {{card.displayNumber}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardSelection__icon">
+                                <svg-icon-arrow opacity="1"></svg-icon-arrow>
+                            </div>
+                        </div>
+                        <div class="divider" *ngIf="i !== (debitCards$ | async).length-1"></div>
+                    </div>
+                </pulse-card>
+            </div>
+            <div *ngIf="showCredit$ | async" class="container_card_selection__section">
+                <div class="container_card_selection__title pulse-tp-bo1-comp-m">Tarjetas de Crédito</div>
+                <div class="container_card_selection__subtitle pulse-tp-hl6-comp-m">Selecciona la tarjeta para realizar la activación</div>
+                <pulse-card class="cards" color="white" colorvariant="700" colorgradient="false" elevation="8"
+                    elevationhover="8">
+                    <div class="cards__div" *ngFor="let card of creditCards$ | async; index as i">
+                        <div class="cardSelection" (click)="selectCard(card)">
+                            <div class="cardSelection__content">
+                                <div class="content__logo">
+                                    <img [src]="card.logoPath" class="logo__src">
+                                </div>
+                                <div>
+                                    <div class="labels__title pulse-tp-bo3-comp-m">{{card.nameCard}}</div>
+                                    <div class="labels__number  pulse-tp-bo4-comp-r">No. {{card.displayNumber}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cardSelection__icon">
+                                <svg-icon-arrow opacity="1"></svg-icon-arrow>
+                            </div>
+                        </div>
+                        <div class="divider" *ngIf="i !== (creditCards$ | async).length-1"></div>
+                    </div>
+                </pulse-card>
+            </div>
+        </div>
+    </div>
+</pulse-flowthc>

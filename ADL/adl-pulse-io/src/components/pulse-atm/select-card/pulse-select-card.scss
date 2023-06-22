@@ -1,0 +1,104 @@
+@import "../../../global/disabled";
+@import "../../../utils/resets/button_reset";
+@import "pulse-select-card.vars.scss";
+
+:host {
+    --border-radius: 1rem;
+    border-radius: var(--border-radius);
+}
+
+:host(.button-disabled) {
+    pointer-events: none;
+}
+
+:host(.button-disabled) .btn-select {
+    @include generic_disable();
+}
+
+:host(*) .btn-select {
+    --background: white;
+}
+
+:host(.pulse-color) .btn-select {
+    --bkg-selected: #{get-pulse-color('info', 100)};
+    --border-focused: var(--pulse-color-bg);
+    --border-focused-radio: var(--pulse-color-success-700);
+    --color-focused: var(--bkg-selected);
+}
+
+:host(.btn-select--selected) .btn-select {
+    border-color: var(--border-focused);
+    @include build_shadow(4);
+    background-color: var(--bkg-selected);
+    .btn-select__regular{
+        color: var(--border-focused);
+        font-weight: 500;
+    }
+}
+
+:host(.switch) .btn-select {
+    justify-content: flex-start;
+}
+:host(.switch) .btn-select__body {
+    width: 100%;
+    margin-left: 1.6rem;
+}
+
+:host(.btn-select--selected-green) .btn-select {
+    border-color: var(--border-focused-radio);
+    @include build_shadow(4);
+    .btn-select__regular{ 
+        color: var(--border-focused);
+        font-weight: 500;
+    }
+}
+
+.btn-select {
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    background: var(--background);
+    border: 1px solid;
+    border-color: #{get-pulse-color('carbon-light', 900)};
+    color: #{get-pulse-color('carbon', 700)};
+    cursor: pointer;
+    min-height: var(--pulse-select-card-height);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    transition: all .1s ease-out;
+
+    &__regular {
+        font-family: $button-font-family;
+        font-size: 1.4rem;
+        line-height: 2rem;
+    }
+
+    &:hover {
+        transition: all .3s ease-out;
+        @include build_shadow(8);
+        .btn-select__regular {
+            color: var(--border-focused);
+            font-weight: 500;
+        }
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--border-focused);
+        box-shadow: 0 0 0 4px var(--color-focused);
+        color: var(--border-focused);
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .btn-select {
+        &:hover {
+            box-shadow: none;
+            .btn-select__regular {
+                color: #{get-pulse-color('carbon', 700)};
+                font-weight: inherit;
+            }
+        }
+    }
+}

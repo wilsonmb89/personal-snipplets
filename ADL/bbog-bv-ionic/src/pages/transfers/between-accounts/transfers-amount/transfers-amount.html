@@ -1,0 +1,67 @@
+<ion-content>
+
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+        [lOption]="leftHdrOption" [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <div class="input-amount-wrapper">
+        <div class="inner">
+          <div  class="subtitle">
+            {{subtitle}}
+          </div>
+          <div hidden-p-md-down class="cost">
+            <ng-template [ngIf]="aval">Esta transacción no tiene costo adicional</ng-template>
+            <ng-template [ngIf]="!aval">
+              <span *ngIf="cost$ | async as cost">Esta transacción tiene un costo de {{ cost }}</span>
+              <span *ngIf="!(cost$ | async)">
+                Consultar costo de la transacción <a rel=noopener href="https://www.bancodebogota.com/wps/portal/banco-de-bogota/bogota/productos/para-ti/tasas-y-tarifas" target="_blank">Aquí</a>
+              </span>
+            </ng-template>
+          </div>
+          <form [formGroup]="amountForm" class="bv-form">
+            <pulse-input ngDefaultControl
+              id="re-ai"
+              type="currency"
+              hasdecimals="true"
+              formControlName="amount"
+              [placeholder]="inputPh"
+              [state]="amountForm.controls.amount.invalid && amountForm.controls.amount.dirty ? 'error' : 'basic'"
+              [labelerror]="amountForm.controls.amount.invalid && amountForm.controls.amount.dirty ? 'Sólo se permiten transacciones mayores a $0.1 pesos.' : ''"
+              (valueEmmitInput)="changeAmount($event)"
+            ></pulse-input>
+            <div (click)="toggleNote()" style="cursor: pointer;">
+              <input bdb-normalize-diacritic text-wrap class="add-input" id="note" [ngClass]="noteActive ? 'active': null"
+                placeholder="+ Añadir nota" maxlength="24" type="text" formControlName="note">
+            </div>
+            <div (click)="toggleBillId()" style="cursor: pointer;">
+              <input bdb-normalize-diacritic text-wrap class="add-input" id="billId" [ngClass]="billIdActive ? 'active': null"
+                placeholder="+ Añadir No. de factura" maxlength="24" type="text" formControlName="billId">
+            </div>
+            <div class="btn-wrapper" hidden-p-sm-down>
+              <button bv-button (click)="continue()" id="amount-btn" class="continue-btn" [color]="colorBtnSubmit"
+                [disabled]="amountForm.controls.amount.invalid" ion-button>{{ nameBtnSubmit }}</button>
+              <div hidden-p-md-down class="key-hint" [hidden]="amountForm.controls.amount.invalid">o presiona enter</div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new  hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+  <ion-footer hidden-p-md-up>
+    <ion-toolbar no-padding>
+      <button id="mob-amount-btn" (click)="continue()" class="continue-btn" full [color]="colorBtnSubmit" ion-button
+        [disabled]="amountForm.controls.amount.invalid">{{ nameBtnSubmit }}</button>
+    </ion-toolbar>
+  </ion-footer>

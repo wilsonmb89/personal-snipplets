@@ -1,0 +1,45 @@
+<pulse-modaltb class="account-clipboard-container">
+  <div slot="header">
+    <div class="account-clipboard-container__btn-close" (click)="closeModal()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="title">
+        <div class="account-clipboard-container__title">
+          <img src="assets/imgs/generic-modal/plane.svg" alt="share information">
+          <span>Compartir información</span>
+        </div>
+
+
+      </div>
+      <div slot="body" class="account-clipboard-container__body">
+        <div class="account-clipboard-container__body__desc pulse-tp-bo3-comp-r">
+          <span>Comparte los datos de tu producto para</span> <span class="pulse-tp-bo3-comp-b">inscripciones y transacciones:</span>
+          <br>
+          <div id="accountInfo" *ngIf="customerBasicData | async as userData">
+           <span class="account-clipboard-container__body__bank">Banco de Bogotá</span><br>
+           <span class="pulse-tp-bo3-comp-b">Tipo de cuenta: </span><span>{{ pName }}</span><br>
+           <span class="pulse-tp-bo3-comp-b">Número de cuenta: </span><span>{{ accountNumber }}</span><br>
+           <div *ngIf="showFullName" id="name"><span class="pulse-tp-bo3-comp-b">Titular: </span><span>{{userData.firstName | capitalizeCasePipe}} {{userData.middleName | capitalizeCasePipe}} {{userData.lastName | capitalizeCasePipe}} {{userData.secondLastName | capitalizeCasePipe}}</span><br></div>
+           <span class="pulse-tp-bo3-comp-b">Documento: </span><span>{{customerIdentification}}</span>
+           </div>
+        </div>
+          </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer"  *ngIf="customerBasicData | async as userData" >
+  <hr class="account-clipboard-container__divider">
+    <div class="account-clipboard-container__buttons">
+      <div class="account-clipboard-container__buttons__detail" (click)="copyAccountInfo()">
+       <div [ngClass]="{
+            'account-clipboard-container__buttons__share': true
+            }">
+            <pulse-icon class="card-detail-wrapper__lock_button--icon" color="carbon" size="m" icon="copy-paste"></pulse-icon>
+        </div>
+        <span class="pulse-tp-bo4-comp-b">Copiar info.</span>
+      </div>
+    </div>
+  </div>
+</pulse-modaltb>

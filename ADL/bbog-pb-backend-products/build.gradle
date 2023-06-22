@@ -1,0 +1,89 @@
+apply from: "https://gradle.avaldigitallabs.com/resources/java-ms-project.gradle"
+apply from: "https://gradle.avaldigitallabs.com/resources/static-code-analysis/spotless.gradle"
+
+buildscript {    ext {
+    springBootVersion = '2.2.9.RELEASE'
+}
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    configurations.maybeCreate("pitest")
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.7"
+        classpath("info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.7")
+        pitest'eu.stamp-project:descartes:1.2.5'
+    }
+}
+
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.sonarqube'
+apply plugin: 'jacoco'
+apply plugin: 'info.solidsoft.pitest'
+
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+    compile('co.com.adl.pb.bdb.common:bbog-pb-commons-lib:1.0.57')
+    compile("org.jeasy:easy-rules-core:3.4.0")
+    compile("org.jeasy:easy-rules-mvel:3.4.0")
+    compile('org.springframework:spring-context-support')
+    compile('com.github.ben-manes.caffeine:caffeine')
+    compile("com.amazonaws:aws-java-sdk-dynamodb:1.11.833")
+    compile("org.springframework.data:spring-data-commons")
+    compile("io.github.boostchicken:spring-data-dynamodb:5.2.3")
+    annotationProcessor("org.projectlombok:lombok:1.18.12")
+    testCompile('com.squareup.okhttp3:mockwebserver:3.14.9')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    compile('org.hibernate.validator:hibernate-validator:6.1.5.Final')
+}
+
+sonarqube {
+    properties {
+        property "sonar.language" , "java"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.projectName", "bbog-pb-backend-products"
+        property "sonar.exclusions", "**/common/**, **/*Application.java, **/aspect/**, **/config/**, **/model/**"
+        property "sonar.projectKey", "bbog-pb-backend-products"
+        property "sonar.host.url", "${sonarURL}"
+        property "sonar.login", "${stk}"
+    }
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+
+        rule {
+            element = 'BUNDLE'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.9
+            }
+            excludes = [
+                'co.com.adl.pb.bdb.*.*.common.*',
+                'co.com.adl.pb.bdb.*.*.config.*',
+                'co.com.adl.pb.bdb.*.*.properties.*',
+                'co.com.adl.pb.bdb.*.*.enumeration.*',
+                'co.com.adl.pb.bdb.*.*.aspect.*'
+            ]
+        }
+    }
+}
+
+pitest {
+    targetClasses = ['co.com.adl.pb.bdb.products.*']
+    mutationEngine = "descartes"
+    pitestVersion = "1.4.7"
+    excludedClasses = ["co.com.adl.pb.bdb.products.configuration.*"]
+}

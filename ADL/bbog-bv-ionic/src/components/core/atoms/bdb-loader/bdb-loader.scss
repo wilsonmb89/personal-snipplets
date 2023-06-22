@@ -1,0 +1,17 @@
+bdb-loader {
+    svg{
+        -webkit-animation: loader-rotate 0.65s infinite;
+        animation: loader-rotate 0.65s infinite;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+    @keyframes loader-rotate {
+        from {
+          transform: translateX(-50%) rotate(0deg) ;
+        }
+        
+        to {
+          transform: translateX(-50%) rotate(360deg);
+        }
+    }
+}

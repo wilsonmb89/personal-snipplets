@@ -1,0 +1,32 @@
+[
+    {
+        "id": "006",
+        "name": "Viajes",
+        "bank_name": "VACACIONES"
+    },
+    {
+        "id": "001",
+        "name": "Salud",
+        "bank_name": "ROPA"
+    },
+    {
+        "id": "002",
+        "name": "Educación",
+        "bank_name": "MIS ESTUDIOS"
+    },
+    {
+        "id": "003",
+        "name": "Hogar",
+        "bank_name": "HOGAR"
+    },
+    {
+        "id": "004",
+        "name": "Eventos",
+        "bank_name": "TECNOLOGIA"
+    },
+    {
+        "id": "999",
+        "name": "Otros",
+        "bank_name": "OTRO"
+    }
+]

@@ -1,0 +1,35 @@
+:host {
+    .modaltb-main {
+        display: block;
+        min-height: 33.2rem;
+        padding: 1.6rem 2.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - 3.2rem);
+
+        @media only screen and  (min-width: 540px) {
+            height: auto;
+        }
+
+        &__header {
+            width: calc(100% + 1.6rem);
+            margin-left: -0.8rem;
+        }
+
+        &__body {
+            min-height: 24rem;
+            width: 100%;
+        }
+
+        &__footer {
+            width: calc(100% + 1.6rem);
+            margin-left: -0.8rem;
+
+            @media only screen and  (min-width: 540px) {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+}

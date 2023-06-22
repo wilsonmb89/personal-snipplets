@@ -1,0 +1,40 @@
+
+<ion-header hidden-md-up>
+  <ion-navbar class="header" hideBackButton="true">
+    <header-img [text]="'Atrás'" [imgPath]="company?.iconLarge" (backPressed)="back()"></header-img>
+  </ion-navbar>
+</ion-header>
+
+<ion-content auto-resize class="default-background">
+  <ion-grid id="aval-summary-grid" no-padding>
+    <ion-row class="main-row">
+      <ion-col col-12 col-md-5 col-xl-4 class="left-container">
+        <div class="header_main" >
+          <header-img hidden-sm-down [text]="'Atrás'" [imgPath]="company?.iconLarge" (backPressed)="back()"></header-img>
+        </div>
+        <div class="line" hidden-sm-down></div>
+        <ion-row class="prods-row">
+          <ion-col col-10 offset-1 class="col-size">
+            <bdb-submenu-header [title]="'Mis productos'"></bdb-submenu-header>
+            <single-product-card *ngFor="let product of productsCompany" 
+            [p]="product" 
+            (onCardClicked)="clickDetails(product)" 
+            >
+          </single-product-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col no-padding col-12 col-md-7 col-xl-8 class="right-container" hidden-sm-down >
+          <header-sesion></header-sesion>
+          <div class="right-container__middle">
+            <img  src="assets/imgs/avalDevice.png">
+            <p class="right-container__middle__text">
+                Para consultar los movimientos y realizar transacciones con tus productos ingresa a los canales del 
+                <span class="right-container__middle__text--force">{{company?.name}}</span>.
+            </p>
+          </div>
+      </ion-col>
+     
+    </ion-row>
+  </ion-grid>
+</ion-content>

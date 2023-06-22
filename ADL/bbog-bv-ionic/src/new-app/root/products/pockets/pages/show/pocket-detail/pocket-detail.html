@@ -1,0 +1,50 @@
+<ion-content #content>
+  <pulse-flowtr>
+    <div slot="header" class="header-slot" #header>
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onLogout()" [lOption]="'Atrás'"
+        [rOption]="'Salida segura'">
+        <svg-back (click)="onBackPressed()" left></svg-back>
+        <svg-logout (click)="onLogout()" right></svg-logout>
+      </bdb-nav-options>
+      <div class="pocker-card-title">
+        <h4>{{cardData.pocketName}}</h4>
+        <h6>No. {{cardData.pocketId}}</h6>
+      </div>
+    </div>
+    <div slot="master" #master>
+      <bdb-pocket-card-detail
+      [contentMain]="contentMain" 
+      [shirinkEffect]="true" 
+      [cardData]="cardData" 
+      [showLoader]="showLoaderDetail"
+      (onReload)="getPocketValues()" 
+      (shrinkStatusChange)="cardShrinkChange($event)">
+      </bdb-pocket-card-detail>
+    
+    </div>
+    <div slot="detail">
+      <div #txtable>
+
+        <bdb-title-generic-table>
+          <div title>Tu actividad</div>
+        </bdb-title-generic-table>
+
+        <div *ngIf="true">
+          
+          <bdb-generic-table
+            [columns]="columns"
+            [dataSource]="pocketDetail"
+            (reload)="loadDetail()"
+            [validateDateMobile]="validateDateMobile()"
+            [loader]="showDetail==='L'"
+          >
+          </bdb-generic-table>
+          
+        </div>
+      </div>
+      <div [style.height.px]="divHeight" #fixi></div>
+    </div>
+  </pulse-flowtr>
+
+
+</ion-content>

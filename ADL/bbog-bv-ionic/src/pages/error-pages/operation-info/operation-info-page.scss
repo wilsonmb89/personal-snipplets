@@ -1,0 +1,71 @@
+operation-info-page {
+
+  .space {
+    &-32{
+      height: 3.2rem;
+    }
+    &-24{
+      height: 2.4rem;
+    }
+    &-16{
+      height: 1.6rem;
+    }
+    &-8{
+      height: .8rem;
+    }
+  }
+
+
+
+  .content {
+    text-align: center;
+    .header {
+      .title {
+        color: var(--pulse-color-primary-700);
+        width: 100%;
+
+      }
+      .sub-title {
+        color: var(--pulse-color-carbon-700);
+        width: 100%;
+      }
+    }
+
+    .modal{
+      &-card {
+        padding: 0;
+      }
+      &-content {
+        &-title {
+          color: var(--pulse-color-primary-700);
+          width: 100%;
+        }
+        &-text {
+          color: var(--pulse-color-carbon-700);
+          width: 100%;
+        }
+        &-box {
+          padding-bottom: 1.6rem;
+          padding-top: 1.6rem;
+          width: 100%;
+          height: 8.8rem;
+          border-radius: 1rem;
+          border: solid 1px var(--pulse-color-primary-100);
+          background-color: var(--pulse-color-info-100);
+          &-amount {
+            color: var(--pulse-color-carbon-900);
+            width: 100%;
+          }
+          &-description {
+            color: var(--pulse-color-carbon-900);
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+

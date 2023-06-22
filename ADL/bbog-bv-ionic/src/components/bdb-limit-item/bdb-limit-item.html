@@ -1,0 +1,32 @@
+<ion-item class="limit-main">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center col-md-6 col-12>
+        <div class="limit-main__title">
+          {{ limit.desc }}
+        </div>
+      </ion-col>
+      <ion-col align-self-center col-md-2 col-5>
+        <div class="limit-main__label-title">
+          Monto
+        </div>
+        <div class="limit-main__label-text">
+          {{ limit.amount | currency:'USD':'symbol':'1.0':'en-US'}}
+        </div>
+      </ion-col>
+      <ion-col align-self-center offset-md-1 col-md-2 col-5>
+        <div class="limit-main__label-title" *ngIf="limit.trnCount">
+          Transacciones
+        </div>
+        <div class="limit-main__label-text" *ngIf="limit.trnCount">
+          {{ limit.trnCount }}
+        </div>
+      </ion-col>
+      <ion-col align-self-start col-md-1 col-2>
+        <button id="bli-edit" (click)="toggleBtnEdit()" class="limit-main__button">
+          <img [src]="iconBtnEdit">
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-item>

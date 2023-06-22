@@ -1,0 +1,38 @@
+.modal-products {
+  overflow-y: scroll;
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  background-color: var(--sherpa-white);
+  width: inherit;
+  padding: var(--sherpa-spacing-8) var(--sherpa-spacing-0);
+  &__header {
+    margin-bottom: var(--sherpa-spacing-7);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    &__title {
+      color: var(--sherpa-carbon-900);
+    }
+    &__close {
+      display: flex;
+      align-items: center;
+      color: var(--sherpa-midnight-900);
+    }
+  }
+  @media (max-width: 1024px) {
+    margin-top: 33rem;
+    width: 100%;
+    right: 0;
+    overflow-x: hidden;
+    &__header__close {
+      display: none;
+    }
+  }
+  @media (max-width: 599px) {
+    margin-top: 9.6rem;
+    padding: var(--sherpa-spacing-8) var(--sherpa-spacing-4);
+    width: auto;
+  }
+}

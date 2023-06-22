@@ -1,0 +1,30 @@
+[
+    {
+        "key": "S",
+        "value": "Soltero"
+    },
+    {
+        "key": "U",
+        "value": "U. Libre"
+    },
+    {
+        "key": "C",
+        "value": "Casado"
+    },
+    {
+        "key": "P",
+        "value": "Separado"
+    },
+    {
+        "key": "D",
+        "value": "Divorciado"
+    },
+    {
+        "key": "V",
+        "value": "Viudo"
+    },
+    {
+        "key": "O",
+        "value": "Otro"
+    }
+]

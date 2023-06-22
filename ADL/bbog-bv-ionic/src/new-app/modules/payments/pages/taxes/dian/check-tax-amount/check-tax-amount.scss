@@ -1,0 +1,129 @@
+check-tax-amount {
+
+  pulse-flowthcs {
+    height: 100vh;
+  }
+
+  .content {
+    margin-top: 1.6rem;
+    margin-bottom: 9rem;
+    position: relative;
+    width: 100%;
+    color: var(--pulse-color-carbon-700);
+
+    &__amt-summary {
+      display: none;
+
+      &__info {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        &--amt {
+          color: var(--pulse-color-carbon-900);
+        }
+
+      }
+    }
+
+    &__alert-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 0.7rem;
+      border-radius: 0.6rem;
+      padding: 2.4rem;
+
+      &__body {
+        margin-top: 1.6rem;
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+  
+          span {
+            margin-bottom: 2.4rem;
+            text-align: center;
+          }
+
+          div {
+            text-align: center;
+          }
+
+        }
+      }
+    }
+
+    &__controls {
+      padding: 0 1.6rem 1.6rem 1.6rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--pulse-color-white-700);
+  
+      span {
+        display: none;
+      }
+    }
+
+    @media only screen and (min-width: 541px) {
+      margin-top: 2.4rem;
+      margin-bottom: 1.6rem;
+
+      &__alert-message {
+        padding: 2.4rem 4rem;
+      }
+  
+      &__controls {
+        padding: 0;
+        position: initial;
+        margin-top: 4.8rem;
+  
+        pulse-button {
+          width: auto;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 771px) {
+
+      &__alert-message {
+        margin-top: 3.2rem;
+      }
+
+      &__amt-summary {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1.6rem;
+        border-bottom: 1px solid var(--pulse-color-info-400);
+      }
+
+      &__controls {
+        span {
+          display: initial;
+          margin-left: 1.6rem;
+        }
+      }
+    }
+  }
+
+  .summary {
+    margin-top: 2.4rem;
+    width: 100%;
+  }
+
+}
+
+
+
+

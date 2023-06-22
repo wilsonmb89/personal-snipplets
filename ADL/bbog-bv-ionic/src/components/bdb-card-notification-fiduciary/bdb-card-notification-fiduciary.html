@@ -1,0 +1,15 @@
+<pulse-card pulse-padding-none-xs-a color="primary" colorgradient= true *ngIf="textFiduciary">
+  <div class="card-notification-content-fiduciary" (click)="executeEmit()" id="cardNotification">
+      <div class="">
+        <div class="card-notification-content-fiduciary__icon-notification">
+          <img class="card-notification-content-fiduciary__img" [src]="principalImg">
+        </div>
+        <div class="card-notification-content-fiduciary__text-notification">
+          <div class="pulse-tp-bo2-comp-r" [innerHtml]="firstText">
+          </div>
+          <div col-12 class="card-notification-content-fiduciary__text-notification__second-text pulse-tp-hl5-comp-r" [innerHtml]="secondText">
+          </div>
+        </div>
+      </div>
+  </div>
+</pulse-card>

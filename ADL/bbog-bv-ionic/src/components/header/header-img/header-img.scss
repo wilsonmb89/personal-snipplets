@@ -1,0 +1,46 @@
+header-img {
+
+    .back {
+        padding: 8px;
+        background-color: color($colors, bdb-bg);
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .wrapper{
+        display: flex;
+        //margin-left: 15%;
+        align-items: center;
+        position: relative;
+        margin: 32px 32px 0 15%;
+        width: 100%;
+        margin: 0px;
+        padding: 10px 0;
+        background-color: white;
+    }
+
+    .text {
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        font-weight: 500;
+        color: color($colors, steel);
+        text-align: left;
+    }
+
+    .img {
+        width: 100%;
+        text-align: right;
+    }
+
+    @media only screen and (max-width: 768px) {
+        .back {
+            background-color: white;
+            border-radius: 0;
+        }
+
+        .img {
+            text-align: center;
+        }
+    }
+}

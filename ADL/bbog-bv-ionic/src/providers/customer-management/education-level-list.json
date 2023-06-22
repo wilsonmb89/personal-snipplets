@@ -1,0 +1,26 @@
+[
+    {
+        "key": "0",
+        "value": "Ninguno"
+    },
+    {
+        "key": "1",
+        "value": "Primaria"
+    },
+    {
+        "key": "2",
+        "value": "Secundaria"
+    },
+    {
+        "key": "3",
+        "value": "Tecnólogo"
+    },
+    {
+        "key": "4",
+        "value": "Universitario"
+    },
+    {
+        "key": "5",
+        "value": "Especialización"
+    }
+]

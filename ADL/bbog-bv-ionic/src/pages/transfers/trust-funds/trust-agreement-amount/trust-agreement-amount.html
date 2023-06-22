@@ -1,0 +1,59 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+        [rOption]="abandonText" [lOption]="'Regresar'" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="inner">
+        <bdb-submenu-header class="amount-header__header" [title]="title" [subtitle]="subtitle">
+        </bdb-submenu-header>
+        <form [formGroup]="amountForm" class="bv-form">
+          <pulse-input ngDefaultControl
+            id="re-ai"
+            type="currency"
+            formControlName="amount"
+            placeholder="Ingresa el valor"
+            [state]="amountForm.controls.amount.invalid && amountForm.controls.amount.dirty ? 'error' : 'basic'"
+            [labelerror]="amountForm.controls.amount.invalid && amountForm.controls.amount.dirty ? 'Sólo se permiten transacciones mayores a $1 peso.' : ''"
+          ></pulse-input>
+          <div class="error-msg"
+            *ngIf="amountForm.errors?.amountFiduSummaInvalid && (amountForm.touched || amountForm.dirty)">
+            La inversión debe ser al menos de $30.000.
+          </div>
+          <div class="radios">
+            <bdb-radio>
+              <input bdbRadioRef id='investment' type="radio" value="investment" formControlName="choice">
+            </bdb-radio>
+            <div class="radio-label" [ngClass]="inv ? 'radio-label-active' : null">Invertir a fiducia</div>
+            <bdb-radio>
+              <input bdbRadioRef id='divestment' type="radio" value="divestment" formControlName="choice">
+            </bdb-radio>
+            <div class="radio-label" [ngClass]="!inv ? 'radio-label-active' : null">Retirar de fiducia</div>
+          </div>
+
+          <div class="btn-wrapper" hidden-p-sm-down>
+            <button bvButton color='bdb-blue' id="amount-btn"
+              [disabled]="amountForm.controls.amount.invalid || amountForm.errors?.amountFiduSummaInvalid" ion-button
+              (click)="continue()">Continuar</button>
+            <div class="key-hint" [hidden]="amountForm.controls.amount.invalid">o presiona Enter</div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button id="mob-amount-btn" class="continue-btn" full color="bdb-blue" ion-button (click)="continue()"
+      [disabled]="amountForm.controls.amount.invalid || amountForm.errors?.amountFiduSummaInvalid">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

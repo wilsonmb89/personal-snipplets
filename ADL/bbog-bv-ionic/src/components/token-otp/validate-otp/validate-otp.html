@@ -1,0 +1,118 @@
+<pulse-modaltb class="validate-otp-main" [ngSwitch]="stepOtp">
+  <div slot="header">
+    <div class="validate-otp-main__btn-close" id="btn-otp-close-modal" (click)="closeModal(false)">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img *ngIf="stepOtp !== 'wrongNumber'" [src]="getStepImage()" alt="otp">
+      </div>
+      <div slot="title">
+        <ng-container *ngSwitchCase="'send'">
+          <span @boxAnimation>
+            <span class="pulse-tp-hl3-comp-r">Código de</span>&nbsp;verificación
+          </span>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'validate'">
+          <span @boxAnimation>
+            <span class="pulse-tp-hl3-comp-r">Código de</span>&nbsp;verificación
+          </span>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'fail'">
+          <span @boxAnimation>
+            Límite de intentos
+          </span>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'error'">
+          <span @boxAnimation>
+            Error en envío del mensaje
+          </span>
+        </ng-container>
+
+        <ng-container *ngSwitchCase="'wrongNumber'">
+          <span @boxAnimation>
+            <span class="pulse-tp-hl3-comp-r">¿No es tu número</span>&nbsp;de celular?
+          </span>
+        </ng-container>
+      </div>
+      <div slot="body">
+        <div class="validate-otp-main__body">
+          <ng-container *ngSwitchCase="'send'">
+            <div class="validate-otp-main__body--text-phone" @boxAnimation>
+              Enviaremos un código de verificación a tu celular registrado terminado en
+              <div class="validate-otp-main__body--text-phone-number pulse-tp-hl3-comp-m">
+                (***)***{{ otpData.phoneNumber }}
+              </div>
+              No compartas este código con nadie
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'validate'">
+            <span @boxAnimation>
+              Ingresa el código de 6 dígitos que se envió a tu celular terminado en
+              <span class="pulse-tp-bo3-comp-b">(***)***{{ otpData.phoneNumber }}</span>
+            </span>
+            <form [formGroup]="otpForm">
+              <div class="validate-otp-main__body--input" @boxAnimation>
+                <pulse-input ngDefaultControl formControlName="number" id="number"
+                  (inputKeyDown)="onInputKeyDown($event)" (inputKeyUp)="onInputKeyUp($event)"
+                  [state]="otpData.validationError ? 'error' : 'basic'" [labelerror]="otpData.labelerror"
+                  [name]="'number'" [type]="'number'" [maxlength]="6" inputtextalign="center"></pulse-input>
+              </div>
+            </form>
+            <div class="validate-otp-main__body--info-wrapper" @boxAnimation>
+              ¿No recibiste el código?<br>
+              Intenta nuevamente en <span class="pulse-tp-bo3-comp-b">30 minutos.</span>
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'fail'">
+            <div @boxAnimation>
+              Has superado el límite de códigos<br>
+              Vuelve a intentar más tarde este proceso.
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'error'">
+            <div @boxAnimation>
+              <p>En estos momentos tu operador de telefonía no nos permite enviarte el mensaje.</p>
+              <span>Por favor intenta este proceso en </span><span class="pulse-tp-bo3-comp-b">30 minutos.</span>
+            </div>
+          </ng-container>
+
+          <ng-container *ngSwitchCase="'wrongNumber'">
+            <div @boxAnimation>
+              <p>Siguiendo las regulaciones de seguridad de la información, necesitamos que te acerques a la oficina más
+                cercana y actualices tus datos.</p>
+              <p>No olvides ir con tu protección, nosotros estamos listos para recibirte con todas las precauciones
+                necesarias.</p>
+              <p>Revisa los horarios y puntos de atención en <span
+                  class="pulse-tp-bo3-comp-b">www.bancodebogota.com</span>, en la sección <span
+                  class="pulse-tp-bo3-comp-b">Puntos de Atención.</span></p>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="validate-otp-main__footer">
+      <div class="validate-otp-main__footer--button-wrapper">
+        <pulse-button id="btn-opt-main-action" [block]="true" [colorgradient]="true" (click)="getActionButton()"
+          [disabled]="validateControllButton()">{{ getButtonText() }}</pulse-button>
+      </div>
+      <div class="validate-otp-main__footer--wrong-link">
+        <ng-container *ngSwitchCase="'send'">
+          <div @boxAnimation class="validate-otp-main__footer--not-number-help pulse-tp-btn-comp-m"
+            (click)="stepOtp = 'wrongNumber'">
+            Este no es mi número de celular</div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</pulse-modaltb>

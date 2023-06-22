@@ -1,0 +1,11 @@
+<pulse-card class="pulse-padding-none-xs-a card" color="info" colorvariant="100" elevation="0">
+    <div class="card__body">
+        <div class="card__body__labels">
+            <div class="card__body__labels__title pulse-tp-bo2-comp-b">
+                {{cdtCardtitle$ | async}}
+            </div>
+            <toggle-component [isActive]="toggleIsActive$ | async" [isEnabled]="toggleIsEnabled$ | async" (onChangeState)="toggleRenovation()"></toggle-component>
+        </div>
+        <div class="card__body__labels__content  pulse-tp-bo3-comp-r" [innerHTML]="cdtCardContent$ | async"></div>
+    </div>
+</pulse-card> 

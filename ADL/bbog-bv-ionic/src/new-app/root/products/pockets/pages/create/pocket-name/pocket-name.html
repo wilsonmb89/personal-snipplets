@@ -1,0 +1,59 @@
+<ion-content no-padding>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="leftHdrOption"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="pocket-name-container">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="pulse-grid">
+            <div class="row">
+              <div class="col-xs-12" no-padding>
+                <div class="flowtt-title">
+                  Nombra tu alcancía
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12" no-padding>
+                <div class="flowtt-subtitle">
+                  Todo lo importante en la vida tiene un nombre propio.
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-xs-12" no-padding>
+                <div class="pocket-name-container__input">
+                  <pulse-input (valueEmmitInput)="onTextChange($event)" ngDefaultControl formControlName="name" id="name" [name]="'name'"
+                    [placeholder]="'Nombre'" [maxlength]="15">
+                  </pulse-input>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-xs-12" no-padding>
+                <div class="pocket-name-container__button" hidden-p-sm-down>
+                  <pulse-button (click)="submit()" [disabled]="!form.valid">Continuar</pulse-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div slot="summary">
+      <picture hidden-p-md-down>
+        <img id="pckt-icon-summary" src="assets/imgs/pocket/create.svg" alt="create">
+      </picture>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button ion-button full color="blue-gradient" [disabled]="!form.valid" (click)="submit()">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

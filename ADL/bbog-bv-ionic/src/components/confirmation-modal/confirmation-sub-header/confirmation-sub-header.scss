@@ -1,0 +1,18 @@
+confirmation-sub-header {
+    .conf-sub-wrapper{
+        padding: 12px 17px;
+        border-bottom: solid 1px #dddddd;
+
+        &__sub{
+            font-family: $ArgoRegular;
+            font-size: 1.8em;
+            color: black;
+        }
+        &__desc{
+            font-family: $RobotoLight;
+            font-size: 1.4em;
+            color: color($colors, bdb-black);
+            padding: 2px 0;
+        }
+    }
+}

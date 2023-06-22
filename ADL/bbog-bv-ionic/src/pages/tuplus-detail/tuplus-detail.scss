@@ -1,0 +1,71 @@
+page-tuplus-detail {
+
+    bdb-card-detail pulse-card.pulse-color {
+        --pulse-color-bg: #2cafa9 !important;
+    }
+
+    .tuPulse-title{
+        font-family: $ArgoRegular;
+        font-size: 1.6rem;
+        line-height: 0;
+        color: color($colors, bdb-blue);
+        margin-top: 7.6rem;
+    }
+
+    .status{
+        display: inline-flex;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin-top: 32px;
+        &__no-data--title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        &--msg {
+            margin-left: 0.5rem;
+            padding: 0;
+            opacity: 0.8;
+            font-family: $RobotoRegular;
+            font-size: 1.4rem;
+            line-height: 0;
+            letter-spacing: -0.3px;
+            color: color($colors, carbon);
+        }
+        div[class^="status__no-data"] {
+            margin-top: 3rem;
+        }
+
+        &--btn{
+            margin-top: 1.5rem;
+        }
+    }
+   .endRows {
+       width: 100%;
+       height: 1.4rem;
+       text-align: center;
+   }
+
+   .tag {
+    margin-top: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    @media only screen and (min-width: 540px) {
+      flex-direction: row;
+    }
+
+    &__text {
+      color: var(--pulse-color-carbon-700);
+      margin-right: 0.8rem;
+    }
+
+    @media only screen and (max-width: 540px) {
+      &__group {
+        margin: 1rem 0 1.1rem -0.3rem;
+      }
+    }
+  }
+}

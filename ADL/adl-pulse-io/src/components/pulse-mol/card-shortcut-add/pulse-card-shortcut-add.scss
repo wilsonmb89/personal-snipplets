@@ -1,0 +1,95 @@
+:host {
+    font-family: var(--pulse-tp-ff-comp);
+    --pulse-card-shorcut-add-font-color: #8a8d94;
+}
+
+.shortcut-add-wrapper {
+    background: transparent;
+    width: 11rem;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    transition: all .1s ease-in;
+    border-radius: .6rem;
+    display: inline-block;
+
+    &__avatar {
+        border-radius: 50%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: dashed 2px #c4d4e3;
+
+        &__bg {
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+    }
+
+    &__text {
+        font-size: 1.3rem;
+        margin-top: 1.2rem;
+    }
+}
+
+:host(.light) .shortcut-add-wrapper {
+    --pulse-card-shorcut-add-font-color: #8a8d94;
+
+    &__avatar {
+        min-width: 5.2rem;
+        min-height: 5.2rem;
+        max-width: 5.2rem;
+        min-width: 5.2rem;
+
+        &__bg {
+            background: transparent;
+            min-width: 5.6rem;
+            min-height: 5.6rem;
+            max-width: 5.6rem;
+            min-width: 5.6rem;
+        }
+    }
+
+    &__text {
+        color: var(--pulse-card-shorcut-add-font-color);
+    }
+}
+
+:host(.dark) .shortcut-add-wrapper {
+    --pulse-card-shorcut-add-font-color: #fff;
+
+    &__avatar {
+        min-width: 4.4rem;
+        min-height: 4.4rem;
+        max-width: 4.4rem;
+        min-width: 4.4rem;
+
+        &__bg {
+            background: rgba(white, .3);
+            min-width: 5.6rem;
+            min-height: 5.6rem;
+            max-width: 5.6rem;
+            min-width: 5.6rem;
+        }
+    }
+
+    &__text {
+        color: var(--pulse-card-shorcut-add-font-color);
+    }
+
+    ::slotted(svg) {
+        fill: var(--pulse-card-shorcut-add-font-color);
+    }
+}
+
+
+@media all and(min-width: 768px) {
+    .shortcut-add-wrapper:hover {
+        background: white;
+        @include build_shadow(8);
+    }
+}

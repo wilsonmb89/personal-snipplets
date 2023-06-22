@@ -1,0 +1,103 @@
+
+page-temp-login {
+
+    .pac-man{
+        width: 100px;
+        height: 100px;
+        background-color: #aa3e3e;
+        border-radius: 50%;
+
+    }
+    .polygon1 {
+        -webkit-clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+    .circle2 {
+        -webkit-clip-path: circle(70% at 70% 20%);
+        clip-path: circle(50% at center);
+    }
+
+    .invalid {
+        border-bottom: 0.55px solid #aa3e3e;
+    }
+
+    p {
+        font-size: 0.9em;
+        color: #aa3e3e;
+    }
+
+    .invalid-msg p{
+        white-space: normal;
+    }
+
+    .item-inner {
+        border-bottom: none!important;
+        box-shadow: none!important;
+    }
+
+    ion-input {
+        border-bottom: 0.55px solid #c8c7cc;
+    }
+
+    ion-label {
+        color: #6d6565;
+    }
+
+
+    .indications{
+        margin-top: 10px;
+        margin-bottom: 30px;
+        color:  rgb(122, 122, 122);
+    }
+
+
+    @media only screen and (min-width: 768px) {
+        .indications{
+            margin-top: 20px;
+        }
+
+        .toolbar-title-md {
+            margin-left: 60px;
+        }
+    }
+
+    .main-icon{
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+
+        svg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .main-icon:hover{
+        background-color: color($colors,bdb-bg);
+        .star{
+            stroke: color($colors, mango);
+        }
+
+    }
+
+    .star{
+        transition: all .2s ease-in;
+        fill: white;
+    }
+
+    .star--active{
+        fill: color($colors, mango);
+        stroke: color($colors, mango);
+
+    }
+
+    .bank{
+    color: transparent;
+    opacity: 0;
+    }
+
+}

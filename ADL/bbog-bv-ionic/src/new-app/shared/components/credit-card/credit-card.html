@@ -1,0 +1,66 @@
+<div class="plastic_card" *ngIf="fullFields">
+    <div [class]="'card__perspective' + rotate">
+        <pulse-card elevation="8" elevationhover="8" [class]="'card__front background' + categoryColor">
+            <div class="front__full-fields">
+                <img src="assets/imgs/logo-full-mobile.svg" alt="" class="full-fields__logo">
+                <div class="full-fields__number pulse-tp-hl2-comp-m">
+                    <span *ngFor="let n of lastDigits" class="number__char">{{n}}</span>
+                </div>
+                <div class="full-fields__date ">
+                    <div class="date__label pulse-tp-hl6-comp-r">GOOD THRU</div>
+                    <div class="date__value pulse-tp-hl5-comp-m">{{goodThruDate}}</div>
+                </div>
+                <div class="full-fields__bottom">
+                    <div class="bottom__name pulse-tp-hl5-comp-m">{{customerName}} </div>
+                    <div class="bottom__visa">
+                        <img [src]="cardLogo" alt="">
+                    </div>
+                </div>
+            </div>
+            <div [class]="'front__shadow shadow' + categoryColor"></div>
+        </pulse-card>
+
+        <pulse-card elevation="8" elevationhover="8" [class]="'card__back background' + categoryColor">
+            <div class="back__content">
+                <div [class]="'content__bar bar' + categoryColor"></div>
+                <div class="content__cvv">
+                    <div class="cvv__bar pulse-tp-bo4-comp-m">CVV</div>
+                    <div class="cvv__number pulse-tp-bo4-comp-m">{{cvv}}</div>
+                </div>
+            </div>
+            <div [class]="'back__shadow shadow' + categoryColor"></div>
+        </pulse-card>
+    </div>
+</div>
+
+<pulse-card *ngIf="!fullFields" [class]="'half-card background' + categoryColor" [ngClass]="{'half-card__small': smallCard}">
+    <div class="half-fields" [ngClass]="{'half-fields__small': smallCard}">
+        <img src="assets/imgs/logo-full-mobile.svg" alt="" class="half-fields__logo" [ngClass]="{'half-fields__logo__small': smallCard}">
+        <div class="half-fields__label pulse-tp-hl5-comp-r" [ngClass]="{'half-fields__label__small': smallCard}">
+            Tarjeta de Crédito <span class="half-fields__category pulse-tp-hl5-comp-r">{{category}}</span>
+        </div>
+        <div class="half-fields__number">
+            <div class="number__value">
+                <div class="dots">
+                    <div class="dots__dot"></div>
+                    <div class="dots__dot"></div>
+                    <div class="dots__dot"></div>
+                    <div class="dots__dot"></div>
+                </div>
+                <div class="dots">
+                    <div class="dots__dot"></div>
+                    <div class="dots__dot"></div>
+                    <div class="dots__dot"></div>
+                    <div class="dots__dot"></div>
+                </div>
+
+                <div *ngFor="let n of lastDigits" class="value__large pulse-tp-hl2-comp-m">{{n}}</div>
+
+                <span *ngFor="let n of lastDigits" class="value__small pulse-tp-hl3-comp-m">{{n}}</span>
+            </div>
+            <img [src]="cardLogo" alt="" class="number__visa" [ngClass]="{'number__visa__small': smallCard}">
+        </div>
+        <img [src]="cardLogo" alt="" class="half-fields__visa" [ngClass]="{'half-fields__visa__small': smallCard}">
+    </div>
+    <div [class]="'front__shadow shadow' + categoryColor"></div>
+</pulse-card>

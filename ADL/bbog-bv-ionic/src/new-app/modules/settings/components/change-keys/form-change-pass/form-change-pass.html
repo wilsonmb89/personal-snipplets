@@ -1,0 +1,43 @@
+<div class="form-change-pass-container">
+    <form [formGroup]="formChangePass" (submit)="onChangePass()">
+        <div class="form-change-pass-container__current-key">
+            <div class="form-change-pass-container__current-key--input">
+                <pulse-input icon="view-off" lefticon="false" actionableicon="true" label="Clave actual"
+                    type="password" inputtextalign="left" [maxlength]="4" [minlength]="4" [pattern]="'[0-9]*'"
+                    max-length-input type-number-input (iconClick)="inputPassHandle($event)" ngDefaultControl
+                    formControlName="oldPassword" required id="oldPassword" [name]="'oldPassword'">
+                </pulse-input>
+            </div>
+        </div>
+        <div class="form-change-pass-container__new-key">
+            <div class="form-change-pass-container__new-key--input">
+                <pulse-input icon="view-off" lefticon="false" actionableicon="true" label="Digita la nueva clave"
+                    type="password" [state]="
+                    formChangePass.controls['confirmPassword'].hasError('NoPassswordMatch') ?
+                    'error' : 'basic'" [labelerror]="
+                    formChangePass.controls['confirmPassword'].hasError('NoPassswordMatch') ?
+                    'La clave no coincide' : null" inputtextalign="left" [maxlength]="4" [minlength]="4"
+                    [pattern]="'[0-9]*'" max-length-input type-number-input (iconClick)="inputPassHandle($event)"
+                    ngDefaultControl formControlName="newPassword" required id="newPassword" [name]="'newPassword'">
+                </pulse-input>
+            </div>
+            <div class="form-change-pass-container__new-key--input">
+                <pulse-input icon="view-off" lefticon="false" actionableicon="true" label="Confirma la nueva clave"
+                    type="password" [state]="
+                    formChangePass.controls['confirmPassword'].hasError('NoPassswordMatch') ?
+                    'error' : 'basic'" [labelerror]="
+                    formChangePass.controls['confirmPassword'].hasError('NoPassswordMatch') ?
+                    'La clave no coincide' : null" inputtextalign="left" [maxlength]="4" [minlength]="4"
+                    [pattern]="'[0-9]*'" max-length-input type-number-input (iconClick)="inputPassHandle($event)"
+                    ngDefaultControl formControlName="confirmPassword" required id="confirmPassword"
+                    [name]="'confirmPassword'">
+                </pulse-input>
+            </div>
+        </div>
+        <div class="form-change-pass-container__btn-submit">
+            <pulse-button type="submit" [disabled]="formChangePass.invalid">
+                Cambiar clave
+            </pulse-button>
+        </div>
+    </form>
+</div>

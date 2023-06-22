@@ -1,0 +1,64 @@
+<ion-content no-padding>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()" [lOption]="leftHdrOption"
+        [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back [hidden]="hideLeftOption" (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="pocket-period-container">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="pulse-grid">
+            <div class="row">
+              <div class="col-xs-12" no-padding>
+                <div class="flowtt-title">
+                  La quieres completar en:
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12" no-padding margin-bottom>
+                <div class="flowtt-label">
+                  Un periodo de:
+                </div>
+              </div>
+              <div class="col-lg-5 col-md-3 col-xs-4" no-padding>
+                <pulse-input ngDefaultControl formControlName="number" id="number" [name]="'number'" [type]="'number'"
+                  [placeholder]="'#'">
+                </pulse-input>
+              </div>
+              <div class="col-lg-6 col-md-6 col-xs-8" no-padding>
+                <div class="pocket-period-container__period__periods">
+                  <select bdb-select formControlName="periods" id="periods">
+                    <option *ngFor="let period of periods; let i = index" [value]="period.id">
+                      {{period.name}}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-xs-12" no-padding>
+                <div class="pocket-period-container__button" hidden-p-sm-down>
+                  <pulse-button (click)="submit()" [disabled]="!form.valid">Continuar</pulse-button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div slot="summary">
+      <picture hidden-p-md-down>
+        <img id="pckt-icon-summary" src="assets/imgs/pocket/create.svg" alt="create">
+      </picture>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button ion-button full color="blue-gradient" [disabled]="!form.valid" (click)="submit()">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

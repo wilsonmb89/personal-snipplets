@@ -1,0 +1,51 @@
+@import '../../../../variables.scss';
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sherpa-spacing-7);
+  margin-top: var(--sherpa-spacing-6);
+  &__actions {
+    display: flex;
+    gap: var(--sherpa-spacing-4);
+    flex-direction: column;
+    margin: var(--sherpa-spacing-9) var(--sherpa-spacing-0) var(--sherpa-spacing-7);
+    button {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (min-width: $break-mobile-md) {
+    display: grid;
+    grid-template-areas:
+      'description description'
+      'account account'
+      'mount frequency'
+      'indefinite indefinite'
+      'count date';
+    grid-template-columns: repeat(2, calc(50% - var(--sherpa-spacing-4)));
+    column-gap: var(--sherpa-spacing-2);
+    &__actions {
+      flex-direction: row;
+      button {
+        width: auto;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $break-desktop) {
+    display: grid;
+    grid-template-areas:
+      'description description . .'
+      'account account mount mount'
+      'frequency frequency indefinite indefinite'
+      'count count date date';
+    grid-template-columns: repeat(4, calc(25% - var(--sherpa-spacing-6)));
+    gap: var(--sherpa-spacing-7);
+    &__indefinite {
+      display: flex;
+      align-items: center;
+      padding-top: var(--sherpa-spacing-7);
+    }
+  }
+}

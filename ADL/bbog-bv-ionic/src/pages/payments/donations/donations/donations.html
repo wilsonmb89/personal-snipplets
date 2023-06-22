@@ -1,0 +1,36 @@
+<ion-content no-padding>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+        [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="flowtt-title">
+        {{subtitle}}
+      </div>
+      <form class="flowtt-form" [formGroup]="formDonation" (ngSubmit)="submit()">
+        <div class="flowtt-label">Selecciona la entidad </div>
+        <select bdb-select class="donation-sel__type__field" id="type" formControlName="type">
+          <option [ngValue]="'d'" disabled selected>Selecciona</option>
+          <option *ngFor="let item of listRecipient" [ngValue]="item">{{item.name}}</option>
+        </select>
+        <div class="btn-wrapper">
+            <pulse-button id="btn-submit-donation" type="submit" color="primary" colorgradient="true" hidden-sm-down
+            [disabled]="!formDonation.valid || formDonation.controls['type'].value ==='d'">Continuar</pulse-button>
+        </div>
+      </form>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-md-up>
+  <ion-toolbar no-padding>
+    <button id="btn-submit-donation-mob" type="button" (click)="submit()" class="mob-submit" full color="blue"
+      ion-button [disabled]="!formDonation.valid || formDonation.controls['type'].value ==='d'">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,41 @@
+@import '../../../../variables.scss';
+
+.scheduled_transfer {
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 14rem);
+  padding: var(--sherpa-spacing-4) 1rem 3rem;
+
+  &__title {
+    color: var(--sherpa-carbon-900);
+    margin-bottom: var(--sherpa-spacing-4);
+    font-size: var(--sherpa-spacing-4);
+  }
+
+  @media only screen and (min-width: $break-mobile-md) {
+    margin: 0 auto;
+    max-width: 81%;
+  }
+
+  @media only screen and (min-width: 599px) {
+    max-width: none;
+    padding: var(--sherpa-spacing-4) 0rem 3rem;
+  }
+
+  @media only screen and (min-width: $break-table-md) {
+    max-width: 114rem;
+    min-height: calc(100vh - 18rem);
+    padding-top: var(--sherpa-spacing-6);
+    &__title {
+      margin-bottom: var(--sherpa-spacing-6);
+      font-size: 2rem;
+    }
+  }
+
+  &__add-button {
+    position: sticky;
+    margin: 0 auto;
+    bottom: 3.2rem;
+    width: 25rem;
+  }
+}

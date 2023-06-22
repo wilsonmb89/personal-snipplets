@@ -1,0 +1,10 @@
+@import "pulse-card.vars";
+
+:host {
+  display: block;
+  border-radius: #{$card-radius};
+  padding: #{$card-safe-area};
+  background: var(--pulse-color-bg);
+  color: var(--pulse-color-fg);
+  @include pulse-elevation-anim();
+}

@@ -1,0 +1,84 @@
+<ion-content #content>
+  <pulse-flowtr>
+    <div slot="header" #header>
+      <bdb-nav-options (onRightClicked)="onLogout()"
+                       [rOption]="'Salida segura'">
+
+        <svg-logout (click)="onLogout()" right></svg-logout>
+      </bdb-nav-options>
+    </div>
+    <div slot="master" #master>
+
+
+    </div>
+    <div slot="detail" class="content">
+
+
+      <div *ngIf="!!infoData" class="col-lg-offset-3 col-md-offset-2 col-sm-offset-0   col-lg-6 col-md-8 col-sm-12">
+
+        <div class="header">
+          <div class="row">
+            <span id="info-page-title" [innerHTML]="infoData.title" class="pulse-tp-hl3-comp-r title"> </span>
+          </div>
+
+          <div class="row">
+            <span id="info-page-date" [innerHTML]="formatDate(infoData.dateTime)" class="pulse-tp-bo4-comp-r sub-title" > </span>
+          </div>
+        </div>
+
+        <div class="space-32"></div>
+
+        <div class="row modal">
+          <pulse-card elevation="16" class="modal-card">
+            <pulse-modaltb>
+              <div slot="header">
+                <img id="info-page-img" [src]="infoData.image" >
+              </div>
+
+              <div slot="content">
+                <div class="space-24"></div>
+                <div class="row">
+                  <span id="info-page-body-title" [innerHTML]="infoData.bodyTitle" class="pulse-tp-hl3-comp-b modal-content-title" ></span>
+                </div>
+                <div class="space-16"></div>
+                <div class="row">
+                  <span id="info-page-body-text" [innerHTML]="infoData.bodyText" class="pulse-tp-bo3-comp-r modal-content-text">
+                  </span>
+                </div>
+                <div class="space-24"></div>
+
+                <div class="row">
+                  <div class="modal-content-box">
+                    <div class="row ">
+                      <span id="info-page-amount" [innerHTML]="numberWithCommas(this.infoData.amount)" class="pulse-tp-hl2-comp-r modal-content-box-amount" ></span>
+                    </div>
+                    <div class="row ">
+                      <span id="info-page-amount-text" [innerHTML]="infoData.amountText" class="pulse-tp-bo4-comp-r modal-content-box-description"> </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="space-24"></div>
+
+              </div>
+
+              <div slot="footer">
+                <pulse-button (click)="infoData.buttonAction()" [innerHTML]="infoData.buttonText" id="info-page-button" colorgradient="true"> </pulse-button>
+                <div class="space-8"></div>
+
+              </div>
+
+            </pulse-modaltb>
+
+          </pulse-card>
+
+        </div>
+
+      </div>
+
+    </div>
+  </pulse-flowtr>
+
+
+</ion-content>
+
+

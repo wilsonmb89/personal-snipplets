@@ -1,0 +1,168 @@
+@import '../../../app/core/styles/loading.scss';
+
+single-product-card {
+
+	.single-product-card {
+		&__fade-in {
+			-webkit-transition: opacity 200ms; /* For Safari 3.1 to 6.0 */
+			transition: opacity 200ms;
+			opacity: 0;
+		}
+		
+		&__fade-out {
+			-webkit-transition: opacity 200ms; /* For Safari 3.1 to 6.0 */
+			transition: opacity 200ms;
+			opacity: 1;
+		}
+	}
+
+	#cards-wrapper {
+		width: 100%;
+		margin-top: 1.6rem;
+		background-color: white;
+	}
+
+	#cards-wrapper .check {
+		position: absolute;
+		right: 0;
+	}
+	#cards-wrapper div.product {
+		width: 100%;
+		border-radius: 10px;
+		box-shadow: 0 5px 15px 0 rgba(102, 128, 173, 0.3);
+		/*border: solid 1px #c4d4e3;*/
+		cursor: pointer;
+		transition: 0.2s ease;
+	}
+	#cards-wrapper div.product:hover {
+		transition: 0.1s ease-in;
+		transform: translateX(5px);
+		box-shadow: 0px 5px 15px 0px rgba(102, 128, 173, 0.2);
+	}
+
+	.row-1 {
+		padding: 16px 16px 0px 16px;
+		min-height: 40px;
+	}
+	.row-2 {
+		padding: 0px 16px 0px 16px;
+		margin-bottom: 16px;
+	}
+	.row-3 {
+		padding: 0px 16px 16px 16px;
+	}
+	.row-4 {
+		padding: 4px 0 8px 16px;
+		background-color: color($colors, bdb-bg);
+	}
+	.row-4.private-mode {
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+	.row-5 {
+		background-color: color($colors, bdb-bg);
+	}
+	#cards-wrapper .progress {
+		height: 6px;
+		background: linear-gradient(to right, #b4ec51, color($colors, active-green));
+		border-radius: 0 20px 20px 20px;
+	}
+	#cards-wrapper .product-name {
+		font-family: $RobotoRegular;
+		font-size: 16px;
+		line-height: 24px;
+		color: color($colors, bdb-blue);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	#cards-wrapper .product-number {
+		font-family: $RobotoRegular;
+		font-size: 12px;
+		line-height: 24px;
+		opacity: 0.8;
+		color: color($colors, carbon);
+	}
+	#cards-wrapper .info-label {
+		font-family: $RobotoRegular;
+		font-size: 12px;
+		line-height: 24px;
+		letter-spacing: normal;
+		opacity: 0.6;
+		color: color($colors, carbon);
+	}
+	#cards-wrapper .info-label.end {
+		text-align: end;
+	}
+	#cards-wrapper .info {
+		font-family: $RobotoLight;
+		font-size: 2.3rem;
+		line-height: 24px;
+		letter-spacing: normal;
+		color: color($colors, bdb-black);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	#cards-wrapper .payment {
+		font-family: $RobotoRegular;
+		font-size: 14px;
+		line-height: 1.43;
+		letter-spacing: normal;
+		opacity: 0.8;
+		color: color($colors, carbon);
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	#cards-wrapper .payment.private-mode {
+		padding: 12px 0px;
+	}
+
+	#cards-wrapper .pay {
+		color: color($colors, bdb-black);
+		font-family: $RobotoMedium;
+	}
+	#cards-wrapper .pay:hover {
+		box-shadow: 0 4px 8px 0 rgba(246, 155, 49, 0.5);
+	}
+	#cards-wrapper .btn-pay {
+		align-self: center;
+	}
+	#cards-wrapper img.account-log-img {
+		width: 27px;
+		height: 27px;
+		object-fit: contain;
+		opacity: 0.6;
+		margin-left: 16px;
+		margin-right: 16px;
+	}
+	.info__loader {
+		@include loading-effect(1);
+		border-radius: 4px;
+		width: 106px;
+  		height: 32px;
+	}
+	@media only screen and (max-width: 540px) {
+		
+		#cards-wrapper .product .row-3 {
+			margin-top: 0px;
+		}
+		#cards-wrapper div.product {
+			display: block;
+		}
+		#cards-wrapper .info {
+			font-size: 1.8rem;
+		}
+		#cards-wrapper .product {
+			margin-top: 3px;
+		}
+		#cards-wrapper .info-label {
+			margin-top: 5px;
+		}
+		#cards-wrapper div.product:hover {
+			transform: none;
+		}
+	}
+}

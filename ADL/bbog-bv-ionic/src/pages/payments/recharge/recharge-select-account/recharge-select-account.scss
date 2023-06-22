@@ -1,0 +1,50 @@
+page-recharge-select-account {
+    .inner{
+        padding-bottom: 4rem; 
+    }
+    .subtitle{
+        font-family: $ArgoRegular;
+        font-size: 16px;
+        color : color($colors, bdb-blue);
+        margin-bottom: 4rem;
+        padding-left: 1rem;
+    }
+    
+    .left-container{
+        padding: 0;
+        display: flex;
+    }
+
+    .err-result{
+        color: #721c24;
+        font-family: $RobotoLight;
+        font-size: 16px;
+    }
+
+    *.confirm-btn{
+        margin-top: 48px;
+    }
+
+    .scroll-content{
+        overflow-y: auto;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+        *.confirm-btn{
+            border-radius: 0;
+            margin: 0.4rem 0.2rem;
+        }
+
+        .scroll-content{
+            padding: 0!important;
+        }
+    }
+
+}

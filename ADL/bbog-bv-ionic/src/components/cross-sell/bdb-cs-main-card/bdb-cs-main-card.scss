@@ -1,0 +1,53 @@
+bdb-cs-main-card {
+    .wrapper{
+        background-color: white;
+        border: solid 1px color($colors, light-blue-grey);
+        border-radius: 10px;
+        height: 100%;
+        .grid{
+            height: 100%;
+            .row{
+                height: 100%;
+                .col{
+                    height: 100%;
+                }
+            }
+        }
+        &__left{
+            padding: 24px 9px 16px 24px;
+            &__title{
+                font-family: $ArgoRegular;
+                font-size: 20px;
+                color: color($colors, dusty-shadow);
+            }
+    
+            &__desc{
+                font-family: $RobotoRegular;
+                font-size: 13px;
+                color: color($colors, steel);
+                margin-top: 24px;
+            }
+    
+            &__btn{
+                margin-top: 16px;
+            }
+        }
+
+        &__right{
+            height: 100%;
+            align-items: center;
+            display: flex;
+            background-color: color($colors, duck-egg-blue);
+            border-radius: 0 10px 10px 0;
+            img{
+                margin: 0 auto;
+            }
+        }
+
+        .bv-button{
+            padding: 0 1rem;
+        }
+    }
+
+
+}

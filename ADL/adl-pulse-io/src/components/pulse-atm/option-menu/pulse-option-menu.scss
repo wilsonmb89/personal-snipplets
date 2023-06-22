@@ -1,0 +1,31 @@
+:host(.pulse-option-menu) {
+  --bck-color: var(--pulse-color-carbon-900);
+  position: fixed;
+  width: fit-content;
+  background-color: white;
+
+  .menu-container {
+    z-index: 999;
+    padding: 0;
+    width: fit-content;
+    overflow: auto;
+
+  &--hide {
+    display: none;
+  }
+
+    &--show {
+      display: inline-block;
+    }
+
+  &__slot {
+    padding: 0.8rem;
+    width: inherit;
+    text-align: left;
+  }
+}
+
+}
+
+
+

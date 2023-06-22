@@ -1,0 +1,7 @@
+{
+  "name": "BancaVirtual",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,88 @@
+app-send-mail-modal {
+
+  .send-mail-modal-main {
+
+    &__header {
+      &__btn-close {
+        height: 2.8rem;
+        width: 2.8rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: var(--pulse-color-info-100);
+        margin-left: auto;
+        cursor: pointer;
+      }
+    }
+
+    &__content {
+      &__body {
+        flex-grow: 1;
+
+        &__info {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 3.2rem;
+        }
+
+        &__inputs {
+          display: flex;
+          flex-direction: column;
+
+          &--input {
+            padding-bottom: 1.6rem;
+            text-align: left;
+
+            &.hidden {
+              display: none;
+            }
+          }
+        }
+
+        &__add {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 1.6rem;
+          margin-bottom: 2.4rem;
+
+          span {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 540px) {
+    .send-mail-modal-main {
+      &__footer {
+        &__button-wrapper {
+          text-align: center;
+
+          pulse-button {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 771px) {
+    .send-mail-modal-main {
+      &__content {
+        &__body {
+          &__add:hover {
+            cursor: pointer;
+  
+            span {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}

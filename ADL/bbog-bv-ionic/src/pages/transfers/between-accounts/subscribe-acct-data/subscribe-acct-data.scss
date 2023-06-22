@@ -1,0 +1,212 @@
+page-subscribe-acct-data {
+    .acct-data-wrapper {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        height: 100%;
+        padding-bottom: 20px;
+    }
+
+    .acct-agreements-list {
+        position: absolute;
+        z-index: 900;
+        width: 100%;
+        box-shadow: 0 0 15px 0 rgba(102, 128, 173, 0.2);
+        overflow-y: auto;
+        max-height: 280px;
+
+    }
+
+    .acct-item:hover {
+        transition: all ease-in 0.2s;
+        background-color: color($colors, bdb-blue);
+        color: white;
+
+        .service-name {
+            color: white;
+        }
+
+        .category-name {
+            color: white;
+        }
+    }
+
+    .service-name {
+        color: color($colors, bdb-black);
+        font-size: 16px;
+    }
+
+    .category-name {
+        color: color($colors, steel);
+        font-size: 12px;
+    }
+
+    .acct-agreements-list .itm-inner {
+        color: color($colors, bdb-black);
+        font-family: $RobotoLight;
+        font-size: 16px;
+    }
+
+    .acct-data-wrapper .title {
+        font-family: $RobotoRegular;
+        font-size: 16px;
+        color: color($colors, bdb-blue);
+    }
+
+    .acct-data-wrapper .subtitle {
+        font-size: 12px;
+        color: color($colors, bdb-black);
+    }
+
+    .acct-data-wrapper .subtitle.subtitle-acct-number {
+        margin-top: 40px;
+    }
+
+    .acct-data-wrapper .subtitle.subtitle-acct-bank {
+        margin-top: 26px;
+    }
+
+    /* form styles */
+    .acct-data-wrapper .inner .bv-form {
+        position: relative;
+    }
+
+    .acct-data-wrapper .inner .bv-form .err-hint {
+        margin-top: 22px;
+        color: #a94442;
+    }
+
+    .acct-data-wrapper .inner .bv-form .input-item {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid #dcdee0;
+        width: 100%;
+        padding: 2px 0px;
+        font-size: 24px;
+        font-family: $RobotoLight;
+        color: color($colors, bdb-black);
+    }
+
+    .btn-wrapper {
+        margin-top: 48px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-wrapper .key-hint {
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, steel);
+        margin-left: 16px;
+    }
+
+    .button-inner {
+        font-size: 12px;
+        color: white;
+        font-family: $RobotoRegular;
+    }
+
+    ::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: color($colors, bdb-black);
+        opacity: 0.2;
+        /* Firefox */
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: color($colors, bdb-black);
+        opacity: 0.8;
+    }
+
+    ::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: color($colors, bdb-black);
+        opacity: 0.8;
+    }
+
+    @media only screen and (max-width: 768px) {
+
+        .acct-data-wrapper {
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .acct-agreements-list {
+            overflow-y: hidden;
+            max-height: none;
+        }
+
+        .acct-data-wrapper .subtitle {
+            font-family: $RobotoLight;
+            font-size: 16px;
+            color: color($colors, bdb-slate);
+        }
+
+        .acct-data-wrapper .inner .bv-form {
+            margin-top: 15px;
+            position: relative;
+            flex: 1;
+        }
+
+        /* selector pago extraordinario styles */
+        .acct-type-row .acct-type-col {
+            display: inline-flex;
+            float: none;
+            width: 100%;
+        }
+
+        .acct-type-row .acct-type-col .btn-select {
+            flex: 1;
+            margin-left: 0;
+        }
+
+        .acct-type-row .acct-type-col .btn-select:first-child {
+            margin-right: 8px;
+        }
+
+    }
+
+
+    /* selector pago extraordinario styles */
+    .acct-type-row {
+        display: flex;
+        margin-top: 16px;
+    }
+
+    .acct-type-row .acct-type-col {
+        display: inline-flex;
+        float: right;
+    }
+
+    .acct-type-row .acct-type-col .btn-select {
+        border-radius: 6px;
+        border: solid 1px color($colors, light-blue-grey);
+        padding: 12px 24px;
+        cursor: pointer;
+        margin-left: 28px;
+        text-align: center;
+    }
+
+    .acct-type-row .acct-type-col .btn-select:first-child {
+        margin-left: 0px;
+    }
+
+    .acct-type-row .acct-type-col .btn-select .text-strong {
+        font-family: $RobotoMedium;
+        font-size: 14px;
+        color: color($colors, bdb-slate);
+    }
+
+    .acct-type-row .acct-type-col .btn-select .text-light {
+        font-family: $RobotoLight;
+        font-size: 12px;
+        color: color($colors, bdb-slate);
+    }
+
+    .acct-type-row .acct-type-col .btn-select.active {
+        border-radius: 6px;
+        border: solid 2px color($colors, active-green);
+        box-shadow: 0 0 5px 0 rgba(102, 128, 173, 0.2);
+    }
+
+}

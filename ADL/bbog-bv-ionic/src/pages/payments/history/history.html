@@ -1,0 +1,18 @@
+<ion-grid no-padding>
+    <ion-row *ngIf="type !== '3'" class="history-content__top">
+        <ion-col col-12>
+            <bdb-tabs [tabs]="tabs" (selectChange)="changeTab($event)" [disabled]="tabsDisabled"></bdb-tabs>
+        </ion-col>
+    </ion-row>
+    <ion-row class="history-content__table">
+        <ion-col col-12>
+            <tx-history-web #historyWeb class="t-web" [showTransactionsLoader]="showTransactionsLoader"
+                [showTransactionsError]="showTransactionsError" [error]="transactionsErrorMsg" [columns]="columns"
+                [dataSource]="dataSource" (selectClicked)="onSelectClicked($event)"
+                (dataRangeClicked)="onDataRangeClicked($event)" (downloadCsv)="exportData($event)" [optionFilter]="true"
+                [optionDownloadCsv]="true" [quickSelect]="quickSelect" [datePicker]="datePicker" [minDate]="minDate"
+                (eventBtn1)="viewVoucher($event)" [validateDateMobile]="validateDateMobile()">
+            </tx-history-web>
+        </ion-col>
+    </ion-row>
+</ion-grid>

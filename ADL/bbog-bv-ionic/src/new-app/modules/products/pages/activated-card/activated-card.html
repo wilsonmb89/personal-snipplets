@@ -1,0 +1,157 @@
+<pulse-flowthc class="bgColor_atc">
+  <div slot="header" class="activatied-card-header__header-box">
+    <pulse-flowth>
+      <div slot="content" class="activatied-card-header__header-logos">
+        <img src="assets/imgs/horizontal-logo_white.svg" alt="header-logos" hidden-p-sm-down>
+        <img src="assets/imgs/3.svg" alt="header-logos" hidden-p-md-up>
+      </div>
+      <div slot="right-content" *ngIf="toggleIsActived">
+        <pulse-nav-button only-icon-device="sm,md" icon-position="right" icon="close"
+            (click)="showTooltip()">Abandonar activación de clave
+        </pulse-nav-button>
+    </div>
+    </pulse-flowth>
+  </div>
+
+  <div slot="content" class="content_atc">
+    <div class="content_atc__summary_activated">
+      <credit-card-component 
+        [category]="plasticType" 
+        customerName="nombre" 
+        [cardType]="cardType" 
+        [fullFields]='false' 
+        [cardNumber]="number"
+        [smallCard]='false'
+      ></credit-card-component>
+    </div>
+    <span class="content_atc__title pulse-tp-hl3-comp-b">¡Tu tarjeta ha sido activada!</span>
+    <span class="content_atc__subtitle pulse-tp-hl5-comp-m">Desde mañana podrás ver todos los detalles y movimientos de tu tarjeta.</span>
+
+    <div class="pulse--grid benefit_atc">
+      <div class="pulse-row">
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-4">
+          <pulse-card
+            class="benefit_atc__card"
+            color="white"
+            colorvariant="700"
+            colorgradient="false"
+            elevation="0"
+            elevationhover="8">
+            <div class="benefit_atc__card__imgBox">
+              <div class="benefit_atc__card__img">
+                <pulse-icon icon="insurance-umbrella-heart"></pulse-icon>
+              </div>
+            </div>
+            
+            <div class="benefit_atc__card__text">
+              <p class="benefit_atc__card__text__title pulse-tp-hl5-comp-b">{{benefits.first.title}}</p>
+              <p class="benefit_atc__card__text__subtitle pulse-tp-hl5-comp-l">{{benefits.first.subtitle}}</p>
+            </div>
+          </pulse-card>
+        </div>
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-4 benefit__mid">
+          <pulse-card
+            class="benefit_atc__card"
+            color="white"
+            colorvariant="700"
+            colorgradient="false"
+            elevation="0"
+            elevationhover="8">
+            <div class="benefit_atc__card__imgBox">
+              <div class="benefit_atc__card__img">
+                <pulse-icon icon="saving-piggy-dollars"></pulse-icon>
+              </div>
+            </div>
+
+            <div class="benefit_atc__card__text">
+              <p class="benefit_atc__card__text__title pulse-tp-hl5-comp-b">{{benefits.second.title}}</p>
+              <p class="benefit_atc__card__text__subtitle pulse-tp-hl5-comp-l">{{benefits.second.subtitle}}</p>
+            </div>
+          </pulse-card>
+        </div>
+        <div class="pulse-col pulse-col-sm-4 pulse-col-md-8 pulse-col-lg-4">
+          <pulse-card
+            class="benefit_atc__card"
+            color="white"
+            colorvariant="700"
+            colorgradient="false"
+            elevation="0"
+            elevationhover="8">
+            <div class="benefit_atc__card__imgBox">
+              <div class="benefit_atc__card__img">
+                <pulse-icon icon="cog-base" color="primary"></pulse-icon>
+              </div>
+            </div>
+            <div class="benefit_atc__card__text">
+              <p class="benefit_atc__card__text__title pulse-tp-hl5-comp-b">{{benefits.third.title}}</p>
+              <p class="benefit_atc__card__text__subtitle pulse-tp-hl5-comp-l">{{benefits.third.subtitle}}</p>
+            </div>
+          </pulse-card>
+        </div>
+      </div>
+    </div>
+
+    <div class="card_key" *ngIf="toogleKeyCard">
+      <div class="card_key__toogle">
+        <div class="card_key__toogle__title pulse-tp-bo3-comp-r">
+          Crear clave de avances, úsala para retirar en cajeros
+        </div>
+        <toggle-component
+          [isActive]="toggleIsActived"
+          [isEnabled]="toggleIsEnabled"
+          (onChangeState)="toggleRenovation()"
+        ></toggle-component>
+      </div>
+      <div class="card_key__form" *ngIf="toggleIsActived">
+        <set-pin-card 
+          (key)="changeKey($event)"
+          [textDescription]="textPinDescription"
+          [inputLabelKey]="inputLabelKeyPin"
+          [inputLabelConfirm]="inputLabelConfirmPin"
+          [btnText]="btnTextPin">
+        </set-pin-card>
+      </div>
+    </div>
+
+    <div class="activate_new_card" *ngIf="!toggleIsActived" (click)="resetData()"
+      [ngClass]="{'activate_new_card--toogleKeyCard': !toogleKeyCard}">
+      <div class="activate_new_card__multiple_cards" *ngIf="!showActivate">
+        <pulse-button
+          class="pulse-block"
+          [color]="'primary'"
+          [colorvariant]="700"
+          [disabled]="false"
+          [pulseButtonType]="'secondary'"
+          [pulseButtonSize]="'default'"
+          (click)='showTooltip()'>
+          Ir a productos
+        </pulse-button>
+        <pulse-button
+          class="pulse-block"
+          color="primary"
+          colorvariant="700"
+          disabled="false"
+          colorgradient="true"
+          pulseButtonType="primary"
+          pulseButtonSize="default"
+          [pulseButtonSize]="'default'"
+          (click)='redirectCardSelection()'>
+          Activar otra tarjeta
+        </pulse-button>
+      </div> 
+
+      <div class="activate_new_card__unique_card" *ngIf="showActivate">
+        <pulse-button
+          class="pulse-block"
+          [colorgradient]="true"
+          style="opacity: 1;"
+          [block]="true"
+          fill="solid"
+          [colorgradient]="true"
+          (click)='showTooltip()'>
+          Ir a productos
+        </pulse-button>
+      </div>
+    </div>
+  </div>
+</pulse-flowthc>

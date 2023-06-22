@@ -1,0 +1,54 @@
+server:
+  port: 8099
+
+general-properties:
+  name: banking-reports
+  bbog-api-key: ${LAB-BBOG-API-KEY:rtAtgtGdWy1GB0022Bhg04THR1j9bE7K3Vy41hOa}
+
+management:
+  endpoints:
+    web:
+      base-path: '/'
+  endpoint:
+    info:
+      sensitive: false
+      enabled: true
+    health:
+      sensitive: false
+      enabled: true
+
+info:
+  owner: Fredy Guerrero <fredy.guerrero@avaldigitallabs.com>
+  pod: the-simpsons
+
+api-connect-integration:
+  enabled: true
+api-services:
+  timeout: 20
+  keystore:
+    file: ${keystore_file:src/main/resources/certificate/adl-pb.avaldigitallabs.com.jks}
+    credential: ${SECURITY_KEYSTORE_CREDENTIAL:Datapower}
+  oauthProperties:
+    client-id: ${API_CONNECT_CLIENT_ID:9a76b4b5c7a9d2abe96f12d137aca8c4}
+    client-secret: ${API_CONNECT_CLIENT_SECRET:3ad097242e6cb969c7bb093c9edeba90}
+    grant-type: client_credentials
+    scope: scope1
+    auth-endpoint: ${API_CONNECT_ENDPOINT:https://apicapi-gateway-qa.appsptqa.ath.com.co/org-qa/api-pb/}
+    auth-resource: v1/Authentication/oauth2/token
+    skip-oauth: false
+    certificate-required: true
+  info:
+    id: bbog-pb-backend-banking-reports
+    url: ${API_CONNECT_ENDPOINT:https://apicapi-gateway-qa.appsptqa.ath.com.co/org-qa/api-pb/}
+    resource-map:
+      account-statement : accountsManagement/v3/Accounts_Statement/Statement
+      account-reference : accountsManagement/v2/Accounts_Certificates/Certificates
+      statement-periods : accountsManagement/v3/Accounts_Statement/Statement/Periods
+
+#Analytic and datalake parameters
+analytics:
+  enabled: true
+#End analytic and datalake parameters
+
+elastic-integration:
+  enabled: true

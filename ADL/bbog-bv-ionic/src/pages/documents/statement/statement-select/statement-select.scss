@@ -1,0 +1,17 @@
+page-statement-select {
+
+  .sub-title {
+    color: var(--pulse-color-bg);
+    margin-bottom: 4rem;
+  }
+
+  .inner {
+    margin-bottom: 40px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .inner {
+      margin-bottom: 5px;
+    }
+  }
+}

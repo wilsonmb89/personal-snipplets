@@ -1,0 +1,47 @@
+/* Variables para la animacion */
+$pulse-elevation-duration: 0.2s;
+$pulse-elevation-timing-func: ease;
+
+$elevations: (0: 'none',
+2: '0 0 2px 0',
+4: '0 2px 4px 0',
+8: '0 4px 8px 0',
+16: '0 8px 16px 0',
+24: '0 16px 24px 0'
+);
+
+@function get-elevation($index) {
+    @return #{map-get($elevations,  $index)}
+}
+@mixin build_shadow($ind, $colors: '#C4D4E3'){
+    box-shadow: get-elevation($ind) #{$colors};
+}
+
+
+@mixin pulse-elevation($color: '#C4D4E3') {
+
+    @each $indx,
+    $value in $elevations {
+        .pulse-elevation-#{$indx} {
+            @include build_shadow($indx,$color);
+            // box-shadow: get-elevation($indx) #{$color};
+            @if $indx == 0 {
+                border: solid 1px #{$color};
+            }
+        }
+
+        .pulse-elevation-hover-#{$indx}:hover {
+            @include build_shadow($indx,$color);
+        }
+    }
+}
+
+@function pulse-elevation-anim-properties($duration: $pulse-elevation-duration,
+$timing-func: $pulse-elevation-timing-func) {
+    @return box-shadow #{$duration} #{$timing-func};
+}
+
+@mixin pulse-elevation-anim($duration: $pulse-elevation-duration,
+$timing-func: $pulse-elevation-timing-func) {
+    transition: pulse-elevation-anim-properties($duration, $timing-func);
+}

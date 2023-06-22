@@ -1,0 +1,88 @@
+$size-xs: 4rem;
+$size-s: 4rem;
+$size-m: 4.8rem;
+$size-l: 5.6rem;
+$size-xl: 5.6rem;
+
+:root {
+  --diameter: 0;
+}
+
+:host {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  background: var(--pulse-color-bg);
+  color: var(--pulse-color-white-700);
+  border-radius: 50%;
+}
+
+
+.size {
+  width: var(--diameter);
+  height: var(--diameter);
+
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  &--xs {
+    --diameter: #{$size-s};
+  }
+
+  &--s {
+    --diameter: #{$size-s};
+  }
+
+  &--m {
+    --diameter: #{$size-m};
+  }
+
+  &--l {
+    --diameter: #{$size-l};
+  }
+
+  &--xl {
+    --diameter: #{$size-l};
+  }
+}
+
+.border {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--white {
+    color: var(--pulse-color-carbon-700);
+    border: 0.1rem solid #{get-pulse-color('carbon-light', 900)};
+    width: calc(var(--diameter) - 0.1rem * 2);
+    height: calc(var(--diameter) - 0.1rem * 2);
+  }
+
+  &--dashed {
+    border: 0.1rem dashed #{get-pulse-color('carbon-light', 900)};
+    width: calc(var(--diameter) - 0.1rem * 2);
+    height: calc(var(--diameter) - 0.1rem * 2);
+  }
+
+  &--opacity {
+    border: 0.4rem solid rgba(255, 255, 255, 0.3);
+    width: calc(var(--diameter) - 0.4rem * 2);
+    height: calc(var(--diameter) - 0.4rem * 2);
+  }
+}
+
+.logo {
+  div {
+    display: flex;
+  }
+}
+
+
+
+
+

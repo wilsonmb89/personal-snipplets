@@ -1,0 +1,39 @@
+<div class="acct-person-wrapper">
+  <div class="inner">
+    <div class="title">
+      {{title}}
+    </div>
+    <form [formGroup]="acctPersonForm" class="bv-form">
+      <div class="subtitle subtitle-acct-number">
+        {{ subtitleName }}
+      </div>
+      <ion-input #nameInput class="input-item" id="sap-inp-name" type="text" placeholder="Nombres"
+        formControlName="personName" bdb-normalize-diacritic (keyup)="onTextChange($event)" 
+        maxlength="40"></ion-input>
+      <div class="subtitle subtitle-acct-number">
+        {{ subtitleType }}
+      </div>
+      <ion-item class="item-doc-type">
+        <select #docTypeSelect class="item item-block item-md input-lg" formControlName="personDocType"
+          id="sap-sel-type">
+          <option *ngFor="let item of listItem" [value]="item.value">{{item.name}}</option>
+        </select>
+      </ion-item>
+
+      <div class="subtitle subtitle-acct-number">
+        {{ subtitleNumber }}
+      </div>
+      <ion-input #docNumberInput class="input-item" id="sap-inp-num" type="number" placeholder="Documento"
+        pattern="[0-9]{0,}" formControlName="personDocNumber"></ion-input>
+
+      <div class="btn-wrapper" hidden-p-sm-down>
+        <button bvButton id="sap-btn-next" color="bdb-blue"
+          [disabled]="!acctPersonForm.controls.personName.valid || !acctPersonForm.controls.personDocNumber.valid"
+          ion-button (click)="triggerAcct()">Continuar</button>
+        <div class="key-hint"
+          [hidden]="!acctPersonForm.controls.personName.valid || !acctPersonForm.controls.personDocNumber.valid">o
+          presiona Enter</div>
+      </div>
+    </form>
+  </div>
+</div>

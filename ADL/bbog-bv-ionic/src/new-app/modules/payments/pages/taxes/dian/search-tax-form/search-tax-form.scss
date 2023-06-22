@@ -1,0 +1,111 @@
+search-tax-form {
+
+  pulse-flowthcs {
+    height: 100vh;
+  }
+
+  .search-tax-container {
+    margin-top: 1.6rem;
+    margin-bottom: 9rem;
+    position: relative;
+    width: 100%;
+  
+    &__subtitle {
+      color: var(--pulse-color-primary-700);
+      margin-bottom: 3.2rem;
+    }
+  
+    &__inputs {
+  
+      &__payment-type {
+        margin-bottom: 2.4rem;
+  
+        &--title {
+          margin-bottom: 1.6rem;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          color: var(--pulse-color-carbon-400);
+  
+          &--icon-info {
+            cursor: pointer;
+            margin-top: 0.2rem;
+            margin-left: 0.5rem;
+          }
+        }
+  
+        &--options {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+  
+          pulse-select-card-group {
+            width: 100%;
+          }
+        }
+  
+      }
+  
+      &__form-number {
+        margin-bottom: 4.8rem;
+        display: flex;
+        flex-direction: column;
+        span {
+          color: var(--pulse-color-carbon-400);
+          margin-bottom: 0.6rem;
+        }
+      }
+    }
+  
+    &__controls {
+      padding: 0 1.6rem 1.6rem 1.6rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--pulse-color-white-700);
+  
+      span {
+        color: var(--pulse-color-carbon-400);
+        display: none;
+      }
+    }
+  
+    @media only screen and (min-width: 541px) {
+      margin-top: 2.4rem;
+      margin-bottom: 1.6rem;
+  
+      &__controls {
+        padding: 0;
+        position: initial;
+        margin-top: 4.8rem;
+  
+        pulse-button {
+          width: auto;
+        }
+      }
+    }
+  
+    @media only screen and (min-width: 771px) {
+      &__controls {
+        span {
+          display: initial;
+          margin-left: 1.6rem;
+        }
+      }
+    }
+  }
+  
+  .search-tax-summary-container {
+    display: none;
+    margin-top: 2.4rem;
+    width: 100%;
+  
+    @media only screen and (min-width: 771px) {
+      display: initial;
+    }
+  }
+}

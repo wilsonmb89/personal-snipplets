@@ -1,0 +1,10 @@
+<div class="cards-campaign__content">
+  <div *ngIf="checkValidSavingAccount()" class="cards-campaign__slide">
+    <card-campaign-item [class.cards-campaign--margin--right]="(i === 0) && (cards.length > 1)"
+                        [ngClass]="getClassForItemsByCardsLength(cards.length)"
+                        [itemCardModel]="card"
+                        *ngFor="let card of cards, let i = index">
+    </card-campaign-item>
+  </div>
+</div>
+

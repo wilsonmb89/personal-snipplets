@@ -1,0 +1,45 @@
+<ion-content no-padding>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options (onLeftClicked)="onBackPressed()" (onRightClicked)="onAbandonClicked()"
+        [lOption]="'Atrás'" [rOption]="abandonText" [navTitle]="navTitle">
+        <svg-back (click)="onBackPressed()" left></svg-back>
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <div slot="content">
+      <div class="flowtt-title">
+        Valor a donar
+      </div>
+      <div class="flowtt-subtitle">
+        Esta transacción no tiene costo adicional
+      </div>
+      <form class="flowtt-form" [formGroup]="formDonationAmt" (ngSubmit)="submit()">
+        <div class="flowtt-label">Valor de la donación </div>
+        <div class="donation-amt__type__field">
+          <pulse-input ngDefaultControl
+            id="re-ai"
+            type="currency"
+            formControlName="amount"
+            placeholder="$ 0"
+            [state]="formDonationAmt.controls.amount.invalid && formDonationAmt.controls.amount.dirty ? 'error' : 'basic'"
+            [labelerror]="formDonationAmt.controls.amount.invalid && formDonationAmt.controls.amount.dirty ? 'Sólo se permiten transacciones mayores a $1 peso.' : ''"
+          ></pulse-input>
+        </div>
+        <div class="btn-wrapper" hidden-p-sm-down>
+          <pulse-button id="amount-btn" type="submit" color="primary" colorgradient="true"
+          [disabled]="!formDonationAmt.valid || formDonationAmt.controls['amount'].value ==='d'">Continuar</pulse-button>
+        </div>
+      </form>
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+<ion-footer hidden-md-up>
+  <ion-toolbar no-padding>
+    <button id="mob-amount-btn" type="button" (click)="submit()" class="mob-submit" full color="blue-gradient"
+      ion-button [disabled]="!formDonationAmt.valid">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

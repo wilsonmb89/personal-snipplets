@@ -1,0 +1,125 @@
+trust-agreement-amount {
+    .inner{
+        margin: 0 auto;
+        margin-top: -4.8rem;
+
+    }
+
+    .amount-header {
+
+    &__header {
+
+        .title {
+            font-size: 16px;
+        }
+    }
+    }
+
+    /* form styles */
+
+    .inner .bv-form{
+        margin-top: 55px;
+    }
+
+    .inner .bv-form .err-hint{
+        margin-top: 22px;
+        color: #a94442;
+    }
+
+    .btn-wrapper{
+        margin-top: 48px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn-wrapper .key-hint{
+        font-family: $RobotoRegular;
+        font-size: 12px;
+        color: color($colors, steel);
+        margin-left: 16px;
+    }
+
+    .button-inner{
+        font-size: 12px;
+        color: white;
+        font-family: $RobotoRegular;
+    }
+    
+    .radio-label{
+        font-family: $RobotoLight;
+        font-size: 14px;
+        color: color($colors, bdb-slate);
+        padding-left: 12px;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+        opacity: 0.4;
+    }
+
+    .radio-label-active {
+        opacity: 1;
+    }
+
+    .radios {
+        margin-top: 32px;
+        flex-wrap: nowrap;
+        display: inline-flex;
+        width: 100%;
+    }
+
+    .error-msg{
+        font-family: $RobotoMedium;
+        color: color($colors, bright-red);
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        margin-top: 0.2rem;
+    }
+
+    @media only screen and (max-width: 1348px) {
+        .inner{
+            width: 67%;
+        }
+    }
+
+    @media only screen and (max-width: 1130px) {
+        .inner{
+            width: 78%;
+        }
+    }
+
+    @media only screen and (max-width: 736px){
+        ion-slides{
+            height: auto;
+        }
+
+        *.continue-btn{
+            border-radius: 0;
+        }
+
+        .button-inner{
+            color: white;
+            font-family: $RobotoRegular;
+            font-size: 16px;
+        }
+
+        .inner{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .title{
+            font-family: $RobotoLight;
+            font-size: 16px;
+            color : color($colors, bdb-slate);
+        }
+
+        .inner .bv-form{
+            margin-top: 15px;
+            position: relative;
+            flex: 1;
+        }
+    }
+}

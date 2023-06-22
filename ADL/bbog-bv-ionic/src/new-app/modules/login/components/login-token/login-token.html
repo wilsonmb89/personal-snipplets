@@ -1,0 +1,46 @@
+<pulse-modaltb class="login-token-main">
+  <div slot="header">
+    <div class="login-token-main__btn-close" (click)="onCloseStep()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon">
+        <img @boxAnimation *ngIf="!_isError" src="assets/imgs/token-otp/token/token.svg" alt="token">
+        <img @boxAnimation *ngIf="_isError" src="assets/imgs/token-otp/token/token-warning.svg" alt="token-warning">
+      </div>
+      <div slot="title">
+        <ng-container *ngIf="!_isError">
+          <span @boxAnimation class="pulse-tp-hl3-comp-r">Código</span>&nbsp;Token
+        </ng-container>
+        <span @boxAnimation *ngIf="_isError">Token incorrecto</span>
+      </div>
+      <div slot="body">
+        <div class="login-token-main__body">
+
+          <span @boxAnimation *ngIf="!_isError">Para realizar este proceso, ingresa el código de Token móvil o
+            físico.</span>
+          <span @boxAnimation *ngIf="_isError">Para realizar este proceso, vuelve a ingresar el código de Token móvil o
+            físico.</span>
+
+          <form [formGroup]="tokenForm" (ngSubmit)="submitInput()">
+            <div class="login-token-main__body--input">
+              <pulse-input ngDefaultControl formControlName="token" id="token" [name]="'token'" [maxlength]="6"
+                [minlength]="6" [type]="'number'" [pattern]="'[0-9]*'" #inputToken max-length-input type-number-input
+                inputtextalign="center">
+              </pulse-input>
+            </div>
+          </form>
+        </div>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="login-token-main__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" [disabled]="tokenForm.invalid" (click)="submitInput()">
+        Continuar
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

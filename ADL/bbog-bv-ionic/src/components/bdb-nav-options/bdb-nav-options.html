@@ -1,0 +1,26 @@
+<div class="nav-options">
+  <div class="pulse-grid">
+    <div class="row">
+      <div class="col-xs-2 col-md-3 pulse-padding-none-xs-a">
+        <div class="nav-options__left">
+          <ng-content select="[left]">
+          </ng-content>
+          <span (click)="leftClicked()" class="nav-options__left__text" hidden-sm-down>{{lOption}}</span>
+        </div>
+      </div>
+      <div class="col-xs-8 col-md-6 pulse-padding-none-xs-a">
+        <div class="nav-options__title">
+          <p class="nav-options__title--content">
+            {{navTitle}}
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-2 col-md-3 pulse-padding-none-xs-a">
+        <div class="nav-options__right" text-end>
+          <span (click)="rightClicked()" class="nav-options__right__text" hidden-sm-down>{{rOption}}</span>
+          <ng-content select="[right]"></ng-content>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

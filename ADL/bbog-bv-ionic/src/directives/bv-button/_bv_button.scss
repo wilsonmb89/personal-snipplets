@@ -1,0 +1,58 @@
+.bv-button {
+  color: white;
+  margin: 0;
+}
+
+.bv-button, .bv-button-outline {
+  border-radius: 100px;
+  font-family: $RobotoBold;
+  font-stretch: normal;
+  line-height: 2.86;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: 1.4rem;
+  height: 4rem;
+  padding: 0 2.3rem;
+}
+
+.bv-button-outline {
+  border: 1px solid;
+}
+
+.bv-button-outline:hover {
+  background-color: transparent !important;
+}
+
+.bv-button-small {
+  height: 2.1em;
+  font-size: 1.3rem;
+  padding: 0 0.9em;
+  line-height: normal;
+}
+
+[full].bv-button{
+  border-radius: 0px;
+}
+
+.spinner{
+    width: 2rem;
+    height: 2rem;
+    background-image: url(../assets/imgs/icon-loader.svg);
+    position: relative;
+    -webkit-animation: loader-rotate 0.65s infinite;
+    animation: loader-rotate 0.65s infinite;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    left: 50%;
+    background-size: cover;
+}
+
+@keyframes loader-rotate {
+  from {
+    transform: translateX(-50%) rotate(0deg) ;
+  }
+  
+  to {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}

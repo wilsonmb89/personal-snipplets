@@ -1,0 +1,31 @@
+<pulse-modaltb class="error-modal">
+  <div class="error-modal__header" slot="header">
+    <div class="error-modal__header__btn-close" (click)="onCloseClicked()">
+      <pulse-icon icon="close"></pulse-icon>
+    </div>
+  </div>
+  <div slot="content">
+    <pulse-modaltc>
+      <div slot="icon" *ngIf="!!errorModalModel.iconPath">
+        <img [src]="errorModalModel.iconPath" alt="error-icon">
+      </div>
+      <div slot="title">
+        <span>
+          {{ errorModalModel.customerErrorMessage.title }}
+        </span>
+      </div>
+      <div slot="body">
+        <span>
+          {{ errorModalModel.customerErrorMessage.message }}
+        </span>
+      </div>
+    </pulse-modaltc>
+  </div>
+  <div slot="footer">
+    <div class="error-modal__footer-btns">
+      <pulse-button [colorgradient]="true" [block]="true" (click)="onActionClicked()">
+        Entendido
+      </pulse-button>
+    </div>
+  </div>
+</pulse-modaltb>

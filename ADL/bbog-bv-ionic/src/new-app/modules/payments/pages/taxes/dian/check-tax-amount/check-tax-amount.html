@@ -1,0 +1,61 @@
+<pulse-flowthcs [lgcontentsize]="5">
+  <div slot="header">
+    <flow-header [rightOption]="'leave'" (onStart)="goPreviousPage()" (onEnd)="goTaxSelectionPage()">
+      Pago DIAN
+      <div start>Atrás</div>
+      <div end>Abandonar transacción</div>
+    </flow-header>
+  </div>
+  <div slot="content">
+    <div class="content">
+      <div class="content__amt-summary">
+        <div class="content__amt-summary__info">
+          <span class="pulse-tp-bo3-comp-r">Valor a pagar:</span>
+          <span class="content__amt-summary__info--amt pulse-tp-hl3-comp-r">{{ amountText }}</span>
+        </div>
+        <div class="content__amt-summary__info">
+          <span class="pulse-tp-bo3-comp-r">Costo de transacción (sin IVA):</span>
+          <span class="content__amt-summary__info--amt pulse-tp-bo3-comp-r">Gratis</span>
+        </div>
+      </div>
+      <div class="content__alert-message pulse-elevation-8">
+        <div class="content__alert-message__header">
+          <div class="content__alert-message__header__img">
+            <img src="assets/imgs/payments/message-img.svg" alt="alert">
+          </div>
+        </div>
+        <div class="content__alert-message__body">
+          <div class="content__alert-message__body__info pulse-tp-bo3-comp-r" *ngIf="!isDueDate">
+            <span>Este impuesto esta registrado con el documento:</span>
+            <span class="pulse-tp-bo3-comp-b">{{ documentTypeNumberText }}</span>
+            <span>Recuerda que la fecha límite de pago es el {{ dateText }}</span>
+            <div class="pulse-tp-bo3-comp-r" *ngIf="amountIs0">
+              <span>Tu declaración es de $0 pesos; no es necesario realizar alguna acción adicional.</span>
+            </div>
+          </div>
+          <div class="content__alert-message__body__info pulse-tp-bo3-comp-r" *ngIf="isDueDate">
+            <span class="pulse-tp-bo3-comp-b">El impuesto que ingresaste se ha vencido.</span>
+            <span>Debes volver a generar el formulario en la página de la DIAN.</span>
+            <span>Fecha de vencimiento {{ dateText }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="content__controls" *ngIf="!!actionButton">
+        <pulse-button id="btn-submit-search-tax"
+                      [color]="actionButton.color"
+                      [colorgradient]="true"
+                      [block]="true" 
+                      (click)="doAction()">
+          {{ actionButton.text }}
+        </pulse-button>
+        <span *ngIf="actionButton.text === 'Continuar' && hasAvaliableProducts" class="pulse-tp-bo3-comp-r">o presiona enter</span>
+      </div>
+    </div>
+  </div>
+  <div slot="summary">
+    <div class="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </div>
+</pulse-flowthcs>

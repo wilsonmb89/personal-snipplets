@@ -1,0 +1,33 @@
+<ion-header></ion-header>
+<ion-content no-padding class="default-background">
+  <ion-grid id="main-settings-grid">
+    <ion-row class="main-row">
+      <ion-col col-12 col-md-6 col-lg-5 col-xl-4 col-sm-12 class="left-container">
+        <bdb-submenu-header hidden-md-down [title]="title" [subtitle]="subtitle">
+        </bdb-submenu-header>
+        <!--Se quita mientras el refactoring-->
+        <!--<ion-item class="setting-main__item" *ngIf="isApp">
+          <ion-label>Ingreso con Touch ID</ion-label>
+          <ion-toggle [(ngModel)]="setting.fingerEnabled" [checked]="setting.checked" color="secondary" (ionChange)="updateFinger()"></ion-toggle>
+        </ion-item>-->
+        <bdb-list-submenu [items]="itemsMenu" (clickItem)="itemSelected($event)">
+        </bdb-list-submenu>
+      </ion-col>
+      <ion-col col-12 col-md-6 col-lg-7 col-xl-8 class="right-container" hidden-sm-down>
+        <header-sesion></header-sesion>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <bdb-last-connect hidden-md-up></bdb-last-connect>
+</ion-content>
+
+<ion-footer no-padding hidden-md-up no-border class="setting-footer">
+  <div class="setting-footer__version pulse-tp-bo4-comp-r">
+    V.{{ appVersion$ | async }}
+  </div>
+  <ion-toolbar no-padding>
+    <button class="setting-footer__btn-exit" full ion-button color="mango" (click)="logout()">
+      <img src="assets/imgs/exit-to-app-material.png"> Salida Segura
+    </button>
+  </ion-toolbar>
+</ion-footer>

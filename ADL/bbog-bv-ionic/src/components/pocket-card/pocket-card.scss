@@ -1,0 +1,52 @@
+@import '../../app/core/styles/loading.scss';
+
+:root {
+  --pc-title-color: var(--pulse-color-carbon-700);
+  --pc-title-font: var(--pulse-font-comp-r);
+  --pc-card-height: 12.2rem
+}
+
+pocket-card {
+
+  .pocket-card-wrapper {
+    width: 25rem;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+
+    &__col {
+      padding: 0.5rem;
+    }
+
+    &__content {
+      height: var(--pc-card-height);
+
+      &__title {
+        text-align: left;
+        font-weight: var(--pc-title-font);
+        color: var(--pc-title-color);
+        justify-content: center;
+        -webkit-flex-direction: column;
+        display: flex;
+        align-content: center;
+        height: 100%;
+
+      }
+
+      &--loading {
+        @include loading-effect(1);
+        height: var(--pc-card-height);
+        width: 100%;
+      }
+
+    }
+
+    @media (min-width: map_get($screen-bkps, "md")) {
+      &:hover {
+        cursor: pointer;
+        --pc-title-color: var(--pulse-color-primary-700);
+        --pc-title-font: var(--pulse-font-comp-m);
+      }
+    }
+  }
+
+}

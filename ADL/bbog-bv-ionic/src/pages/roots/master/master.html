@@ -1,0 +1,14 @@
+<ion-split-pane>
+  <ion-menu *ngIf="!showTabs" [ngClass]="{'shrink' : shrink}" id="side-menu" [content]="rootNav">
+    <navbar-side [itemsMenu]="itemsMenu" [shrink]="shrink" (menuClicked)="onMenuClick($event)"></navbar-side>
+  </ion-menu>
+
+  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+  <ion-nav [root]="masterPage" #rootNav swipeBackEnabled="false" id="navmaster" main></ion-nav>
+  <pulse-tabs id="bottom-tabs" [@expandRow]="!shrink" #pulseTabs *ngIf="showTabs">
+    <pulse-tab (click)="navigate(itemTab)" (tabDidLoad)="tabDidLoad()" color="primary" colorgradient="true"
+      *ngFor="let itemTab of itemsTab;" [selected]="itemTab.active" [tabtext]="itemTab.title"
+      [innerHTML]="itemTab.icon | safe: 'html'" [disabled]="!itemTab.enabled">
+    </pulse-tab>
+  </pulse-tabs>
+</ion-split-pane>

@@ -1,0 +1,68 @@
+facilpass-set-amount-page {
+  .set-amount-content {
+    width: 100%;
+
+    &__title {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 3.2rem;
+      color: var(--pulse-color-carbon-700);
+
+      &__main {
+        margin-bottom: 0.8rem;
+        color: var(--pulse-color-primary-700);
+      }
+    }
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+
+      &__submit-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__submit-btn {
+          position: fixed;
+          bottom: 2.4rem;
+          width: 93%;
+        }
+
+        &__submit-label {
+          color: var(--pulse-color-carbon-700);
+          display: none;
+        }
+      }
+    }
+
+    @media all and (min-width: 541px) {
+      &__form {
+        &__submit-wrapper {
+          margin-top: 4.2rem;
+
+          &__submit-btn {
+            position: initial;
+            width: fit-content;
+          }
+        }
+      }
+    }
+
+    @media all and (min-width: 771px) {
+      &__form {
+        &__submit-wrapper {
+          &__submit-label {
+            display: initial;
+            margin-left: 1.6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .set-amount-summary {
+    margin: 1.6rem 0 3.2rem 0;
+    width: 100%;
+  }
+}

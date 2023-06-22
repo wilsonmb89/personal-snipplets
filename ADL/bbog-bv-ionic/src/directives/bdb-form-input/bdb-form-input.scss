@@ -1,0 +1,27 @@
+.custom-input{
+    background-color: white;
+    padding: 1.5rem;
+    width: 100%;
+    font-family: $RobotoRegular;
+    color: rgba(color($colors, bdb-black), .8);
+    line-height: 1.9rem;
+    border-radius: 6px;
+    border: 1px solid #e1e2e6;
+    font-size: 1.6rem;
+}
+
+.custom-input.is-invalid{
+    border-color: #ff7683;
+    background-color: #fddfe2;
+    color: #ff0019;
+}
+
+.custom-input:disabled{
+    border-color: #e1e2e6;
+    background-color: #ededee;
+    color: color($colors, steel);
+}
+
+.custom-input::placeholder{
+    color: rgba(color($colors, steel), .8);
+}

@@ -1,0 +1,47 @@
+[
+    {
+        "type": "products",
+        "name": "Productos",
+        "page": "DashboardPage",
+        "img": "assets/imgs/icon-menu-products.svg",
+        "imgOn": "assets/imgs/icon-menu-products-on.svg",
+        "enabled": false,
+        "active": false
+    },
+    {
+        "type": "payments",
+        "name": "Pagos",
+        "page": "PaymentsMainPage",
+        "img": "assets/imgs/icon-menu-payments.svg",
+        "imgOn": "assets/imgs/icon-menu-payments-on.svg",
+        "enabled": false,
+        "active": false
+    },
+    {
+        "type": "transfers",
+        "name": "Transferencias",
+        "page": "NewTransferMenuPage",
+        "img": "assets/imgs/icon-menu-transfers.svg",
+        "imgOn": "assets/imgs/icon-menu-transfers-on.svg",
+        "enabled": false,
+        "active": false
+    },
+    {
+        "type": "documents",
+        "name": "Documentos",
+        "page": "DocsMenuPage",
+        "img": "assets/imgs/icon-menu-documents.svg",
+        "imgOn": "assets/imgs/icon-menu-documents-on.svg",
+        "enabled": false,
+        "active": false
+    },
+    {
+        "type": "security",
+        "name": "Configuración",
+        "page": "settings%app",
+        "img": "assets/imgs/icon-menu-config.svg",
+        "imgOn": "assets/imgs/icon-menu-config-on.svg",
+        "enabled": false,
+        "active": false
+    }
+]

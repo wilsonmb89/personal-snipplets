@@ -1,0 +1,208 @@
+//Inspired in animate.css https://github.com/daneden/animate.css
+
+.animated {
+  -webkit-animation-duration: var(--time-animation, 1s);
+  animation-duration: var(--time-animation, 1s);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+//Especific ZoomOut
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+
+@-webkit-keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  animation-name: zoomIn;
+}
+
+@keyframes mobileTooltipIn {
+  from {
+    transform: translateY(100%)
+  }
+
+  100% {
+    transform: translateY(0%)
+  }
+}
+
+.mobileTooltipIn {
+  animation-name: mobileTooltipIn;
+}
+
+@keyframes mobileTooltipOut {
+  from {
+    transform: translateY(0%)
+  }
+
+  100% {
+    transform: translateY(100%)
+  }
+}
+
+.mobileTooltipOut {
+  animation-name: mobileTooltipOut
+}
+
+.webToastClosed {
+  -webkit-animation-name: webToastClosed;
+  -webkit-animation-duration: 500ms;
+  animation-name: webToastClosed;
+  animation-duration: 500ms;
+}
+
+@-webkit-keyframes webToastClosed {
+  from {
+    bottom: 2rem;
+    opacity: 1
+  }
+  to {
+    bottom: -100px;
+    opacity: 0
+  }
+}
+
+@keyframes webToastClosed {
+  from {
+    bottom: 2rem;
+    opacity: 1
+  }
+  to {
+    bottom: -100px;
+    opacity: 0
+  }
+}
+
+.webToastOpen {
+  -webkit-animation-name: webToastOpen;
+  -webkit-animation-duration: 500ms;
+  animation-name: webToastOpen;
+  animation-duration: 500ms;
+}
+
+@-webkit-keyframes webToastOpen {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+  to {
+    bottom: 2rem;
+    opacity: 1
+  }
+}
+
+@keyframes webToastOpen {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+  to {
+    bottom: 2rem;
+    opacity: 1
+  }
+}
+
+@media only screen and (max-width: 540px) {
+
+  .mobileToastOpen {
+    -webkit-animation-name: mobileToastOpen;
+    -webkit-animation-duration: 500ms;
+    animation-name: mobileToastOpen;
+    animation-duration: 500ms;
+  }
+  @-webkit-keyframes mobileToastOpen {
+    from {
+      top: -50px;
+      opacity: 0
+    }
+    to {
+      top: 2rem;
+      opacity: 1
+    }
+  }
+  @keyframes mobileToastOpen {
+    from {
+      top: -50px;
+      opacity: 0
+    }
+    to {
+      top: 2rem;
+      opacity: 1
+    }
+  }
+
+  .mobileToastClose {
+    -webkit-animation-name: mobileToastClose;
+    -webkit-animation-duration: 500ms;
+    animation-name: mobileToastClose;
+    animation-duration: 500ms;
+  }
+  @-webkit-keyframes mobileToastClose {
+    from {
+      top: 2rem;
+      opacity: 1
+    }
+    to {
+      top: -50px;
+      opacity: 0
+    }
+  }
+  @keyframes mobileToastClose {
+    from {
+      top: 2rem;
+      opacity: 1
+    }
+    to {
+      top: -50px;
+      opacity: 0
+    }
+  }
+
+
+}
+
+

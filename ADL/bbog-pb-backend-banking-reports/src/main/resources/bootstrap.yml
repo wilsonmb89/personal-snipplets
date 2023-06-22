@@ -1,0 +1,6 @@
+aws:
+  paramstore:
+    prefix: /${BDB_APPLICATION_CHANNEL:yp-pb}-${yb_profile_env}
+    name: banking-reports
+    enabled: ${param_store_enable:false}
+

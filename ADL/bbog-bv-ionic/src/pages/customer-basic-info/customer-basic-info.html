@@ -1,0 +1,374 @@
+<ion-content no-padding>
+    <ion-grid class="header-grid">
+        <ion-row>
+            <ion-col offset-md-1 col-12 col-sm-8 col-md-6>
+                <div class="page-header">
+                    <div class="page-header__title">Actualización de datos</div>
+                    <div class="page-header__subtitle">Los campos marcados con un asterisco * son obligatorios</div>
+                </div>
+            </ion-col>
+            <ion-col hidden-xs col-sm-4>
+                <div class="nav">
+                    <abandon-payment [text]="'Abandonar'" (onAbandonClicked)="onAbandonClicked()"></abandon-payment>
+                </div>
+            </ion-col>
+        </ion-row>
+        <!-- datos personales -->
+        <ion-row>
+            <ion-col col-12 col-md-10 offset-md-1 offset-0>
+                <div class="section-header">
+                    <img src="assets/imgs/customer.svg">
+                    <div class="section-title">Datos personales</div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <form [formGroup]="formPersonalData" autocomplete="off">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 offset-0 col-md-8 offset-md-2>
+                    <ion-row>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Nacionalidad</div>
+                            <select bdb-select [isInvalid]="formPersonalData.controls.nationality.invalid"
+                                formControlName="nationality" id="cbi-nat">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of nationalities" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formPersonalData.controls.nationality.invalid">
+                                {{requiredField}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Estado civil</div>
+                            <select bdb-select formControlName="maritalStatus" id="cbi-ms">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of maritalStatusList" [value]="item.key">{{item.value}}
+                                </option>
+                            </select>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Nivel de educación</div>
+                            <select bdb-select formControlName="educationLevel" id="cbi-edu">
+                                <option disabled value="">Seleccione</option>
+                                <option *ngFor="let item of educationLevelList" [value]="item.key">{{item.value}}
+                                </option>
+                            </select>
+                        </ion-col>
+                    </ion-row>
+                    <!-- lugar de nacimiento -->
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="section-title">Lugar de nacimiento</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*País</div>
+                            <select bdb-select formControlName="countryBirth" id="cbi-cnbirth"
+                                [isInvalid]="formPersonalData.controls.countryBirth.invalid"
+                                (change)="onCountryBirthChange()">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of countriesBirth" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formPersonalData.controls.countryBirth.invalid">{{requiredField}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Departamento</div>
+                            <select bdb-select formControlName="departmentBirth" id="cbi-dpbirth"
+                                [isInvalid]="formPersonalData.controls.departmentBirth.invalid"
+                                (change)="onDepartmentBirthChange()">
+                                <option disabled value="">Seleccione</option>
+                                <option *ngFor="let item of departmentsBirth" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formPersonalData.controls.departmentBirth.invalid">{{requiredField}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Ciudad</div>
+                            <select bdb-select formControlName="cityBirth" id="cbi-ctbirth" [isInvalid]="formPersonalData.controls.cityBirth.invalid">
+                                <option disabled value="">Seleccione</option>
+                                <option *ngFor="let item of citiesBirth" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formPersonalData.controls.cityBirth.invalid">{{requiredField}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- datos laborales -->
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="section-title">Datos laborales</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Ocupación</div>
+                            <select bdb-select [isInvalid]="formPersonalData.controls.occupation.invalid"
+                                formControlName="occupation" id="cbi-oc" (change)="onOccupationChange()">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of occupationList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formPersonalData.controls.occupation.invalid">
+                                {{requiredField}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Sector</div>
+                            <select bdb-select [isInvalid]="formPersonalData.controls.sector.invalid"
+                                formControlName="sector" id="cbi-sec" (change)="onSectorChange()">
+                                <option disabled value="00">Seleccione</option>
+                                <option *ngFor="let item of sectorList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formPersonalData.controls.sector.invalid">
+                                {{requiredField}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Actividad económica</div>
+                            <select bdb-select [isInvalid]="formPersonalData.controls.economicActivity.invalid"
+                                formControlName="economicActivity" id="cbi-ea">
+                                <option disabled value="">Seleccione</option>
+                                <option *ngFor="let item of economicActivities" [value]="item.key">{{item.value}}
+                                </option>
+                            </select>
+                            <div class="error-msg" *ngIf="formPersonalData.controls.economicActivity.invalid">
+                                {{requiredField}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- datos de vivienda -->
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="section-title">Datos de vivienda</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Tipo de vivienda</div>
+                            <select bdb-select formControlName="housing" id="cbi-housing">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of housingList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                        </ion-col>
+
+                    </ion-row>
+                    <!-- reporte de costos anual -->
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="section-title">Reporte anual de costos totales</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Tipo de entrega</div>
+                            <select bdb-select formControlName="deliveryMethod" id="cbi-dm">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of reportList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+    <form [formGroup]="formContactData" autocomplete="off">
+        <ion-grid>
+            <ion-row>
+                <ion-col col-12 col-md-10 offset-md-1 offset-0>
+                    <div class="section-header">
+                        <img src="assets/imgs/cust_location.svg">
+                        <div class="section-title">Datos de ubicación y contacto</div>
+                    </div>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 offset-0 col-md-8 offset-md-2>
+                    <!-- tipo de direccion -->
+                    <ion-row>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Tipo de dirección</div>
+                            <select bdb-select [isInvalid]="formContactData.controls.addressType.invalid"
+                                formControlName="addressType" id="cbi-adType">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of addressTypeList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formContactData.controls.addressType.invalid">
+                                {{requiredField}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- Direccion -->
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="select-title">Dirección</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <select bdb-select [isInvalid]="formContactData.controls.wayType1.invalid"
+                                formControlName="wayType1" id="cbi-wt1">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of wayTypeList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formContactData.controls.wayType1.invalid">{{requiredField}}
+                            </div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-2>
+                            <input placeholder="1234" bdb-form-input
+                                [isInvalid]="formContactData.controls.number1.invalid" id="cbi-number1"
+                                formControlName="number1">
+                            <div class="error-msg" *ngIf="formContactData.controls.number1.invalid">{{requiredField}}
+                            </div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <select bdb-select [isInvalid]="formContactData.controls.wayType2.invalid"
+                                formControlName="wayType2" id="cbi-wt2">
+                                <option value="">Seleccione</option>
+                                <option *ngFor="let item of wayTypeList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formContactData.controls.wayType2.invalid">{{requiredField}}
+                            </div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-2>
+                            <input placeholder="12 - 34" bdb-form-input
+                                [isInvalid]="formContactData.controls.number2.invalid" id="cbi-number2"
+                                formControlName="number2">
+                            <div class="error-msg" *ngIf="formContactData.controls.number2.invalid">{{requiredField}}
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <select bdb-select formControlName="propertyType1" id="cbi-pt1">
+                                <option value="">Seleccione</option>
+                                <option *ngFor="let item of propertyTypeList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-2>
+                            <input id="cbi-number3" placeholder="abcde" bdb-form-input formControlName="number3">
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <select bdb-select formControlName="propertyType2" id="cbi-pt2">
+                                <option value="">Seleccione</option>
+                                <option *ngFor="let item of propertyTypeList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-2>
+                            <input id="cbi-number4" placeholder="abcde" bdb-form-input formControlName="number4">
+                        </ion-col>
+                    </ion-row>
+                    <!-- barrio -->
+                    <ion-row>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Barrio</div>
+                            <input placeholder="Escribe el barrio" bdb-form-input id="cbi-nb"
+                                [isInvalid]="formContactData.controls.neighbourhood.invalid"
+                                formControlName="neighbourhood">
+                            <div class="error-msg" *ngIf="formContactData.controls.neighbourhood.invalid">
+                                {{requiredField}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- pais, departamento, ciudad -->
+                    <ion-row>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*País</div>
+                            <select bdb-select disabled formControlName="country" id="cbi-cn">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of countries" [value]="item.key">{{item.value}}</option>
+                            </select>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Departamento</div>
+                            <select bdb-select formControlName="department" id="cbi-dp"
+                            (change)="onDepartmentChange()"
+                            [isInvalid]="formContactData.controls.department.invalid">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of departments" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formContactData.controls.department.invalid">{{requiredField}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Ciudad</div>
+                            <select bdb-select formControlName="city" id="cbi-ct" [isInvalid]="formContactData.controls.city.invalid">
+                                <option disabled value="">Seleccione</option>
+                                <option *ngFor="let item of cities" [value]="item.key">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formContactData.controls.city.invalid">{{requiredField}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- telefono -->
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="section-title">Teléfono</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Tipo de teléfono</div>
+                            <select bdb-select formControlName="phoneType" id="cbi-pt" (change)="onPhoneTypeChange()">
+                                <option disabled value="0">Seleccione</option>
+                                <option *ngFor="let item of phoneTypeList" [value]="item.key">{{item.value}}</option>
+                            </select>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Indicativo</div>
+                            <select bdb-select formControlName="prefix" id="cbi-ind" [isInvalid]="formContactData.controls.prefix.invalid">
+                                <option disabled value="">Seleccione</option>
+                                <option *ngFor="let item of prefixList" [value]="item.value">{{item.value}}</option>
+                            </select>
+                            <div class="error-msg" *ngIf="formContactData.controls.prefix.invalid">{{requiredField}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Número de teléfono</div>
+                            <input type="tel" placeholder="Escribe tu número telefónico" bdb-form-input id="cbi-phone"
+                                (input)="onPhoneNumberChange($event.target.value)" [isInvalid]="invalidPhone"
+                                formControlName="phoneNumber">
+                            <div class="error-msg" *ngIf="invalidPhone">{{errorPhone}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Extensión</div>
+                            <input id="cbi-ext" placeholder="Escribe la extensión" bdb-form-input formControlName="ext" [isInvalid]="formContactData.controls.ext.invalid">
+                            <div class="error-msg" *ngIf="formContactData.controls.ext.invalid">{{requiredField}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Número de celular</div>
+                            <input type="tel" pattern="[0-9]*" bdb-form-input id="cbi-mobile"
+                                (input)="onMobileNumberChange($event.target.value)" [isInvalid]="invalidMobile"
+                                placeholder="Escribe tu número de celular" formControlName="mobileNumber">
+                            <div class="error-msg" *ngIf="invalidMobile">{{errorMobile}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- correo electronico -->
+                    <ion-row>
+                        <ion-col col-12>
+                            <div class="section-title">Correo electrónico</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">Correo electrónico</div>
+                            <input bdb-form-input id="cbi-email"
+                                [isInvalid]="(formContactData.controls.email.invalid && formContactData.controls.email.dirty)"
+                                (input)="onEmailChange($event.target.value)" placeholder="persona@correo.com"
+                                formControlName="email">
+                            <div class="error-msg"
+                                *ngIf="(formContactData.controls.email.dirty && formContactData.controls.email.invalid)">
+                                {{errorEmail}}</div>
+                        </ion-col>
+                        <ion-col col-12 col-md-6 col-lg-4>
+                            <div class="select-title">*Confirmar correo electrónico</div>
+                            <input bdb-form-input id="cbi-econf" [isInvalid]="!equalEmails"
+                                (input)="onConfEmailChange($event.target.value)" placeholder="persona@correo.com"
+                                formControlName="emailConf">
+                            <div class="error-msg" *ngIf="!equalEmails">{{errorConfEmail}}</div>
+                        </ion-col>
+                    </ion-row>
+                    <!-- buttons row -->
+                    <ion-row>
+                        <ion-col>
+                            <div class="web-btn-wrapper">
+                                <button
+                                    [disabled]="!equalEmails || formContactData.invalid || formPersonalData.invalid || invalidPhone || invalidMobile"
+                                    id="cbi-btn-save" bv-button color="mango-gradient" hidden-xs-down ion-button
+                                    (click)="save()">{{btnRight}}</button>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</ion-content>
+<ion-footer hidden-sm-up>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-12>
+                <button full class="mobile-button-group__save-btn" id="mob-cbi-btn-save" bv-button
+                    color="mango-gradient" ion-button (click)="save()"
+                    [disabled]="!equalEmails || formContactData.invalid || formPersonalData.invalid || invalidPhone || invalidMobile">{{btnRight}}</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

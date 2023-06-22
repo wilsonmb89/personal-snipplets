@@ -1,0 +1,30 @@
+<div class="item-card-wrapper">
+  <ion-grid no-padding>
+    <ion-row>
+      <ion-col col-10>
+        <div class="item-btn" ion-item no-lines detail-none id="bdb-card" (click)="itemClicked()">
+          <bdb-avatar class="item-btn__avatar" [showOnlyIcon]="showLogo" [contraction]="contraction"
+            [avatarColor]="avatarColor" [iconPath]="logoPath" item-start>
+          </bdb-avatar>
+          <div>
+            <p class="item-detail-1">{{title}}</p>
+            <p class="item-detail-2" *ngFor="let des of desc" id="bic-prod-num">{{des}}</p>
+            <p class="item-detail-3" *ngFor="let subDes of subDesc">{{subDes}}</p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col col-1>
+        <div class="item-card-wrapper__favorite" *ngIf="withFavoriteStar">
+          <bdb-star [(isActive)]='_isFavorite' (click)="clickStar()"></bdb-star>
+        </div>
+      </ion-col>
+      <ion-col col-1>
+        <div id="context-btn" #ctmenu class="item-card-wrapper__options__context-menu" [hidden]="!withContextMenu">
+          <a>
+            <pulse-nav-button icon="more" (click)="contextClicked($event, ctmenu)" fill="clear"></pulse-nav-button>
+          </a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

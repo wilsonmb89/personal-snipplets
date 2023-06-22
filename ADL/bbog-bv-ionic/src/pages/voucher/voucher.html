@@ -1,0 +1,51 @@
+<ion-content no-padding class="voucher-content">
+  <ion-grid no-padding class="voucher-content__grid">
+    <ion-row>
+      <ion-col col-md-3 offset-md-1 hidden-sm-down>
+
+        <ion-grid no-padding>
+          <ion-row hidden-sm-down>
+
+            <ion-col class="voucher-content__title" col-12>
+              <span class="voucher-content__title-text">
+                {{ data.successful ? 'Transacción exitosa' : 'Transacción fallida' }}
+              </span>
+              <img [src]="data.successful ? 'assets/imgs/group-9.png' : 'assets/imgs/group-8.png'"
+                class="voucher-content__title-img">
+            </ion-col>
+
+            <ion-col col-12 class="voucher-content__failed-text" *ngIf="!data.successful">
+              {{ data.err.title }}<br />
+              {{ data.err.message }}
+            </ion-col>
+
+            <ion-col col-12 *ngIf="!data.successful">
+              <button id="voucherVolver" bvButton (click)="popFlow()">Volver</button>
+            </ion-col>
+
+          </ion-row>
+          <ion-row hidden-sm-down *ngIf="data.sendEmail">
+            <ion-col class="voucher-content__action">
+              <div id="voucherEmailImg" class="voucher-content__action-circle" (click)="triggerSendEmail()">
+                <img src="assets/imgs/noun-mail.svg" class="voucher-content__action-circle-img">
+              </div>
+              <span class="voucher-content__action-text">Enviar por e-mail</span>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="data.successful">
+            <ion-col no-padding>
+              <voucher-send-email hidden-sm-down [viewSendEmail]="viewSendEmail" (triggerSendEmail)="triggerSendEmail()"
+                (submitSendEmail)="submitSendEmail($event)"></voucher-send-email>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-col>
+      <ion-col col-md-6 offset-md-1 col-12 offset-0>
+        <voucher-info [data]="data" [buttons]="buttons" [viewSendEmail]="viewSendEmail"
+          (triggerSendEmail)="triggerSendEmail()" (submitSendEmail)="submitSendEmail($event)" (popFlowEvent)="popFlow()"
+          (btnClick)="btnClick($event)"></voucher-info>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

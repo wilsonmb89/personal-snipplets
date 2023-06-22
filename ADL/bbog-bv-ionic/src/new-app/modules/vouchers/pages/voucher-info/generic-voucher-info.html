@@ -1,0 +1,109 @@
+<div class="voucher-info-content__voucher voucher-info-content__voucher-corner">
+  <div class="voucher-info-content__voucher voucher-info-content__voucher-corner-2">
+    <div>
+      <div class="voucher-info-content__head">
+        <div>
+          <img src="assets/imgs/horizontal-logo_white.svg" class="voucher-info-content__voucher-img" hidden-md-down>
+          <img src="assets/imgs/3.svg" class="voucher-info-content__voucher-img" hidden-lg-up>
+        </div>
+
+
+        <div class="voucher-info-content__head__info" text-right>
+          <img src="assets/imgs/new-voucher/recibo.svg" class="voucher-info-content__voucher-img__stamp"
+               *ngIf="data.isPayment && data.successful">
+          <div class="voucher-info-content__head__details">
+            <div class="voucher-info-content__title" hidden-lg-up>
+              <span class="voucher-info-content__title-text pulse-tp-hl4-comp-b">
+                {{ data.successful ? 'Transacción exitosa' : 'Transacción fallida' }}
+              </span>
+              <img class="voucher-info-content__title-img"
+                   [src]="data.successful ? 'assets/imgs/group-9.png' : 'assets/imgs/group-8.png'">
+            </div>
+
+
+            <div class="voucher-info-content__voucher-header-title pulse-tp-hl4-comp-r">
+              <div *ngIf="data.successful && data.voucher.number">
+                Comprobante No.{{
+                data.voucher.number }}</div>
+              <div class="voucher-info-content__voucher-header-title__empty" hidden-md-down *ngIf="!data.successful">
+                Sin comprobante
+              </div>
+            </div>
+            <div class="voucher-info-content__voucher-header-subtitle pulse-tp-hl6-comp-r">
+              {{ data.voucher.date ? data.voucher.date : today | date: 'medium' }}
+            </div>
+            <div class="voucher-info-content__failed-text pulse-tp-bo3-comp-r" hidden-lg-up *ngIf="!data.successful">
+              {{ data.err.title }} <b>{{ data.err.result}}</b>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ion-grid *ngIf="data.successful" hidden-lg-up>
+        <ion-row>
+          <ion-col no-padding>
+            <generic-voucher-send-email [viewSendEmail]="viewSendEmail" (triggerSendEmail)="triggerSendEmailEvent()"
+                                        (submitSendEmail)="submitSendEmailEvent($event)"></generic-voucher-send-email>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid [ngClass]="['voucher-info-content__voucher-list', viewSendEmail ? 'email-mobile-hidden' : '' ]">
+        <ion-row *ngFor="let content of data.voucher.content; last as isLast"
+                 [ngClass]="[isLast ? 'voucher-info-content__voucher-item_last': 'voucher-info-content__voucher-item', !data.successful ? 'voucher-opacity voucher-info-content__voucher-item_last_fail' : '']">
+          <ion-col col-6 text-left no-padding>
+            <div
+              class="voucher-info-content__voucher-item-text voucher-left pulse-tp-hl5-comp-r">{{ content.name }}</div>
+          </ion-col>
+          <ion-col col-6 text-right no-padding>
+            <div
+              [ngClass]="[text.cssClass ? text.cssClass : 'voucher-info-content__voucher-item-text pulse-tp-hl5-comp-r']"
+              *ngFor="let text of content.text;">
+              <img [src]="text.img ? text.img : ''" width="36" *ngIf="text.img">
+              {{ text.value }}
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+  </div>
+</div>
+<div no-padding>
+  <div hidden-lg-up *ngIf="data.sendEmail" class="voucher-info-content__action">
+    <div id="voucherEmailImg" class="voucher-info-content__action-circle" (click)="triggerSendEmailEvent()">
+      <img src="assets/imgs/new-voucher/email-action-add.svg" class="voucher-info-content__action-circle-img">
+    </div>
+    <div class="voucher-info-content__actname pulse-tp-hl6-comp-m">E-mail</div>
+  </div>
+</div>
+
+<div no-padding>
+  <div class="voucher-info-content__voucher-buttons">
+
+    <div *ngIf="buttons && data.successful">
+      <pulse-button [id]="buttons[0].id"
+                    (click)="onClick(buttons[0].type)"
+                    [fill]="'outline'"
+      >{{ buttons[0].name }}
+      </pulse-button>
+
+      <pulse-button [id]="buttons[1].id"
+                    (click)="onClick(buttons[1].type)"
+                    [colorgradient]="true"
+                    [color]="'primary'"
+      >{{ buttons[1].name }}
+      </pulse-button>
+
+    </div>
+    <div hidden-lg-up *ngIf="!data.successful">
+    <pulse-button (click)="goPreviousPage()"
+                  [colorgradient]="true"
+                  [color]="'primary'">
+      Volver
+    </pulse-button>
+  </div>
+  </div>
+</div>
+
+

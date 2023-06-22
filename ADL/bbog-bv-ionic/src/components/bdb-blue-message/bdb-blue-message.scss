@@ -1,0 +1,42 @@
+bdb-blue-message {
+    
+        .req-token--wrapper {
+            &__icon {
+                text-align: center;
+                margin: 1.6rem 0;
+            }
+    
+            &__content {
+    
+                &--advise {
+                    background-color: #eaf5fd;
+                    border-radius: 10px;
+                    padding: 1.6rem;
+                    color: rgba(color($colors, carbon), .8);
+                    margin-top: 2.6rem;
+                    display: flex;
+    
+                    span {
+                        flex-grow: 1;
+                        margin-left: 1.6rem;
+                    }
+                }
+            }
+    
+        @media (max-width: 540px) {
+            .req-token--wrapper {
+                &__icon {
+                    margin: 5.4rem 0 3.8rem 0;
+                }
+    
+                &__content {
+    
+                    &--button {
+                        margin-top: 3.2rem;
+                    }
+                }
+    
+            }
+        }
+    }
+}

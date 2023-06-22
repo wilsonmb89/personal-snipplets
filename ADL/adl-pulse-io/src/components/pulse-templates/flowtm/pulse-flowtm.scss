@@ -1,0 +1,46 @@
+.flowtm-main{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    &--container{
+        max-width: 100%;
+        width: 100%;
+       &--header{
+            padding: 0.8rem 0;
+            position: sticky;
+            top:0;
+            z-index: 999;
+            background-color: var(--pulse-flowtx-header);
+        }
+
+    }
+
+    @media only screen and  (min-width: 540px) {
+        &--container{
+            &--header{
+                padding: 1.6rem 0;
+              }
+        }
+
+    }
+
+    @media only screen and  (min-width: 768px) {
+
+        &--container{
+            max-width: var(--pulse-max-container-width, 1140px);
+            width: var(--pulse-max-container-width, 1140px);
+            min-width: 540px;
+
+            &--header{
+                padding: 2.4rem 0;
+                margin-bottom: 2.4rem;       
+              }
+        }
+    
+    
+    }
+
+    
+}

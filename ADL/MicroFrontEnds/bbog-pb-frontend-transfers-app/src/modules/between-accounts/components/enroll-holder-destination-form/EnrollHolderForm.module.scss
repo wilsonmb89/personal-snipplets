@@ -1,0 +1,73 @@
+@import '../../../../variables.scss';
+
+.holder-form {
+  &__epigraph {
+    color: var(--sherpa-carbon-800);
+  }
+
+  &__title {
+    margin: var(--sherpa-spacing-2) var(--sherpa-spacing-0);
+    color: var(--sherpa-carbon-900);
+  }
+
+  &__subtitle {
+    margin-bottom: var(--sherpa-spacing-7);
+    color: var(--sherpa-carbon-800);
+  }
+
+  &__names-holder {
+    margin-bottom: 2.8rem;
+  }
+
+  &__document {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: var(--sherpa-spacing-4);
+    margin-bottom: 2.8rem;
+  }
+
+  &__customized-name {
+    margin-bottom: 3.6rem;
+  }
+
+  &__actions {
+    display: grid;
+    gap: var(--sherpa-spacing-4);
+  }
+
+  @media only screen and (max-width: $break-mobile-md) {
+    &__document {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2.8rem;
+    }
+    &__actions {
+      gap: unset;
+      &__summary {
+        margin-bottom: var(--sherpa-spacing-5);
+      }
+    }
+  }
+
+  @media only screen and (min-width: $break-mobile-md) {
+    &__customized-name {
+      margin-bottom: 4.4rem;
+    }
+
+    &__actions {
+      width: 29.8rem;
+      grid-template-columns: 1.8fr 1fr;
+    }
+  }
+
+  @media only screen and (min-width: $break-desktop) {
+    &__actions {
+      display: block;
+      width: 12.5rem;
+
+      &__summary {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div *ngIf="!!transactionData" class="transaction-result-container">
+  <pulse-transaction [voucherdata]="transactionData" (mailactionclicked)="doMailAction()"
+    (mainactionclicked)="doMainAction()" (secondaryactionclicked)="doSecondaryAction()">
+    <div slot="message-info" [innerHTML]="transactionData.header.messageInfo"></div>
+    <div slot="summary-list-items" class="transaction-result-container__list-items">
+      <div *ngIf="!!transactionData.body.addendum" class="transaction-result-container__list-items--item"
+        [class.error]="transactionData.state === 'error'">
+        <pulse-voucher-summary-item titlename="Nota:" [state]="transactionData.state">
+          <span>
+            {{ transactionData.body.addendum.note }}
+          </span>
+        </pulse-voucher-summary-item>
+        <pulse-voucher-summary-item titlename="Factura No.:" [state]="transactionData.state">
+          <span>
+            {{ transactionData.body.addendum.billId }}
+          </span>
+        </pulse-voucher-summary-item>
+      </div>
+      <div *ngIf="!!transactionData.body.channel" class="transaction-result-container__list-items--item"
+        [class.error]="transactionData.state === 'error'">
+        <pulse-voucher-summary-item titlename="Canal:" [state]="transactionData.state">
+          <span>
+            {{ transactionData.body.channel }}
+          </span>
+        </pulse-voucher-summary-item>
+      </div>
+    </div>
+  </pulse-transaction>
+</div>

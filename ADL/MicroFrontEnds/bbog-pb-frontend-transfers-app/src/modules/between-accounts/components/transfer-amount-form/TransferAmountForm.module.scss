@@ -1,0 +1,45 @@
+@import '../../../../variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sherpa-spacing-5);
+  margin-top: var(--sherpa-spacing-6);
+  &--step {
+    color: var(--sherpa-carbon-800);
+  }
+  &--question {
+    color: var(--sherpa-carbon-900);
+  }
+  &--aditional-info {
+    color: var(--sherpa-carbon-800);
+  }
+  &__actions {
+    display: flex;
+    gap: var(--sherpa-spacing-4);
+    flex-direction: column;
+    margin: var(--sherpa-spacing-5) var(--sherpa-spacing-0) var(--sherpa-spacing-4);
+    &--continue {
+      width: 35%;
+    }
+
+    @media only screen and (max-width: $break-desktop) {
+      &--continue {
+        width: 55%;
+      }
+    }
+
+    @media only screen and (min-width: $break-mobile) and (max-width: $break-table-md) {
+      &--continue {
+        width: 100%;
+      }
+    }
+
+    @media only screen and (min-width: $break-table-md) and (max-device-width: $break-table-md) {
+      flex-direction: row;
+      &--continue {
+        width: 35%;
+      }
+    }
+  }
+}

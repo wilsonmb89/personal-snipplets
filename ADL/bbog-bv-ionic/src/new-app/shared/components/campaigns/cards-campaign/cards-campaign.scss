@@ -1,0 +1,48 @@
+.cards-campaign {
+  &__content {
+    margin-top: 4.2rem;
+    width: inherit;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  &__content::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__slide {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  &--margin--right {
+    margin-right: 2%;
+  }
+
+  &--width-for {
+    &--two {
+      width: 49%;
+    }
+
+    &--unique {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    &__slide {
+      display: inline-flex;
+      width: auto;
+    }
+
+    &--margin--right {
+      margin-right: 1.6rem;
+    }
+    &--width-for {
+      &--two {
+        width: 31rem;
+      }
+    }
+  }
+}
+

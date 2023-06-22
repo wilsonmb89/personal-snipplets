@@ -1,0 +1,36 @@
+<ion-content class="schedule-bill-content">
+    <pulse-flowtm>
+        <div slot="header" class="schedule-bill-content__header">
+            <bdb-nav-options (onRightClicked)="onAbandonClicked()" [rOption]="'Cancelar'" [navTitle]="navTitle">
+                <cancel-icon (click)="onCancel()" right></cancel-icon>
+            </bdb-nav-options>
+        </div>
+        <div slot="content">
+            <div class="pulse-grid">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="schedule-bill-content__title-desktop" hidden-p-md-down>
+                            Programar pago de servicio
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" no-padding>
+                        <bdb-generic-schedule-card #schedcard [item]="item" [newSched]="isNewSchedule"
+                            (onSave)="saveChanges()" (onDelete)="deleteSchedule()" [validAccounts]="validAccounts">
+                        </bdb-generic-schedule-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </pulse-flowtm>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+    <ion-toolbar no-padding>
+        <button [disabled]="!schedCard.formScheduleInfo.valid" id="sb-mob-save" (click)="saveChanges()" bv-button full
+            color="mango-gradient" ion-button>
+            Guardar cambios
+        </button>
+    </ion-toolbar>
+</ion-footer>

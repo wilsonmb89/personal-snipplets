@@ -1,0 +1,46 @@
+<ion-content>
+  <pulse-flowtt>
+    <div slot="header">
+      <bdb-nav-options  (onRightClicked)="onAbandonClicked()"
+         [rOption]="abandonText" [navTitle]="navTitle">
+        <cancel-icon (click)="onAbandonClicked()" right></cancel-icon>
+      </bdb-nav-options>
+    </div>
+    <!--formulario-->
+    <div slot="content">
+      <div class="pulse-grid">
+        <div class="row">
+          <div class="col-xs-12" no-padding>
+            <form [formGroup]="phoneForm" class="bv-form">
+              <div class="subtitle">
+                {{subtitle}}
+              </div>
+              <bdb-phone-input [placeHolder]="'(***) ***-****'" id="re-pi" formControlName="phoneNumber">
+              </bdb-phone-input>
+              <p class="err-hint"
+                *ngIf="phoneForm.controls.phoneNumber.invalid && phoneForm.controls.phoneNumber.dirty">El número debe
+                tener máximo 10 dígitos</p>
+              <div class="btn-wrapper" hidden-p-sm-down>
+                <button bvButton id="pi-btn" color="bdb-blue" [disabled]="phoneForm.controls.phoneNumber.invalid"
+                  ion-button (click)="triggerAmmtInput()">Continuar</button>
+                <div class="key-hint" [hidden]="phoneForm.controls.phoneNumber.invalid">o presiona Enter</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div slot="summary">
+      <web-progress-bar-new hidden-p-md-down></web-progress-bar-new>
+      <bdb-summary hidden-p-lg-up></bdb-summary>
+    </div>
+  </pulse-flowtt>
+</ion-content>
+
+<ion-footer hidden-p-md-up>
+  <ion-toolbar no-padding>
+    <button bvButton id="mob-pi-btn" class="continue-btn" full color="blue-gradient" ion-button
+      (click)="triggerAmmtInput()" [disabled]="phoneForm.controls.phoneNumber.invalid">Continuar</button>
+  </ion-toolbar>
+</ion-footer>

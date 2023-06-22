@@ -1,0 +1,26 @@
+cancel-icon {
+    .cancel-icon{
+        box-sizing: border-box;
+        height: 2.8rem;
+        border-style: none;
+        position: relative;
+  
+        &:before,&:after{
+          content: '';
+          position: absolute;
+          width: 19px;
+          height: 2.45px;
+          background-color: #437bda;
+          border-radius: 20%;
+          top: 50%;
+          left: 50%;
+        }
+  
+        &:after{
+          transform:  translate(-50%, -50%) rotate(45deg);
+        }
+        &:before{
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+}
